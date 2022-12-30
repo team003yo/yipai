@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-12-23 16:34:39
+-- 產生時間： 2022-12-29 18:42:30
 -- 伺服器版本： 10.4.25-MariaDB
 -- PHP 版本： 7.4.30
 
@@ -18,8 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `my_db2`
+-- 資料庫： `my_db999`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  `product_price` int(10) NOT NULL,
+  `amount` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -35,6 +48,39 @@ CREATE TABLE `marketing` (
   `marketing_use_way` int(10) NOT NULL,
   `marketing_vaild` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `news`
+--
+
+CREATE TABLE `news` (
+  `news_id` int(10) UNSIGNED NOT NULL,
+  `news_title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_introduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_location` varchar(255) NOT NULL,
+  `news_images` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_date` date NOT NULL,
+  `news_start_time` date NOT NULL,
+  `news_end_time` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_title`, `news_introduction`, `news_location`, `news_images`, `news_date`, `news_start_time`, `news_end_time`) VALUES
+(1, '屏東縣美術協會會員聯展', '為美化人生、豐富心靈，屏東縣美術協會藝術家透過視覺等感官\n體驗，運用畫筆，反映當代思想、生活習俗、文化與時代特性並\n融入多元文化元素，以不同面向及題材的詮釋觀點，將文化精神\n無限延伸，創作出不同風格作品並留下了珍貴美好的畫面，帶給\n社會大眾美的心靈饗宴。', '高雄市苓雅區001鄰五福一路67號', '1.jpg', '2022-12-29', '2023-02-24', '2023-03-07'),
+(2, '【工藝日常】你我的人生舞台', '每一個人來到世間，就像登上一座期間限定、僅此一回的人生舞台，隨著時間的推移、人群的聚散，扮演不同的角色。\r\n且來欣賞工藝家以木雕、陶瓷、皮雕、草編等不同材質，揉入巧手匠心，刻劃將你我也融會其中的生之影姿。', '宜蘭縣五結鄉五濱路2段201號', '2.jpg', '2022-12-29', '2023-01-01', '2023-04-14'),
+(3, '「2022藝起港動」新北市國際藝術村成果展', '本展覽以2022年新北市國際藝術村八組駐村藝術家之創作成果為基礎，規劃八種藝術創作展區，作品型態橫跨刺繡、繪畫、攝影、採集、雕塑、皮革、裝置藝術、新媒體及複合媒材等眾多領域。今年適逢淡水開港設關160周年，以藝術家視野詮釋「淡水」，並奠基於淡水開港設關及馬偕來臺史實，發展其創作理念及相關論述。', '新北市淡水區中正路一段6巷32-2號', '3.jpg', '2022-12-29', '2023-01-01', '2023-02-28'),
+(4, '兩種自然 - Susan BEINER創作個展', '大自然的複雜性是一種持續存在且不斷變化的現象，而脆弱的人類與動植物生態系是藝術家所關切的。我們的處境充滿了非常真實且日益嚴重的威脅，亦即人類對賦予生命的生態系統帶來各種影響。儘管無人能倖免，但只要有警覺意識，每個人都能發揮一己之力，更好地保護我們的地球，達到我們與大自然連結的生態平衡性。\r\n這次展覽聚焦在各種與自然共存時油然而生的想法。藝術家在許多作品中運用中國古畫裡的菊花。菊花象徵能夠抵禦一切逆境的美德，並描繪出大自然的幾何與力量。相比之下，「不可生物降解」的想法源自於社會在過度生產和浪費上的陋習，而這', '新北市立鶯歌陶瓷博物館1F陽光特展室', '4.jpg', '2022-12-29', '2023-01-01', '2023-02-19'),
+(5, '菸．葉．廠－複薰土地的金黃記憶', '全台首座菸葉館保存菸葉除骨、複薰等大型加工機具，引入數位化導覽系統，提供全新的五感體驗，重現台灣重要菸葉產業發展歷史。\r\n時光複薰了屏東的金黃歲月，這一次，屬於你我「菸．葉．廠」的金黃記憶，將以不同方式續寫故事篇章。', '屏東縣屏東市菸廠路1號', '5.jpg', '2022-12-29', '2022-02-25', '2022-12-31'),
+(6, '高雄市雙彩美術協會「雙彩印象」跨年會員聯展', '本會於民國97年成立至今，在溫瑞和老師的帶領與指導下，會員的作品年年更精進，每次展出皆有許多令人驚艷創作。\r\n除了聯展外，會員的向心力強感情佳，也經常舉辦研習活動，旅遊寫生。', '高雄市苓雅區五福一路67號', '6.jpg', '2022-12-29', '2023-01-01', '2023-01-03'),
+(7, '「島．過來」特展', '「島．過來」展覽匯集111年老家生活藝文空間協辦風箏節「從聆開始」風鈴製作陶藝工作坊及聯合大學USR計畫「50+藝術陪伴共好生活行動-陶舞」，兩場活動參與者之手捏陶作品。\n「島．過來」展期預計於苗栗特色館-陶藝工坊舉辦三場創作工作坊，以肢體覺察的角度引導參與者體驗手捏陶的趣味。其中12月31日場次(上午10時30分至12時)「小陶偶創作工作坊」專為親子設計，招收10組20人，參與者須全程參與開幕活動，將共同創作兩件成品，一件將於展覽期間一同展出，一件可直接帶回收藏；另「從聆開始」陶風鈴創作工作坊，於1', '苗栗縣公館鄉14鄰館南352號 ', '7.jpg', '2022-12-29', '2023-01-01', '2023-02-28'),
+(8, '狂八〇 : 跨領域靈光出現的時代】', '本展以作品、檔案、音像紀錄與訪談追索「跨領域」在臺灣八〇年代藝文發展史的脈絡——臺灣的「跨領域」不是現代性的進程，而是社群的存在狀態與出路。展出五大子題：\n「前衛與實驗」呈現創作人在紙媒的刺激與西方新形式的啟發下，著手各領域的實驗。', '臺北市中山區中山北路三段181號', '8.jpg', '2022-12-29', '2022-12-03', '2023-02-26'),
+(9, '「2022藝起港動」新北市國際藝術村成果展', '本展覽以2022年新北市國際藝術村八組駐村藝術家之創作成果為基礎，規劃八種藝術創作展區，作品型態橫跨刺繡、繪畫、攝影、採集、雕塑、皮革、裝置藝術、新媒體及複合媒材等眾多領域。今年適逢淡水開港設關160周年，以藝術家視野詮釋「淡水」，並奠基於淡水開港設關及馬偕來臺史實，發展其創作理念及相關論述。', '台北市中正區北平東路7號', '9.jpg', '2022-12-29', '2023-01-01', '2023-02-28'),
+(10, '故宮國寶遊彰化2.0-「故宮魔幻山水歷險到彰化」新媒體藝術展', '由國立故宮博物院策畫「故宮魔幻山水歷險到彰化」，以故宮數位典藏成果為基底，運用近幾年來成功發展的顯像科技與互動技術，搭配AI、8K等新興科技，將經典美學轉譯為當代語彙，帶給觀眾聽覺、視覺等多重感官的體驗。\r\n「故宮魔幻山水歷險到彰化」分為4個展區，其中「舞蝶香徑」取故宮典藏的宋徽宗〈詩帖〉意象，結合「清余省百蝶圖」，透過動態光影投影，讓觀眾化身蝴蝶融入百蝶紛飛意境；「幻象古水族-海錯奇珍沉浸式互動劇場」則是以〈海錯圖〉與〈海怪圖記〉為設計，利用體感偵測器材，打造和海底古生物互動空間；「寰宇歷遊-走入畫中」', '彰化縣彰化市卦山路3號', '10.jpg', '2022-12-29', '2023-01-01', '2023-02-28');
 
 -- --------------------------------------------------------
 
@@ -295,6 +341,83 @@ INSERT INTO `product` (`product_id`, `product_name`, `category`, `product_price`
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `sellers`
+--
+
+CREATE TABLE `sellers` (
+  `seller_id` int(6) UNSIGNED NOT NULL,
+  `seller_account` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seller_password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seller_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seller_phone` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seller_email` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seller_created_at` datetime DEFAULT NULL,
+  `seller_last_updated_at` datetime DEFAULT NULL,
+  `seller_valid` tinyint(1) NOT NULL,
+  `valid_role` int(6) NOT NULL,
+  `seller_introduce` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `blacklist` tinytext COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `sellers`
+--
+
+INSERT INTO `sellers` (`seller_id`, `seller_account`, `seller_password`, `seller_name`, `seller_phone`, `seller_email`, `seller_created_at`, `seller_last_updated_at`, `seller_valid`, `valid_role`, `seller_introduce`, `blacklist`) VALUES
+(1, 'Ace', '827ccb0eea8a706c4c34a16891f84e7b', 'Ace', '0928299163', 'Ace1234@example.com', '2022-10-21 15:00:00', NULL, 1, 1, '這個丹麥藝 從 1993 年起就開始進行一系列有關經濟力、民主生產條件和自我組織的計畫。這些藝 術家的計畫檢察查了替代能源生產方法，以及巴西、泰國和歐洲的商品生產，兩者均揭 發了現有經濟結構的不足，並對其加以質疑。', '0'),
+(2, 'Beck', '827ccb0eea8a706c4c34a16891f84e7b', 'Beck', '0912985206', 'Beck1234@example.com', '2022-10-21 15:09:00', NULL, 1, 1, '生於韓國釜山，政大哲學系畢業。曾任《天下雜誌》、《時報周刊》、《民生報》、《自立早晚報》、《時報新聞刊》、《工商時報》 等攝影記者，《Playboy 中文版》攝影指導、《Smart 智富月刊》攝影主編、《非凡新聞 e 周刊》攝影主任、《明報周刊》副總編輯， 現任何創影像工作室負責人。', '0'),
+(3, 'Allen', '827ccb0eea8a706c4c34a16891f84e7b', 'Allen', '0934651524\n', 'Allen1234@example.com', '2022-10-21 15:52:45', NULL, 1, 1, 'Allen 1972 年出生於西班牙，目前在鹿特丹生活與工作。這位西班牙藝術家的作', '0'),
+(4, 'Ari', '827ccb0eea8a706c4c34a16891f84e7b', 'Ari', '0937113468', 'Ari1234@example.com', '2022-10-21 15:59:56', NULL, 1, 1, '1970 年出生於以色列的阿富拉（Afula）。目前在以色列居住與工作。', '0'),
+(5, 'Arvin', '827ccb0eea8a706c4c34a16891f84e7b', 'Arvin', '0963662973', 'Arvin1234@example.com', '2022-10-21 16:03:28', NULL, 1, 1, '1963 年出生於羅馬尼亞，也是羅馬尼亞伊希（Iasi）Periferic 雙年展創始人。', '0'),
+(6, 'Baldwin', '827ccb0eea8a706c4c34a16891f84e7b', 'Baldwin', '0931046439', 'Baldwin1234@example.com', '2022-10-21 16:05:35', NULL, 1, 1, '出生於羅馬尼亞，她曾在斯洛伐克的布拉索夫藝術學院研習雕塑和概念藝術', '0'),
+(7, 'Bard', '827ccb0eea8a706c4c34a16891f84e7b', 'Bard', '09131111111', 'Bard1234@example.com', '2022-10-24 09:45:02', NULL, 1, 1, '1968 年出生於法國，目前工作於里斯本與巴黎。1995 年，畢業於 巴黎維爾曼（Villemin）建築學院，佛斯提諾目前在里斯本和巴黎兩地都從事多方面的 活動。', '0'),
+(8, 'Lance', '827ccb0eea8a706c4c34a16891f84e7b', 'Lance', '0929445746', 'Lance123@gmail.com', '2022-10-24 14:17:10', NULL, 1, 1, '她幫所有媒體設計，並與許多不同的設計家、作家和藝術家合作。 同時她也出版過一些書，相當成功：《策略彙編》（Catalogue of Strategy）、《人人都是 設計師》（Everyone is a Designer）、《一心求變與下一個大自然》（Mobile Minded and Next Nature）。', '0'),
+(9, 'Baron', '827ccb0eea8a706c4c34a16891f84e7b', 'Baron', '0918117898', 'Baron1234@example.com', '2022-10-24 14:17:52', NULL, 1, 1, '他是雪黎大學雪黎學院的藝術系學士，以及新南威爾斯 大學藝術學院碩士。格萊維爾是數位藝術家，以類似街頭的方式將過去與現在巧妙地結 合在一起。', '0'),
+(10, 'Barry', '827ccb0eea8a706c4c34a16891f84e7b', 'Barry', '0986012913', 'Barry1234@example.com', '2022-10-24 14:26:36', NULL, 1, 1, '1997 年在卻爾西學院完成雕塑碩士學位，從那時起在英 國內外都進行過許多藝術計畫。', '0'),
+(11, 'Bart', '827ccb0eea8a706c4c34a16891f84e7b', 'Bart', '0916148362', 'Bart1234@example.com', '2022-10-24 14:28:22', NULL, 1, 1, '1997 年在卻爾西學院完成雕塑碩士學位，從那時起在英 國內外都進行過許多藝術計畫。', '0'),
+(12, 'Bernd', '827ccb0eea8a706c4c34a16891f84e7b', 'Bernd', '0982356642', 'Bernd1234@example.com', '2022-10-24 16:06:19', NULL, 1, 1, '1974 年出生於德國，奧 然後就搬到法蘭克福，並就讀於當地的 Städelschule 藝術學院，接受 Ayse Erkmen 教授 的指導。特爾目前住在倫敦和法蘭克福，也在這兩地工作。圖爾曾多次參加各大展覽： 克羅埃西亞札格拉布新藝廊（Galerija Nova）展出「失去的土地」（Ground Lost）、塞 浦路斯尼柯西亞市立藝術中心（NiMAC）展出「橫越」（Crossings）', '0'),
+(13, 'Bill	', '827ccb0eea8a706c4c34a16891f84e7b', 'Bill	', '0972819942', 'Bill123@gmail.com', '2022-10-25 09:18:19', NULL, 1, 1, '1960 年出生於檳榔市的黃海昌是 求學，1987 年才從美國返回馬來西亞，他擁有麻州布蘭迪斯（Brandeis）大學文學學士 及哈佛大學教育碩士、安默斯特麻州大學藝術碩士學位。', '0'),
+(14, 'Bob', '827ccb0eea8a706c4c34a16891f84e7b', 'Bob', '0933555444', 'Bob123@gmail.com', '2022-10-25 09:20:56', NULL, 1, 1, '出生於板橋，1965 年畢業於臺灣大學土木工程系。「隨時走路，即時在場」，張照堂自高中時期拿起相機開始拍照，至今未曾 停歇。他的影像平凡中有超脫、親切又疏離、荒謬中具詼諧的特質，體現出攝影家敏銳的觀察、誠摯的理解，以及濃厚的關懷與 同理心。他曾說：「攝影家尋找的不是風景，而是一種氛圍，一種狀態，它或許是浩巨的安靜與空無，或許是微妙的想像與期待， 也可能是另一種呼之欲出的能量與騷動。」', '0'),
+(15, 'Byron', '827ccb0eea8a706c4c34a16891f84e7b', 'Byron', '0934546154', 'Byron123@gmail.com', '2022-10-25 09:26:56', NULL, 1, 1, '1961 年生於臺灣臺中縣，1984 年畢業於東吳大學英文系，1990 年於美國印第安那大學取得教育碩士學位。張乾琦首次接觸攝影 是在東吳大學社團，當時真正的拍攝有限，倒是圖書館裡大量翻譯的國外攝影書籍，給他打開一扇窗。攝影，成了他認識自己和 世界，一種沈默的交流方式。印第安那大學自由開放的校風，給了張乾琦機會去沈迷於自己的「愛好」。', '0'),
+(16, 'Calvin', '827ccb0eea8a706c4c34a16891f84e7b', 'Calvin', '0952870299', 'Calvin123@gmail.com', '2022-10-31 11:59:35', NULL, 1, 1, '澎湖山水人，藝評家郭力昕曾讚譽張詠捷為臺灣中青代最傑出的女性攝影家，熱情直觀。1985 年以黑白影像記錄家鄉澎湖，展 開攝影之路。1990 年專職雜誌攝影編輯，以誠摯的影像尋找內心與外在世界對話，並投入原住族群關懷與山林智慧學習。', '0'),
+(17, 'Carl', '827ccb0eea8a706c4c34a16891f84e7b', 'Carl', '0952870277', 'Carl123@gmail.com', '2022-10-31 12:06:45', NULL, 1, 1, '1996 年就讀於紐約視覺藝術學院攝影系，三年後以傑出成就獎獲得美術學士學位。2013 年畢業於國立臺北藝術大學美術學系碩 士班，目前就學於國立臺北藝術大學美術學系博士班。他在攝影生涯的初始階段，就著眼於攝影藝術不同的面向。陳敬寶以《片 刻濃妝：檳榔西施》系列紀實肖像的作品受到注目。', '0'),
+(18, 'Cash', '827ccb0eea8a706c4c34a16891f84e7b', 'Cash', '0955750533', 'Cash123@gmail.com', '2022-10-31 12:09:37', NULL, 1, 1, '1963 年出生於臺灣澎湖，1986 年中國文化大學美術系西畫組畢業。90 年代初以來，陳順築源於自傳性的觀點，衍生出「攝影」 為主體語言的影像思考，作品常以複合媒材及裝置介入空間和地景。', '0'),
+(19, 'Christ', '827ccb0eea8a706c4c34a16891f84e7b', 'Christ', '0989337496', 'Christ123@gmail.com', '2022-10-31 12:13:02', NULL, 1, 1, '1980 年出生於臺灣臺南，就讀國立臺南藝術大學藝術與創作理論研究所博士班。曾獲選臺北國際藝術村 BankART1929 日本橫濱 駐村交流、文化部巴黎西帖國際藝術村出訪計畫。2', '0'),
+(20, 'Dennis', '827ccb0eea8a706c4c34a16891f84e7b', 'Dennis', '0922514740', 'Dennis123@gmail.com', '2022-11-01 16:36:23', NULL, 1, 1, '齊柏林於 1988 年起擔任專業攝影師致力於空中攝影領域，1990 年服務公職並肩負紀錄臺灣各項重大工程的興建過程任務。從事 空中攝影紀錄近 25 年，直升機飛行攝影飛行時數逾 2500 小時，累積超過 30 萬張空拍照片，出版空中攝影專輯約 30 餘冊，為 臺灣地形地貌及生態環境留下珍貴的空中影像。', '0'),
+(21, 'Eli', '827ccb0eea8a706c4c34a16891f84e7b', 'Eli', '0934216476', 'Eli123@gmail.com', '2022-11-01 16:36:40', NULL, 1, 1, '1958 年生於基隆，淡江大學東方語文學系畢業，日本大學藝術學部藝術研究所專題研究兩年。曾任新聞局光華雜誌專任攝影、 大地地理雜誌社攝影主編。1992 年正式告別攝影界自行創業，成立「夏綠原國際有限公司」。 1998 年恢復「夏門攝影企劃研究 室」營運，陸續彙整、研究台灣攝影發展脈絡中，代表性攝影家的作品數位化掃描，並建立 Metadata 資料庫，專致於臺灣攝影 文化搜研、保存、展覽與出版。', '0'),
+(22, 'Fion', '827ccb0eea8a706c4c34a16891f84e7b', 'Fion', '0933039361', 'Fion123@gmail.com', '2022-11-01 16:36:48', NULL, 1, 1, '紐約州立大學純藝術攝影碩士畢。長期關注於影像發展與文化間的互動關係，其研究及創作始終傾向於跨領域媒材或媒介的運用 與整合，並藉此探討臺灣社會與文化之議題。例如嘗試將攝影結合臺灣廟會文化中常出現的傳統刺繡美學，並不斷轉化其形式與 敘事，持續展演於各地：不僅在臺灣臺北、大陸平遙、大理等攝影節，或是倫敦、義大利的博覽會，甚至在日本、韓國的個展中 都深受關注。', '0'),
+(23, 'Irene', '827ccb0eea8a706c4c34a16891f84e7b', 'Irene', '0971654010', 'Glenn123@gmail.com', '2022-11-01 16:37:03', NULL, 1, 1, '生於1965 年，畢業於世界新聞專科學校，退伍後進入媒體工作，之後並開啟了專題攝影計畫，包括：「行過幽谷」、「消失的群像— 勞動者紀事」、「野想—黃羊川計劃」、「人的莊園」等。早期攝影作品以「報導攝影」風格為主，以紀實且帶有詩意的影像傳 達個人對於主題人物的觀點與想法。「人的莊園」以「編導式攝影」方式進行創作，透過細膩且色彩飽滿的影像，並結合超現實 的景境氛圍，開創個人獨特的攝影語境。周慶輝曾先後榮獲了「台北攝影節報導類特別獎」、「金鼎獎」、SOPA 亞洲「卓越特 寫攝影獎」等榮譽獎項。', '0'),
+(24, 'Jenny', '827ccb0eea8a706c4c34a16891f84e7b', 'Jenny', '0911938064', 'Hobart123@gmail.com', '2022-11-01 16:37:15', NULL, 1, 1, '臺灣臺南人。畢業於臺灣藝術大學美術學系、臺南藝術大學造形藝術研究所。莊榮哲歷年作品展於臺灣與北京，並多次獲得國家 文藝基金會展覽及創作補助。代表作〈紋人畫〉系列係使用現代的紋身機具，在皮膚上創造傷口、紋出中國水墨花卉。', '0'),
+(25, 'Josephine', '827ccb0eea8a706c4c34a16891f84e7b', 'Josephine', '0915688825', 'Ken123@gmail.com', '2022-11-01 16:37:23', NULL, 1, 1, '文學出身的影像創作者，同時以經營者、教育者、英文攝影書籍譯者身份生活於台北。韓筠青的攝影作品從情感出發，以故事敘 事法以及自拍的方式表述，並使用十九世紀古典化學方法印製與展出。她相信，以自己為本質的創作就像一段未知的旅程，我們 可從中感受到生命的各種啟發與意義。', '0'),
+(26, 'batman', '827ccb0eea8a706c4c34a16891f84e7b', 'batman', '0910222555', 'batman@test.com', '2022-11-08 14:09:38', NULL, 1, 2, '', '0'),
+(27, 'TOBO', '827ccb0eea8a706c4c34a16891f84e7b', 'TOBO', '0912123126', 'TOBO@test.com', '2022-11-14 13:43:30', NULL, 1, 2, '', '0'),
+(28, 'SAKA', 'e10adc3949ba59abbe56e057f20f883e', 'SAKA', '0912123125', 'SAKA@test.com', '2022-11-14 13:59:18', NULL, 1, 2, '', '0'),
+(29, 'john', '827ccb0eea8a706c4c34a16891f84e7b', 'John', '091234567', 'john@example.com', '2022-10-21 15:00:00', NULL, 1, 2, '', '0'),
+(30, 'may', '827ccb0eea8a706c4c34a16891f84e7b', 'May', '0912345678', 'may@gmail.com', '2022-10-21 15:09:00', NULL, 1, 2, '', '0'),
+(31, 'joe', '827ccb0eea8a706c4c34a16891f84e7b', 'Joe', '0934651524\n', 'joe@test.com', '2022-10-21 15:52:45', NULL, 1, 2, '', '0'),
+(32, 'sarch', '827ccb0eea8a706c4c34a16891f84e7b', 'Sarch', '0937113468', 'sarch@gamil.com', '2022-10-21 15:59:56', NULL, 1, 2, '', '0'),
+(33, 'sue', '827ccb0eea8a706c4c34a16891f84e7b', 'Sue', '0963662973', 'sue@test.com', '2022-10-21 16:03:28', NULL, 1, 2, '', '0'),
+(34, 'Tony', '827ccb0eea8a706c4c34a16891f84e7b', 'Tony', '0931046439', 'tony@test.com', '2022-10-21 16:05:35', NULL, 1, 2, '', '0'),
+(35, 'james', '827ccb0eea8a706c4c34a16891f84e7b', 'James', '09131111111', 'james@test.com', '2022-10-24 09:45:02', NULL, 1, 2, '', '0'),
+(36, 'tom', '827ccb0eea8a706c4c34a16891f84e7b', 'Tom', '0929445746', 'tom@test.com', '2022-10-24 14:17:10', NULL, 1, 2, '', '0'),
+(37, 'jessie', '827ccb0eea8a706c4c34a16891f84e7b', 'Jessie', '0918117898', 'jessie@test.com', '2022-10-24 14:17:52', NULL, 1, 2, '', '0'),
+(38, 'Julia', '827ccb0eea8a706c4c34a16891f84e7b', 'Julia', '0986012913', 'Julia@test.com', '2022-10-24 14:26:36', NULL, 1, 2, '', '0'),
+(39, 'curry', '827ccb0eea8a706c4c34a16891f84e7b', 'Curry', '0916148362', 'curry@test.com', '2022-10-24 14:28:22', NULL, 1, 2, '', '0'),
+(40, 'jason', '827ccb0eea8a706c4c34a16891f84e7b', 'Jason', '0982356642', 'jason@test.com', '2022-10-24 16:06:19', NULL, 1, 2, '', '0'),
+(41, 'rock', '827ccb0eea8a706c4c34a16891f84e7b', 'Rock', '0917427898\n', 'rock@test.com', '2022-10-25 09:18:19', NULL, 1, 2, '', '0'),
+(42, 'peter', '827ccb0eea8a706c4c34a16891f84e7b', 'Peter', '0933555444', 'prter@test.com', '2022-10-25 09:20:56', NULL, 1, 2, '', '0'),
+(43, 'bruce', '827ccb0eea8a706c4c34a16891f84e7b', 'Bruce', '0934546154', 'bruce@test.com', '2022-10-25 09:26:56', NULL, 1, 2, '', '0'),
+(44, 'Ada', '827ccb0eea8a706c4c34a16891f84e7b', 'Ada', '0952870299', 'Ada@test.com', '2022-10-31 11:59:35', NULL, 1, 2, '', '0'),
+(45, 'Aaliyah', '827ccb0eea8a706c4c34a16891f84e7b', 'Aaliyah', '0982922850', 'Aaliyah@test.com', '2022-10-31 12:06:45', NULL, 1, 2, '', '0'),
+(46, 'Cara', '827ccb0eea8a706c4c34a16891f84e7b', 'Cara', '0938911584', 'Cara@test.com', '2022-10-31 12:09:37', NULL, 1, 2, '', '0'),
+(47, 'Chloe', '827ccb0eea8a706c4c34a16891f84e7b', 'Chloe', '0989337496', 'Chloe@test.com', '2022-10-31 12:13:02', NULL, 1, 2, '', '0'),
+(48, 'Debby', '827ccb0eea8a706c4c34a16891f84e7b', 'Debby', '0920311845', 'Debby@test.com', '2022-11-01 16:36:23', NULL, 1, 2, '', '0'),
+(49, 'Gail', '827ccb0eea8a706c4c34a16891f84e7b', 'Gail', '0934216476', 'Gail@test.com', '2022-11-01 16:36:40', NULL, 1, 2, '', '0'),
+(50, 'Grace	', '827ccb0eea8a706c4c34a16891f84e7b', 'Grace', '0913939424', 'Grace@test.com', '2022-11-01 16:36:48', NULL, 1, 2, '', '0');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `space`
 --
 
@@ -349,67 +472,6 @@ INSERT INTO `space` (`space_id`, `space_name`, `category_id`, `space_address`, `
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `users`
---
-
-CREATE TABLE `users` (
-  `id` int(6) UNSIGNED NOT NULL,
-  `account` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `valid` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `users`
---
-
-INSERT INTO `users` (`id`, `account`, `password`, `name`, `phone`, `email`, `created_at`, `valid`) VALUES
-(1, 'john', '827ccb0eea8a706c4c34a16891f84e7b', 'John', '091234567', 'john@example.com', '2022-10-21 15:00:00', 1),
-(2, 'may', '827ccb0eea8a706c4c34a16891f84e7b', 'May', '0912345678', 'may@gmail.com', '2022-10-21 15:09:00', 1),
-(3, 'joe', '827ccb0eea8a706c4c34a16891f84e7b', 'Joe', '0934651524\n', 'joe@test.com', '2022-10-21 15:52:45', 1),
-(4, 'sarch', '827ccb0eea8a706c4c34a16891f84e7b', 'Sarch', '0937113468', 'sarch@gamil.com', '2022-10-21 15:59:56', 1),
-(5, 'sue', '827ccb0eea8a706c4c34a16891f84e7b', 'Sue', '0963662973', 'sue@test.com', '2022-10-21 16:03:28', 1),
-(6, 'Tony', '827ccb0eea8a706c4c34a16891f84e7b', 'Tony', '0931046439', 'tony@test.com', '2022-10-21 16:05:35', 1),
-(7, 'james', '827ccb0eea8a706c4c34a16891f84e7b', 'James', '09131111111', 'james@test.com', '2022-10-24 09:45:02', 1),
-(8, 'tom', '827ccb0eea8a706c4c34a16891f84e7b', 'Tom', '0929445746', 'tom@test.com', '2022-10-24 14:17:10', 1),
-(9, 'jessie', '827ccb0eea8a706c4c34a16891f84e7b', 'Jessie', '0918117898', 'jessie@test.com', '2022-10-24 14:17:52', 1),
-(10, 'Julia', '827ccb0eea8a706c4c34a16891f84e7b', 'Julia', '0986012913', 'Julia@test.com', '2022-10-24 14:26:36', 1),
-(11, 'curry', '827ccb0eea8a706c4c34a16891f84e7b', 'Curry', '0916148362', 'curry@test.com', '2022-10-24 14:28:22', 1),
-(12, 'jason', '827ccb0eea8a706c4c34a16891f84e7b', 'Jason', '0982356642', 'jason@test.com', '2022-10-24 16:06:19', 1),
-(13, 'rock', '827ccb0eea8a706c4c34a16891f84e7b', 'Rock', '0917427898\n', 'rock@test.com', '2022-10-25 09:18:19', 1),
-(14, 'peter', '827ccb0eea8a706c4c34a16891f84e7b', 'Peter', '0933555444', 'prter@test.com', '2022-10-25 09:20:56', 1),
-(15, 'bruce', '827ccb0eea8a706c4c34a16891f84e7b', 'Bruce', '0934546154', 'bruce@test.com', '2022-10-25 09:26:56', 1),
-(16, 'Ada', '827ccb0eea8a706c4c34a16891f84e7b', 'Ada', '0952870299', 'Ada@test.com', '2022-10-31 11:59:35', 1),
-(17, 'Aaliyah', '827ccb0eea8a706c4c34a16891f84e7b', 'Aaliyah', '0982922850', 'Aaliyah@test.com', '2022-10-31 12:06:45', 1),
-(18, 'Cara', '827ccb0eea8a706c4c34a16891f84e7b', 'Cara', '0938911584', 'Cara@test.com', '2022-10-31 12:09:37', 1),
-(19, 'Chloe', '827ccb0eea8a706c4c34a16891f84e7b', 'Chloe', '0989337496', 'Chloe@test.com', '2022-10-31 12:13:02', 1),
-(20, 'Debby', '827ccb0eea8a706c4c34a16891f84e7b', 'Debby', '0920311845', 'Debby@test.com', '2022-11-01 16:36:23', 1),
-(21, 'Gail', '827ccb0eea8a706c4c34a16891f84e7b', 'Gail', '0934216476', 'Gail@test.com', '2022-11-01 16:36:40', 1),
-(22, 'Grace	', '827ccb0eea8a706c4c34a16891f84e7b', 'Grace', '0913939424', 'Grace@test.com', '2022-11-01 16:36:48', 1),
-(23, 'Irene', '827ccb0eea8a706c4c34a16891f84e7b', 'Irene', '0958944892', 'Irene@test.com', '2022-11-01 16:37:03', 1),
-(24, 'Jenny', '827ccb0eea8a706c4c34a16891f84e7b', 'Jenny', '0932273961', 'Jenny@test.com', '2022-11-01 16:37:15', 1),
-(25, 'Josephine', '827ccb0eea8a706c4c34a16891f84e7b', 'Josephine', '0931057539', 'Josephine@test.com', '2022-11-01 16:37:23', 1),
-(26, 'leoleo', '827ccb0eea8a706c4c34a16891f84e7b', 'leo', '0900000000', 'leo@test.com', '2022-11-07 10:35:55', 1),
-(27, 'maya123', '827ccb0eea8a706c4c34a16891f84e7b', 'maya', '0900000000', 'maya@test.com', '2022-11-07 10:37:36', 1),
-(28, 'big123', 'e10adc3949ba59abbe56e057f20f883e', 'SAKA1234', '0912123125', 'SAKA@test.com', '2022-11-10 16:37:24', 1),
-(29, 'yoman', '827ccb0eea8a706c4c34a16891f84e7b', 'yoman', '0936100100', 'yoman@test.com', '2022-11-14 12:29:14', 1),
-(30, 'yoman2', '827ccb0eea8a706c4c34a16891f84e7b', 'yoman2', '0931057531', 'yoman2@test.com', '2022-11-14 12:29:34', 1),
-(31, 'yoman3', '827ccb0eea8a706c4c34a16891f84e7b', 'yoman3', '0931057532', 'yoman3@test.com', '2022-11-14 12:32:38', 1),
-(32, 'Niko', '', 'Niko', '0910222554', 'Niko@test.com', '2022-11-14 12:37:57', 1),
-(33, 'koki', '827ccb0eea8a706c4c34a16891f84e7b', 'koki', '0912123123', 'koki@test.com', '2022-11-14 13:44:23', 1),
-(34, 'somi', 'e10adc3949ba59abbe56e057f20f883e', 'somiii', '0912123129', 'somi@test.com', '2022-11-14 13:45:47', 0),
-(35, '', '', 'somii', '0912123129', 'somi@test.com', '2022-11-14 13:47:06', 0),
-(36, '', '', 'somi', '0912123129', 'somi@test.com', '2022-11-14 13:47:33', 0),
-(37, '', '', 'somii', '0912123129', 'somi@test.com', '2022-11-14 13:50:36', 0),
-(38, 'Moni', '', 'Moni', '0912123456', 'Moni@test.com', '2022-11-14 16:13:08', 1);
-
--- --------------------------------------------------------
-
---
 -- 資料表結構 `user_order`
 --
 
@@ -459,16 +521,16 @@ INSERT INTO `user_order` (`order_id`, `product_id`, `user_id`, `amount`, `order_
 --
 
 --
--- 資料表索引 `marketing`
+-- 資料表索引 `cart`
 --
-ALTER TABLE `marketing`
-  ADD PRIMARY KEY (`marketing_id`);
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
 
 --
--- 資料表索引 `order_status`
+-- 資料表索引 `news`
 --
-ALTER TABLE `order_status`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`news_id`);
 
 --
 -- 資料表索引 `product`
@@ -477,17 +539,11 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- 資料表索引 `space`
+-- 資料表索引 `sellers`
 --
-ALTER TABLE `space`
-  ADD PRIMARY KEY (`space_id`);
-
---
--- 資料表索引 `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `name` (`name`);
+ALTER TABLE `sellers`
+  ADD PRIMARY KEY (`seller_id`),
+  ADD KEY `name` (`seller_name`);
 
 --
 -- 資料表索引 `user_order`
@@ -500,16 +556,16 @@ ALTER TABLE `user_order`
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `marketing`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `cart`
 --
-ALTER TABLE `marketing`
-  MODIFY `marketing_id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `order_status`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `news`
 --
-ALTER TABLE `order_status`
-  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `news`
+  MODIFY `news_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `product`
@@ -518,16 +574,10 @@ ALTER TABLE `product`
   MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `space`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `sellers`
 --
-ALTER TABLE `space`
-  MODIFY `space_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+ALTER TABLE `sellers`
+  MODIFY `seller_id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user_order`
