@@ -6,6 +6,7 @@
   align-items: center;
   padding: 1.4rem 6rem;
   position: fixed;
+  z-index: 999;
   /* position: sticky; */
   background: rgba(255, 255, 255, 0.5);
 }
@@ -67,7 +68,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   text-align: end;
   background: rgb(247, 247, 245);
   padding: 2rem;

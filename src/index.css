@@ -3,12 +3,12 @@
 :root {
   --font-family: "Roboto", sans-serif;
 
-  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --gradient-text: linear-gradient(93.97deg, #000000 1.84%, #858585 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
 
   --color-bg: #f9f7f2;
-  --color-footer: #031b34;
+  --color-footer: #C9D7E3;
   --color-blog: #042c54;
-  --color-text: #81afdd;
+  --color-text: #C9D7E3;
   --color-subtext: #ff8a71;
 }
