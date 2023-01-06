@@ -1,5 +1,7 @@
 import React from 'react';
 import Article from '../../components/article/Article';
+import ArtistBlog from '../airistblog/Artistblog';
+import Productsblog from '../productsblog/Productsblog';
 import { blog01, blog02, blog03, blog04, blog05 } from './imports';
 import './blog.css';
 
@@ -19,6 +21,15 @@ const Blog = () => (
         <Article imgUrl={blog05} date="2023 01/01" text="Byen Ungpil - SOMEONE 2021_001 Original" />
       </div>
     </div>
+    <div className="yipai__blog-heading">
+      <h1 className="yipai__text gradient__text">尋找藝術品</h1>
+    </div>
+    <Productsblog />
+    <div className="yipai__blog-heading">
+      <h1 className="yipai__text gradient__text">大藝術家們</h1>
+    </div>
+    <ArtistBlog />
+
   </div>
 );
 

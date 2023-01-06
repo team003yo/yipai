@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login } from './containers';
+import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,ArtistBlog } from './containers';
 import { Brand, Navbar } from './components';
 
 import './App.css';
@@ -17,11 +17,9 @@ function App() {
         <MyContent>
           <Routes>
             <Route index element={<Header />} />
-
           </Routes>
           <Routes>
             <Route path='/' element={<Blog />} />
-
             <Route path='space' element={<Space />} />
             <Route path='products' element={<Products />} />
             <Route path='about' element={<About />} />
@@ -33,6 +31,9 @@ function App() {
         </MyContent>
       </div>
         <Brand />
+        <Routes>
+          <Route path='artistblog' element={<ArtistBlog />} />
+        </Routes>
       </div>
       <Footer />
     </BrowserRouter>

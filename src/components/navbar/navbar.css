@@ -1,5 +1,5 @@
 .yipai__navbar {
-  width: 1920px;
+  /* width: 1920px; */
   max-width: 100%;
   display: flex;
   justify-content: space-between;
@@ -132,5 +132,11 @@
 
   .yipai__navbar-menu_container-links-sign {
     display: block;
+  }
+  .yipai__navbar-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 1px;
   }
 }
