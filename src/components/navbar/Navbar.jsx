@@ -5,6 +5,7 @@ import { FaUser } from 'react-icons/fa';
 // import logo from '../../logo.svg';
 import logo1 from '../../logo1.svg';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,35 +15,37 @@ const Navbar = () => {
       <div className="yipai__navbar-links">
         <div className="yipai__navbar-links_logo">
           {/* <img src={logo} /> */}
-          <img src={logo1} />
+          <Link to="/">
+            <img src={logo1} />
+          </Link>
         </div>
         <div className="yipai__navbar-links_container">
           <p>
-            <a href="#home">展覽活動</a>
+            <Link to="/">展覽活動</Link>
           </p>
           <p>
-            <a href="#wgpt3">展覽空間</a>
+            <Link to="space">展覽空間</Link>
           </p>
           <p>
-            <a href="#possibility">藝術品</a>
+            <Link to="products">藝術品</Link>
           </p>
           <p>
-            <a href="#features">藝術家</a>
+            <Link to="artist">藝術家</Link>
           </p>
           <p>
-            <a href="#blog">關於我們</a>
+            <Link to="about">關於我們</Link>
           </p>
         </div>
         <div className="yipai__navbar-icon">
-          <a href="#">
+          <Link to="/">
             <BsFillHeartFill className="iconStyle" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="cart">
             <BsCartFill className="iconStyle" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="users">
             <FaUser className="iconStyle" />
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -64,19 +67,19 @@ const Navbar = () => {
           <div className="yipai__navbar-menu_container scale-up-center">
             <div className="yipai__navbar-menu_container-links">
               <p>
-                <a href="#home">展覽活動</a>
+                <Link to="/">展覽活動</Link>
               </p>
               <p>
-                <a href="#wgpt3">展覽空間</a>
+                <Link to="space">展覽空間</Link>
               </p>
               <p>
-                <a href="#possibility">藝術品</a>
+                <Link to="products">藝術品</Link>
               </p>
               <p>
-                <a href="#features">藝術家</a>
+                <Link to="artist">藝術家</Link>
               </p>
               <p>
-                <a href="#blog">關於我們</a>
+                <Link to="about">關於我們</Link>
               </p>
             </div>
           </div>

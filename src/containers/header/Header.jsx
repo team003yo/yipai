@@ -1,5 +1,4 @@
 import React from 'react';
-import people from '../../assets/people.png';
 import ai2 from '../../assets/ai2.jpg';
 import './header.css';
 
