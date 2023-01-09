@@ -1,6 +1,7 @@
 import React from 'react';
 import ai2 from '../../assets/ai2.jpg';
 import './header.css';
+import Carousel from '../../components/carousel/Carousel';
 
 const Header = () => (
   <div className="yipai__header section__padding" id="home">

@@ -38,6 +38,13 @@
 .yipai__text{
     margin-top: 50px;
 }
+.spaceblog-content{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 3rem;
+    margin-right: 5rem;
+}
+
 
 @media screen and (max-width: 990px) {
     .yipai__blog-container {

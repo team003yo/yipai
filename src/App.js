@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,ArtistBlog } from './containers';
-import { Brand, Navbar } from './components';
+import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,ArtistBlog ,SpaceBlog } from './containers';
+import { Brand, Navbar, Carousel } from './components';
 
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -16,7 +16,8 @@ function App() {
         {/* <Header /> */}
         <MyContent>
           <Routes>
-            <Route index element={<Header />} />
+            <Route index element={<Carousel />} /> 
+            {/* <Route index element={<Header />} /> */}
           </Routes>
           <Routes>
             <Route path='/' element={<Blog />} />
@@ -33,6 +34,7 @@ function App() {
         <Brand />
         <Routes>
           <Route path='artistblog' element={<ArtistBlog />} />
+          <Route path='spaceblog' element={<SpaceBlog />} />
         </Routes>
       </div>
       <Footer />
