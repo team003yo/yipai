@@ -47,9 +47,7 @@ const Navbar = () => {
             <FaUser className="iconStyle" />
           </Link>
         </div>
-      </div>
-
-      <div className="yipai__navbar-menu">
+        <div className="yipai__navbar-menu">
         {toggleMenu ? (
           <RiCloseLine
             color="#000"
@@ -84,7 +82,10 @@ const Navbar = () => {
             </div>
           </div>
         )}
+      </div>  
       </div>
+
+      
     </div>
   );
 };

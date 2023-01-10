@@ -10,7 +10,7 @@
 }
 
 .yipai__blog-heading h1 {
-    font-size: 52px;
+    font-size: 40px;
     line-height: 75px;
     font-family: var(--font-family);
     font-weight: 800;
@@ -34,6 +34,17 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
 }
+
+.yipai__text{
+    margin-top: 50px;
+}
+.spaceblog-content{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 3rem;
+    margin-right: 5rem;
+}
+
 
 @media screen and (max-width: 990px) {
     .yipai__blog-container {

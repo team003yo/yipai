@@ -1,0 +1,139 @@
+.body{
+    display: flex;
+    margin: 0;
+}
+
+.products_grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+
+}
+.flex-col{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.yipai__title-text{
+    font-family: var(--font-family);
+    font-size: 25.11px;
+    font-weight: 800;
+    line-height: 20.30px;
+    color: #000;
+    margin: 2rem;
+    cursor: pointer;
+}
+
+.yipai__artistbox{    
+    background: #000;
+    width: 270px;
+    height: 270px;
+    margin: 15px;
+    
+}
+
+.yipai__artistbox img{
+    width: 270px;
+    height: 270px;
+}
+@media screen and (max-width: 1300px) {
+    .products_grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        margin:auto;
+    
+    }
+}
+@media screen and (max-width: 990px) {
+    .products_grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1,1fr);
+        margin: auto;
+    
+    }
+    .yipai__artistbox{
+    
+        background: #000;
+        width: 170px;
+        height: 170px;
+        margin: 5px;
+        
+    }
+    .yipai__artistbox img{
+        width: 170px;
+        height: 170px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .products_grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1,1fr);
+        margin: auto;
+    
+    }
+    .yipai__artistbox{
+    
+        background: #000;
+        width: 130px;
+        height: 130px;
+        margin: 5px;
+        
+        
+    }
+    .yipai__artistbox img{
+        width: 130px;
+        height: 130px;
+    }
+    .bigimg img{
+        width: 250px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-col {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .products_grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1,1fr);
+        margin: auto;
+        
+    
+    }
+
+    .yipai__blog-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+    .yipai__artistbox{
+        background: #000;
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+            
+    }
+    .yipai__artistbox img{
+        width: 200px;
+        height: 200px;
+    }
+    
+}

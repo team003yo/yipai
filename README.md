@@ -5,3 +5,5 @@
 
 
 終端機請安裝yarn add react-router-dom
+
+幻燈片功能請載 npm install react-responsive-carousel --save
