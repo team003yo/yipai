@@ -3,7 +3,8 @@ import './login.css';
 
 const Login = () => (
   <div id='login'>
-    Login
+    <img src={{}} alt=""></img>
+    
   </div>
 );
 
