@@ -41,8 +41,11 @@
 .spaceblog-content{
     display: flex;
     flex-direction: row-reverse;
-    margin-bottom: 3rem;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
     margin-right: 15rem;
+    font-weight: 700;
+    font-family: var(--font-family);
 }
 
 
