@@ -27,7 +27,8 @@
 }
 
 .yipai__artistbox{    
-    background: #000;
+    /* background: #000; */
+    object-fit: cover;
     width: 270px;
     height: 270px;
     margin: 15px;
@@ -58,8 +59,8 @@
     
     }
     .yipai__artistbox{
-    
-        background: #000;
+        object-fit: cover;
+        /* background: #000; */
         width: 170px;
         height: 170px;
         margin: 5px;
@@ -82,7 +83,7 @@
     }
     .yipai__artistbox{
     
-        background: #000;
+        /* background: #000; */
         width: 130px;
         height: 130px;
         margin: 5px;
@@ -125,7 +126,7 @@
         line-height: 42px;
     }
     .yipai__artistbox{
-        background: #000;
+        /* background: #000; */
         width: 200px;
         height: 200px;
         margin: 5px;
