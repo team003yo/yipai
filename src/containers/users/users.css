@@ -8,9 +8,17 @@ margin-top: 150px;
     width: auto;
     height: 100vh;
 }
+.h3{
+    font-size: 44px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .flex-ab{
     position: absolute;
-    left: calc(50vw - 16em);
+    left: calc(50vw - ((44px * 4) + 12em));
     top:50vh;
 }
 .text-center{
@@ -21,12 +29,15 @@ background-image: url(./image/buyerIcon.svg);
 background-repeat: no-repeat;
 width: 100px;
 height: 100px;
+background-position: center center;
 }
 .sellerIcon{
 background-image: url(./image/sellerIcon.svg);
 background-repeat: no-repeat;
 width: 100px;
 height: 100px;
+background-position: center center;
+
 }
 .box{
     padding: 6em;

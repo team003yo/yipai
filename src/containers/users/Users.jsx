@@ -7,13 +7,17 @@ const Users = () => (
         {/* <h2>您好 May 你現在是藝拍小夥伴啦！</h2> */}
         {/* <img src={{}} alt="Background" ></img>  */}
         <div className='flex-ab flex-col'>
-            <div className='box'>
+            <div className='box flex'>
                 <div className='buyerIcon'></div>
-                <Link to='/users/login' className="">買家登入</Link>
+                <Link to='/users/login' className='h3'>
+                    買家登入
+                </Link>
             </div>
-            <div className='box2'>
+            <div className='box2 flex'>
                 <div className='sellerIcon'></div>
-                <Link to='/users/login'>賣家登入</Link>
+                <Link to='/users/login' className='h3'>
+                    賣家登入
+                </Link>
             </div>
         </div>
         <div className='BG'></div>
