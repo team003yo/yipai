@@ -1,6 +1,38 @@
 .login-button{
 margin-top: 150px;
 }
-.btn-info{
-    
+.BG{
+    background-image: url(./image/LoginBG.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: auto;
+    height: 100vh;
+}
+.flex-ab{
+    position: absolute;
+    left: calc(50vw - 16em);
+    top:50vh;
+}
+.text-center{
+    text-align: center;
+}
+.buyerIcon{
+background-image: url(./image/buyerIcon.svg);
+background-repeat: no-repeat;
+width: 100px;
+height: 100px;
+}
+.sellerIcon{
+background-image: url(./image/sellerIcon.svg);
+background-repeat: no-repeat;
+width: 100px;
+height: 100px;
+}
+.box{
+    padding: 6em;
+    background-color:var(--color-bg);
+}
+.box2{
+    padding: 6em;
+    background-color:var(--color-text);
 }
