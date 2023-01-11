@@ -127,14 +127,25 @@
     }
     .yipai__artistbox{
         /* background: #000; */
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height:150px;
         margin: 5px;
             
     }
     .yipai__artistbox img{
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .bigimg p{
+        font-size: 30px;
+        line-height: normal;
+        margin-left: 40px;
+    }
+    .bigimg img{
+        margin-left: 40px;
+        width: 250px;
+        height: 300px;
     }
     
 }

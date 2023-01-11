@@ -17,12 +17,17 @@
     width: 270px;
     height: 270px;
     margin: 15px;
-    
+    -webkit-box-shadow: 3px 3px 5px rgba(136, 136, 136, 0.793);
+	-moz-box-shadow: 3px 3px 5px rgb(141, 141, 141);
+	box-shadow: 3px 3px 5px rgb(125, 125, 125);
 }
-.yipai__artistbox :hover::before{
-
+.yipai__artistbox img:hover{
+    filter:alpha(Opacity=100);
+    -moz-opacity:0.7;
+    opacity: 0.3;
 
 }
+
 .yipai__artistbox img{
     object-fit:cover;
 }
@@ -109,7 +114,7 @@
 
     .yipai__artistbox-text p{
         margin: 15px;
-        font-size: 22px;
+        font-size: 15px;
         color: #CAB296;
     }
 

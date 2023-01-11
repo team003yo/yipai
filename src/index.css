@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap');
+
 :root {
-  --font-family: "Roboto", sans-serif;
+  /* --font-family: "Roboto", sans-serif; */
+  --font-family: 'Noto Sans TC', sans-serif;
 
   --gradient-text: linear-gradient(93.97deg, #000000 1.84%, #858585 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);

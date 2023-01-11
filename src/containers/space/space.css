@@ -5,6 +5,10 @@
     background: #F9F7F2;
   } */
   
+.font-family{
+    font-family: var(--font-family);
+    font-weight: 700;
+}
 
 /* main */
 .main-content{

@@ -17,13 +17,13 @@ function Space() {
           <div class="bannerImg"></div>
         </div>
       </header>
-      <div class="container">
+      <div class="container font-family">
         <div class="main-content">
           <nav class="aside-menu">
             <h3>空間分類</h3>
             <hr />
             <Dropdown>
-              <Dropdown.Toggle variant="dark" id="dropdown-basic">
+              <Dropdown.Toggle  variant="dark" id="dropdown-basic">
                 依地點
               </Dropdown.Toggle>
               <Dropdown.Menu>
@@ -58,7 +58,7 @@ function Space() {
           </nav>
           <main>
             <div className="d-flex justify-content-between m-2">
-              <p>首頁▷展覽資訊</p>
+              <p>首頁 ▶ 展覽資訊</p>
               <Button variant="dark">由新至舊</Button>
             </div>
             <div className="container main-card mt-5">
