@@ -1,3 +1,7 @@
+:root{
+    --text-h1:44px;
+    --text-h2:20px;
+}
 .login-button{
 margin-top: 150px;
 }
@@ -7,9 +11,10 @@ margin-top: 150px;
     background-position: center center;
     width: auto;
     height: 100vh;
+    z-index: 0;
 }
 .h3{
-    font-size: 44px;
+    font-size: var(--text-h1);
 }
 .flex{
     display: flex;
@@ -20,6 +25,7 @@ margin-top: 150px;
     position: absolute;
     left: calc(50vw - ((44px * 4) + 12em));
     top:50vh;
+    z-index: 3;
 }
 .text-center{
     text-align: center;

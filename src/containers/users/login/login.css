@@ -1,0 +1,54 @@
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.h3{
+    margin: 0.5em 0 0.5em 0;
+}
+.buyerIcon {
+    background-image: url(../image/buyerIcon.svg);
+    
+}
+.BG {
+    background-image: url(../image/LoginBG.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: auto;
+    height: 100vh;
+    position: relative;
+}
+.buyerbox {
+    position: absolute;
+    width: 32em;
+    height: 40em;
+    top: calc(50% - 20em);
+    left: calc(50% - 16em);
+    background-color:var(--color-bg);
+
+}
+.inputBox{
+    background: var(--color-text);
+    border: 0em;
+    width: 15em;
+    height: 3em;
+    font-size: var(--text-h2);
+}
+.inputBox2{
+    background: #EAEAEA;
+    border: 0em;
+    width: 15em;
+    height: 3em;
+    font-size: var(--text-h2);
+}
+.btn{
+    background: var(--color-text);
+    border: 0em;
+    width: 15em;
+    height: 3em;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+    font-size: var(--text-h2);
+}
