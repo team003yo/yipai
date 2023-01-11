@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
         <div className="yipai__navbar-links_container">
           <p>
-            <Link to="/">展覽活動</Link>
+            <Link to="news">展覽活動</Link>
           </p>
           <p>
             <Link to="space">展覽空間</Link>

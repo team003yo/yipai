@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,ArtistBlog ,SpaceBlog } from './containers';
+import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,ArtistBlog ,SpaceBlog,NewsId,News } from './containers';
 import { Brand, Navbar, Carousel } from './components';
 
 import './App.css';
@@ -28,6 +28,8 @@ function App() {
             <Route path='users' element={<Users />} />            
             <Route path='/users/login' element={<Login />} />            
             <Route path='cart' element={<Cart />} />
+            <Route path="/news/newsId" element={<NewsId />} />
+            <Route path="news" element={<News />} />
           </Routes>  
         </MyContent>
       </div>
