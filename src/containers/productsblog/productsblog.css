@@ -21,7 +21,8 @@
     font-size: 25.11px;
     font-weight: 800;
     line-height: 20.30px;
-    color: #000;
+    /* color: #000; */
+    background: transparent;
     margin: 2rem;
     cursor: pointer;
 }

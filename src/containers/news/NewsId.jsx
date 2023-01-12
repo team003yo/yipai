@@ -36,7 +36,7 @@ const NewsId = () => (
                   </Link>
                 </box>
               </div>
-              <h1 className="gradient__text fw-bold">達文西光影藝術特展</h1>
+              <h1 className="fw-bold">達文西光影藝術特展</h1>
               <div className="d-flex flex-row justify-content-center my-4 ">
                 <IoIosTimer className="timer_icon" />
                 2022-12-01 ~ 2022-12-07
@@ -58,12 +58,13 @@ const NewsId = () => (
                     Bridege Art 的會員藝術家 3 位名額可以展出作品與販售週邊!
                   </h6>
                 </Col>
-                <div className="place d-flex">
-                  <box className="fw-bold">
+                <div className="address">
+                  <box className=" fw-bold">
                     <FaMapMarker />
                     地點
+                    <h6 >双融域 AMBI SPACE ONE（台北101五樓）</h6>
                   </box>
-                  <h6>双融域 AMBI SPACE ONE（台北101五樓）</h6>
+                  
                 </div>
 
                 <Col>

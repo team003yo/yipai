@@ -16,7 +16,6 @@
     width:100%;
  }
 
-
 .timer_icon{
     width: 36px;
     height: 20px;
@@ -27,16 +26,14 @@
 }
 .share_icon{
     width: 16px;
-    height: 17px;
-    
+    height: 17px;   
 }
-h6{
-    margin:0px;
-}
-.place,.fw-bold,h6{
+.place{
     margin: 15px;
 }
-
+.address{
+    margin: 0px;
+}
 .map__img {
     height: 344px;
     left: 654px;
@@ -55,8 +52,6 @@ h6{
     text-align: center;
     justify-content: center;
     align-items: flex-end;
-   
-
 }
 .collect,.share{
     margin: 5px;

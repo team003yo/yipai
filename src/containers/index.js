@@ -13,3 +13,5 @@ export { default as ArtistBlog } from './airistblog/Artistblog';
 export { default as SpaceBlog } from './spaceBlog/SpaceBlog';
 export { default as NewsId } from './news/NewsId';
 export { default as News } from './news/News';
+export { default as ProductsDetail } from './products/ProductsDetail';
+

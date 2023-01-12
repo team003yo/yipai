@@ -1,11 +1,24 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import yipaiLogo from '../../logo1wt.svg';
 import './footer.css';
 import { BsFacebook,BsInstagram } from 'react-icons/bs'
 import { AiFillWechat } from 'react-icons/ai'
+import { useLocation } from 'react-router-dom';
 
-const Footer = () => (
-  <div className="yipai__footer section__padding">
+
+
+
+const Footer = () => {
+  
+  let location = useLocation();
+
+  if(location.pathname === '/cart'){
+    return<></>
+  }
+  // ;
+
+  return (
+    <div className="yipai__footer section__padding">
 
     <div className="yipai__footer-links">
       <div className="yipai__footer-links_logo">
@@ -29,9 +42,9 @@ const Footer = () => (
         <p>Yipai@gmail.com</p>
         <p>0912-123-321</p>
         <p>
-          <a href="#" className="yipai__footer-icons"><BsFacebook className="iconStyle-footer" /></a>
-          <a href="#" className="yipai__footer-icons"><BsInstagram className="iconStyle-footer" /></a>
-          <a href="#" className="yipai__footer-icons"><AiFillWechat className="iconStyle-footer" /></a>
+          <a href="https://zh-tw.facebook.com/" className="yipai__footer-icons"><BsFacebook className="iconStyle-footer" /></a>
+          <a href="https://www.instagram.com/" className="yipai__footer-icons"><BsInstagram className="iconStyle-footer" /></a>
+          <a href="https://www.wechat.com/zh_HK/" className="yipai__footer-icons"><AiFillWechat className="iconStyle-footer" /></a>
         </p>
       </div>
     </div>
@@ -40,6 +53,9 @@ const Footer = () => (
       <p>@2023 YiPai All rights reserved.</p>
     </div>
   </div>
-);
+
+  )
+}
+ 
 
 export default Footer;
