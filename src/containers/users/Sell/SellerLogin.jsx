@@ -6,7 +6,7 @@ const SellLogin = () => (
     <div id='login'>
         {/* 賣家登入 */}
         <div className='BG'>
-            <div className='flex buyerbox'>
+            <div className='flex sellerbox'>
                 <div className='sellerIcon'></div>
                 <form method='POST' action='' className='flex'>
                     <label className='h3'>賣家登入</label>

@@ -20,31 +20,31 @@
     height: 100vh;
     position: relative;
 }
-.buyerbox {
+.sellerbox {
     position: absolute;
     width: 32em;
     height: 40em;
     top: calc(50% - 20em);
     left: calc(50% - 16em);
-    background-color:var(--color-bg);
+    background-color:var(--color-text);
 
 }
 .inputBox{
-    background: var(--color-text);
-    border: 0em;
-    width: 15em;
-    height: 3em;
-    font-size: var(--text-h2);
-}
-.inputBox2{
     background: #EAEAEA;
     border: 0em;
     width: 15em;
     height: 3em;
     font-size: var(--text-h2);
 }
+.inputBox2{
+    background: #fff;
+    border: 0em;
+    width: 15em;
+    height: 3em;
+    font-size: var(--text-h2);
+}
 .btn{
-    background: var(--color-text);
+    background: var(--color-bg);
     border: 0em;
     width: 15em;
     height: 3em;
