@@ -80,4 +80,4 @@ const NewsId = () => (
   </div>
 )
 
-export default NewsId
+export default NewsId;

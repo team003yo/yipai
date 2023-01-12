@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,Sell,ArtistBlog ,SpaceBlogNewsId,News } from './containers';
+import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,Sell,ArtistBlog ,SpaceBlog,News, NewsId } from './containers';
 import { Brand, Navbar, Carousel } from './components';
 
 import './App.css';

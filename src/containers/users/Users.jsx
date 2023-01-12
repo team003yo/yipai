@@ -4,8 +4,6 @@ import "./users.css";
 
 const Users = () => (
     <div id='users'>
-        {/* <h2>您好 May 你現在是藝拍小夥伴啦！</h2> */}
-        {/* <img src={{}} alt="Background" ></img>  */}
         <div className='flex-ab flex-col'>
             <div className='box flex'>
                 <div className='buyerIcon'></div>
