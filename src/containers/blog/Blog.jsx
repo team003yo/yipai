@@ -12,6 +12,7 @@ const Blog = () => (
     <div className="yipai__blog-heading">
       <h1 className="gradient__text">最新消息｜當期展覽及新展預告</h1>
     </div>
+    <Link to='news'><h4 className='spaceblog-content'>更多最新消息 ▶</h4></Link>
     <div className="yipai__blog-container">
       <div className="yipai__blog-container_groupA">
         <Article imgUrl={blog01} date="2023 01/01" text="Byen Ungpil - SOMEONE 2021_001 Original" />
@@ -34,7 +35,7 @@ const Blog = () => (
     <div className="yipai__blog-heading">
       <h1 className="yipai__text gradient__text">立即探索展覽空間</h1>
     </div>
-    <Link to='space'><h4 className='spaceblog-content'>探索更多展覽空間 ▶</h4></Link>
+    <Link to='space'><h4 className='spaceblog-content'>更多展覽空間 ▶</h4></Link>
     <SpcaeBlog />
   </div>
 );

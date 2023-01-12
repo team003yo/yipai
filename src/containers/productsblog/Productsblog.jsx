@@ -8,12 +8,18 @@ import './productsblog.css';
 const Productsblog = () => (
   <div className='product_body'>
     <div className='flex-col'>
-      <div className='bigimg'><img src={art1} /></div>
+      <div className='bigimg'><img src={art1} />
+      <div className=' yipai__title-text yipai__artistbox-text'><p>沒印象了嗎?</p><p>找出你最有印象的那一幅</p><p>印象派</p></div>
+      </div>
+      
       <div className='yipai__title-text'>
         <div id='productsblog' className='products_grid'>
           <div className='yipai__artistbox'><img src={pic2} /></div>
-          <div className='yipai__artistbox'><img src={pic3} /></div>
+          <div className='yipai__artistbox yipai__artistbox-text'><p>沒印象了嗎?</p><p>找出你最有印象的那一幅</p><p>印象派</p></div>
+          <div className='yipai__artistbox yipai__artistbox'><img src={pic3} /></div>
+          <div className='yipai__artistbox yipai__artistbox-text'><p>沒印象了嗎?</p><p>找出你最有印象的那一幅</p><p>印象派</p></div>
           <div className='yipai__artistbox'><img src={pic4} /></div>
+          <div className='yipai__artistbox yipai__artistbox-text'><p>沒印象了嗎?</p><p>找出你最有印象的那一幅</p><p>印象派</p></div>
         </div>
       </div>
     </div>

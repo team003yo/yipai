@@ -11,3 +11,5 @@ export { default as Cart } from './cart/Cart';
 export { default as Login } from './users/login/Login';
 export { default as ArtistBlog } from './airistblog/Artistblog';
 export { default as SpaceBlog } from './spaceBlog/SpaceBlog';
+export { default as NewsId } from './news/NewsId';
+export { default as News } from './news/News';
