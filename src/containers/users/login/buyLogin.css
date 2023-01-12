@@ -5,6 +5,14 @@
     align-items: center;
     justify-content: center;
 }
+.flex-re{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    justify-content: flex-end;
+}
 .h3{
     margin: 0.5em 0 0.5em 0;
 }
@@ -51,4 +59,27 @@
     margin-top: 3em;
     margin-bottom: 0.5em;
     font-size: var(--text-h2);
+}
+.headIcon{
+    background-image: url(../image/addFileIcon.svg);
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.headImg{
+    z-index: 0;
+}
+.buyerControlBtn{
+    border: 0;
+    color: var(--color-bg);
+    background-color: #000;
+    padding: 1em;
+    border-radius: 0.6em;
+}
+:active.buyerControlBtn{
+    background-color: var(--color-text);
 }
