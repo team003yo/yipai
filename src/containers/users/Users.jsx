@@ -9,13 +9,13 @@ const Users = () => (
         <div className='flex-ab flex-col'>
             <div className='box flex'>
                 <div className='buyerIcon'></div>
-                <Link to='/users/login' className='h3'>
+                <Link to='/users/BuyLogin' className='h3'>
                     買家登入
                 </Link>
             </div>
             <div className='box2 flex'>
                 <div className='sellerIcon'></div>
-                <Link to='/users/login' className='h3'>
+                <Link to='/users/SellLogin' className='h3'>
                     賣家登入
                 </Link>
             </div>

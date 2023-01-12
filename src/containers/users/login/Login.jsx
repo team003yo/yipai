@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./login.css";
+import "./buyLogin.css";
 
 const Login = () => (
     <div id='login'>
@@ -34,8 +34,6 @@ const Login = () => (
                 </div>
             </div>
         </div>
-
-        {/* 賣家登入 */}
         
     </div>
 );
