@@ -13,25 +13,36 @@
 }
 
 .yipai__artistbox{    
-    background: #000;
+    /* background: #000; */
     width: 270px;
     height: 270px;
     margin: 15px;
-    
+    -webkit-box-shadow: 3px 3px 5px rgba(136, 136, 136, 0.793);
+	-moz-box-shadow: 3px 3px 5px rgb(141, 141, 141);
+	box-shadow: 3px 3px 5px rgb(125, 125, 125);
 }
-.yipai__artistbox :hover::before{
-
+.yipai__artistbox img:hover{
+    filter:alpha(Opacity=100);
+    -moz-opacity:0.7;
+    opacity: 0.3;
 
 }
+
 .yipai__artistbox img{
-    width: 270px;
-    height: 270px;
+    object-fit:cover;
+}
+
+.yipai__artistbox-text p {
+    margin: 15px;
+    font-size: 23px;
+    color: #CAB296;
+
 }
 
 @media screen and (max-width: 990px) {
     .yipai__artistbox{
     
-        background: #000;
+        /* background: #000; */
         width: 170px;
         height: 170px;
         margin: 5px;
@@ -40,13 +51,21 @@
     .yipai__artistbox img{
         width: 170px;
         height: 170px;
+    }
+
+    .yipai__artistbox-text p {
+        margin: 15px;
+        font-size: 23px;
+        color: #CAB296;
+        
+
     }
 }
 
 @media screen and (max-width: 700px) {
     .yipai__artistbox{
     
-        background: #000;
+        /* background: #000; */
         width: 130px;
         height: 130px;
         margin: 5px;
@@ -56,6 +75,13 @@
     .yipai__artistbox img{
         width: 130px;
         height: 130px;
+    }
+ 
+    .yipai__artistbox-text p {
+        margin: 15px;
+        font-size: 16px;
+        color: #CAB296;
+
     }
 }
 
@@ -64,7 +90,7 @@
         display: grid;
         justify-content: center;
         align-items: center;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
         margin: auto;
     
     }
@@ -74,7 +100,7 @@
     }
     .yipai__artistbox{
         
-        background: #000;
+        /* background: #000; */
         width: 200px;
         height: 200px;
         margin: 5px;
@@ -84,6 +110,12 @@
     .yipai__artistbox img{
         width: 200px;
         height: 200px;
+    }
+
+    .yipai__artistbox-text p{
+        margin: 15px;
+        font-size: 15px;
+        color: #CAB296;
     }
 
 }

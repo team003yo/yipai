@@ -1,0 +1,57 @@
+.margin-50{
+    margin: 50px;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+.iconStyle-title{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size:45px;
+}
+.keepbuying-button {
+    background: transparent;
+    margin: 3rem;
+}
+.flex-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-color thead{
+    background: #C9D7E3;
+}
+
+
+.line-height-50{
+    line-height: 50px;
+}
+@media screen and (max-width: 990px) {
+
+}
+
+@media screen and (max-width: 700px) {
+    tr{
+        font-size: 10px;
+    }
+    
+    .flex-text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    .flex-text h5{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .keepbuying-button {
+        background: transparent;
+        margin: 0.5rem;
+    }
+
+}
