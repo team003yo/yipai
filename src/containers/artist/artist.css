@@ -1,248 +1,292 @@
-  /* .container {
+/* .container {
     width: 100%;
     height: 80%;
     margin: 0 auto;
     background: #F9F7F2;
   } */
-  
 
 /* main */
-.main-content{
-    display: flex;
-    margin: auto;
-    height: auto;
-    margin-top: 10px;
+.main-content {
+  display: flex;
+  margin: auto;
+  height: auto;
+  margin-top: 10px;
 }
-.main-card{
-    display: flex;
+.main-card {
+  display: flex;
 }
-.main-card-item img{
-    width: 310px;
-    height: 210px;
-    object-fit: cover;
+.main-card-item img {
+  width: 310px;
+  height: 210px;
+  object-fit: cover;
 }
 
-.aside-menu{
-    width: 200px;
-    text-align: center;
-    margin: 50px 20px;
+.aside-menu {
+  width: 200px;
+  text-align: center;
+  margin: 50px 20px;
 }
 /* banner */
 .banner {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 .artistImg {
-    height: 100%;
-    background-image: url("./artist_main.png");
-    background-repeat:no-repeat;
-    background-size:cover;
-    
+  height: 100%;
+  background-image: url("./artist_main.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.button{
-    min-width:90px;
-    max-width: 90px;
-    height:40px;
+.button {
+  min-width: 90px;
+  max-width: 90px;
+  height: 40px;
 }
-.card-img-top{
-    max-height: 250px;
+.card-img-top {
+  max-height: 250px;
 }
-.card-img-body{
-    width: 80%;
+.card-img-body {
+  width: 80%;
+}
+.page-item a {
+  color: white;
+  background-color: #000;
 }
 @media screen and (max-width: 1440px) {
-    .banner {
-        height: 80vh;
-    }
-    .main-card-item img, .card-img-top{
-        background-size:cover;
-        max-width: 100%;
-        max-height: 150px;
-    }
-
+  .banner {
+    height: 80vh;
   }
+  .main-card-item img,
+  .card-img-top {
+    background-size: cover;
+    max-width: 100%;
+    max-height: 150px;
+  }
+}
 @media screen and (max-width: 1080px) {
-    .banner {
-        height: 60vh;
-    }
-    .bannerImg {
-        height: 100%;
-    }
-    .main-card-item img, .card-img-top{
-        width: 270px;
-        height: 160px;
-
-    }
-    .main-content{
-        height: 100%;
-    }
+  .banner {
+    height: 60vh;
   }
-  @media screen and (max-width: 780px) {
-    .banner {
-        height: 45vh;
-    }
+  .bannerImg {
+    height: 100%;
   }
-  
-  @media screen and (max-width: 500px) {
-
-    .main-content{
-        display: inline-block;
-        height: 100%;
-    }
-    .main-card-item-text{
-        font-weight: 800;
-    }
-    .banner {
-        height: 25vh;
-    }
-    .aside-menu{
-        display: none;
-    }
-    .pagination{
-        display: none;
-    }
-    .main-card-item img , .card-body, .card-img-top{
-        width: 360px;
-        height: 250px;
-    }
+  .main-card-item img,
+  .card-img-top {
+    width: 270px;
+    height: 160px;
   }
-  
-
-
-/*SpaceDetail */
-
-.aside-pic{
-    width: 100%;
-    background-size:cover;
+  .main-content {
+    height: 100%;
+  }
 }
-.aside{
-    position: absolute;
-    right: 0px;
-    width: 75%;
-}
-.detail-img{
-    position: relative;
-}
-.detail-name{
-	color: black;
-	position:absolute;
-	top: 30%;
-	left:10%;
-    text-align: center;
-}
-.detail-name h1{
-    font-size: 70px;
-}
-.detail-name h2{
-    font-size: 50px;
+@media screen and (max-width: 780px) {
+  .banner {
+    height: 45vh;
+  }
 }
 
-/*SpaceDetail detail-map */
-.detail-map{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* text-align: center; */
-}
-.detail-map-text{
-    width: 60%;
-    line-height:40px;
-    margin-top: 20px;
-}
-.detail-map-title{
-    font-weight: 900;
-    font-size: 50px;
-}
-.detail-map-text h6{
-    font-size: 20px;
-    margin: 10px 0px;
-}
-.detail-map-title-6{
-    font-size: 18px;
+@media screen and (max-width: 500px) {
+  .main-content {
+    display: inline-block;
+    height: 100%;
+  }
+  .main-card-item-text {
+    font-weight: 800;
+  }
+  .banner {
+    height: 25vh;
+  }
+  .aside-menu {
+    display: none;
+  }
+  .pagination {
+    display: none;
+  }
+  .main-card-item img,
+  .card-body,
+  .card-img-top {
+    width: 360px;
+    height: 250px;
+  }
 }
 
+/*ArtistDetail */
+.artist-country {
+  color: #cab296;
+}
+.artist-born {
+  color: #f9f7f2;
+}
+.artist-name {
+  color: #f9f7f2;
+}
+.aside-pic {
+  width: 100%;
+  background-size: cover;
+}
+.aside {
+  position: absolute;
+  right: 0px;
+  width: 75%;
+}
+.detail-img {
+  position: relative;
+}
+.artist-detail-name {
+  /* color: black; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+}
+.artist-detail-name h1 {
+  font-size: 60px;
+}
+.artist-detail-name h2 {
+  font-size: 40px;
+}
 
+/*ArtistDetail detail-intro */
+.detail-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+.detail-intro-text {
+  width: 80%;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.detail-intro-title {
+  padding-top: 20px;
+  font-weight: 900;
+  font-size: 50px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 121.3%;
+  /* or 53px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.155em;
+  text-transform: lowercase;
+}
+.detail-intro-body {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 126.8%;
+  /* or 22px */
+
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+.detail-intro-text h6 {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.detail-intro-title-6 {
+  font-size: 18px;
+}
 
 /* icon */
-.size280{
-    width: 280px;
+.size280 {
+  width: 280px;
 }
-.artistHead{
-    background-image: url("./artist_head.png");
-    height: 50%;    
-    background-repeat:no-repeat;
+.artistHead {
+  background-image: url("./artist_head.png");
+  height: 50%;
+  background-repeat: no-repeat;
 }
-.icon{
-    display: flex;
-    justify-content: center;
-    /* text-align: center; */
-    /* align-items: flex-end; */
+.icon {
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+  /* align-items: flex-end; */
 }
-.collect,.share{
-    margin: 5px;  
+.collect,
+.share {
+  margin: 5px;
 }
-.FaHeart_icon,.share_icon{
-    width: 36px;
-    height: 20px;
-    margin-bottom:5px;
+.FaHeart_icon,
+.share_icon {
+  width: 36px;
+  height: 20px;
+  margin-bottom: 5px;
 }
 
-.text-container{
-    text-align: center;
-    justify-content: center;
+.text-container {
+  text-align: center;
+  justify-content: center;
+}
+.detail-intro-img{
+    width: 350px;
+    max-height: 500px;
 }
 
 @media screen and (max-width: 1400px) {
-    .detail-map-text{
-        line-height:30px;
-    }
-    .detail-map-text h6, .detail-map-title-6{
-        font-size: 16px;
-    }
+  .detail-intro-text {
+    line-height: 30px;
+  }
+  .detail-intro-text h6,
+  .detail-intro-title-6 {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 980px) {
-    .detail-name h1{
-        font-size: 50px;
-    }
-    .detail-name h2{
-        font-size: 40px;
-    }
-    /* 換一行 */
-    .detail-main{
-        display: block;
-        flex-direction: column;
-    }
-    .detail-map-text{
-        margin: 30px;
-        padding: 0px 50px;
-    }
-    .detail-map-img{
-        height: 70vh;
-        object-fit: cover;
-    } 
-    .detail-map-title{
-        font-size: 30px;
-    }
-    .detail-map-text h6,.detail-map-title-6{
-        font-size: 16px;
-    }
-   
-}
-  
-@media screen and (max-width: 500px) {
-    .aside-pic{
-        height: 300px;
-    }
-    .aside{
-        width: 110%;
-    }
-    .detail-map-text{
-        padding: 0px;
-    }
-    .detail-name{
-        display: none;
-    }
-    .detail-map-img{
-        height: 50vh;
-    }
+  .artist-detail-namet- h1 {
+    font-size: 50px;
   }
+  .artist-detail-name h2 {
+    font-size: 40px;
+  }
+  /* 換一行 */
+  .detail-main {
+    display: block;
+    flex-direction: column;
+  }
+  .detail-intro-text {
+    margin: 30px;
+    padding: 0px 50px;
+  }
+  .detail-intro-img {
+    width: 80%;
+    height: 70vh;
+    object-fit: cover;
+  }
+  .detail-intro-title {
+    font-size: 30px;
+  }
+  .detail-intro-text h6,
+  .detail-intro-title-6 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .aside-pic {
+    height: 300px;
+  }
+  .aside {
+    width: 110%;
+  }
+  .detail-intro-text {
+    padding: 0px;
+  }
+  .artist-detail-name h1 {
+    font-size: 40px;
+  }
+  .artist-detail-name h2 {
+    font-size: 30px;
+  }
+  .detail-intro-img {
+    height: 50vh;
+  }
+}

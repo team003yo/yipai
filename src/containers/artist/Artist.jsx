@@ -24,7 +24,7 @@ function Artist() {
             <h3>藝術家</h3>
             <hr />
             <Dropdown>
-              <Dropdown.Toggle variant="dark" id="dropdown-basic">
+              <Dropdown.Toggle variant="--color-bg " style={{border:"none"}} id="dropdown-basic">
                 依名字排序
               </Dropdown.Toggle>
               <Dropdown.Menu>
@@ -34,7 +34,7 @@ function Artist() {
             </Dropdown>
             <br />
             <Dropdown>
-              <Dropdown.Toggle variant="dark" id="dropdown-basic">
+              <Dropdown.Toggle variant="--color-bg" style={{border:"none"}} id="dropdown-basic">
                 依總銷售量
               </Dropdown.Toggle>
               <Dropdown.Menu>
