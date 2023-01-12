@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 function BuyerSettings(params) {
     return(
         <h3>HoLa</h3>

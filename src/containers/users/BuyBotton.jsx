@@ -1,7 +1,12 @@
 import React from "react";
 function BuyBotton(params) {
-    return(
-        <button className="buyerControlBtn">{params.text}</button>
+    return (
+        <div>
+            <button className='buyerControlBtn'>
+                <img src={params.src} alt={params.alt}></img>
+                {params.text}
+            </button>
+        </div>
     );
 }
 export default BuyBotton;
