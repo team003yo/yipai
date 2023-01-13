@@ -98,20 +98,25 @@
     color: var(--color-bg);
     background-color: #000;
     width: auto;
-    height: 3em;
-    padding: 0 0.5em 0 0.5em;
+    padding: 0.5em;
     border-radius: 0.6em;
-    /* margin: 0 1em 0 1em; */
 }
 :active._buyLogin_ChangeControlBtn {
     background-color: var(--color-text);
 }
 ._buyLogin_Titlebox {
     background-color: var(--color-text);
-    width: 20em;
+    margin: 2em 0 0 0;
+    /* width: 35em; */
+    padding: 0 2em 0 2em;
     height: 3.5em;
 }
 ._buyLogin_Contentbox{
     background-color: #eaeaea;
-
+    padding: 0 2em 0 2em;
+    /* width: 35em; */
+    height: 20em;
+}
+._buyLogin_SettingInput{
+    width: 8em;
 }
