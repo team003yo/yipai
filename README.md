@@ -4,7 +4,7 @@
 
 終端機請安裝 npm install --save react-router-dom
 
-幻燈片功能請載 npm install react-responsive-carousel --sav
+幻燈片功能請載 npm install react-responsive-carousel --save
 
 
 
