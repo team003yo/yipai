@@ -14,7 +14,6 @@ const Navbar = () => {
     <div className="yipai__navbar">
       <div className="yipai__navbar-links">
         <div className="yipai__navbar-links_logo">
-          {/* <img src={logo} /> */}
           <Link to="/">
             <img src={logo1} />
           </Link>

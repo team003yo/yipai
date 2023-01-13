@@ -5,16 +5,22 @@
     background: #F9F7F2;
   } */
   
-.font-family{
+  .font-family{
     font-family: var(--font-family);
     font-weight: 700;
+}
+.space_container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 /* main */
 .main-content{
     display: flex;
     margin: auto;
-    height: 100vh;
+    height: auto;
     margin-top: 10px;
 }
 .main-card{
@@ -44,6 +50,22 @@
     
 }
 
+.page-item a{
+    color: white;
+    background-color: black;
+}
+.Space_FaHeart_icon{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+}
+.button{
+    min-width:100px;
+    max-width: 100px;
+    height:40px;
+}
+
 @media screen and (max-width: 1440px) {
     .banner {
         height: 80vh;
@@ -51,6 +73,10 @@
     .main-card-item img{
         width: 280px;
         height: 160px;
+    }
+    .Space_FaHeart_icon{
+        right: 20px;
+    
     }
 
   }
@@ -69,6 +95,14 @@
     .main-content{
         height: 100%;
     }
+    .Space_FaHeart_icon{
+        right: 110px;
+    }
+  }
+  @media screen and (max-width: 980px) {
+    .Space_FaHeart_icon{
+        right: 20px;
+    }
   }
   @media screen and (max-width: 780px) {
     .banner {
@@ -76,7 +110,7 @@
     }
   }
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 550px) {
 
     .main-content{
         display: inline-block;
@@ -86,17 +120,22 @@
         font-weight: 800;
     }
     .banner {
-        height: 25vh;
+        height: 30vh;
     }
     .aside-menu{
-        display: none;
-    }
-    .pagination{
         display: none;
     }
     .main-card-item img{
         width: 360px;
         height: 210px;
+    }
+
+    /* pagination */
+    .page-item{
+        display: none;
+    }
+    .none550 p{
+        display: none;
     }
   }
   
@@ -210,7 +249,7 @@
    
 }
   
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     .aside-pic{
         height: 300px;
     }

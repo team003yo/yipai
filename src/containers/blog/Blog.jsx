@@ -33,7 +33,7 @@ const Blog = () => (
     </div>
     <ArtistBlog />
     <div className="yipai__blog-heading">
-      <h1 className="yipai__text gradient__text">立即探索展覽空間</h1>
+        <h1  className="yipai__text gradient__text">立即探索展覽空間</h1>
     </div>
     <Link to='space'><h4 className='spaceblog-content'>更多展覽空間 ▶</h4></Link>
     <SpcaeBlog />

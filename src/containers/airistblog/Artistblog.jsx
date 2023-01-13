@@ -18,7 +18,6 @@ const ArtistBlog = () => {
   return(
     <div className='body'>
     <div id='artistblog' className='grid'>
- 
       <div className='yipai__artistbox'><img src={pic1} /></div>
       <div className='yipai__artistbox'><img src={pic2} /></div>
       <div className='yipai__artistbox'><img src={pic3} /></div>

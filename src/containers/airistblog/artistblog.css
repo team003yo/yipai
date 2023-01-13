@@ -32,12 +32,18 @@
     object-fit:cover;
 }
 
+.yipai__artistbox-text {
+    background: rgba(236, 235, 235, 0.4);
+}
+
 .yipai__artistbox-text p {
     margin: 15px;
     font-size: 23px;
     color: #CAB296;
+    
 
 }
+
 
 @media screen and (max-width: 990px) {
     .yipai__artistbox{

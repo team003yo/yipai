@@ -1,0 +1,269 @@
+.container{
+    width:1440px;
+}
+
+.Products-banner {
+    width: 100%;
+    height: 100vh;
+}
+.ProductsbannerImg {
+    height: 100%;
+    background-image: url("../../assets/shop.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#Products {
+    font-family: var(--font-family);
+    display: grid; /* 1.設定 display 為 grid */
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+                         "aside  nav "
+                         "aside  main "
+                         "..  footer "
+                      ; /* 2.區域分為4行兩列 */
+    grid-template-rows: 100px 1400px 50px; /* 3.各區域 寬高設置 */
+    grid-template-columns:  250px 1fr ;
+  }
+  
+  #Products > nav {
+    grid-area: nav;
+    background-color: blueviolet;
+  }
+  
+#Products > aside {
+    grid-area: aside;
+    background-color: brown;
+  }
+
+#Products > footer {
+    grid-area: footer;
+    background-color: rgb(161, 165, 42);
+  }
+
+.aside-content{
+    text-align: center;
+    padding: 30px;
+}
+#Products > main.Products-main {
+    grid-area: main;
+  }
+.Products-item-main-wrapp{
+    padding: 20px 0px 0 0px;
+}
+.Products-main-card-item{
+    width: 270px;
+    height: 400px;
+    border: 1px solid;
+}
+.Products-main-card-item-text{
+    margin-bottom:0px
+}
+
+h3,p.link{
+    margin: 0px;
+    padding: 0px ;
+}
+
+.main-content{
+    display: flex;
+    margin: auto;
+    height: 100vh;
+    margin-top: 10px;
+}
+.main-card{
+    display: flex;
+}
+
+.aside-menu{
+    width: 200px;
+    text-align: center;
+    margin: 50px 20px;
+}
+
+.yipai__navbar-menu {
+    margin-left: 1rem;
+    display: none;
+    position: relative;
+  }
+  
+  .yipai__navbar-menu svg {
+    cursor: pointer;
+  }
+  
+  .yipai__navbar-menu_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: end;
+    background: rgb(247, 247, 245);
+    padding: 2rem;
+    position: absolute;
+    right: 0.3rem;
+    /* top: 40px; */
+    margin-top: 30px;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .yipai__navbar-menu_container p {
+    margin: 1rem 0;
+  }
+  
+  .yipai__navbar-menu_container-links-sign {
+    display: none;
+  }
+
+p.pade-link{
+    letter-spacing: 3px;
+}
+.Products-item-main-card{
+    width:309px;
+    height:531px;
+}
+.ProductsNamepic{
+    width: 230px;
+    object-fit:contain;
+    margin: 0 20px;
+}
+.ProductsNamepic{
+    height: 280px;
+}
+.ProductsName-text{
+    width:225px;
+    padding:0 0 0 18px;
+}
+.Products-main-card-content{
+    height:368px;
+}
+
+/* @media screen and (max-width: 990px) { */
+    /* #Products { */
+        /* display: grid; 1.設定 display 為 grid */
+        /* width: 100%; */
+        /* height: 100%; */
+        /* grid-template-areas: */
+                             /* "aside  main" */
+                             /* "aside  main" */
+                             /* "aside  main" */
+                             /* ; 2.區域分為4行兩列 */
+        /* grid-template-rows: 120px 120px 120px x; 3.各區域 寬高設置 */
+        /* grid-template-columns: 200px 1fr; */
+      /* } */
+    /* .banner { */
+        /* height: 60vh; */
+    /* } */
+    /* .bannerImg { */
+        /* height: 100%; */
+    /* } */
+    /* .main-card-item img{ */
+        /* width: 500px; */
+        /* height: 300px; */
+/*  */
+    /* } */
+    /* .main-content{ */
+        /* height: 100%; */
+    /* } */
+  /* } */
+  /* @media screen and (max-width: 700px) { */
+    /* .banner { */
+        /* height: 45vh; */
+    /* } */
+  /* } */
+/*    */
+  /* @media screen and (max-width: 550px) { */
+/*  */
+    /* .main-content{ */
+        /* display: inline-block; */
+        /* height: 100%; */
+    /* } */
+    /* .main-card-item-text{ */
+        /* font-weight: 800; */
+    /* } */
+    /* .banner { */
+        /* height: 25vh; */
+    /* } */
+    /* .aside-menu{ */
+        /* display: none; */
+    /* } */
+    /* .pagination{ */
+        /* display: none; */
+    /* } */
+    /* .main-card-item img{ */
+        /* width: 360px; */
+        /* height: 210px; */
+    /* } */
+  /* } */
+/*  */
+/* SpaceDetail */
+/*  */
+/* .aside-pic{ */
+    /* width: 100%; */
+    /* background-size:cover; */
+/* } */
+/* .aside{ */
+    /* position: absolute; */
+    /* right: 0px; */
+    /* width: 75%; */
+/* } */
+/* .detail-img{ */
+    /* position: relative; */
+/* } */
+/* .detail-name{ */
+	/* color: black; */
+	/* position:absolute; */
+	/* top: 30%; */
+	/* left:10%; */
+    /* text-align: center; */
+/* } */
+/* .detail-name h1{ */
+    /* font-size: 70px; */
+/* } */
+/* .detail-name h2{ */
+    /* font-size: 50px; */
+/* } */
+/*  */
+/* SpaceDetail detail-map */
+/* .detail-map{ */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+/* } */
+/* .detail-map-text{ */
+    /* width: 60%; */
+    /* line-height:40px; */
+    /* margin-top: 20px; */
+/* } */
+/* .detail-map-title{ */
+    /* font-weight: 900; */
+    /* font-size: 50px; */
+/* } */
+/* .detail-map-text h6{ */
+    /* font-size: 20px; */
+    /* margin: 10px 0px; */
+/* } */
+/* .detail-map-title-6{ */
+    /* font-size: 18px; */
+/* } */
+/*  */
+/*  */
+/*  */
+/* icon */
+/* .icon{ */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* align-items: flex-end; */
+/* } */
+/* .collect,.share{ */
+    /* margin: 5px;   */
+/* } */
+/* .FaHeart_icon,.share_icon{ */
+    /* width: 36px; */
+    /* height: 20px; */
+    /* margin-bottom:5px; */
+ 

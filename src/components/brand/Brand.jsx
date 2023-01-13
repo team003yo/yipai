@@ -1,9 +1,19 @@
 import React from 'react';
 import { google, slack, atlassian, dropbox, shopify } from './imports';
 import './brand.css';
+import { useLocation } from 'react-router-dom';
 
-const Brand = () => (
-  <div className="gpt3__brand section__padding">
+
+const Brand = () => {
+
+  let location = useLocation();
+
+  if(location.pathname === '/cart'){
+    return<></>
+  }
+
+  return(
+    <div className="gpt3__brand section__padding">
     <div>
       <img src={google} />
     </div>
@@ -20,6 +30,8 @@ const Brand = () => (
       <img src={shopify} />
     </div>
   </div>
-);
+  )
+}
+  
 
 export default Brand;
