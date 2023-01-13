@@ -88,7 +88,7 @@ const ProductsDetail = () =>  {
               <p className="card-text">French</p>
               <p className="card-text"></p>
               <p>我是林容德，84年次，出生於嘉義縣水上鄉。父親任職於新營長榮鋼鐵品管課課長，母親為財團法人嘉義北回文化藝術基金會董事長助理，我的哥哥畢業於國立交通大學，目前在桃園星宇航空總部工作</p>
-              <Button variant="dark">關注</Button>
+              <button className='products-button'>關注</button>
           </div>
           </div>
       </div>
@@ -97,31 +97,31 @@ const ProductsDetail = () =>  {
        
     </section>
     </div>
-    <main>
+    <main className='ProductsDetail-main'>
+    <h3 className='fw-bold more d-flex'>這個藝術家的其他商品</h3>
     <div className='other-wrapp '>
               <div className="otherLink" >
-                  <h3 className='fw-bold more d-flex'>這個藝術家的其他商品</h3>
                   {/* <img className='otherProducts' src={productsId01} /> */}
                   <div className="other-product">  
-                      <div className="card-pic" >
+                      <div className="card-pic pic1" >
                         <img src={productsId01} className="card-img-top" />
                         <h6 className='productId' >品名品名品名品名品名品名品名品名品名品名品名品名</h6>
                         <p className='article' >作者作者作者作者</p>
                         <p>$16900</p>
                       </div> 
-                      <div className="card-pic" >
+                      <div className="card-pic pic2" >
                         <img src={productsId01} className="card-img-top" />
                         <h6 className='productId'>品名品名品名品名品名品名品名品名品名品名品名品名</h6>
                         <p className='article' >作者作者作者作者</p>
                         <p>$16900</p>
                       </div> 
-                      <div className="card-pic" >
+                      <div className="card-pic pic3" >
                         <img src={productsId01} className="card-img-top" />
                         <h6 className='productId'>品名品名品名品名品名品名品名品名品名品名品名品名</h6>
                         <p className='article' >作者作者作者作者</p>
                         <p>$16900</p>
                       </div> 
-                      <div className="card-pic" >
+                      <div className="card-pic pic4" >
                         <img src={productsId01} className="card-img-top" />
                         <h6 className='productId'>品名品名品名品名品名品名品名品名品名品名品名品名</h6>
                         <p className='article' >作者作者作者作者</p>
@@ -129,7 +129,7 @@ const ProductsDetail = () =>  {
                       </div> 
                       
                       <div className="card-pic pic5" >
-                        <img src={productsId01} className="card-img-top" />
+                        <img  src={productsId01} className="card-img-top" />
                         <h6 className='productId'>品名品名品名品名品名品名品名品名品名品名品名品名</h6>
                         <p className='article' >作者作者作者作者</p>
                         <p>$16900</p>
@@ -158,8 +158,8 @@ const ProductsDetail = () =>  {
               </div>
         </div>
         </main>
-        <div className='addCar-bottom '>
-                  <a className="d-inline">加入購物車</a>
+        <div className='addCar-botton'>
+            <a className="d-inline">加入購物車</a>
         </div>
         
 </div>

@@ -8,8 +8,17 @@
                        "article  .."
                        "aside  .."
                       ; /* 2.區域分為4行兩列 */
-  grid-template-rows: 846px 411px 411px ; /* 3.各區域 寬高設置 */
+  grid-template-rows:  846px 411px 411px ; /* 3.各區域 寬高設置 */
   grid-template-columns: 915px 1fr;
+}
+
+#ProductsDetail > figure {
+  grid-area: figure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
 }
  
 #ProductsDetail > hgroup {
@@ -18,12 +27,32 @@
   justify-content: center;
   position: relative;
 }
+.ProductsDetail-main{
+  height:557px ;
+  background-color:#EAEAEA;
+
+  justify-content: center;
+
+}
+.more{
+  padding: 25px;
+}
+.otherLink{
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
 
 .other-wrapp ,.nav-wrapper,.addCar,.slider-pic,.main-wrap{
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+.card-pic{
+  width: 200px;
+padding: 0 5px;
 }
 .nav-wrapper{
   width: 330px;
@@ -38,14 +67,6 @@
   color: rgb(0, 0, 0);
 }
 
-#ProductsDetail > figure {
-  grid-area: figure;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  
-}
 .carousel-products{
   width: 468px;
   height:570px;
@@ -60,7 +81,7 @@
 }
 
 .other-wrapp {
-  background-color: #EAEAEA;
+  /* width: 1400px; */
   background-attachment: fixed;
   height: 475px;
   display: flex;
@@ -69,7 +90,6 @@
   
 }
 .other-product{
-  width: 1300px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -91,6 +111,13 @@ p.article{
   text-align:center;
   justify-content: center;    
 }
+.products-button button{
+  background-color: black;
+  color:#F9F7F2;
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+}
 .demo-pic{
   height: 350px;
   display: flex;
@@ -107,13 +134,10 @@ p.article{
   background-color: transparent;   
 }
 .otherLink{
-
-  text-align:center;
+width: 900px;
   justify-content: center; 
 }
-.more{
-  padding: 25px;
-}
+
 .Detile,.aside-wrapp,.footer-wrapp{
   height:411px;
   display: flex;
@@ -128,13 +152,6 @@ p.article{
   display: flex;
   align-items: center;
   justify-content: center;    
-}
-.box{
-  width: 578px;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .d-inline inline-column{
@@ -181,6 +198,9 @@ p.article{
 .addCar-bottom{
   display: none;
 }
+.addCar-botton{
+  display: none;
+}
 @media screen and (max-width: 990px){
   .container{
     max-width: 990px;
@@ -199,7 +219,7 @@ p.article{
   }
   
   .other-product{
-    width:80%;
+    /* width:80%; */
     overflow: hidden;
     justify-content: center;
   }
@@ -210,10 +230,11 @@ p.article{
     width:150px;
     height: auto;
   }
+  
   h6 .pic{
     margin: 0px ;
   }
-  .pic5.pic6{
+  .pic4.pic5.pic6.pic7{
     display: none;
   }
   h6.productId{
@@ -227,10 +248,13 @@ p.article{
   .demoPic{
     width: 200px;
   }
- 
-  #carousel{
-    height:150px;
+  .other-wrapp {
+    height: 375px;
+   }
+   .other-product{
+    padding: 20px;
   }
+  
  }
 
 @media screen and (max-width: 700px){
@@ -247,23 +271,18 @@ p.article{
     grid-template-rows: 680px 500px 311px 400px; /* 3.各區域 寬高設置 */
     grid-template-columns: 700px ;
   }
-  .other-product{
-    width:600px;
-    overflow: hidden;
+ 
+  .card-pic{
+    height:300px;
   }
-  h6,.card-img-top{
-    width:120px;
-    height: auto;
-  }
+ 
   .artistLink{
     width:500px;
   }
   .aside-wrapp{
     height: 311px;
   }
-  p{
-    width:300px;
-  }
+  
   figure{
     position: relative;
   }
@@ -275,7 +294,7 @@ p.article{
   .addCar{
     display: none;
   }
-  .addCar-bottom{
+  .addCar-botton{
     padding: 20px;
     background-color:#C9D7E3 ;
     color: rgb(0, 0, 0);
@@ -287,10 +306,16 @@ p.article{
     position: fixed;
     bottom: 0;
   } 
-
-  h6.productId{
-    width: 100px;
+     .pic4, .pic5, .pic6{
+    display: none;
   }
+  .other-product{
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center; 
+    }
 }
 @media screen and (max-width: 550px){
   #ProductsDetail {
@@ -306,5 +331,17 @@ p.article{
     grid-template-rows: 680px 500px 311px 400px; /* 3.各區域 寬高設置 */
     grid-template-columns: 550px ;
   }
-  
+  .pic3{
+    display: none;
+  }
+
+  .card-pic{
+  margin: 0 20px;
+  }
+  .other-wrapp {
+   height: 375px;
+  }
+  .productId{
+    margin-top:10px;
+  }
 }

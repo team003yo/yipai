@@ -5,24 +5,24 @@ import "./sellerLogin.css";
 const SellLogin = () => (
     <div id='login'>
         {/* 賣家登入 */}
-        <div className='BG'>
-            <div className='flex sellerbox'>
-                <div className='sellerIcon'></div>
-                <form method='POST' action='' className='flex'>
-                    <label className='h3'>賣家登入</label>
+        <div className='_sellerLogin_BG'>
+            <div className='_sellerLogin_flex _sellerLogin_sellerbox'>
+                <div className='_sellerLogin_sellerIcon'></div>
+                <form method='POST' action='' className='_sellerLogin_flex'>
+                    <label className='_sellerLogin_h3'>賣家登入</label>
                     <input
                         type='text'
-                        className='inputBox'
+                        className='_sellerLogin_inputBox'
                         name='accountNumber'
                         placeholder=' 帳號'
                     />
                     <input
                         type='password'
-                        className='inputBox2'
+                        className='_sellerLogin_inputBox2'
                         name='password'
                         placeholder=' 密碼'
                     />
-                    <button type='submit' className='btn'>
+                    <button type='submit' className='_sellerLogin_btn'>
                         登入
                     </button>
                 </form>

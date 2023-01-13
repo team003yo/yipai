@@ -1,0 +1,315 @@
+/* .container {
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+    background: #F9F7F2;
+  } */
+
+/* main */
+.main-content {
+  display: flex;
+  margin: auto;
+  height: auto;
+  margin-top: 10px;
+}
+.main-card {
+  display: flex;
+}
+.main-card-item img {
+  width: 310px;
+  height: 210px;
+  object-fit: cover;
+}
+
+.aside-menu {
+  width: 200px;
+  text-align: center;
+  margin: 50px 20px;
+}
+/* banner */
+.banner {
+  width: 100%;
+  height: 100vh;
+}
+.artistImg {
+  height: 100%;
+  background-image: url("./artist_main.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.button-new-old {
+  min-width: 100px;
+  max-width: 100px;
+  height: 40px;
+}
+.card-img-top {
+  max-height: 200px;
+}
+.card-img-body {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.page-item a {
+  color: white;
+  background-color: #000;
+}
+@media screen and (max-width: 1440px) {
+  .banner {
+    height: 80vh;
+  }
+  .main-card-item img,
+  .card-img-top {    
+    object-fit:cover;
+    width: 100%;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .banner {
+    height: 80vh;
+  }
+  .bannerImg {
+    height: 100%;
+  }
+  .main-card-item img,
+  .card-img-top {
+    background-size: cover;
+    width: 100%;
+    height: 160px;
+  }
+  .main-content {
+    height: auto;
+  }
+}
+@media screen and (max-width: 780px) {
+  .banner {
+    height: 70vh;
+  }
+  .card-img-top {
+    background-size: cover;
+    width: 100%;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-content {
+    display: inline-block;
+    height: auto;
+  }
+  .main-card-item-text {
+    font-weight: 800;
+  }
+  .banner {
+    height: 70vh;
+  }
+  .aside-menu {
+    display: none;
+  }
+  .pagination {
+    display: none;
+  }
+  
+  .card-img-top {
+    background-size: cover;
+    width: 100%;
+    height: 220px;
+  }
+  .card {
+    margin: auto;
+    width: 300px;
+  }
+}
+
+/*ArtistDetail */
+.artist-country {
+  color: #cab296;
+}
+.artist-born {
+  color: #f9f7f2;
+}
+.artist-name {
+  color: #f9f7f2;
+}
+.aside-pic {
+  width: 100%;
+  background-size: cover;
+}
+.aside {
+  position: absolute;
+  right: 0px;
+  width: 75%;
+}
+.detail-img {
+  position: relative;
+}
+.artist-detail-name {
+  /* color: black; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+}
+.artist-detail-name h1 {
+  font-size: 60px;
+}
+.artist-detail-name h2 {
+  font-size: 40px;
+}
+
+/*ArtistDetail detail-intro */
+.detail-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+.detail-intro-text {
+  width: 80%;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.detail-intro-title {
+  padding-top: 20px;
+  font-weight: 900;
+  font-size: 50px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 121.3%;
+  /* or 53px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.155em;
+  text-transform: lowercase;
+}
+.detail-intro-body {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 126.8%;
+  /* or 22px */
+
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+.detail-intro-text h6 {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.detail-intro-title-6 {
+  font-size: 18px;
+}
+
+/* icon */
+.size280 {
+  width: 280px;
+}
+.artistHead {
+  background-image: url("./artist_head.png");
+  height: 50%;
+  background-repeat: no-repeat;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+  /* align-items: flex-end; */
+}
+.collect,
+.share {
+  margin: 5px;
+}
+.FaHeart_icon,
+.share_icon {
+  width: 36px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.text-container {
+  text-align: center;
+  justify-content: center;
+}
+.detail-intro-img {
+  width: 40vw;
+  max-height: 800px;
+  object-fit:contain;
+}
+
+@media screen and (max-width: 1400px) {
+  .detail-intro-text {
+    line-height: 30px;
+  }
+  .detail-intro-text h3,
+  .detail-intro-title {
+    font-size: 32px;
+  }
+  
+}
+@media screen and (max-width: 980px) {
+  .artist-detail-namet- h1 {
+    font-size: 50px;
+  }
+  .artist-detail-name h2 {
+    font-size: 40px;
+  }
+  /* 換一行 */
+  .detail-main {
+    display: block;
+    flex-direction: column;
+  }
+  .detail-intro-text {
+    margin: 30px;
+    padding: 0px 50px;
+  }
+  .detail-intro-img {
+    width: 80%;    
+    object-fit:contain;
+  }
+  .detail-intro-title {
+    font-size: 30px;
+  }
+  .detail-intro-text h6,
+  .detail-intro-title-6 {
+    font-size: 16px;
+  }
+  .detail-intro-img-body {   
+    text-align: center;
+    justify-content: center;
+    object-fit:cover;    
+    width: 100%;    
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .aside-pic {
+    height: 300px;
+  }
+  .aside {
+    width: 110%;
+  }
+  .detail-intro-text {
+    padding: 0px;
+  }
+  .artist-detail-name h1 {
+    font-size: 40px;
+  }
+  .artist-detail-name h2 {
+    font-size: 30px;
+  }
+  .detail-intro-img {
+    height: 100%;
+  }
+  .detail-intro-img-body {
+    text-align: center;
+    justify-content: center;
+  }
+}

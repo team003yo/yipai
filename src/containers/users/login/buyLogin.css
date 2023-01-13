@@ -1,11 +1,10 @@
-
-.flex {
+._buyLogin_flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.flex-re{
+._buyLogin_flex-re {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,14 +12,23 @@
     position: relative;
     justify-content: flex-end;
 }
-.h3{
+._buyLogin_h3 {
     margin: 0.5em 0 0.5em 0;
+    font-size: var(--text-h1);
 }
-.buyerIcon {
+._buyLogin_h4 {
+    margin: 0.6em 0 0.6em 1em;
+    font-weight: bold;
+    font-size: var(--text-h2);
+}
+._buyLogin_buyerIcon {
     background-image: url(../image/buyerIcon.svg);
-    
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    background-position: center center;
 }
-.BG {
+._buyLogin_BG {
     background-image: url(../image/LoginBG.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -28,30 +36,29 @@
     height: 100vh;
     position: relative;
 }
-.buyerbox {
+._buyLogin_buyerbox {
     position: absolute;
     width: 32em;
     height: 40em;
     top: calc(50% - 20em);
     left: calc(50% - 16em);
-    background-color:var(--color-bg);
-
+    background-color: var(--color-bg);
 }
-.inputBox{
+._buyLogin_inputBox {
     background: var(--color-text);
     border: 0em;
     width: 15em;
     height: 3em;
     font-size: var(--text-h2);
 }
-.inputBox2{
-    background: #EAEAEA;
+._buyLogin_inputBox2 {
+    background: #eaeaea;
     border: 0em;
     width: 15em;
     height: 3em;
     font-size: var(--text-h2);
 }
-.btn{
+._buyLogin_btn {
     background: var(--color-text);
     border: 0em;
     width: 15em;
@@ -60,7 +67,7 @@
     margin-bottom: 0.5em;
     font-size: var(--text-h2);
 }
-.headIcon{
+._buyLogin_headIcon {
     background-image: url(../image/addFileIcon.svg);
     background-repeat: no-repeat;
     width: 42px;
@@ -70,10 +77,10 @@
     right: 0;
     cursor: pointer;
 }
-.headImg{
+._buyLogin_headImg {
     z-index: 0;
 }
-.buyerControlBtn{
+._buyLogin_buyerControlBtn {
     border: 0;
     color: var(--color-bg);
     background-color: #000;
@@ -81,8 +88,35 @@
     height: 3em;
     padding: 0 1em 0 1em;
     border-radius: 0.6em;
-    margin:0 1em 0 1em;
+    margin: 0 1em 0 1em;
 }
-:active.buyerControlBtn{
+:active._buyLogin_buyerControlBtn {
     background-color: var(--color-text);
+}
+._buyLogin_ChangeControlBtn {
+    border: 0;
+    color: var(--color-bg);
+    background-color: #000;
+    width: auto;
+    padding: 0.5em;
+    border-radius: 0.6em;
+}
+:active._buyLogin_ChangeControlBtn {
+    background-color: var(--color-text);
+}
+._buyLogin_Titlebox {
+    background-color: var(--color-text);
+    margin: 2em 0 0 0;
+    /* width: 35em; */
+    padding: 0 2em 0 2em;
+    height: 3.5em;
+}
+._buyLogin_Contentbox{
+    background-color: #eaeaea;
+    padding: 0 2em 0 2em;
+    /* width: 35em; */
+    height: 20em;
+}
+._buyLogin_SettingInput{
+    width: 8em;
 }

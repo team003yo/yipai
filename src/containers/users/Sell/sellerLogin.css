@@ -1,18 +1,21 @@
-
-.flex {
+._sellerLogin_flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.h3{
+._sellerLogin_h3 {
+    font-size: var(--text-h1);
     margin: 0.5em 0 0.5em 0;
 }
-.sellerIcon {
+._sellerLogin_sellerIcon {
     background-image: url(../image/sellerIcon.svg);
-    
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    background-position: center center;
 }
-.BG {
+._sellerLogin_BG {
     background-image: url(../image/LoginBG.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -20,30 +23,29 @@
     height: 100vh;
     position: relative;
 }
-.sellerbox {
+._sellerLogin_sellerbox {
     position: absolute;
     width: 32em;
     height: 40em;
     top: calc(50% - 20em);
     left: calc(50% - 16em);
-    background-color:var(--color-text);
-
+    background-color: var(--color-text);
 }
-.inputBox{
-    background: #EAEAEA;
+._sellerLogin_inputBox {
+    background: #eaeaea;
     border: 0em;
     width: 15em;
     height: 3em;
     font-size: var(--text-h2);
 }
-.inputBox2{
+._sellerLogin_inputBox2 {
     background: #fff;
     border: 0em;
     width: 15em;
     height: 3em;
     font-size: var(--text-h2);
 }
-.btn{
+._sellerLogin_btn {
     background: var(--color-bg);
     border: 0em;
     width: 15em;
