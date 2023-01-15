@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import BuyBotton from "./BuyBotton";
+// 帳號設定
 function BuyerSettings(params) {
     ReactDOM.render(
         <div>
@@ -216,8 +217,27 @@ function BuyerSettings(params) {
         document.getElementById("userDown")
     );
 }
-function PurchaseHistory(params) {
-    ReactDOM.render(<div></div>, document.getElementById("userDown"));
+// 我的訂單選項
+function MyOrder(params) {
+    ReactDOM.render(<div>
+        <table>
+            <tr>
+                <th>訂單編號</th>
+                <th>出貨狀態</th>
+                <th>金額</th>
+                <th>訂購時間</th>
+                <th>訂購品項</th>
+                <th><BuyBotton text="詳細資訊"/></th>
+            </tr>
+            <tr>
+                <td>1002939311112</td>
+                <td>未出貨</td>
+                <td>109,800</td>
+                <td>2022/11/02</td>
+
+            </tr>
+        </table>
+    </div>, document.getElementById("userDown"));
 }
 
-export { BuyerSettings, PurchaseHistory };
+export { BuyerSettings, MyOrder };

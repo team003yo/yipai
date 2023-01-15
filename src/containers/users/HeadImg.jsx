@@ -1,6 +1,6 @@
 import React from "react";
 import BuyBotton from "./BuyBotton";
-import { BuyerSettings } from "./userOnclick";
+import { BuyerSettings,MyOrder } from "./userOnclick";
 
 import buyerImg from "./image/buyHead.png";
 import SettingIcon from "./image/settingIcon.svg";
@@ -35,7 +35,7 @@ function HeadImg(user) {
                     onClick={BuyerSettings}
                 />
                 <BuyBotton text='購買記錄' src={HistoryIcon} />
-                <BuyBotton text='我的訂單' src={OrderIcon} />
+                <BuyBotton text='我的訂單' src={OrderIcon} onClick={MyOrder}/>
                 <BuyBotton text='我喜愛的藝術家' src={Loveartist} />
                 <BuyBotton text='我喜愛的藝術品' src={Loveart} />
             </div>
