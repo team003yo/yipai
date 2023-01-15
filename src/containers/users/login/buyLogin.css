@@ -4,6 +4,12 @@
     align-items: center;
     justify-content: center;
 }
+._buyLogin_flex_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 ._buyLogin_flex-re {
     display: flex;
     flex-direction: column;
@@ -11,6 +17,9 @@
     justify-content: center;
     position: relative;
     justify-content: flex-end;
+}
+._buyLogin_p2{
+    padding-top: 2em;
 }
 ._buyLogin_h3 {
     margin: 0.5em 0 0.5em 0;
@@ -47,7 +56,7 @@
 ._buyLogin_inputBox {
     background: var(--color-text);
     border: 0em;
-    width: 15em;
+    width: 18em;
     height: 3em;
     font-size: var(--text-h2);
 }
@@ -98,7 +107,7 @@
     color: var(--color-bg);
     background-color: #000;
     width: auto;
-    padding: 0.5em;
+    padding: 0.5em 2em ;
     border-radius: 0.6em;
 }
 :active._buyLogin_ChangeControlBtn {
@@ -107,16 +116,17 @@
 ._buyLogin_Titlebox {
     background-color: var(--color-text);
     margin: 2em 0 0 0;
-    /* width: 35em; */
+    width: 35em;
     padding: 0 2em 0 2em;
     height: 3.5em;
 }
 ._buyLogin_Contentbox{
     background-color: #eaeaea;
     padding: 0 2em 0 2em;
-    /* width: 35em; */
-    height: 20em;
+    width: 35em;
+    height: 28em;
 }
 ._buyLogin_SettingInput{
     width: 8em;
+    border: 0.5em;
 }
