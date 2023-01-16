@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import BuyBotton from "./BuyBotton";
+
 // 帳號設定
 function BuyerSettings(params) {
     ReactDOM.render(
@@ -223,6 +223,35 @@ function BuyerSettings(params) {
         document.getElementById("userDown")
     );
 }
+
+// 購買記錄選項
+function PurchaseHistory(params) {
+    ReactDOM.render(<div>
+        <div style={{ overflowX: "auto" }}>
+                <table className='_buyLogin_table'>
+                    <thead className="_buyLogin_tline">
+                        <tr className='_buyLogin_td'>
+                            <th>訂單編號</th>
+                            <th>金額</th>
+                            <th>訂購時間</th>
+                            <th>訂購品項</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
+                            <td>1002939311112</td>
+                            <td>12,800</td>
+                            <td>2022/11/02</td>
+                            <td>1</td>
+                            <td>
+                                <button className="_buyLogin_tableBtn">詳細資訊</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>,document.getElementById("userDown"));}
+
 // 我的訂單選項
 function MyOrder(params) {
     ReactDOM.render(
@@ -251,7 +280,7 @@ function MyOrder(params) {
                         </tr>
                         <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
                             <td>100293931223</td>
-                            <td>已出貨</td>
+                            <td>未出貨</td>
                             <td>10,800</td>
                             <td>2022/12/02</td>
                             <td>2</td>
@@ -267,4 +296,8 @@ function MyOrder(params) {
     );
 }
 
-export { BuyerSettings, MyOrder };
+
+function FavoriteArtist(params) {
+    ReactDOM.render(<div></div>,document.getElementById("userDown"));}
+
+export { BuyerSettings, MyOrder ,PurchaseHistory,FavoriteArtist };
