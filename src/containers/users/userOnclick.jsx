@@ -21,7 +21,13 @@ function BuyerSettings(params) {
                             帳戶設定
                         </div>
                     </div>
-                    <div className='_buyLogin_Contentbox _buyLogin_flex' style={{alignItems:"unset",justifyContent: "space-between"}}>
+                    <div
+                        className='_buyLogin_Contentbox _buyLogin_flex'
+                        style={{
+                            alignItems: "unset",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         {/* 左邊表單 */}
                         <form method='post'>
                             <div className=' _buyLogin_flex_content _buyLogin_p2'>
@@ -219,25 +225,46 @@ function BuyerSettings(params) {
 }
 // 我的訂單選項
 function MyOrder(params) {
-    ReactDOM.render(<div>
-        <table>
-            <tr>
-                <th>訂單編號</th>
-                <th>出貨狀態</th>
-                <th>金額</th>
-                <th>訂購時間</th>
-                <th>訂購品項</th>
-                <th><BuyBotton text="詳細資訊"/></th>
-            </tr>
-            <tr>
-                <td>1002939311112</td>
-                <td>未出貨</td>
-                <td>109,800</td>
-                <td>2022/11/02</td>
-
-            </tr>
-        </table>
-    </div>, document.getElementById("userDown"));
+    ReactDOM.render(
+        <div>
+            <div style={{ overflowX: "auto" }}>
+                <table className='_buyLogin_table'>
+                    <thead className="_buyLogin_tline">
+                        <tr className='_buyLogin_td'>
+                            <th>訂單編號</th>
+                            <th>出貨狀態</th>
+                            <th>金額</th>
+                            <th>訂購時間</th>
+                            <th>訂購品項</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
+                            <td>1002939311112</td>
+                            <td>未出貨</td>
+                            <td>109,800</td>
+                            <td>2022/11/02</td>
+                            <td>3</td>
+                            <td>
+                                <button className="_buyLogin_tableBtn">詳細資訊</button>
+                            </td>
+                        </tr>
+                        <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
+                            <td>100293931223</td>
+                            <td>已出貨</td>
+                            <td>10,800</td>
+                            <td>2022/12/02</td>
+                            <td>2</td>
+                            <td>
+                                <button className="_buyLogin_tableBtn">詳細資訊</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>,
+        document.getElementById("userDown")
+    );
 }
 
 export { BuyerSettings, MyOrder };
