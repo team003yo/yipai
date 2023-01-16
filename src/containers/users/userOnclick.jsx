@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Art from "./Art";
+import ArtistImg from "./image/ArtistImg.png";
+import pesnalImg from "./image/pesnalImg.png";
+import artsImg from "./image/artsImg.png";
 
 // 帳號設定
 function BuyerSettings(params) {
@@ -226,10 +230,11 @@ function BuyerSettings(params) {
 
 // 購買記錄選項
 function PurchaseHistory(params) {
-    ReactDOM.render(<div>
-        <div style={{ overflowX: "auto" }}>
+    ReactDOM.render(
+        <div>
+            <div style={{ overflowX: "auto" }}>
                 <table className='_buyLogin_table'>
-                    <thead className="_buyLogin_tline">
+                    <thead className='_buyLogin_tline'>
                         <tr className='_buyLogin_td'>
                             <th>訂單編號</th>
                             <th>金額</th>
@@ -238,54 +243,18 @@ function PurchaseHistory(params) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
+                        <tr
+                            className='_buyLogin_tr _buyLogin_tline'
+                            style={{ borderColor: "#CAB296" }}
+                        >
                             <td>1002939311112</td>
                             <td>12,800</td>
                             <td>2022/11/02</td>
                             <td>1</td>
                             <td>
-                                <button className="_buyLogin_tableBtn">詳細資訊</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    </div>,document.getElementById("userDown"));}
-
-// 我的訂單選項
-function MyOrder(params) {
-    ReactDOM.render(
-        <div>
-            <div style={{ overflowX: "auto" }}>
-                <table className='_buyLogin_table'>
-                    <thead className="_buyLogin_tline">
-                        <tr className='_buyLogin_td'>
-                            <th>訂單編號</th>
-                            <th>出貨狀態</th>
-                            <th>金額</th>
-                            <th>訂購時間</th>
-                            <th>訂購品項</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
-                            <td>1002939311112</td>
-                            <td>未出貨</td>
-                            <td>109,800</td>
-                            <td>2022/11/02</td>
-                            <td>3</td>
-                            <td>
-                                <button className="_buyLogin_tableBtn">詳細資訊</button>
-                            </td>
-                        </tr>
-                        <tr className='_buyLogin_tr _buyLogin_tline' style={{borderColor:"#CAB296"}}>
-                            <td>100293931223</td>
-                            <td>未出貨</td>
-                            <td>10,800</td>
-                            <td>2022/12/02</td>
-                            <td>2</td>
-                            <td>
-                                <button className="_buyLogin_tableBtn">詳細資訊</button>
+                                <button className='_buyLogin_tableBtn'>
+                                    詳細資訊
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -296,8 +265,121 @@ function MyOrder(params) {
     );
 }
 
+// 我的訂單選項
+function MyOrder(params) {
+    ReactDOM.render(
+        <div>
+            <div style={{ overflowX: "auto" }}>
+                <table className='_buyLogin_table'>
+                    <thead className='_buyLogin_tline'>
+                        <tr className='_buyLogin_td'>
+                            <th>訂單編號</th>
+                            <th>出貨狀態</th>
+                            <th>金額</th>
+                            <th>訂購時間</th>
+                            <th>訂購品項</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            className='_buyLogin_tr _buyLogin_tline'
+                            style={{ borderColor: "#CAB296" }}
+                        >
+                            <td>1002939311112</td>
+                            <td>未出貨</td>
+                            <td>109,800</td>
+                            <td>2022/11/02</td>
+                            <td>3</td>
+                            <td>
+                                <button className='_buyLogin_tableBtn'>
+                                    詳細資訊
+                                </button>
+                            </td>
+                        </tr>
+                        <tr
+                            className='_buyLogin_tr _buyLogin_tline'
+                            style={{ borderColor: "#CAB296" }}
+                        >
+                            <td>100293931223</td>
+                            <td>未出貨</td>
+                            <td>10,800</td>
+                            <td>2022/12/02</td>
+                            <td>2</td>
+                            <td>
+                                <button className='_buyLogin_tableBtn'>
+                                    詳細資訊
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>,
+        document.getElementById("userDown")
+    );
+}
 
+// 我喜愛的藝術家
 function FavoriteArtist(params) {
-    ReactDOM.render(<div></div>,document.getElementById("userDown"));}
+    ReactDOM.render(
+        <div>
+            {/* 橫的 */}
+            <div
+                className='_buyLogin_flex'
+                style={{ flexDirection: "row", height: "30em" }}
+            >
+                {/* 橫的 */}
+                <div
+                    className='_buyLogin_flex'
+                    style={{ flexDirection: "row", position: "relative" }}
+                >
+                    <img
+                        src={pesnalImg}
+                        alt='藝術家頁面圖'
+                        style={{ position: "absolute", left: "0", zIndex: 1 }}
+                    />
+                    <img
+                        src={ArtistImg}
+                        alt='藝術家頭貼'
+                        style={{ zIndex: 2 ,marginLeft:"3em"}}
+                    />
+                    {/* 直的 */}
+                    <div className='_buyLogin_flex' style={{ zIndex: 2,marginRight:"3em",marginLeft:"1em" }}>
+                    {/* 藝術家 */}
+                        <h5 style={{fontSize:"30px",fontStyle:"bold"}}>yannick aaron</h5>
+                        <p style={{fontSize:"18px"}}>french</p>
+                        <button className='_buyLogin_tableBtn' style={{fontSize:"18px"}}>取消關注</button>
+                    </div>
+                    {/* 作品 */}
+                    <div
+                        className='_buyLogin_flex'
+                        style={{ flexDirection: "row", zIndex: 2 }}
+                    >
+                        <Art 
+                            img={artsImg}
+                            artName="作品名稱可能會很長blablabla"
+                            artistName="作者名字也可能會長長長長長長長長"
+                            artPrice="$1000000k"
+                        />
+                        {/* 下一個藝術品 */}
+                        <Art 
+                            img={artsImg}
+                            artName="作品名稱可能會很長blablabla"
+                            artistName="作者名字也可能會長長長長長長長長"
+                            artPrice="$1000000k"
+                        />
+                        
+                    </div>
+                </div>
+                {/* 下一個藝術家??? */}
+                
+            </div>
+        </div>,
+        document.getElementById("userDown")
+    );
+}
 
-export { BuyerSettings, MyOrder ,PurchaseHistory,FavoriteArtist };
+// function FavoriteArtist(params) {
+//     ReactDOM.render(<div></div>,document.getElementById("userDown"));}
+
+export { BuyerSettings, MyOrder, PurchaseHistory, FavoriteArtist };
