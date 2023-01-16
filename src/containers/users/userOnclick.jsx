@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Art from "./Art";
+import BuyBotton from "./BuyBotton";
+
 import ArtistImg from "./image/ArtistImg.png";
 import pesnalImg from "./image/pesnalImg.png";
 import artsImg from "./image/artsImg.png";
+import buyButton from "./image/buyButton.svg";
 
 // 帳號設定
 function BuyerSettings(params) {
@@ -378,8 +381,46 @@ function FavoriteArtist(params) {
         document.getElementById("userDown")
     );
 }
+// 我喜愛的藝術品
+function FavoriteArts(params) {
+    ReactDOM.render(
+    <div>
+        {/* 直的排列作品 */}
+        <div className="_buyLogin_flex" style={{marginTop:"1em",alignItems: "stretch"}}>
+            {/* 橫的盤列圖片文字 */}
+            <div className="_buyLogin_flex_content" style={{justifyContent: "space-evenly",width:"50em"}}>
+                <img src={artsImg} alt="藝術品" style={{display:"flex"}}/>
+                {/* 直的排列文字 */}
+                <div className="_buyLogin_flex" style={{alignItems: "flex-start"}}>
+                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>海報，放輕鬆</h5>
+                    <h5 style={{fontSize:"29px",flexGrow: "2"}}>商品尺寸：50x40</h5>
+                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>價格：16,900</h5>
+                </div>
+                <BuyBotton 
+                    text="購買"
+                    src={buyButton}
+                    alt="ICon"
+                    btnStyle={{display:"flex"}}
+                />
+            </div>
+            {/* 下一個作品 */}
+            {/* 橫的盤列圖片文字 */}
+            <div className="_buyLogin_flex_content" style={{justifyContent: "space-evenly",width:"50em",marginTop:"1em"}}>
+                <img src={artsImg} alt="藝術品" style={{display:"flex"}}/>
+                {/* 直的排列文字 */}
+                <div className="_buyLogin_flex" style={{alignItems: "flex-start"}}>
+                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>海報，放輕鬆</h5>
+                    <h5 style={{fontSize:"29px",flexGrow: "2"}}>商品尺寸：50x40</h5>
+                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>價格：16,900</h5>
+                </div>
+                <BuyBotton 
+                    text="購買"
+                    src={buyButton}
+                    alt="ICon"
+                    btnStyle={{display:"flex"}}
+                />
+            </div>
+        </div>
+    </div>,document.getElementById("userDown"));}
 
-// function FavoriteArtist(params) {
-//     ReactDOM.render(<div></div>,document.getElementById("userDown"));}
-
-export { BuyerSettings, MyOrder, PurchaseHistory, FavoriteArtist };
+export { BuyerSettings, MyOrder, PurchaseHistory, FavoriteArtist ,FavoriteArts};
