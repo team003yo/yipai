@@ -12,14 +12,14 @@ import Loveart from "./image/loveartIcon.svg";
 function HeadImg(user) {
     return (
         <div className='_buyLogin_flex'>
-            <div className='_buyLogin_flex-re'>
+            <div className='_buyLogin_flex-re' style={{marginTop: "1em"}}>
                 <img src={buyerImg} alt='buyHead' className='_buyLogin_headImg' />
                 <label className='_buyLogin_headIcon'>
                     {/* 增加檔案 */}
                     <input type='file' style={{ display: "none" }}></input>
                 </label>
             </div>
-            <h3>您好{user.name}你現在是藝拍小夥伴啦</h3>
+            <h3 style={{margin: "0.5em 0"}}>您好{user.name}你現在是藝拍小夥伴啦</h3>
             <div
                 className='_buyLogin_flex'
                 style={{
