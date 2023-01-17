@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Art from "./Art";
-import BuyBotton from "./BuyBotton";
+import ArtList from "./ArtList";
 
 import ArtistImg from "./image/ArtistImg.png";
 import pesnalImg from "./image/pesnalImg.png";
 import artsImg from "./image/artsImg.png";
-import buyButton from "./image/buyButton.svg";
 
-// 帳號設定
+// 帳號設定選項
 function BuyerSettings(params) {
     ReactDOM.render(
         <div>
@@ -344,83 +343,99 @@ function FavoriteArtist(params) {
                     <img
                         src={ArtistImg}
                         alt='藝術家頭貼'
-                        style={{ zIndex: 2 ,marginLeft:"3em"}}
+                        style={{ zIndex: 2, marginLeft: "3em" }}
                     />
                     {/* 直的 */}
-                    <div className='_buyLogin_flex' style={{ zIndex: 2,marginRight:"3em",marginLeft:"1em" }}>
-                    {/* 藝術家 */}
-                        <h5 style={{fontSize:"30px",fontStyle:"bold"}}>yannick aaron</h5>
-                        <p style={{fontSize:"18px"}}>french</p>
-                        <button className='_buyLogin_tableBtn' style={{fontSize:"18px"}}>取消關注</button>
+                    <div
+                        className='_buyLogin_flex'
+                        style={{
+                            zIndex: 2,
+                            marginRight: "3em",
+                            marginLeft: "1em",
+                        }}
+                    >
+                        {/* 藝術家 */}
+                        <h5 style={{ fontSize: "30px", fontStyle: "bold" }}>
+                            yannick aaron
+                        </h5>
+                        <p style={{ fontSize: "18px" }}>french</p>
+                        <button
+                            className='_buyLogin_tableBtn'
+                            style={{ fontSize: "18px" }}
+                        >
+                            取消關注
+                        </button>
                     </div>
                     {/* 作品 */}
                     <div
                         className='_buyLogin_flex'
                         style={{ flexDirection: "row", zIndex: 2 }}
                     >
-                        <Art 
+                        <Art
                             img={artsImg}
-                            artName="作品名稱可能會很長blablabla"
-                            artistName="作者名字也可能會長長長長長長長長"
-                            artPrice="$1000000k"
+                            artName='作品名稱可能會很長blablabla'
+                            artistName='作者名字也可能會長長長長長長長長'
+                            artPrice='$1000000k'
                         />
                         {/* 下一個藝術品 */}
-                        <Art 
+                        <Art
                             img={artsImg}
-                            artName="作品名稱可能會很長blablabla"
-                            artistName="作者名字也可能會長長長長長長長長"
-                            artPrice="$1000000k"
+                            artName='作品名稱可能會很長blablabla'
+                            artistName='作者名字也可能會長長長長長長長長'
+                            artPrice='$1000000k'
                         />
-                        
                     </div>
                 </div>
                 {/* 下一個藝術家??? */}
-                
             </div>
         </div>,
         document.getElementById("userDown")
     );
 }
+
 // 我喜愛的藝術品
 function FavoriteArts(params) {
     ReactDOM.render(
-    <div>
-        {/* 直的排列作品 */}
-        <div className="_buyLogin_flex" style={{marginTop:"1em",alignItems: "stretch"}}>
-            {/* 橫的盤列圖片文字 */}
-            <div className="_buyLogin_flex_content" style={{justifyContent: "space-evenly",width:"50em"}}>
-                <img src={artsImg} alt="藝術品" style={{display:"flex"}}/>
-                {/* 直的排列文字 */}
-                <div className="_buyLogin_flex" style={{alignItems: "flex-start"}}>
-                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>海報，放輕鬆</h5>
-                    <h5 style={{fontSize:"29px",flexGrow: "2"}}>商品尺寸：50x40</h5>
-                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>價格：16,900</h5>
-                </div>
-                <BuyBotton 
-                    text="購買"
-                    src={buyButton}
-                    alt="ICon"
-                    btnStyle={{display:"flex"}}
+        <div>
+            {/* 直的排列作品列 */}
+            <div
+                className='_buyLogin_flex'
+                style={{
+                    marginTop: "1em",
+                    alignItems: "stretch",
+                }}
+            >
+                {/* 橫排的單個作品 */}
+                <ArtList
+                    artsImg={artsImg}
+                    artname='海報，放輕鬆'
+                    artsize='50X40'
+                    artprice='20,000'
+                />
+                {/* 下一個作品 */}
+                <ArtList
+                    artsImg={artsImg}
+                    artname='海報，放輕鬆'
+                    artsize='50X40'
+                    artprice='20,000'
+                />
+                {/* 下一個作品 */}
+                <ArtList
+                    artsImg={artsImg}
+                    artname='海報，放輕鬆'
+                    artsize='50X40'
+                    artprice='20,000'
                 />
             </div>
-            {/* 下一個作品 */}
-            {/* 橫的盤列圖片文字 */}
-            <div className="_buyLogin_flex_content" style={{justifyContent: "space-evenly",width:"50em",marginTop:"1em"}}>
-                <img src={artsImg} alt="藝術品" style={{display:"flex"}}/>
-                {/* 直的排列文字 */}
-                <div className="_buyLogin_flex" style={{alignItems: "flex-start"}}>
-                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>海報，放輕鬆</h5>
-                    <h5 style={{fontSize:"29px",flexGrow: "2"}}>商品尺寸：50x40</h5>
-                    <h5 style={{fontSize:"29px",flexGrow: "1"}}>價格：16,900</h5>
-                </div>
-                <BuyBotton 
-                    text="購買"
-                    src={buyButton}
-                    alt="ICon"
-                    btnStyle={{display:"flex"}}
-                />
-            </div>
-        </div>
-    </div>,document.getElementById("userDown"));}
+        </div>,
+        document.getElementById("userDown")
+    );
+}
 
-export { BuyerSettings, MyOrder, PurchaseHistory, FavoriteArtist ,FavoriteArts};
+export {
+    BuyerSettings,
+    MyOrder,
+    PurchaseHistory,
+    FavoriteArtist,
+    FavoriteArts,
+};

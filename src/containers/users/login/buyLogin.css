@@ -140,6 +140,10 @@
 }
 ._buyLogin_tr {   
     margin: 4em 0;
+    background:none;
+}
+:hover._buyLogin_tr{
+    background:#D9D9D9;
 }
 ._buyLogin_tline{
     border-bottom: 1px  solid black;
@@ -153,4 +157,28 @@
     /* margin: 0 1em 0 1em; */
     line-height: 2em;
 }
-
+._buyLogin_deleteBtn{
+    background-image: url(../image/deleteButton.svg);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    border: 0;
+}
+._buyLogin_artbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50em;
+    border: 1px solid #000;
+    padding: 1em 2em;
+    margin-top: 1.5em;
+    background:none;
+}
+:hover._buyLogin_artbox{
+    background: #D9D9D9;
+}
