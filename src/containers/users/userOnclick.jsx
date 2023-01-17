@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ArtistPage from "./ArtistPage";
 import Art from "./Art";
 import ArtList from "./ArtList";
 
@@ -330,42 +331,18 @@ function FavoriteArtist(params) {
                 className='_buyLogin_flex'
                 style={{ flexDirection: "row", height: "30em" }}
             >
-                {/* 橫的 */}
+                {/* 一個藝術家 */}
                 <div
                     className='_buyLogin_flex'
                     style={{ flexDirection: "row", position: "relative" }}
                 >
-                    <img
-                        src={pesnalImg}
-                        alt='藝術家頁面圖'
-                        style={{ position: "absolute", left: "0", zIndex: 1 }}
+                    <ArtistPage
+                        pesnalImg={pesnalImg}
+                        artistImg={ArtistImg}
+                        artisrName='yannick aaron'
+                        artisrCountry='french'
                     />
-                    <img
-                        src={ArtistImg}
-                        alt='藝術家頭貼'
-                        style={{ zIndex: 2, marginLeft: "3em" }}
-                    />
-                    {/* 直的 */}
-                    <div
-                        className='_buyLogin_flex'
-                        style={{
-                            zIndex: 2,
-                            marginRight: "3em",
-                            marginLeft: "1em",
-                        }}
-                    >
-                        {/* 藝術家 */}
-                        <h5 style={{ fontSize: "30px", fontStyle: "bold" }}>
-                            yannick aaron
-                        </h5>
-                        <p style={{ fontSize: "18px" }}>french</p>
-                        <button
-                            className='_buyLogin_tableBtn'
-                            style={{ fontSize: "18px" }}
-                        >
-                            取消關注
-                        </button>
-                    </div>
+
                     {/* 作品 */}
                     <div
                         className='_buyLogin_flex'
@@ -386,7 +363,6 @@ function FavoriteArtist(params) {
                         />
                     </div>
                 </div>
-                {/* 下一個藝術家??? */}
             </div>
         </div>,
         document.getElementById("userDown")
