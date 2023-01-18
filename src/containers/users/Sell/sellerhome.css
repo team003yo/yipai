@@ -4,12 +4,11 @@
 }
 .sellerhome__main{
     margin: 10vh auto;
-    width: 60em;
 }
 
 /* 側欄 */
 .sellerhome__sidebar{
-    width: 20em;
+    width: 350px;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -100,19 +99,19 @@
 }
 .sellerpage__title{
     background-color: #C9D7E3;
-    padding: 0.5em 1em;
+    padding: 20px;
     font-weight: 900;
 }
 .sellerpage__main{
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 background-color: #EAEAEA;
-/* height: 60vh; */
-padding: 3em 2em;
+height: 60vh;
+padding-top: 20px;
 }
 .sellerpage__main__left{
-    /* width: 40vh; */
-    /* padding-top: 40px; */
+    width: 40vh;
+    padding-top: 40px;
 }
 .sellerpage__main__left__name{
     display: flex;
@@ -123,9 +122,7 @@ padding: 3em 2em;
     align-items: flex-start;
 }
 .sellerpage__main__right{
-    /* width: 30vh; */
-    /* padding-top: 40px; */
-
+    width: 30vh;
 }
 .sellerpage__main__right__name{
     display: flex;
@@ -150,10 +147,10 @@ padding: 3em 2em;
   align-items: flex-start;
 }
 .SellerUpload__name__input p,input{
-    margin: 1em;
+    margin: 10px;
 }
 .SellerUpload__name__textarea p,textarea{
-    margin: 0.5em;
+    margin: 10px;
 }
 /* money */
 .SellerUpload__money{
@@ -215,17 +212,11 @@ padding: 3em 2em;
     /* right: 0; */
     cursor: pointer;
 }
-.SellerUpload__attributes__select_color{
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    border: 0;
-    margin-left: 0.5em;
-}
+
 /* SellerProduct  */
 /* SellerProduct  */
 #SellerProduct__aside{
-    /* float: right; */
+    float: right;
   }
   ul.SellerProduct__aside-list{
      display: flex;
@@ -253,9 +244,10 @@ padding: 3em 2em;
       vertical-align:  bottom;
   }
   .SellerProduct__card-img-top{
-      max-width:15em;
-      height: 15em;
+      max-width:90%;
+      height: 300px;
       object-fit:contain;
+      padding: 20px;
   }
   
   .SellerProduct__card-pic{
@@ -264,27 +256,15 @@ padding: 3em 2em;
   }
   
   .SellerProduct__productId{
-      /* padding: 5px; */
+      width: 300px;
+      padding: 5px;
       margin: 0;
       /* text-align:justify; */
     }
   .SellerProduct__article,.SellerProduct__price{
       margin: 0;
   }
-  .SellerProduct_art{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0.4em;
-  }
-.SellerProduct_artList{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.SellerProduct__card-text{
-    width: 15em;
-}
+
 /* sellerorder */
 .sellerorder__main{
     background-color: #F9F7F2;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,Login,Sell,ArtistBlog ,SpaceBlog,News, NewsId, ProductsDetail,ArtistDetail,SpaceDetail } from './containers';
+import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,CartPart2,Login,Sell,ArtistBlog ,SpaceBlog,News, NewsId, ProductsDetail,ArtistDetail,SpaceDetail } from './containers';
 import { Brand, Navbar, Carousel } from './components';
 
 import './App.css';
@@ -34,6 +34,7 @@ function App() {
             <Route path='/users/BuyLogin' element={<Login />} />            
             <Route path='/users/SellLogin' element={<SellLogin />} />            
             <Route path='cart' element={<Cart />} />
+            <Route path='/cart/CartPart2' element={<CartPart2 />} />
             <Route path="/news/newsId" element={<NewsId />} />
             <Route path="news" element={<News />} />
           </Routes>  

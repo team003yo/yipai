@@ -1,0 +1,78 @@
+#News__container-fluid{
+    width:1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.News__banner {
+    width: 100%;
+    height: 100vh;
+}
+.News__banner__img {
+    height: 100%;
+    background-image: url("../../assets/news__banner.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+#News__section {
+    font-family: var(--font-family);
+    display: grid; /* 1.設定 display 為 grid */
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+                         "News__nav "
+                         "News__main ";
+    grid-template-rows: 100px 3000px 50px; /* 3.各區域 寬高設置 */
+    grid-template-columns:  1fr ;
+  }
+  #News__section > #News__nav {
+    grid-area: News__nav;
+  }
+  #News__section > #News__main {
+    grid-area: News__main;
+  }
+  .News__none550{
+    margin-left: 40px;
+  }
+
+  .News__button{
+    float: right;
+    margin-right: 50px;
+  }
+
+  .News__main-wrap{
+    padding: 50px;
+    width: 100%;
+    margin: 0px auto;
+    column-count:3 ;
+    /*欄數*/
+    column-gap: 50px;
+    /*每欄間隔*/
+}
+.News__newsId{
+    margin-top: 10px;
+}
+.News__img-id-wrap{
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0 auto 5px;
+    break-inside: avoid;
+        /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+}
+.News__card-img-top{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.News__article{
+    margin-bottom: 5px;
+}
+.News__text{
+height: 50px;
+overflow: hidden;
+ text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+}
+
