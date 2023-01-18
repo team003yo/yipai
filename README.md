@@ -6,6 +6,21 @@
 
 幻燈片功能請載 npm install react-responsive-carousel --save
 
+拉條功能 #product slider
+
+npm install @mui/material @emotion/react @emotion/styled
+
+npm install @mui/base
+
+npm install @mui/system @emotion/react @emotion/styled
+
+npm install @mui/material @mui/styled-engine-sc styled-components
+
+用法請參考
+
+https://mui.com/material-ui/react-slider/
+
+https://github.com/mui/material-ui/tree/v5.11.4
 
 
 如果要套入寫好的元件請在components或containers的index.js裡寫上 export { default as 要加的檔案名 } from './檔案路徑' ex:export { default as Article } from './article/Article'
