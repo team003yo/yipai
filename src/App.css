@@ -3,10 +3,14 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+
 }
 
 body {
   background: var(--color-bg);
+
+  min-width: 400px;
+
 }
 
 a {

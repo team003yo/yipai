@@ -8,6 +8,7 @@ export { default as About } from './about/About';
 export { default as Artist } from './artist/Artist';
 export { default as Users } from './users/Users';
 export { default as Cart } from './cart/Cart';
+export { default as CartPart2} from './cart/CartPart2';
 export { default as Login } from './users/login/Login';
 export { default as ArtistBlog } from './airistblog/Artistblog';
 export { default as SpaceBlog } from './spaceBlog/SpaceBlog';

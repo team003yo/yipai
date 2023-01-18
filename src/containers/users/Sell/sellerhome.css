@@ -1,0 +1,305 @@
+.font-family{
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+.sellerhome__main{
+    margin: 10vh auto;
+}
+
+/* 側欄 */
+.sellerhome__sidebar{
+    width: 350px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EADCCC;
+    border-radius: 10px 0 0 10px;
+}
+.sellerhome__sidebar__center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+._sellerhome__pic{
+    position: relative;
+}
+.sellerhome__headIcon{
+    background-image: url(../image/addFileIcon.svg);
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+    z-index: 3;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    cursor: pointer;
+}
+.sellerhome__sidebar__center ul li{
+    margin: 15px;
+    font-size: 1.3rem;
+} 
+.sellerhome__sidebar__center ul li button{
+    border: transparent;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    padding: 5px 50px;
+    background-color: #EADCCC;
+} 
+
+/* @media screen and (max-width: 1440px) {
+    .SellerFrontPage__main__section__todolist ul li{
+        padding: 20px 40px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .SellerFrontPage__main__section__todolist ul li{
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width: 700px) {   
+}
+@media screen and (max-width: 550px) {  
+} */
+
+
+/* SellerFrontPage */
+.SellerFrontPage__main__section__news h2{
+    padding: 30px;
+}
+.SellerFrontPage__main__section__news p{
+    background-color: #C9D7E3;
+    padding: 25px 50px;
+}
+.SellerFrontPage__main__section__todolist h2{
+    padding: 30px;
+}
+.SellerFrontPage__main__section__todolist ul{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.SellerFrontPage__main__section__todolist ul li{
+    width: 10rem;
+    height: 6rem;
+    background-color: #EAEAEA;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space:nowrap;
+    margin: 0px 5px;
+}
+
+/* SellerPage */
+.sellerpage{
+    width: 60vw;
+    margin: auto;
+}
+.sellerpage__title{
+    background-color: #C9D7E3;
+    padding: 20px;
+    font-weight: 900;
+}
+.sellerpage__main{
+display: flex;
+justify-content: space-around;
+background-color: #EAEAEA;
+height: 60vh;
+padding-top: 20px;
+}
+.sellerpage__main__left{
+    width: 40vh;
+    padding-top: 40px;
+}
+.sellerpage__main__left__name{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.sellerpage__main__right{
+    width: 30vh;
+}
+.sellerpage__main__right__name{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+
+
+/* SellerUpload */
+
+/* name */
+.SellerUpload__name{
+    margin: 0 15px 15px 0px;
+    width: 35vw;
+}
+.SellerUpload__name__input ,.SellerUpload__name__textarea{
+  display: flex;
+  align-items: flex-start;
+}
+.SellerUpload__name__input p,input{
+    margin: 10px;
+}
+.SellerUpload__name__textarea p,textarea{
+    margin: 10px;
+}
+/* money */
+.SellerUpload__money{
+    margin: 0 10px 10px 0px;
+    width: 20vw;
+}
+.SellerUpload__money__input{
+    display: flex;
+    align-items: flex-start;
+}
+.SellerUpload__money__input p,input{
+    margin: 10px;
+}
+/* kind */
+.SellerUpload__kind{
+    margin: 0 15px 30px 0px;
+    width: 30vw;
+}
+.SellerUpload__kind__select{
+    display: flex;
+    align-items: flex-start;
+}
+.SellerUpload__kind__select p,select{
+    margin: 10px;
+}
+.SellerUpload__kind__left{
+    margin-right: 10px;
+}
+.SellerUpload__kind__input{
+    display: flex;
+    align-items: center;
+}
+.SellerUpload__kind__right p{
+    margin: 10px;
+}
+
+/* attributes */
+.SellerUpload__attributes{
+    margin: 0 10px 10px 0px;
+    width: 25vw;
+}
+.SellerUpload__attributes__select{
+    display: flex;
+    align-items: flex-start;
+}
+.SellerUpload__attributes__select p,select{
+    margin: 10px;
+}
+
+
+
+.SellerUpload__uploadIcon {
+    background-image: url(../image/seller-upload-pic.svg);
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    z-index: 3;
+    /* position: absolute; */
+    /* right: 0; */
+    cursor: pointer;
+}
+
+/* SellerProduct  */
+/* SellerProduct  */
+#SellerProduct__aside{
+    float: right;
+  }
+  ul.SellerProduct__aside-list{
+     display: flex;
+     list-style: none;
+     padding: 0px 50px 0px 20px;
+  }
+  .SellerProduct__aside-li{
+      margin: 5px;
+  }
+  .SellerProduct__aside-searchBar{
+     
+      background-color: #EAEAEA;
+      width: 300px;
+      height: 38px;
+      border-radius: 10px;
+  }
+  .SellerProduct__aside-searchBar-icon{
+      padding: 5px;
+  }
+  .SellerProduct__total{
+      padding: 20px 0 20px 0;
+  }
+  .SellerProduct__other-product{
+      height: 300px;
+      vertical-align:  bottom;
+  }
+  .SellerProduct__card-img-top{
+      max-width:90%;
+      height: 300px;
+      object-fit:contain;
+      padding: 20px;
+  }
+  
+  .SellerProduct__card-pic{
+      vertical-align:100%;
+      text-align: justify;   
+  }
+  
+  .SellerProduct__productId{
+      width: 300px;
+      padding: 5px;
+      margin: 0;
+      /* text-align:justify; */
+    }
+  .SellerProduct__article,.SellerProduct__price{
+      margin: 0;
+  }
+
+/* sellerorder */
+.sellerorder__main{
+    background-color: #F9F7F2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 20%;
+}
+
+.sellerorder__main__text{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    height: 15%;
+}
+.sellerorder__main__text__input{
+    color: black;
+    display: flex;
+    justify-content: space-between
+}
+.sellerorder__main__table{
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    overflow:auto;
+    height: 70%;
+}
+.sellerorder__main__table th{
+    padding: 7px 20px 10px 20px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+.sellerorder__main__table td{
+    text-align: center;
+    padding: 7px 10px 10px 10px;
+    border-bottom: 1px solid gray;
+}

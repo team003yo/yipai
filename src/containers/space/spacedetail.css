@@ -1,0 +1,123 @@
+/*SpaceDetail */
+
+.space__aside-pic{
+    width: 100%;
+    background-size:cover;
+}
+.space__aside{
+    position: absolute;
+    right: 0px;
+    width: 75%;
+}
+.space__detail-img{
+    position: relative;
+}
+.space__detail-name{
+	color: black;
+	position:absolute;
+	top: 30%;
+	left:10%;
+    text-align: center;
+}
+.space__detail-name h1{
+    font-size: 70px;
+}
+.space__detail-name h2{
+    font-size: 50px;
+}
+
+/*SpaceDetail detail-map */
+.space__detail-map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+}
+.space__detail-map-text{
+    width: 60%;
+    line-height:40px;
+    margin-top: 20px;
+}
+.space__detail-map-title{
+    font-weight: 900;
+    font-size: 50px;
+}
+.space__detail-map-text h6{
+    font-size: 20px;
+    margin: 10px 0px;
+}
+.space__detail-map-title-6{
+    font-size: 18px;
+}
+
+/* icon */
+.space__icon{
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    /* align-items: flex-end; */
+}
+.space__collect,.space__share{
+    margin: 5px;  
+}
+.space__FaHeart_icon,.space__share_icon{
+    width: 36px;
+    height: 20px;
+    margin-bottom:5px;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .space__detail-map-text{
+        line-height:30px;
+    }
+    .space__detail-map-text h6, .space__detail-map-title-6{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 980px) {
+    .space__detail-name h1{
+        font-size: 50px;
+    }
+    .space__detail-name h2{
+        font-size: 40px;
+    }
+    /* 換一行 */
+    .space__detail-main{
+        display: block;
+        flex-direction: column;
+    }
+    .space__detail-map-text{
+        margin: 30px;
+        padding: 0px 50px;
+    }
+    .space__detail-map-img{
+        height: 70vh;
+        object-fit: cover;
+    } 
+    .space__detail-map-title{
+        font-size: 30px;
+    }
+    .space__detail-map-text h6,.space__detail-map-title-6{
+        font-size: 16px;
+    }
+   
+}
+  
+@media screen and (max-width: 550px) {
+    .space__aside-pic{
+        height: 300px;
+    }
+    .space__aside{
+        width: 110%;
+    }
+    .space__detail-map-text{
+        padding: 0px;
+    }
+    .space__detail-name{
+        display: none;
+    }
+    .space__detail-map-img{
+        height: 50vh;
+    }
+  }

@@ -45,7 +45,7 @@ body {
 
 .footer-floor2 {
     display: flex;
-    justify-content: space-betweenEWW;
+    justify-content: space-between;
     overflow: hidden;
     background-color: #edecea;
     position: fixed;
@@ -157,19 +157,21 @@ body {
 }
 
 .cart__products{
+  margin: 30px;
   display: flex;
   /* flex-direction: column; */
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 40rem;
-  padding-bottom: 50px;
+  height: 30rem;
+  padding-bottom: 1.3rem;
+  background: rgba(210, 209, 209, 0.3);
 
   /* background: #000; */
 }
 
 .cart__products-carousel{
   width: 350px;
-  margin: 25px 0 0 25px;
+  margin: 25px 0 0 0;
 }
 
 .cart__h4{
@@ -236,7 +238,7 @@ body {
     }
 
     .cart__products{
-      height: 60vh;
+      /* height: 60vh; */
       display: flex;
       justify-content: center;
       align-items: center;
