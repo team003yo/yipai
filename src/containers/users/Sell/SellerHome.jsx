@@ -22,7 +22,7 @@ import sellerorderIcon from '../image/sellerorderIcon.svg'
 function SellerHome() {
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex" style={{justifyContent: "space-between"}}>
         <div className="sellerhome__main" id="sellerhome__main">
         
         </div>
