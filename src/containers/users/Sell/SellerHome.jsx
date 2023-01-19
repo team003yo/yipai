@@ -7,7 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SellerButton from './SellerButton'
 
 // Onclick
+
 import { SellerFrontPage,SellerPage,SellerUpload,SellerProduct,SellerOrder } from './SellerOnclick'
+
+
 
 // icon
 import buyerImg from '../image/buyHead.png'

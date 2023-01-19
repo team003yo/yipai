@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { Footer, Blog, Header,MyContent,Space,Products,About,Artist,Users,Cart,CartPart2,Login,Sell,ArtistBlog ,SpaceBlog,News, NewsId, ProductsDetail,ArtistDetail,SpaceDetail } from './containers';
 import { Brand, Navbar, Carousel } from './components';
 
