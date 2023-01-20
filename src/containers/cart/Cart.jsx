@@ -52,7 +52,7 @@ const Cart = () => {
               <td className="table-prodcuts">
                 <img src={productsId01} alt="img" />
               </td>
-              <td className="text-center ">Mark</td>
+              <td className="text-center ">海報, 放輕鬆</td>
               <td className="text-center">1</td>
               <td className="text-center">1</td>
             </tr>
@@ -63,7 +63,7 @@ const Cart = () => {
               <td className="table-prodcuts">
                 <img src={productsId01} alt="img" />
               </td>
-              <td className="text-center">Jacob</td>
+              <td className="text-center">海報, 放輕鬆</td>
               <td className="text-center">1</td>
               <td className="text-center">1</td>
             </tr>
@@ -74,7 +74,7 @@ const Cart = () => {
               <td className="table-prodcuts">
                 <img src={productsId01} alt="img" />
               </td>
-              <td className="text-center">YOYO</td>
+              <td className="text-center">海報, 放輕鬆</td>
               <td className="text-center">1</td>
               <td className="text-center">1</td>
             </tr>

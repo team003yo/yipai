@@ -22,7 +22,7 @@
     grid-template-areas:
                          "News__nav "
                          "News__main ";
-    grid-template-rows: 100px 3000px 50px; /* 3.各區域 寬高設置 */
+    grid-template-rows: 100px 2000px 50px; /* 3.各區域 寬高設置 */
     grid-template-columns:  1fr ;
   }
   #News__section > #News__nav {
@@ -32,6 +32,7 @@
     grid-area: News__main;
   }
   .News__none550{
+    margin-top: 20px ;
     margin-left: 40px;
   }
 
@@ -44,10 +45,11 @@
     padding: 50px;
     width: 100%;
     margin: 0px auto;
-    column-count:3 ;
+    column-width:500px ;
     /*欄數*/
     column-gap: 50px;
     /*每欄間隔*/
+    break-inside: avoid;
 }
 .News__newsId{
     margin-top: 10px;
@@ -59,6 +61,7 @@
     break-inside: avoid;
         /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
 }
+
 .News__card-img-top{
     width: 100%;
     object-fit: cover;
@@ -74,5 +77,6 @@ overflow: hidden;
 display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 2;
+
 }
 

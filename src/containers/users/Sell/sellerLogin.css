@@ -55,3 +55,50 @@
     font-size: var(--text-h2);
 }
 
+@media screen and (max-width: 990px) {
+
+}
+
+@media screen and (max-width: 700px) {
+
+}
+
+@media screen and (max-width: 550px) {
+    ._sellerLogin_sellerbox {
+        position: absolute;
+        width: 16em;
+        height: 20em;
+        top: calc(50% - 10em);
+        left: calc(50% - 8em);
+        background-color: var(--color-text);
+    }
+    ._sellerLogin_h3 {
+        font-size: var(--text-h2);
+        font-weight: 700;
+        margin: 3.5em 0 0.5em 0;
+    }
+    ._sellerLogin_inputBox {
+        background: #eaeaea;
+        border: 0em;
+        width: 12em;
+        height: 2em;
+        font-size: var(--text-h2);
+    }
+    ._sellerLogin_inputBox2 {
+        background: #fff;
+        border: 0em;
+        width: 12em;
+        height: 2em;
+        font-size: var(--text-h2);
+    }
+    ._sellerLogin_btn {
+        background: var(--color-bg);
+        border: 0em;
+        width: 12em;
+        height: 2em;
+        margin-top: 3em;
+        margin-bottom: 0.5em;
+        font-size: var(--text-h2);
+    }
+}
+

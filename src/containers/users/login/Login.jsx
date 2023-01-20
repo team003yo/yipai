@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import HeadImg from "../HeadImg";
 import "./buyLogin.css";
 
-var buyerId = true;
+var buyerId = false;
 
 const Login = () => (
     <div id='login'>
