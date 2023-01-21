@@ -13,9 +13,7 @@ function BuyerSettings(params) {
     ReactDOM.render(
         <div>
             <div
-                className='_buyLogin_flex'
-                style={{ flexDirection: "row", justifyContent: "space-around" }}
-            >
+                className='_buyLogin_flex_content_sa '>
                 <div style={{ margin: "0 2em 0 2em" }}>
                     <div
                         className='_buyLogin_Titlebox _buyLogin_flex'

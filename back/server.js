@@ -24,23 +24,23 @@ app.get("/", (req, res, next) => {
     res.send("Hello Express 9");
 });
 
-app.get("/space", async (req, res, next) => {
-    console.log("這裡是 /space");
-    let [data] = await pool.query("SELECT * FROM space");
-    res.json(data);
-});
+// app.get("/space", async (req, res, next) => {
+//     console.log("這裡是 /space");
+//     let [data] = await pool.query("SELECT * FROM space");
+//     res.json(data);
+// });
 app.get('/user', (req, res, next) => {
     console.log('這裡是使用者頁面', req.dt);
     res.send('會員您好');
   });
 
-app.get("/space/:spaceId", async (req, res, next) => {
-    console.log("/space/:spaceId => ", req.params.spaceId);
-    let [data] = await pool.query("SELECT * FROM space WHERE space_id=? ", [
-        req.params.spaceId,
-    ]);
-    res.json(data);
-});
+// app.get("/space/:spaceId", async (req, res, next) => {
+//     console.log("/space/:spaceId => ", req.params.spaceId);
+//     let [data] = await pool.query("SELECT * FROM space WHERE space_id=? ", [
+//         req.params.spaceId,
+//     ]);
+//     res.json(data);
+// });
 app.use((req, res, next) => {
     console.log("出現404！");
     res.status(404).send("錯誤代號404，請輸入正確的網址");

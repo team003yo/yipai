@@ -10,6 +10,12 @@
     align-items: center;
     justify-content: space-between;
 }
+._buyLogin_flex_content_sa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 ._buyLogin_flex-re {
     display: flex;
     flex-direction: column;
@@ -56,7 +62,7 @@
 ._buyLogin_inputBox {
     background: var(--color-text);
     border: 0em;
-    width: 18em;
+    width: 15em;
     height: 3em;
     font-size: var(--text-h2);
 }
@@ -66,6 +72,11 @@
     width: 15em;
     height: 3em;
     font-size: var(--text-h2);
+}
+._buyLogin_rwd_flexbtn {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em;
 }
 ._buyLogin_btn {
     background: var(--color-text);
@@ -89,6 +100,7 @@
 ._buyLogin_headImg {
     z-index: 0;
 }
+/* ICON按鈕樣式 */
 ._buyLogin_buyerControlBtn {
     border: 0;
     color: var(--color-bg);
@@ -135,28 +147,28 @@
     margin-right: auto;
     width: 50em;
     margin-top: 2em;
-    text-align: center;    
+    text-align: center;
     line-height: 3em;
 }
-._buyLogin_tr {   
+._buyLogin_tr {
     margin: 4em 0;
-    background:none;
+    background: none;
 }
-:hover._buyLogin_tr{
-    background:#D9D9D9;
+:hover._buyLogin_tr {
+    background: #d9d9d9;
 }
-._buyLogin_tline{
-    border-bottom: 1px  solid black;
+._buyLogin_tline {
+    border-bottom: 1px solid black;
 }
 ._buyLogin_tableBtn {
     border: 0;
     color: var(--color-bg);
     background-color: #000;
-    padding:0.1em 0.4em;
+    padding: 0.1em 0.4em;
     border-radius: 0.6em;
     line-height: 2em;
 }
-._buyLogin_deleteBtn{
+._buyLogin_deleteBtn {
     background-image: url(../image/deleteButton.svg);
     background-repeat: no-repeat;
     width: 40px;
@@ -167,7 +179,7 @@
     top: 5px;
     border: 0;
 }
-._buyLogin_artbox{
+._buyLogin_artbox {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -176,8 +188,85 @@
     border: 1px solid #000;
     padding: 1em 2em;
     margin-top: 1.5em;
-    background:none;
+    background: none;
 }
-:hover._buyLogin_artbox{
-    background: #D9D9D9;
+:hover._buyLogin_artbox {
+    background: #d9d9d9;
+}
+/* ICON圖片設定 */
+._buyLogin_Icon {
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-position-x: 0.4em;
+    padding-left: 2.5em;
+}
+/* 按鈕組 */
+._buyLogin_SettingIcon {
+    background-image: url("../image/settingIcon.svg");
+}
+._buyLogin_historyIcon {
+    background-image: url("../image/historyIcon.svg");
+}
+._buyLogin_orderIcon {
+    background-image: url("../image/orderIcon.svg");
+}
+._buyLogin_loveartistIcon {
+    background-image: url("../image/loveartistIcon.svg");
+}
+._buyLogin_loveartIcon {
+    background-image: url("../image/loveartIcon.svg");
+}
+@media screen and (max-width: 990px) {
+}
+@media screen and (max-width: 700px) {
+}
+@media screen and (max-width: 550px) {
+    ._buyLogin_rwd_flex {
+        flex-direction: row;
+    }
+    ._buyLogin_flex-re img{
+        width: 8em;
+    }
+    ._buyLogin_rwd_flex h3{
+        margin-left: 1em;
+        width: 7em;
+        text-align: center;
+        margin-top: 1em;
+
+    }
+    ._buyLogin_rwd_flex h3 span{
+        display:block;
+        text-align: center;
+    }
+    ._buyLogin_rwd_flexbtn {
+        flex-flow: column wrap;
+    }
+    ._buyLogin_buyerControlBtn {
+        background-color: #eadccc;
+        color: #000;
+    }
+    ._buyLogin_SettingIcon {
+        background-image: url("../image/settingIconRWD.svg");
+        background-position-x: 5.5em;
+    }
+    ._buyLogin_historyIcon {
+        background-image: url("../image/historyIconRWD.svg");
+        background-position-x: 5.5em;
+    }
+    ._buyLogin_orderIcon {
+        background-image: url("../image/orderIconRWD.svg");
+        background-position-x: 5.5em;
+    }
+    ._buyLogin_loveartistIcon {
+        background-image: url("../image/loveartistIconRWD.svg");
+        background-position-x: 4.5em;
+    }
+    ._buyLogin_loveartIcon {
+        background-image: url("../image/loveartIconRWD.svg");
+        background-position-x: 4.5em;
+    }
+    ._buyLogin_buyerControlBtn {
+        width: 18em;
+        margin-top: 2em;
+    }
 }

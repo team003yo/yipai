@@ -34,7 +34,7 @@ function App() {
             <Route path='/users/SellLogin' element={<SellLogin />} />            
             <Route path='cart' element={<Cart />} />
             <Route path='/cart/CartPart2' element={<CartPart2 />} />
-            <Route path="/news/newsId" element={<NewsId />} />
+            <Route path="/news/newsId}" element={<NewsId />} />
             <Route path="news" element={<News />} />
           </Routes>  
         </MyContent>
