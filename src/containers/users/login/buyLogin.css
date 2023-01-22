@@ -4,6 +4,9 @@
     align-items: center;
     justify-content: center;
 }
+._buyLogin_mx2{
+    margin: 0 2em;
+}
 ._buyLogin_flex_content {
     display: flex;
     flex-direction: row;
@@ -11,6 +14,7 @@
     justify-content: space-between;
 }
 ._buyLogin_flex_content_sa {
+    margin-top: 2em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,8 +28,17 @@
     position: relative;
     justify-content: flex-end;
 }
+._buyLogin_flex_end{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
 ._buyLogin_p2 {
     padding-top: 2em;
+}
+._buyLogin_p1 {
+    padding-top: 1.5em;
 }
 ._buyLogin_h3 {
     margin: 0.5em 0 0.5em 0;
@@ -35,6 +48,8 @@
     margin: 0.6em 0 0.6em 1em;
     font-weight: bold;
     font-size: var(--text-h2);
+    font-size: 14px;
+    margin-left: 0px;
 }
 ._buyLogin_buyerIcon {
     background-image: url(../image/buyerIcon.svg);
@@ -120,17 +135,18 @@
     background-color: #000;
     width: auto;
     padding: 0.5em 2em;
-    border-radius: 0.6em;
+    border-radius: 0.6em;    
+    align-items: end;
 }
 :active._buyLogin_ChangeControlBtn {
     background-color: var(--color-text);
 }
 ._buyLogin_Titlebox {
     background-color: var(--color-text);
-    margin: 2em 0 0 0;
     width: 35em;
     padding: 0 2em 0 2em;
     height: 3.5em;
+    align-items: flex-start;
 }
 ._buyLogin_Contentbox {
     background-color: #eaeaea;
@@ -139,8 +155,9 @@
     height: 28em;
 }
 ._buyLogin_SettingInput {
-    width: 8em;
-    border: 0.5em;
+    width: 14em;
+    height: 1.8em;
+    border: 0;
 }
 ._buyLogin_table {
     margin-left: auto;
@@ -268,5 +285,35 @@
     ._buyLogin_buyerControlBtn {
         width: 18em;
         margin-top: 2em;
+    }
+    ._buyLogin_flex_content_sa{
+        flex-direction: column;
+    }
+    ._buyLogin_mx2{
+        margin: 2em 0;
+    }
+    ._buyLogin_Contentbox{
+        width: 18em;
+        height:auto;
+    }
+    ._buyLogin_Titlebox{
+        width: 18em;
+        height: 1.6em;
+        align-items: center;
+    }
+    ._buyLogin_flex_content{
+        flex-direction: column;
+    }
+    ._buyLogin_p2{
+        padding-bottom: 2em;
+    }
+    ._buyLogin_p1{
+        padding-bottom: 2em;
+    }
+    ._buyLogin_flex_end{
+        align-items: center;
+    }
+    ._buyLogin_SettingInput {
+        height: 3em;
     }
 }
