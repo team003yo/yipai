@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
 }
-._buyLogin_mx2{
+._buyLogin_mx2 {
     margin: 0 2em;
 }
 ._buyLogin_flex_content {
@@ -28,11 +28,21 @@
     position: relative;
     justify-content: flex-end;
 }
-._buyLogin_flex_end{
+._buyLogin_flex_end {
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: center;
+}
+._buyLogin_flex_art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+._buyLogin_flex h5 {
+    font-size: 29px;
+    line-height: 121.3%;
 }
 ._buyLogin_p2 {
     padding-top: 2em;
@@ -135,10 +145,22 @@
     background-color: #000;
     width: auto;
     padding: 0.5em 2em;
-    border-radius: 0.6em;    
+    border-radius: 0.6em;
     align-items: end;
 }
 :active._buyLogin_ChangeControlBtn {
+    background-color: var(--color-text);
+}
+._buyLogin_buyerControlBtnNormal {
+    border: 0;
+    color: var(--color-bg);
+    background-color: #000;
+    width: auto;
+    padding: 0.5em 2em;
+    border-radius: 0.6em;
+    align-items: end;
+}
+:active._buyLogin_buyerControlBtnNormal {
     background-color: var(--color-text);
 }
 ._buyLogin_Titlebox {
@@ -210,6 +232,9 @@
 :hover._buyLogin_artbox {
     background: #d9d9d9;
 }
+._buyLogin_NewBtn{
+    display: none;
+}
 /* ICON圖片設定 */
 ._buyLogin_Icon {
     background-repeat: no-repeat;
@@ -241,18 +266,17 @@
     ._buyLogin_rwd_flex {
         flex-direction: row;
     }
-    ._buyLogin_flex-re img{
+    ._buyLogin_flex-re img {
         width: 8em;
     }
-    ._buyLogin_rwd_flex h3{
+    ._buyLogin_rwd_flex h3 {
         margin-left: 1em;
         width: 7em;
         text-align: center;
         margin-top: 1em;
-
     }
-    ._buyLogin_rwd_flex h3 span{
-        display:block;
+    ._buyLogin_rwd_flex h3 span {
+        display: block;
         text-align: center;
     }
     ._buyLogin_rwd_flexbtn {
@@ -286,34 +310,92 @@
         width: 18em;
         margin-top: 2em;
     }
-    ._buyLogin_flex_content_sa{
+    ._buyLogin_flex_content_sa {
         flex-direction: column;
     }
-    ._buyLogin_mx2{
+    ._buyLogin_mx2 {
         margin: 2em 0;
     }
-    ._buyLogin_Contentbox{
+    ._buyLogin_Contentbox {
         width: 18em;
-        height:auto;
+        height: auto;
     }
-    ._buyLogin_Titlebox{
+    ._buyLogin_Titlebox {
         width: 18em;
         height: 1.6em;
         align-items: center;
     }
-    ._buyLogin_flex_content{
+    ._buyLogin_flex_content {
         flex-direction: column;
     }
-    ._buyLogin_p2{
+    ._buyLogin_p2 {
         padding-bottom: 2em;
     }
-    ._buyLogin_p1{
+    ._buyLogin_p1 {
         padding-bottom: 2em;
     }
-    ._buyLogin_flex_end{
+    ._buyLogin_flex_end {
         align-items: center;
     }
     ._buyLogin_SettingInput {
         height: 3em;
     }
+    ._buyLogin_flex_art {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    ._buyLogin_artbox {
+        width: 12em;
+        border: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+    ._buyLogin_artbox ._buyLogin_flex {
+        width: 10em;
+        margin-top: 0.5em;
+    }
+
+    ._buyLogin_flex h5 {
+        font-size: 13.64px;
+        line-height: 121.3%;
+    }
+    ._buyLogin_artbox img {
+        width: 10em;
+    }
+    ._buyLogin_deleteBtn {
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+        right: 20px;
+        top: 27px;
+    }
+    ._buyLogin_buyerControlBtnNormal {
+        display: none;
+    }
+    ._buyLogin_NewBtn{
+        position: relative;
+        left: 16.5em;
+        top: 1em;
+        display: flex;
+        flex-direction: row-reverse;
+        border: 0;
+        color: var(--color-bg);
+        background-color: #000;
+        width: auto;
+        padding: 0.5em 1.5em;
+        border-radius: 0.6em;
+        background-image: url(../image/newTOoldIcon.svg);
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-position-y: center;  
+    }
+
+
+
+    /* 按鈕列表 */
+    /* .userBtns{
+    } */
 }

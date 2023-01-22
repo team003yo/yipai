@@ -1,4 +1,5 @@
 import React from "react";
+// import { useState, useEffect } from 'react';
 import BuyBotton from "./BuyBotton";
 import {
     BuyerSettings,
@@ -9,6 +10,30 @@ import {
 } from "./userOnclick";
 
 import buyerImg from "./image/buyHead.png";
+
+// const useRWD=()=>{
+//     const [mobile,setMobile]=useState("mobile");
+
+//     const handleRWD=()=>{
+//         if(window.innerWidth>768)
+//             setMobile("PC");
+//         else
+//             setMobile("mobile");
+//     }
+
+//     useEffect(()=>{
+    
+//         window.addEventListener('resize',handleRWD);
+//         handleRWD(); //加入此行
+        
+//         return(()=>{
+//             window.removeEventListener('resize',handleRWD);
+//         })
+//     },[]);
+
+//     return mobile;
+// }
+
 
 function HeadImg(user) {
     return (
@@ -62,8 +87,11 @@ function HeadImg(user) {
                 />
             </div>
             <div id='userDown'></div>
+            <div className="userBtns"></div>
+            
         </div>
     );
 }
 
-export default HeadImg;
+export {HeadImg} ;
+

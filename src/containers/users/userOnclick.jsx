@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import ArtistPage from "./ArtistPage";
 import Art from "./Art";
 import ArtList from "./ArtList";
+import BuyBotton from "./BuyBotton";
+
 
 import ArtistImg from "./image/ArtistImg.png";
 import pesnalImg from "./image/pesnalImg.png";
@@ -304,9 +306,14 @@ function FavoriteArtist(params) {
 function FavoriteArts(params) {
     ReactDOM.render(
         <div>
+            <BuyBotton 
+                className='_buyLogin_NewBtn'
+                text='由新至舊'
+                onClick=''
+            />
             {/* 直的排列作品列 */}
             <div
-                className='_buyLogin_flex'
+                className='_buyLogin_flex_art'
                 style={{
                     marginTop: "1em",
                     alignItems: "stretch",
