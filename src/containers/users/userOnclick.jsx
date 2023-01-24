@@ -209,11 +209,11 @@ function MyOrder(params) {
                 <table className='_buyLogin_table'>
                     <thead className='_buyLogin_tline'>
                         <tr className='_buyLogin_td'>
-                            <th>訂單編號</th>
+                            <th className="_buyLogin_RWDinvisible">訂單編號</th>
                             <th>出貨狀態</th>
                             <th>金額</th>
                             <th>訂購時間</th>
-                            <th>訂購品項</th>
+                            <th className="_buyLogin_RWDinvisible">訂購品項</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -221,11 +221,11 @@ function MyOrder(params) {
                             className='_buyLogin_tr _buyLogin_tline'
                             style={{ borderColor: "#CAB296" }}
                         >
-                            <td>1002939311112</td>
+                            <td className="_buyLogin_RWDinvisible">1002939311112</td>
                             <td>未出貨</td>
                             <td>109,800</td>
                             <td>2022/11/02</td>
-                            <td>3</td>
+                            <td className="_buyLogin_RWDinvisible">3</td>
                             <td>
                                 <button className='_buyLogin_tableBtn'>
                                     詳細資訊
@@ -236,11 +236,11 @@ function MyOrder(params) {
                             className='_buyLogin_tr _buyLogin_tline'
                             style={{ borderColor: "#CAB296" }}
                         >
-                            <td>100293931223</td>
+                            <td className="_buyLogin_RWDinvisible">100293931223</td>
                             <td>未出貨</td>
                             <td>10,800</td>
                             <td>2022/12/02</td>
-                            <td>2</td>
+                            <td className="_buyLogin_RWDinvisible">2</td>
                             <td>
                                 <button className='_buyLogin_tableBtn'>
                                     詳細資訊
@@ -249,6 +249,19 @@ function MyOrder(params) {
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div>
+                <h4>你可能還會喜歡</h4>
+                <ArtList
+                    btnClass='_buyLogin_RWDinvisible'
+                    artsImg={artsImg}
+                    artNameClass='_buyLogin_artName_min'
+                    artname='海報，放輕鬆'
+                    artSizeClass='_buyLogin_artSize_min'
+                    artsize='50X40'
+                    artPriceClass='_buyLogin_artPrice_min'
+                    artprice='20,000'
+                />
             </div>
         </div>,
         document.getElementById("userDown")
@@ -321,23 +334,35 @@ function FavoriteArts(params) {
             >
                 {/* 橫排的單個作品 */}
                 <ArtList
+                    btnClass='_buyLogin_deleteBtn'
                     artsImg={artsImg}
+                    artNameClass='_buyLogin_artName'
                     artname='海報，放輕鬆'
+                    artSizeClass='_buyLogin_artSize'
                     artsize='50X40'
+                    artPriceClass='_buyLogin_artPrice'
                     artprice='20,000'
                 />
                 {/* 下一個作品 */}
                 <ArtList
+                    btnClass='_buyLogin_deleteBtn'
                     artsImg={artsImg}
+                    artNameClass='_buyLogin_artName'
                     artname='海報，放輕鬆'
+                    artSizeClass='_buyLogin_artSize'
                     artsize='50X40'
+                    artPriceClass='_buyLogin_artPrice'
                     artprice='20,000'
                 />
                 {/* 下一個作品 */}
                 <ArtList
+                    btnClass='_buyLogin_deleteBtn'
                     artsImg={artsImg}
+                    artNameClass='_buyLogin_artName'
                     artname='海報，放輕鬆'
+                    artSizeClass='_buyLogin_artSize'
                     artsize='50X40'
+                    artPriceClass='_buyLogin_artPrice'
                     artprice='20,000'
                 />
             </div>

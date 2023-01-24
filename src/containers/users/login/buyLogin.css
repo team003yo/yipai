@@ -392,9 +392,37 @@
         background-position-x: right;
         background-position-y: center;  
     }
+    ._buyLogin_RWDinvisible{
+        display: none;
+    }
+    ._buyLogin_table{
+        width: 20em;
+    }
+    ._buyLogin_artName{
+        font-weight: 400;
+        font-size: 13.6437px;
+        line-height: 121.8%;
+    }
+    ._buyLogin_artSize{
+        font-size: 9.9227px;
+        color: #CAB296;
+    }
+    ._buyLogin_artPrice{
+        font-size: 17.9849px;
+    }
+    ._buyLogin_artName_min{
+        font-size: 10.648px;
+    }
+    ._buyLogin_artSize_min{
+        font-size: 7.744px;
+        color: #CAB296;
+    }
+    ._buyLogin_artPrice_min{
+        font-size: 14.036px;
+    }
 
 
-
+    
     /* 按鈕列表 */
     /* .userBtns{
     } */

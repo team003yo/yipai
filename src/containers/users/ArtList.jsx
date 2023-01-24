@@ -7,7 +7,7 @@ function ArtList(params) {
         <div style={{ position: "relative" }}>
             <div className='_buyLogin_artbox'>
                 {/* 刪除按鈕 */}
-                <button className='_buyLogin_deleteBtn' />
+                <button className={params.btnClass} />
                 <img
                     src={params.artsImg}
                     alt='藝術品'
@@ -18,9 +18,9 @@ function ArtList(params) {
                     className='_buyLogin_flex'
                     style={{ alignItems: "flex-start" }}
                 >
-                    <h5>{params.artname}</h5>
-                    <h5>商品尺寸：{params.artsize}</h5>
-                    <h5>價格：{params.artprice}</h5>
+                    <h5 className={params.artNameClass}>{params.artname}</h5>
+                    <h5 className={params.artSizeClass}>商品尺寸：{params.artsize}</h5>
+                    <h5  className={params.artPriceClass}>價格：{params.artprice}</h5>
                 </div>
                 <BuyBotton
                     text='購買'
