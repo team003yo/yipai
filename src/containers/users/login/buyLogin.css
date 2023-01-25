@@ -235,6 +235,9 @@
 ._buyLogin_NewBtn{
     display: none;
 }
+._buyLogin_RWDnone{
+    display: none;
+}
 /* ICON圖片設定 */
 ._buyLogin_Icon {
     background-repeat: no-repeat;
@@ -420,8 +423,19 @@
     ._buyLogin_artPrice_min{
         font-size: 14.036px;
     }
-
-
+    ._buyLogin_RWDnone{
+        display: block;
+    }
+    ._buyLogin_textCenter{
+        text-align: center;
+        margin-top: 1em;
+    }
+    ._buyLogin_flex_artsRow{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
     
     /* 按鈕列表 */
     /* .userBtns{
