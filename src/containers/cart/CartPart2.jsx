@@ -160,7 +160,7 @@ const CartPart2 = () => {
             <Link to="../cart">
               <button>上一頁</button>
             </Link>
-            <Link to="next">
+            <Link to="/cart/CartPart3">
               <button>前往結帳頁面</button>
             </Link>
           </div>

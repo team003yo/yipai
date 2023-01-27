@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillHeartFill, BsCartFill } from "react-icons/bs";
+import BuyerLogin from '../users/login/Login'
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -13,9 +14,14 @@ import pic5 from "../../assets/pic5.jpg";
 import pic3 from "../../assets/pic3.jpg";
 import pic4 from "../../assets/pic4.jpg";
 
-const Cart = () => {
-  return (
-    <div className="font-family margin-50">
+var buyerId = true
+
+
+const Cart = () => (
+  <div id="login">
+    {/* 賣家登入 */}
+    {buyerId ?(
+      <div className="font-family margin-50">
       <Link to="/products" className="keepbuying-button">
         ❮ 繼續購物
       </Link>
@@ -165,6 +171,12 @@ const Cart = () => {
         </footer>
       </div>
     </div>
-  );
+  ):( 
+      <BuyerLogin />
+    ) 
 };
+  </div>
+)
+
+   
 export default Cart;

@@ -1,17 +1,30 @@
 /*SpaceDetail */
 
 .space__aside-pic{
-    width: 100%;
+    width: 187vh;
     background-size:cover;
+    /* width: 1000px;
+    height: 800px; */
 }
 .space__aside{
     position: absolute;
     right: 0px;
-    width: 75%;
+    top: 0px;
+    width: 75vw;
+    height: 90vh;
+    object-fit: cover;
+}
+.space__aside .thumb{
+    display: none;
 }
 .space__detail-img{
     position: relative;
+    overflow:hidden;
 }
+.space__detail-img .carousel-slider{
+    height: 90vh;
+}
+
 .space__detail-name{
 	color: black;
 	position:absolute;

@@ -12,6 +12,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import { Carousel } from 'react-responsive-carousel';
+
 function SpaceDetail() {
   const { spaceId } = useParams();
   const [data, setData] = useState([]);
@@ -37,16 +39,28 @@ function SpaceDetail() {
                   src={require('./aside.png')}
                   alt="aside"
                 />
-                <img
+
+                {/* <img
                   className="space__aside"
-                  src={require('./aside-1.png')}
+                  src={item.space_img_file}
                   alt="aside-1"
-                />
+                /> */}
+                <Carousel className="space__aside">
+                <div>
+                    <img src={item.space_img_file} />
+                </div>
+                <div>
+                    <img src={item.space_img_file2} />
+                </div>
+                <div>
+                    <img src={item.space_img_file3} />
+                </div>
+                </Carousel>
                 <div className="space__detail-name">
                   <h1>{item.space_name}</h1>
-                  {/* <h2>Ask Art Space</h2> */}
                 </div>
               </div>
+              
               <div className="space__detail-main d-flex">
                 <div className="space__detail-map">
                   <div className="space__detail-map-text">
