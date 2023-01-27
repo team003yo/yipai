@@ -18,4 +18,6 @@ export { default as News } from './news/News';
 export { default as ProductsDetail } from './products/ProductsDetail';
 export { default as ArtistDetail } from './artist/Artistdetail';
 export { default as SpaceDetail } from './space/SpaceDetail';
+export { default as SellRegister } from './users/register/SellRegister';
+export { default as Register } from './users/register/Register';
 

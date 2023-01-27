@@ -36,7 +36,7 @@ const Login = () => (
                     <div style={{ fontColor: "#515151" }}>
                         沒有會員？請
                         <span>
-                            <Link to=''>註冊</Link>
+                            <Link to='/users/Register'>註冊</Link>
                         </span>
                     </div>
                 </div>

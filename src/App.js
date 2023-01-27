@@ -22,6 +22,8 @@ import {
   ProductsDetail,
   ArtistDetail,
   SpaceDetail,
+  Register,
+  SellRegister
 } from './containers';
 import { Brand, Navbar, Carousel } from './components';
 
@@ -57,6 +59,8 @@ function App() {
               <Route path="users" element={<Users />} />
               <Route path="/users/BuyLogin" element={<Login />} />
               <Route path="/users/SellLogin" element={<SellLogin />} />
+              <Route path="/users/Register" element={<Register />} />
+              <Route path="/users/SellRegister" element={<SellRegister />} />
               <Route path="cart" element={<Cart />} />
               <Route path="/cart/CartPart2" element={<CartPart2 />} />
               <Route path="/cart/CartPart3" element={<CartPart3 />} />
