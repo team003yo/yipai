@@ -4,6 +4,26 @@
     align-items: center;
     justify-content: center;
 }
+._buyLogin_mx2 {
+    margin: 0 2em;
+}
+._buyLogin_flex_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+._buyLogin_flex_row{
+    display: flex;
+    flex-direction: row;
+}
+._buyLogin_flex_content_sa {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 ._buyLogin_flex-re {
     display: flex;
     flex-direction: column;
@@ -11,6 +31,28 @@
     justify-content: center;
     position: relative;
     justify-content: flex-end;
+}
+._buyLogin_flex_end {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+._buyLogin_flex_art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+._buyLogin_flex h5 {
+    font-size: 29px;
+    line-height: 121.3%;
+}
+._buyLogin_p2 {
+    padding-top: 2em;
+}
+._buyLogin_p1 {
+    padding-top: 1.5em;
 }
 ._buyLogin_h3 {
     margin: 0.5em 0 0.5em 0;
@@ -20,6 +62,8 @@
     margin: 0.6em 0 0.6em 1em;
     font-weight: bold;
     font-size: var(--text-h2);
+    font-size: 14px;
+    margin-left: 0px;
 }
 ._buyLogin_buyerIcon {
     background-image: url(../image/buyerIcon.svg);
@@ -58,6 +102,11 @@
     height: 3em;
     font-size: var(--text-h2);
 }
+._buyLogin_rwd_flexbtn {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em;
+}
 ._buyLogin_btn {
     background: var(--color-text);
     border: 0em;
@@ -80,6 +129,7 @@
 ._buyLogin_headImg {
     z-index: 0;
 }
+/* ICON按鈕樣式 */
 ._buyLogin_buyerControlBtn {
     border: 0;
     color: var(--color-bg);
@@ -98,72 +148,367 @@
     color: var(--color-bg);
     background-color: #000;
     width: auto;
-    padding: 0.5em;
+    padding: 0.5em 2em;
     border-radius: 0.6em;
+    align-items: end;
 }
 :active._buyLogin_ChangeControlBtn {
     background-color: var(--color-text);
 }
+._buyLogin_buyerControlBtnNormal {
+    border: 0;
+    color: var(--color-bg);
+    background-color: #000;
+    width: auto;
+    padding: 0.5em 2em;
+    border-radius: 0.6em;
+    align-items: end;
+}
+:active._buyLogin_buyerControlBtnNormal {
+    background-color: var(--color-text);
+}
 ._buyLogin_Titlebox {
     background-color: var(--color-text);
-    margin: 2em 0 0 0;
-    /* width: 35em; */
+    width: 35em;
     padding: 0 2em 0 2em;
     height: 3.5em;
+    align-items: flex-start;
 }
-._buyLogin_Contentbox{
+._buyLogin_Contentbox {
     background-color: #eaeaea;
     padding: 0 2em 0 2em;
-    /* width: 35em; */
-    height: 20em;
+    width: 35em;
+    height: 28em;
 }
-._buyLogin_SettingInput{
-    width: 8em;
+._buyLogin_SettingInput {
+    width: 14em;
+    height: 1.8em;
+    border: 0;
 }
-
-@media screen and (max-width: 990px) {
-
+._buyLogin_table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    margin-top: 2em;
+    text-align: center;
+    line-height: 3em;
 }
-
-@media screen and (max-width: 700px) {
-
+._buyLogin_tr {
+    margin: 4em 0;
+    background: none;
 }
-
+:hover._buyLogin_tr {
+    background: #d9d9d9;
+}
+._buyLogin_tline {
+    border-bottom: 1px solid black;
+}
+._buyLogin_tableBtn {
+    border: 0;
+    color: var(--color-bg);
+    background-color: #000;
+    padding: 0.1em 0.4em;
+    border-radius: 0.6em;
+    line-height: 2em;
+}
+._buyLogin_deleteBtn {
+    background-image: url(../image/deleteButton.svg);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    border: 0;
+}
+._buyLogin_artbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50em;
+    border: 1px solid #000;
+    padding: 1em 2em;
+    margin-top: 1.5em;
+    background: none;
+}
+:hover._buyLogin_artbox {
+    background: #d9d9d9;
+}
+._buyLogin_NewBtn{
+    display: none;
+}
+._buyLogin_RWDnone{
+    display: none;
+}
+/* ICON圖片設定 */
+._buyLogin_Icon {
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-position-x: 0.4em;
+    padding-left: 2.5em;
+}
+/* 按鈕組 */
+._buyLogin_SettingIcon {
+    background-image: url("../image/settingIcon.svg");
+}
+._buyLogin_historyIcon {
+    background-image: url("../image/historyIcon.svg");
+}
+._buyLogin_orderIcon {
+    background-image: url("../image/orderIcon.svg");
+}
+._buyLogin_loveartistIcon {
+    background-image: url("../image/loveartistIcon.svg");
+}
+._buyLogin_loveartIcon {
+    background-image: url("../image/loveartIcon.svg");
+}
+._buyLogin_artistPage{
+    position: absolute;
+    left:0;
+    z-index: 1;
+}
+._buyLogin_artistHead{
+    z-index: 2;
+    margin-left: 3em;
+}
+._buyLogin_artistName{
+    font-size: 30px;
+    font-style: bold;
+}
+._buyLogin_h30{
+    height: 30em;
+}
+._buyLogin_artostText{
+    z-index: 2;
+    margin-right: 3em;
+    margin-left: 1em;
+}
 @media screen and (max-width: 550px) {
-    ._buyLogin_buyerbox {
-        position: absolute;
-        width: 16em;
-        height: 20em;
-        top: calc(50% - 10em);
-        left: calc(50% - 8em);
-        background-color: var(--color-bg);
+    ._buyLogin_rwd_flex {
+        flex-direction: row;
     }
-    ._buyLogin_h3 {
-        font-size: var(--text-h2);
-        font-weight: 700;
-        margin: 3.5em 0 0.5em 0;
+    ._buyLogin_flex-re img {
+        width: 8em;
     }
-    ._buyLogin_inputBox {
-        background: #eaeaea;
-        border: 0em;
+    ._buyLogin_rwd_flex h3 {
+        margin-left: 1em;
+        width: 7em;
+        text-align: center;
+        margin-top: 1em;
+    }
+    ._buyLogin_rwd_flex h3 span {
+        display: block;
+        text-align: center;
+    }
+    ._buyLogin_rwd_flexbtn {
+        flex-flow: column wrap;
+    }
+    ._buyLogin_buyerControlBtn {
+        background-color: #eadccc;
+        color: #000;
+    }
+    ._buyLogin_SettingIcon {
+        background-image: url("../image/settingIconRWD.svg");
+        background-position-x: 5.5em;
+    }
+    ._buyLogin_historyIcon {
+        background-image: url("../image/historyIconRWD.svg");
+        background-position-x: 5.5em;
+    }
+    ._buyLogin_orderIcon {
+        background-image: url("../image/orderIconRWD.svg");
+        background-position-x: 5.5em;
+    }
+    ._buyLogin_loveartistIcon {
+        background-image: url("../image/loveartistIconRWD.svg");
+        background-position-x: 4.5em;
+    }
+    ._buyLogin_loveartIcon {
+        background-image: url("../image/loveartIconRWD.svg");
+        background-position-x: 4.5em;
+    }
+    ._buyLogin_buyerControlBtn {
+        width: 18em;
+        margin-top: 2em;
+    }
+    ._buyLogin_flex_content_sa {
+        flex-direction: column;
+    }
+    ._buyLogin_mx2 {
+        margin: 2em 0;
+    }
+    ._buyLogin_my2{
+        margin-top: 2em;
+    }
+    ._buyLogin_Contentbox {
+        width: 18em;
+        height: auto;
+    }
+    ._buyLogin_Titlebox {
+        width: 18em;
+        height: 1.6em;
+        align-items: center;
+    }
+    ._buyLogin_flex_content {
+        flex-direction: column;
+    }
+    ._buyLogin_p2 {
+        padding-bottom: 2em;
+    }
+    ._buyLogin_p1 {
+        padding-bottom: 2em;
+    }
+    ._buyLogin_flex_end {
+        align-items: center;
+    }
+    ._buyLogin_SettingInput {
+        height: 3em;
+    }
+    ._buyLogin_flex_art {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    ._buyLogin_artbox {
         width: 12em;
-        height: 2em;
-        font-size: var(--text-h2);
+        border: 0;
+        padding: 0;
+        flex-direction: column;
     }
-    ._buyLogin_inputBox2 {
-        background: #fff;
-        border: 0em;
-        width: 12em;
-        height: 2em;
-        font-size: var(--text-h2);
+    ._buyLogin_artbox ._buyLogin_flex {
+        width: 10em;
+        margin-top: 0.5em;
     }
-    ._buyLogin_btn {
-        background: var(--color-bg);
-        border: 0em;
-        width: 12em;
-        height: 2em;
-        margin-top: 3em;
-        margin-bottom: 0.5em;
-        font-size: var(--text-h2);
+
+    ._buyLogin_flex h5 {
+        font-size: 13.64px;
+        line-height: 121.3%;
     }
+    ._buyLogin_artbox img {
+        width: 10em;
+    }
+    ._buyLogin_deleteBtn {
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+        right: 20px;
+        top: 27px;
+    }
+    ._buyLogin_buyerControlBtnNormal {
+        display: none;
+    }
+    ._buyLogin_NewBtn{
+        position: relative;
+        left: 16.5em;
+        top: 1em;
+        display: flex;
+        flex-direction: row-reverse;
+        border: 0;
+        color: var(--color-bg);
+        background-color: #000;
+        width: auto;
+        padding: 0.5em 1.5em;
+        border-radius: 0.6em;
+        background-image: url(../image/newTOoldIcon.svg);
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-position-y: center;  
+    }
+    ._buyLogin_RWDinvisible{
+        display: none;
+    }
+    ._buyLogin_table{
+        width: 23em;
+    }
+    ._buyLogin_artName{
+        font-weight: 400;
+        font-size: 13.6437px;
+        line-height: 121.8%;
+    }
+    ._buyLogin_artSize{
+        font-size: 9.9227px;
+        color: #CAB296;
+    }
+    ._buyLogin_artPrice{
+        font-size: 17.9849px;
+    }
+    ._buyLogin_artName_min{
+        font-size: 10.648px;
+    }
+    ._buyLogin_artSize_min{
+        font-size: 7.744px;
+        color: #CAB296;
+    }
+    ._buyLogin_artPrice_min{
+        font-size: 14.036px;
+    }
+    ._buyLogin_RWDnone{
+        display: block;
+    }
+    ._buyLogin_textCenter{
+        text-align: center;
+        margin-top: 1em;
+    }
+    ._buyLogin_flex_artsRow{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    ._buyLogin_buyHistory{
+        background-color: #C9D7E3;
+        height: 0.5em;
+    }
+    ._buyLogin_buyHistory tr td h3{
+        font-size: 12.3px;
+        text-align: center;
+    }
+    ._buyLogin_artPicture_min{
+        width: 10em;
+    }
+    ._buyLogin_textMin h4{
+        font-size: 18px;
+    }
+    ._buyLogin_flex_artMin{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    ._buyLogin_flex_artMin img{
+        width: 10em;
+    }
+    ._buyLogin_artistPage{
+        position: relative;
+    }
+    ._buyLogin_imgBox{
+        width: 21em;
+        height: 13em;
+        overflow: hidden;
+    }
+    ._buyLogin_imgBox img{
+        width: 20em;
+        position:absolute;
+        top: -50%;
+    }
+    ._buyLogin_h30{
+        height: auto;
+    }
+    ._buyLogin_artistHead{
+        width: 6em;
+        height: 6em;
+        margin-top: 1em;
+        margin-left: 0;
+    }
+    ._buyLogin_artostText{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    /* 按鈕列表 */
+    /* .userBtns{
+    } */
 }

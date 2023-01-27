@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeadImg from "../HeadImg";
+import {HeadImg} from "../HeadImg";
 import "./buyLogin.css";
 
-var buyerId = false;
+var buyerId = true;
 
 const Login = () => (
     <div id='login'>
@@ -36,7 +36,7 @@ const Login = () => (
                     <div style={{ fontColor: "#515151" }}>
                         沒有會員？請
                         <span>
-                            <Link to='/users/Register'>註冊</Link>
+                            <Link to=''>註冊</Link>
                         </span>
                     </div>
                 </div>

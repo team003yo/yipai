@@ -1,47 +1,97 @@
 import React from "react";
+// import { useState, useEffect } from 'react';
 import BuyBotton from "./BuyBotton";
-import { BuyerSettings } from "./userOnclick";
+import {
+    BuyerSettings,
+    MyOrder,
+    PurchaseHistory,
+    FavoriteArtist,
+    FavoriteArts,
+} from "./userOnclick";
 
 import buyerImg from "./image/buyHead.png";
-import SettingIcon from "./image/settingIcon.svg";
-import OrderIcon from "./image/orderIcon.svg";
-import HistoryIcon from "./image/historyIcon.svg";
-import Loveartist from "./image/loveartistIcon.svg";
-import Loveart from "./image/loveartIcon.svg";
+
+// const useRWD=()=>{
+//     const [mobile,setMobile]=useState("mobile");
+
+//     const handleRWD=()=>{
+//         if(window.innerWidth>768)
+//             setMobile("PC");
+//         else
+//             setMobile("mobile");
+//     }
+
+//     useEffect(()=>{
+    
+//         window.addEventListener('resize',handleRWD);
+//         handleRWD(); //加入此行
+        
+//         return(()=>{
+//             window.removeEventListener('resize',handleRWD);
+//         })
+//     },[]);
+
+//     return mobile;
+// }
+
 
 function HeadImg(user) {
     return (
         <div className='_buyLogin_flex'>
-            <div className='_buyLogin_flex-re'>
-                <img src={buyerImg} alt='buyHead' className='_buyLogin_headImg' />
-                <label className='_buyLogin_headIcon'>
-                    {/* 增加檔案 */}
-                    <input type='file' style={{ display: "none" }}></input>
-                </label>
+            <div className='_buyLogin_flex _buyLogin_rwd_flex'>
+                <div className='_buyLogin_flex-re' style={{ marginTop: "1em" }}>
+                    <img
+                        src={buyerImg}
+                        alt='buyHead'
+                        className='_buyLogin_headImg'
+                    />
+                    <label className='_buyLogin_headIcon'>
+                        {/* 增加檔案 */}
+                        <input type='file' style={{ display: "none" }}></input>
+                    </label>
+                </div>
+                <h3>
+                    您好
+                    <span>{user.name}</span>
+                    <span>你現在是</span>
+                    <span>藝拍小夥伴啦</span>
+                </h3>
             </div>
-            <h3>您好{user.name}你現在是藝拍小夥伴啦</h3>
-            <div
-                className='_buyLogin_flex'
-                style={{
-                    flexDirection: "row",
-                    flexWrap: "wrap",
-                    margin: "0.5em",
-                }}
-            >
-            {/* 按鈕列 */}
+
+            <div className='_buyLogin_flex _buyLogin_rwd_flexbtn'>
+                {/* 按鈕列 */}
                 <BuyBotton
                     text='帳戶設定'
-                    src={SettingIcon}
+                    className='_buyLogin_buyerControlBtn _buyLogin_Icon _buyLogin_SettingIcon'
                     onClick={BuyerSettings}
                 />
-                <BuyBotton text='購買記錄' src={HistoryIcon} />
-                <BuyBotton text='我的訂單' src={OrderIcon} />
-                <BuyBotton text='我喜愛的藝術家' src={Loveartist} />
-                <BuyBotton text='我喜愛的藝術品' src={Loveart} />
+                <BuyBotton
+                    text='購買記錄'
+                    className='_buyLogin_buyerControlBtn _buyLogin_Icon _buyLogin_historyIcon'
+                    onClick={PurchaseHistory}
+                />
+                <BuyBotton
+                    text='我的訂單'
+                    className='_buyLogin_buyerControlBtn _buyLogin_Icon _buyLogin_orderIcon'
+                    onClick={MyOrder}
+                />
+                <BuyBotton
+                    text='我喜愛的藝術家'
+                    className='_buyLogin_buyerControlBtn _buyLogin_Icon _buyLogin_loveartistIcon'
+                    onClick={FavoriteArtist}
+                />
+                <BuyBotton
+                    text='我喜愛的藝術品'
+                    className='_buyLogin_buyerControlBtn _buyLogin_Icon _buyLogin_loveartIcon'
+                    onClick={FavoriteArts}
+                />
             </div>
             <div id='userDown'></div>
+            <div className="userBtns"></div>
+            
         </div>
     );
 }
 
-export default HeadImg;
+export {HeadImg} ;
+

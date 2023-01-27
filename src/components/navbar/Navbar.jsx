@@ -7,8 +7,23 @@ import logo1 from '../../logo1.svg';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 
+
+const cart = (
+  <Link className='navbar__cart-count' to="cart">
+  <BsCartFill className="iconStyle" />
+  <p>0</p>
+</Link>   
+)
+
+
+  
+
+
+ 
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  
 
   return (
     <div className="yipai__navbar">
@@ -36,12 +51,7 @@ const Navbar = () => {
           </p>
         </div>
         <div className="yipai__navbar-icon">
-          <Link to="/">
-            <BsFillHeartFill className="iconStyle" />
-          </Link>
-          <Link to="cart">
-            <BsCartFill className="iconStyle" />
-          </Link>
+          {cart}
           <Link to="users">
             <FaUser className="iconStyle" />
           </Link>
