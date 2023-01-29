@@ -288,15 +288,10 @@ function MyOrder(params) {
 function FavoriteArtist(params) {
     ReactDOM.render(
         <div>
-            {/* <BuyBotton
-                className='_buyLogin_NewBtn'
-                text='由新至舊'
-                onClick=''
-            /> */}
             {/* 橫的 */}
             <div
-                className='_buyLogin_flex _buyLogin_h30'
-                style={{ flexDirection: "row" }}
+                className='_buyLogin_flex'
+                style={{ flexDirection: "row", height: "30em" }}
             >
                 {/* 一個藝術家 */}
                 <div
@@ -307,11 +302,12 @@ function FavoriteArtist(params) {
                         pesnalImg={pesnalImg}
                         artistImg={ArtistImg}
                         artisrName='yannick aaron'
+                        artisrCountry='french'
                     />
 
                     {/* 作品 */}
                     <div
-                        className='_buyLogin_flex _buyLogin_RWDinvisible'
+                        className='_buyLogin_flex'
                         style={{ flexDirection: "row", zIndex: 2 }}
                     >
                         <Art
