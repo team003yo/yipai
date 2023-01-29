@@ -58,7 +58,7 @@ function HeadImg(user) {
                 </h3>
             </div>
 
-            <div className='_buyLogin_flex _buyLogin_rwd_flexbtn'>
+            <div className=' _buyLogin_rwd_flexbtn'>
                 {/* 按鈕列 */}
                 <BuyBotton
                     text='帳戶設定'

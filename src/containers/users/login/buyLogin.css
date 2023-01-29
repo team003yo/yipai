@@ -103,6 +103,7 @@
     font-size: var(--text-h2);
 }
 ._buyLogin_rwd_flexbtn {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0.5em;
