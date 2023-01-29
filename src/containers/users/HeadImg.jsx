@@ -38,7 +38,7 @@ import buyerImg from "./image/buyHead.png";
 function HeadImg(user) {
     return (
         <div className='_buyLogin_flex'>
-            <div className='_buyLogin_flex _buyLogin_rwd_flex'>
+            <div className='_buyLogin_RWDflexcol _buyLogin_rwd_flex'>
                 <div className='_buyLogin_flex-re' style={{ marginTop: "1em" }}>
                     <img
                         src={buyerImg}

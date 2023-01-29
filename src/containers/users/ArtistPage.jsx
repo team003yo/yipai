@@ -4,7 +4,7 @@ import "./login/buyLogin.css";
 function ArtistPage(params) {
     return (
         <div
-            className='_buyLogin_flex'
+            className='_buyLogin_flex '
             style={{position: "relative" }}
         >
             <div className='_buyLogin_imgBox _buyLogin_artistPage'>

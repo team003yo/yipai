@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import ArtistPage from "./ArtistPage";
 import Art from "./Art";
 import ArtList from "./ArtList";
@@ -286,32 +287,67 @@ function MyOrder(params) {
 
 // 我喜愛的藝術家
 function FavoriteArtist(params) {
+    // let windowSize = false;
+    // if (window.innerWidth <= 550) windowSize = true;
     ReactDOM.render(
         <div>
-            {/* <BuyBotton
+            <BuyBotton
                 className='_buyLogin_NewBtn'
                 text='由新至舊'
                 onClick=''
-            /> */}
+            />
             {/* 橫的 */}
             <div
                 className='_buyLogin_flex _buyLogin_h30'
-                style={{ flexDirection: "row" }}
             >
                 {/* 一個藝術家 */}
                 <div
-                    className='_buyLogin_flex'
+                    className='_buyLogin_flex _buyLogin_card'
                     style={{ flexDirection: "row", position: "relative" }}
                 >
-                    <ArtistPage
-                        pesnalImg={pesnalImg}
-                        artistImg={ArtistImg}
-                        artisrName='yannick aaron'
-                    />
+                    
+                        <ArtistPage
+                            pesnalImg={pesnalImg}
+                            artistImg={ArtistImg}
+                            artisrName='yannick aaron'
+                        />
 
                     {/* 作品 */}
                     <div
-                        className='_buyLogin_flex _buyLogin_RWDinvisible'
+                        className='_buyLogin_RWDinvisible _buyLogin_RWDflexInvisible'
+                        style={{ flexDirection: "row", zIndex: 2 }}
+                    >
+                        <Art
+                            img={artsImg}
+                            artName='作品名稱可能會很長blablabla'
+                            artistName='作者名字也可能會長長長長長長長長'
+                            artPrice='$1000000k'
+                        />
+                        {/* 下一個藝術品 */}
+                        <Art
+                            img={artsImg}
+                            artName='作品名稱可能會很長blablabla'
+                            artistName='作者名字也可能會長長長長長長長長'
+                            artPrice='$1000000k'
+                        />
+                    </div>
+                </div>
+                
+                {/* 一個藝術家 */}
+                <div
+                    className='_buyLogin_flex _buyLogin_card'
+                    style={{ flexDirection: "row", position: "relative" }}
+                >
+                    
+                        <ArtistPage
+                            pesnalImg={pesnalImg}
+                            artistImg={ArtistImg}
+                            artisrName='yannick aaron'
+                        />
+
+                    {/* 作品 */}
+                    <div
+                        className='_buyLogin_RWDinvisible _buyLogin_RWDflexInvisible'
                         style={{ flexDirection: "row", zIndex: 2 }}
                     >
                         <Art
