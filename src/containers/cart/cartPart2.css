@@ -201,6 +201,10 @@ width: 16vw;
   background: #ffffff;
 }
 
+.cart__checkbox{
+  width: 20px;
+  height: 20px;
+}
 
 
 @media screen and (max-width: 1100px) {

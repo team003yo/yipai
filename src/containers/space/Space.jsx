@@ -3,14 +3,26 @@ import { Link } from 'react-router-dom'
 import './space.css'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Pagination from 'react-bootstrap/Pagination';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { TbArrowsSort } from 'react-icons/tb'
 // import { FaHeart } from 'react-icons/fa'
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function Space() {
+  const [space, setSpace] = useState([]);
+
+  useEffect(() => {
+    console.log('第二個參數是空陣列');
+    // 在 component 初始化的時候跑一次
+    // 通常會把去跟後端要資料的動作放在這裡
+    async function getSpace() {
+      let response = await axios.get('http://localhost:3001/space');
+      setSpace(response.data);
+    }
+    getSpace();
+  }, []);
   return (
     <>
       <header>
@@ -45,7 +57,7 @@ function Space() {
             </Dropdown>
           </nav>
           <main>
-            <div className="d-md-flex justify-content-between m-2">
+            <div className="d-md-flex justify-content-between m-2 space__main__header">
               <div className="space__none550 col1 text-nowrap d-inline-flex">
                 <Link to="/" className="text-nowrap">
                   <p>首頁</p>
@@ -55,65 +67,45 @@ function Space() {
                   <p>展覽空間</p>
                 </Link>
               </div>
-              <div className="col-7">
-              <Button className="space__button col-4 text-nowrap" variant="dark"> 
-                由新至舊<TbArrowsSort />
-              </Button>
+              <div className="col-2">
+                <Button
+                  className="space__button col-4 text-nowrap"
+                  variant="dark"
+                >
+                  由新至舊
+                  <TbArrowsSort />
+                </Button>
               </div>
             </div>
             <div className="container space__main-card mt-5">
               <div className="row align-items-start">
-                <div className="col space__main-card-item">
-                  <Link to="spacedetail">
-                    <div className="position-relative">
-                      <div className="Space__FaHeart_icon">
-                        <Link to="#">
-                          {/* <FaHeart className="FaHeart_icon" /> */}
-                          {/* 收藏 */}
-                        </Link>
-                      </div>
-                      <img src="https://obs.line-scdn.net/0hUiVAWg8pCkZrOCMHEzZ1EVFuCSlYVBlFDw5bRShWVHIRC0oWU1pNKEg5XHNFDk0YBQlFI007EXcUD04YBVtN/w1200" />
+                {space.map((space, index) => {
+                  return(
+                    <div
+                      key={space.space_id}
+                      className="col space__main-card-item"
+                    >
+                      <Link to={`/space/${space.space_id}`}>
+                        <div className="position-relative">
+                          <div className="Space__FaHeart_icon">
+                            <Link to="#">
+                              {/* <FaHeart className="FaHeart_icon" /> */}
+                              {/* 收藏 */}
+                            </Link>
+                          </div>
+                          <img src={space.space_img_file} />
+                        </div>
+                        <h4>{space.space_name}</h4>
+                        {/* <h4 className="space__main-card-item-text">英文名字</h4> */}
+                        <h6>{space.space_address}</h6>
+                      </Link>
                     </div>
-                      
-                    <h4>問空間</h4>
-                    <h4 className="space__main-card-item-text">英文名字</h4>
-                    <h5>新北市板橋區重慶路8號9樓</h5>
-                  </Link>
-                </div>
-                <div className="col space__main-card-item">
-                  <img src="https://obs.line-scdn.net/0hUiVAWg8pCkZrOCMHEzZ1EVFuCSlYVBlFDw5bRShWVHIRC0oWU1pNKEg5XHNFDk0YBQlFI007EXcUD04YBVtN/w1200" />
-                  <h4>問空間</h4>
-                  <h4>英文名字</h4>
-                  <h5>新北市板橋區重慶路8號9樓</h5>
-                </div>
-                <div className="col space__main-card-item">
-                  <img src="https://obs.line-scdn.net/0hUiVAWg8pCkZrOCMHEzZ1EVFuCSlYVBlFDw5bRShWVHIRC0oWU1pNKEg5XHNFDk0YBQlFI007EXcUD04YBVtN/w1200" />
-                  <h4>問空間</h4>
-                  <h4>英文名字</h4>
-                  <h5>新北市板橋區重慶路8號9樓</h5>
-                </div>
-                <div className="col space__main-card-item">
-                  <img src="https://obs.line-scdn.net/0hUiVAWg8pCkZrOCMHEzZ1EVFuCSlYVBlFDw5bRShWVHIRC0oWU1pNKEg5XHNFDk0YBQlFI007EXcUD04YBVtN/w1200" />
-                  <h4>問空間</h4>
-                  <h4>英文名字</h4>
-                  <h5>新北市板橋區重慶路8號9樓</h5>
-                </div>
-                <div className="col space__main-card-item">
-                  <img src="https://obs.line-scdn.net/0hUiVAWg8pCkZrOCMHEzZ1EVFuCSlYVBlFDw5bRShWVHIRC0oWU1pNKEg5XHNFDk0YBQlFI007EXcUD04YBVtN/w1200" />
-                  <h4>問空間</h4>
-                  <h4>英文名字</h4>
-                  <h5>新北市板橋區重慶路8號9樓</h5>
-                </div>
-                <div className="col space__main-card-item">
-                  <img src="https://obs.line-scdn.net/0hUiVAWg8pCkZrOCMHEzZ1EVFuCSlYVBlFDw5bRShWVHIRC0oWU1pNKEg5XHNFDk0YBQlFI007EXcUD04YBVtN/w1200" />
-                  <h4>問空間</h4>
-                  <h4>英文名字</h4>
-                  <h5>新北市板橋區重慶路8號9樓</h5>
-                </div>
+                  );
+                })}
               </div>
             </div>
             <div>
-              <Pagination className="space__page-item justify-content-end mt-4">
+              <Pagination className="space__page-item justify-content-center mt-4">
                 <Pagination.First />
                 <Pagination.Prev />
                 <Pagination.Item>{1}</Pagination.Item>

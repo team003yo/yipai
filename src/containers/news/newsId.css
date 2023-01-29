@@ -31,8 +31,15 @@
 .place{
     margin: 15px;
 }
-.address{
-    margin: 0px;
+.newsDetail_address{
+    margin:20px 0 20px 0 ;
+}
+.newsDetail_address-icon{
+    margin-right: 15px;
+}
+.newsDetail__text{
+    line-height: 40px;
+    padding: 10px;
 }
 .map__img {
     height: 344px;

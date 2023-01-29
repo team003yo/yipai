@@ -6,11 +6,11 @@
   height: 100%;
   grid-template-areas:
                        "ProductsDetail_figure  ProductsDetail_hgroup"
-                       "ProductsDetail_article  .."
-                       "ProductsDetail_aside  .."
+                       "ProductsDetail_article  ProductsDetail_article"
+                       "ProductsDetail_aside  ProductsDetail_aside"
                        /* "ProductsDetail_main  ProductsDetail_main" */
                       ; /* 2.區域分為4行兩列 */
-  grid-template-rows:  900px 411px 411px ; /* 3.各區域 寬高設置 */
+  grid-template-rows:  780px 411px 411px ; /* 3.各區域 寬高設置 */
   grid-template-columns: 755px 1fr;
  
 }
@@ -33,6 +33,12 @@
   justify-content: center;
   position: relative;
  
+}
+.ProductsDetail_addCar-button{
+  background-color: #C9D7E3;
+  border: none;
+  width: 300px;
+  padding: 20px;
 }
 #ProductsDetail_main{
   width: 100%;
@@ -77,12 +83,6 @@ p.ProductsDetail_price{
   top: 150px;
 }
 
-.ProductsDetail_addCar{
-  width: auto;
-  padding: 20px;
-  background-color:#C9D7E3 ;
-  color: rgb(0, 0, 0);
-}
 .ProductsDetail_addCar-bottom{
   display: none;
 }

@@ -18,6 +18,9 @@ const Footer = () => {
   if(location.pathname === '/cart/CartPart2'){
     return<></>
   }
+  if(location.pathname === '/cart/CartPart3'){
+    return<></>
+  }
   if(location.pathname === '/users/SellLogin'){ return<></> }
   // ;
 

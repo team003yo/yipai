@@ -13,6 +13,10 @@
     align-items: center;
     justify-content: space-between;
 }
+._buyLogin_flex_row{
+    display: flex;
+    flex-direction: row;
+}
 ._buyLogin_flex_content_sa {
     margin-top: 2em;
     display: flex;
@@ -261,9 +265,26 @@
 ._buyLogin_loveartIcon {
     background-image: url("../image/loveartIcon.svg");
 }
-@media screen and (max-width: 990px) {
+._buyLogin_artistPage{
+    position: absolute;
+    left:0;
+    z-index: 1;
 }
-@media screen and (max-width: 700px) {
+._buyLogin_artistHead{
+    z-index: 2;
+    margin-left: 3em;
+}
+._buyLogin_artistName{
+    font-size: 30px;
+    font-style: bold;
+}
+._buyLogin_h30{
+    height: 30em;
+}
+._buyLogin_artostText{
+    z-index: 2;
+    margin-right: 3em;
+    margin-left: 1em;
 }
 @media screen and (max-width: 550px) {
     ._buyLogin_rwd_flex {
@@ -318,6 +339,9 @@
     }
     ._buyLogin_mx2 {
         margin: 2em 0;
+    }
+    ._buyLogin_my2{
+        margin-top: 2em;
     }
     ._buyLogin_Contentbox {
         width: 18em;
@@ -399,7 +423,7 @@
         display: none;
     }
     ._buyLogin_table{
-        width: 20em;
+        width: 23em;
     }
     ._buyLogin_artName{
         font-weight: 400;
@@ -436,7 +460,54 @@
         align-items: center;
         justify-content: space-evenly;
     }
-    
+    ._buyLogin_buyHistory{
+        background-color: #C9D7E3;
+        height: 0.5em;
+    }
+    ._buyLogin_buyHistory tr td h3{
+        font-size: 12.3px;
+        text-align: center;
+    }
+    ._buyLogin_artPicture_min{
+        width: 10em;
+    }
+    ._buyLogin_textMin h4{
+        font-size: 18px;
+    }
+    ._buyLogin_flex_artMin{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    ._buyLogin_flex_artMin img{
+        width: 10em;
+    }
+    ._buyLogin_artistPage{
+        position: relative;
+    }
+    ._buyLogin_imgBox{
+        width: 21em;
+        height: 13em;
+        overflow: hidden;
+    }
+    ._buyLogin_imgBox img{
+        width: 20em;
+        position:absolute;
+        top: -50%;
+    }
+    ._buyLogin_h30{
+        height: auto;
+    }
+    ._buyLogin_artistHead{
+        width: 6em;
+        height: 6em;
+        margin-top: 1em;
+        margin-left: 0;
+    }
+    ._buyLogin_artostText{
+        margin-right: 0;
+        margin-left: 0;
+    }
     /* 按鈕列表 */
     /* .userBtns{
     } */

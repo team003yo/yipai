@@ -1,0 +1,26 @@
+ .yipai__img {
+       width: 100%;
+        background-size:cover ;
+    }
+    
+    .gradient__text{
+    left: 360px;
+    top: 135px;
+    }
+ @media screen and (max-width: 750px) {
+    .gradient__text{
+        text-align: center;
+
+        
+    }
+
+}
+.yipai__about {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+
