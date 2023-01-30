@@ -1,5 +1,5 @@
-// 使用者模組
-const Usersrouter = require('./modules/users')
+// 使用者授權驗證模組
+const authRouter = require('./routers/authRouter')
 
 const express = require("express");
 const app = express();
@@ -58,7 +58,6 @@ app.get("/users", async (req, res, next) => {
 });
 
 // 會員部分
-app.use('/users', Usersrouter);
 
 app.get("/users/:usersId", async (req, res, next) => {
     console.log("/users/:usersId => ", req.params.usersId);
