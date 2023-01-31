@@ -26,6 +26,7 @@ import {
   SellRegister,
   ProductList,
   MainContent,
+  ScrollToTop
 } from "./containers";
 import { Brand, Navbar, Carousel, ScrollToTop } from "./components";
 import "./App.css";
@@ -42,19 +43,21 @@ function App() {
   <SecondCartProvider localStorageKey="secondCart">
     <CartProvider>
     <BrowserRouter>
-      <div className="App">
-        <div className="gradient__bg">
-          <Navbar />
+    <div className="App">
+      <div className="gradient__bg">
+        <Navbar />
+        
+        {/* <Header /> */}
+        <MyContent>
 
-          {/* <Header /> */}
-          <MyContent>
+        
+          <Routes>
+            <Route index element={<Carousel />} /> 
+            {/* <Route index element={<Header />} /> */}
+          </Routes>
+          {/* ScrollToTop是為了讓連到另一頁內容時，頁面回到最上方 */}
           <ScrollToTop>
-
-            <Routes>
-              <Route index element={<Carousel />} />
-              {/* <Route index element={<Header />} /> */}
-            </Routes>
-            <Routes>
+          <Routes>
               <Route path="/" element={<Blog />} />
               <Route path="/space" element={<Space />} />
               <Route path="/space/:spaceId" element={<SpaceDetail />} />
@@ -74,13 +77,13 @@ function App() {
               <Route path="/cart-test" element={<SingleCart />} />
               <Route path="multiple-cart" element={<MultipleCart />} />
               <Route path="product-list" element={<ProductList />} />
-              <Route path="/news/:newsId" element={<NewsId />} />
+            <Route path="/news/:newsId" element={<NewsId />} />
               <Route path="news" element={<News />} />
-            </Routes>
-            </ScrollToTop>
+          </Routes>  
+          </ScrollToTop>
 
-          </MyContent>
-        </div>
+        </MyContent>
+      </div>
         <Brand />
         <Routes>
           <Route path="artistblog" element={<ArtistBlog />} />
@@ -96,5 +99,6 @@ function App() {
     </SecondCartProvider>
   );
 }
+  
 
 export default App;

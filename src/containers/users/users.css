@@ -1,6 +1,7 @@
 :root{
     --text-h1:44px;
     --text-h2:20px;
+    
 }
 ._users_login-button{
 margin-top: 150px;
@@ -25,8 +26,9 @@ margin-top: 150px;
     display: flex;
     position: absolute;
     left: calc(50vw - ((44px * 4) + 12em));
-    top:50vh;
+    top:30vh;
     z-index: 3;
+
 }
 ._users_text-center{
     text-align: center;
@@ -47,10 +49,43 @@ background-position: center center;
 
 }
 ._users_box{
-    padding: 6em;
+    padding: 5em;
     background-color:var(--color-bg);
 }
 ._users_box2{
-    padding: 6em;
+    padding: 5em;
     background-color:var(--color-text);
+}
+._users_box3{
+    padding: 2em;
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    left: calc(50vw - ((44px * 4) ));
+    top:80vh;
+
+}
+._users_box3_icon{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 414px){
+    ._users_flex-ab{
+        flex-direction: column;
+            display: flex;
+            position: absolute;
+            left: calc(10vw );
+            top:15vh;
+            z-index: 3;
+            
+    }
+    ._users_box3{
+        padding: 2em;
+        display: flex;
+        position: absolute;
+        z-index: 10;
+        left: calc(18vw );
+        top:86vh;
+    
+    }
 }

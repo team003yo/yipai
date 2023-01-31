@@ -23,7 +23,7 @@ const cart = (
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  
+
 
   return (
     <div className="yipai__navbar">

@@ -1,79 +1,87 @@
 // import React from 'react';
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import { Modal, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
-import "./productsDetail.css";
-import "bootstrap";
-import demo from "../../assets/demo.png";
-import artistLink from "../../assets/artistLink.png";
-import { Link } from "react-router-dom";
-import { Carousel } from "react-responsive-carousel";
-import axios from "axios";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-
+import './productsDetail.css'
+import 'bootstrap'
+import demo from '../../assets/demo.png'
+import artistLink from '../../assets/artistLink.png'
+import { Link, useLocation } from 'react-router-dom'
+import { Carousel } from 'react-responsive-carousel'
+import productsId01 from '../../assets/productsId01.png'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useParams  } from 'react-router-dom'
+import { RiDatabase2Fill } from 'react-icons/ri'
+import { BsWindowSidebar } from 'react-icons/bs'
 // cart part
 import { useCart } from "../cart/utils/useCart";
 
 const ProductsDetail = () => {
-  // cartpart
-  const {
-    cart,
-    items,
-    addItem,
-    removeItem,
-    updateItem,
-    clearCart,
-    isInCart,
-    plusOne,
-    minusOne,
-  } = useCart();
+  
+    // cartpart
+    const {
+      cart,
+      items,
+      addItem,
+      removeItem,
+      updateItem,
+      clearCart,
+      isInCart,
+      plusOne,
+      minusOne,
+    } = useCart();
+    
 
-  const [productName, setProductName] = useState("");
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const navigate = useNavigate();
 
-  const showModal = (name) => {
-    setProductName("產品：" + name + "已成功加入購物車");
-    handleShow();
-  };
+    const [productName, setProductName] = useState("");
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const navigate = useNavigate();
+  
+    const showModal = (name) => {
+      setProductName("產品：" + name + "已成功加入購物車");
+      handleShow();
+    };
+  
+    const messageModal = (
+      <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>加入購物車成功</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{productName} </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              handleClose();
+              navigate("/products", { replace: true });
+            }}
+          >
+            繼續購物
+          </Button>
+  
+          <Button
+            className="btn btn-primary"
+            onClick={() => {
+              // 導向購物車頁面
+              // props.history.push('/')
+              navigate("/cart", { replace: true });
+            }}
+          >
+            前往購物車結帳
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+    
+    const [error, setError] = useState(null);
+    const { productId } = useParams();
+    const [data, setdata] = useState([]);
 
-  const messageModal = (
-    <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-      <Modal.Header closeButton>
-        <Modal.Title>加入購物車成功</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>{productName} </Modal.Body>
-      <Modal.Footer>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            handleClose();
-            navigate("/products", { replace: true });
-          }}
-        >
-          繼續購物
-        </Button>
 
-        <Button
-          className="btn btn-primary"
-          onClick={() => {
-            // 導向購物車頁面
-            // props.history.push('/')
-            navigate("/cart", { replace: true });
-          }}
-        >
-          前往購物車結帳
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
-
-  const { productId } = useParams();
-  const [data, setdata] = useState([]);
+  
 
   useEffect(() => {
     // console.log('第二個參數是空陣列')
@@ -83,12 +91,12 @@ const ProductsDetail = () => {
     async function getdata() {
       let response = await axios.get(
         `http://localhost:3001/product/${productId}?`
-      );
-      setdata(response.data);
+      )
+      setdata(response.data)
       // console.log(response.data)
     }
-    getdata();
-  }, []);
+    getdata()
+  }, [])
 
   const display = (
     <>
@@ -177,7 +185,7 @@ const ProductsDetail = () => {
                 <div className="ProductsDetail_Detail">
                   <div className="ProductsDetail_Detail-text ">
                     <p className="ProductsDetail_p" align="left">
-                      {productsDetail.detail_text}
+                    {productsDetail.detail_text}
                     </p>
                   </div>
                   <div className="col-md-6">

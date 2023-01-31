@@ -67,21 +67,21 @@ const Cart = () => {
             ❮ 繼續購物
           </Link>
           <div className="flex-text margin-top-30">
-            <h2>
-              <BsCartFill className="iconStyle-title" />
+      <h2>
+      <BsCartFill className="iconStyle-title" />
               我的購物車
             </h2>
             <h5 className="">
               1.我的購物車 ▶
               <span className="color-gray"> 2.付款資訊 ▶ 3.訂單成立</span>
             </h5>
-          </div>
+    </div>
           <div className="dis-re">
       {/* 列出cart中清單 */}
       <ListItemsWithHook />
-            
+          
             <h4 className="cart__h4">您可能會喜歡 :</h4>
-
+          
             <div className="cart__products">
               <Carousel
                 className="cart__products-carousel"
@@ -90,84 +90,84 @@ const Cart = () => {
                 showStatus={false}
               >
                 <Link to="/products/ProductsDetail">
-                  <div>
-                    <img alt="first" src={pic5} />
-                  </div>
+      <div>
+        <img alt="first" src={pic5} />
+      </div>
                 </Link>
-                <div>
-                  <img alt="first" src={pic3} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic4} />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-              </Carousel>
+      <div>
+        <img alt="first" src={pic3} />
+        {/* <p className="legend">畫廊</p> */}
+      </div>
+      <div>
+        <img alt="first" src={pic4} />
+        {/* <p className="legend">Legend 2</p> */}
+      </div>
+  </Carousel>
               <Carousel
                 className="cart__products-carousel"
                 autoPlay
                 showThumbs={false}
                 showStatus={false}
               >
-                <div>
-                  <img alt="first" src={pic5} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic3} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic4} />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-              </Carousel>
+      <div>
+        <img alt="first" src={pic5} />
+        {/* <p className="legend">畫廊</p> */}
+      </div>
+      <div>
+        <img alt="first" src={pic3} />
+        {/* <p className="legend">畫廊</p> */}
+      </div>
+      <div>
+        <img alt="first" src={pic4} />
+        {/* <p className="legend">Legend 2</p> */}
+      </div>
+  </Carousel>
               <Carousel
                 autoPlay
                 className="cart__display-none cart__products-carousel"
                 showThumbs={false}
                 showStatus={false}
               >
-                <div>
-                  <img alt="first" src={pic5} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic3} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic4} />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-              </Carousel>
-            </div>
+      <div>
+        <img alt="first" src={pic5} />
+        {/* <p className="legend">畫廊</p> */}
+      </div>
+      <div>
+        <img alt="first" src={pic3} />
+        {/* <p className="legend">畫廊</p> */}
+      </div>
+      <div>
+        <img alt="first" src={pic4} />
+        {/* <p className="legend">Legend 2</p> */}
+      </div>
+  </Carousel>
+    </div>
             <br />
             <br />
             <br />
 
-            <footer class="footer-floor1">
-              <div>
+    <footer class="footer-floor1">   
+        <div>
                 <a href="#news">結帳資訊 : </a>
-              </div>
-              <div>
-                <a href="#contact">優惠券 : {0}</a>
+        </div>    
+        <div>
+          <a href="#contact">優惠券 : {0}</a>
                 <a href="#contact">總數 : {cart.totalItems}</a>
-                <a href="#contact">運費 : ${0}</a>
-              </div>
-            </footer>
-            <footer class="footer-floor2">
+          <a href="#contact">運費 : ${0}</a> 
+        </div>    
+    </footer>
+    <footer class="footer-floor2">
               <a href="#total">購物車總計 : {cart.cartTotal}</a>
               <Link to="/cart/CartPart2">
                 <button>前往結帳頁面</button>
               </Link>
-            </footer>
-          </div>
-        </div>
+    </footer>
+    </div>
+  </div>
       ) : (
         <BuyerLogin />
       )}
-      ;
+;
     </div>
   );
 };

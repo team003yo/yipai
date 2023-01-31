@@ -1,19 +1,78 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 import { TiArrowSortedDown } from 'react-icons/ti'
 import './sellerhome.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import { width } from "@mui/system";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import {RiSearch2Line} from 'react-icons/ri'
+
+function SellerSettings(params) {
+  ReactDOM.render(
+    <div>
+      <div
+        className="_buyLogin_flex"
+        style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+      >
+        <div style={{ margin: '0 2em 0 2em' }}>
+          <div className="_buyLogin_Titlebox">
+            <div className="_buyLogin_h4">帳戶設定</div>
+          </div>
+          <div className="_buyLogin_Contentbox">
+            {/* 表單 */}
+            <form method="post">
+              <div
+                className="_buyLogin_flex"
+                style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}
+              >
+                <label className="_buyLogin_h4" style={{ fontSize: 14 }}>
+                  用戶姓名：
+                </label>
+                <input
+                  className="_buyLogin_SettingInput"
+                  type="text"
+                  name="username"
+                ></input>
+              </div>
+              <br />
+              <button className="_buyLogin_ChangeControlBtn">更改</button>
+            </form>
+          </div>
+        </div>
+        <div style={{ margin: '0 2em 0 2em' }}>
+          <div className="_buyLogin_Titlebox">
+            <div className="_buyLogin_h4">帳戶設定</div>
+          </div>
+          <div className="_buyLogin_Contentbox">
+            {/* 表單 */}
+            <form method="post">
+              <label className="_buyLogin_h4" style={{ fontSize: 14 }}>
+                用戶姓名：
+              </label>
+              <input
+                className="_buyLogin_SettingInput"
+                type="text"
+                name="username"
+              ></input>
+              <br />
+              <button className="_buyLogin_ChangeControlBtn">更改</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>,
+    document.getElementById('userDown')
+  )
+}
 
 function SellerFrontPage(params) {
   ReactDOM.render(
     <div>
       <div className="SellerFrontPage__main__section__news">
         <h2>最新消息</h2>
-        <p>這是第一則重要消息！！看的到代表一切正常不用擔心，看不到代表要去客服反應！</p>
+        <p>
+          這是第一則重要消息！！看的到代表一切正常不用擔心，看不到代表要去客服反應！
+        </p>
       </div>
       <div className="SellerFrontPage__main__section__todolist">
         <h2>待辦事項</h2>
@@ -50,164 +109,71 @@ function SellerFrontPage(params) {
       </div>
       <div></div>
     </div>,
-    document.getElementById("sellerhome__main"));
+    document.getElementById('sellerhome__main')
+  )
 }
 function SellerPage(params) {
   ReactDOM.render(
     <div className="sellerpage">
-      <div className="sellerpage__title">
-        藝術家資訊
-      </div>
+      <div className="sellerpage__title">藝術家資訊</div>
       <div className="sellerpage__main">
         <div className="sellerpage__main__left">
-          <div className= "sellerpage__main__left__name">
+          <div className="sellerpage__main__left__name">
             <p>用戶姓名</p>
-            <input type="text" value="" style={{ border: "none" }}/>
+            <input type="text" value="" style={{ border: 'none' }} />
           </div>
           <div className="sellerpage__main__right__name">
             <p>帳號</p>
-            <input type="text" value="" style={{ border: "none" }}/>
+            <input type="text" value="" style={{ border: 'none' }} />
           </div>
           <Button variant="dark">更改</Button>
         </div>
         <div className="sellerpage__main__right">
           <p>畫廊介紹</p>
-          <textarea value="" style={{ width:"250px", height:"350px", backgroundColor:"#F9F7F2", border:"none"}} />
+          <textarea
+            value=""
+            style={{
+              width: '250px',
+              height: '400px',
+              backgroundColor: '#F9F7F2',
+              border: 'none',
+            }}
+          />
           <Button variant="dark">更改</Button>
         </div>
       </div>
     </div>,
-    document.getElementById("sellerhome__main"));
+    document.getElementById('sellerhome__main')
+  )
 }
 function SellerUpload(params) {
   ReactDOM.render(
-    <div className="SellerUpload">
-      <div className="SellerUpload__upload">
+    <div>
+      SellerUpload
+      <div>
+        <div>Upload</div>
+      </div>
+      <div>
         <div>
-          <label className="SellerUpload__uploadIcon">
-            {/* 增加檔案 */}
-            <input type="file" style={{ display: 'none' }}></input>
-          </label>
+          <div>基本資料</div>
+          <div>
+            <p>商品名稱</p>
+            <input type="text" value="" style={{ border: 'none' }} />
+            <p>商品介紹</p>
+            <input type="text" value="" style={{ border: 'none' }} />
+          </div>
         </div>
+        <div>銷售資訊</div>
       </div>
-      <div className="d-flex">
-        <div className="SellerUpload__name">
-          <div
-            style={{
-              backgroundColor: "#C9D7E3",
-              textAlign: "center" }}
-          >
-            基本資料
-          </div>
-          <div style={{ backgroundColor: "#EAEAEA", padding: "20px" }}>
-            <div className="SellerUpload__name__input">
-              <p>商品名稱:</p>
-              <input type="text" value="" style={{ border: "none" }}/>
-            </div>
-            <div className="SellerUpload__name__textarea">
-              <p>商品介紹:</p>
-              <textarea
-                value=""
-                style={{
-                  width: "330px", 
-                  height: "25px", 
-                  border:"none"}}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="SellerUpload__money">
-          <div
-            style={{
-              backgroundColor: "#C9D7E3",
-              textAlign: "center" 
-            }}
-          >
-            銷售資訊
-          </div>
-          <div style={{ backgroundColor: "#EAEAEA", padding: "20px" }}>
-            <div className="SellerUpload__money__input">
-              <p>商品價格:</p>
-              <input type="text" value="" style={{ border: "none", width: "140px"}}/>
-            </div>
-            <div className="SellerUpload__money__input">
-              <p>付款方式:</p>
-              <input type="text" value="" style={{ border: "none", width: "140px" }}/>
-            </div>
-          </div>
-        </div>
+      <div>
+        <div>商品規格</div>
+        <div>商品屬性</div>
       </div>
-      <div className="d-flex">
-        <div className="SellerUpload__kind">
-          <div
-            style={{
-              backgroundColor: "#C9D7E3",
-              textAlign: "center" 
-            }}
-          >
-            商品規格
-          </div>
-          <div className="d-flex" style={{ backgroundColor: "#EAEAEA", padding: "20px" }}>
-            <div className="SellerUpload__kind__left">
-              <div className="SellerUpload__kind__select">
-                <p>作品年份:</p>
-                <select style={{ border: "none" }}>
-                  <option value='A'>第一個選項</option>
-                  <option value='B'>第二個選項</option>
-                  <option value='C'>第三個選項</option>
-                </select>
-              </div>
-              <div className="SellerUpload__kind__select">
-                <p>作品種類:</p>
-                <select  style={{ border: "none" }}>
-                  <option value='A'>第一個選項</option>
-                  <option value='B'>第二個選項</option>
-                  <option value='C'>第三個選項</option>
-                </select>
-              </div>
-            </div>
-            <div className="SellerUpload__kind__right">
-              <p>作品尺寸:</p>
-              <div className="SellerUpload__kind__input">
-                長
-                <input type="text" value="" style={{ width:"50px", border: "none" }}/>
-                寬
-                <input type="text" value="" style={{ width:"50px", border: "none" }}/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="SellerUpload__attributes">
-          <div
-            style={{
-              backgroundColor: "#C9D7E3",
-              textAlign: "center" 
-            }}
-          >
-            商品屬性
-          </div>
-          <div style={{ backgroundColor: "#EAEAEA", padding: "20px" }}>
-            <div className="SellerUpload__attributes__select">
-              <p>風格</p>
-              <select  style={{ border: "none" }}>
-                <option value='A'>第一個選項</option>
-                <option value='B'>第二個選項</option>
-                <option value='C'>第三個選項</option>
-              </select>
-            </div>
-            <div className="SellerUpload__attributes__select">
-              <p>色系</p>
-              <div>紅</div>
-              <div>綠</div>
-              <div>藍</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Button variant="dark" className="me-2">取消</Button>
+      <Button variant="dark">取消</Button>
       <Button variant="dark">儲存並送出</Button>
     </div>,
-    document.getElementById("sellerhome__main"));
+    document.getElementById('sellerhome__main')
+  )
 }
 function SellerProduct(params) {
   ReactDOM.render(
@@ -216,20 +182,18 @@ function SellerProduct(params) {
         <nav id="SellerProduct__nav">
           <h1 className="SellerProduct__total">共有26件</h1>
         </nav>
-        <aside id="SellerProduct__aside" >
-          <ul className="SellerProduct__aside-list">
-            <li className="SellerProduct__aside-li">
-              <div className="SellerProduct__aside-searchBar">
-                <RiSearch2Line className="SellerProduct__aside-searchBar-icon" style={{width:"40px", height:"40px"}}
-                />
-              </div>
-            </li>
-            <li className="SellerProduct__aside-li">
-              <Button variant="dark">新增商品+</Button>
-            </li>
-            <li className="SellerProduct__aside-li">
-              <Button variant="dark">排序</Button>
-          </li>
+      <aside id="SellerProduct__aside" >
+        <ul className="SellerProduct__aside-list">
+        <li className="SellerProduct__aside-li"><div className="SellerProduct__aside-searchBar">
+          <RiSearch2Line className="SellerProduct__aside-searchBar-icon" style={{width:"40px", height:"40px"}}/>
+        </div>
+        </li>
+        <li className="SellerProduct__aside-li">
+        <Button variant="dark">新增商品+</Button>
+        </li>
+        <li className="SellerProduct__aside-li">
+        <Button variant="dark">排序</Button>
+        </li>
         </ul>
         </aside>
         <main id="SellerProduct__main">
@@ -340,10 +304,14 @@ function SellerProduct(params) {
         </main>
       </section>
     </div>,
-    document.getElementById("sellerhome__main"));
+    document.getElementById('sellerhome__main')
+  )
 }
+
 function SellerOrder(params) {
-  ReactDOM.render(<div>
+  ReactDOM.render(
+    <div>
+      SellerOrder
       <div className="sellerorder__main__text ">
         <div>
           <h1>共有幾筆訂單</h1>
@@ -358,32 +326,53 @@ function SellerOrder(params) {
           <thead>
             <tr>
               <th>
-                <Button className="" variant="--color-bg" style={{ border: "none" }}> 
+                <Button
+                  className=""
+                  variant="--color-bg"
+                  style={{ border: 'none' }}
+                >
                   訂單編號
-                  <TiArrowSortedDown/>
+                  <TiArrowSortedDown />
                 </Button>
               </th>
               <th>
-                <Button className="" variant="--color-bg" style={{ border: "none" }}> 
+                <Button
+                  className=""
+                  variant="--color-bg"
+                  style={{ border: 'none' }}
+                >
                   出貨狀況
-                  <TiArrowSortedDown/>
+                  <TiArrowSortedDown />
                 </Button>
               </th>
               <th>
-                <Button className="" variant="--color-bg" style={{ border: "none" }}> 
+                <Button
+                  className=""
+                  variant="--color-bg"
+                  style={{ border: 'none' }}
+                >
                   金額
-                  <TiArrowSortedDown/>
-                </Button></th>
-              <th>
-                <Button className="" variant="--color-bg" style={{ border: "none" }}> 
-                  售出時間
-                  <TiArrowSortedDown/>
+                  <TiArrowSortedDown />
                 </Button>
               </th>
               <th>
-                <Button className="" variant="--color-bg" style={{ border: "none" }}> 
+                <Button
+                  className=""
+                  variant="--color-bg"
+                  style={{ border: 'none' }}
+                >
+                  售出時間
+                  <TiArrowSortedDown />
+                </Button>
+              </th>
+              <th>
+                <Button
+                  className=""
+                  variant="--color-bg"
+                  style={{ border: 'none' }}
+                >
                   售出數量
-                  <TiArrowSortedDown/>
+                  <TiArrowSortedDown />
                 </Button>
               </th>
               <th></th>
@@ -409,7 +398,8 @@ function SellerOrder(params) {
               <td>
                 <Button variant="dark">詳細資料</Button>
               </td>
-            </tr>            <tr>
+            </tr>{' '}
+            <tr>
               <td>0000000000000000000000</td>
               <td>未出貨</td>
               <td>2000</td>
@@ -423,7 +413,8 @@ function SellerOrder(params) {
         </table>
       </div>
     </div>,
-    document.getElementById("sellerhome__main"));
+    document.getElementById('sellerhome__main')
+  )
 }
 
-export { SellerFrontPage, SellerPage, SellerUpload, SellerProduct, SellerOrder};
+export { SellerFrontPage, SellerPage, SellerUpload, SellerProduct, SellerOrder }

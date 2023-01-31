@@ -1,9 +1,9 @@
 import React from "react";
 function BuyBotton(params) {
     return (
-        <div style={params.btnStyle}>
-            <button className={params.className}  onClick={params.onClick}>
-                <img className={params.ImgClassName} src={params.src} alt={params.alt}></img>
+        <div>
+            <button className='_buyLogin_buyerControlBtn' onClick={params.onClick}>
+                <img src={params.src} alt={params.alt}></img>
                 {params.text}
             </button>
         </div>

@@ -42,10 +42,10 @@ const ArtistBlog = () => {
           <div id="artistblog" className="grid">
             <div className="yipai__artistbox">
               <img src={pic1} alt="img" />
-            </div>
+    </div>
             <div className="yipai__artistbox">
               <img src={pic2} alt="img2" />
-            </div>
+  </div>
             <div className="yipai__artistbox">
               <img src={pic3} alt="img" />
             </div>
@@ -69,7 +69,7 @@ const ArtistBlog = () => {
           </div>
         </div>
       </div>
-        
+ 
       );
     })}
   </>

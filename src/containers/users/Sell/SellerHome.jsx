@@ -7,18 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SellerButton from './SellerButton'
 
 // Onclick
-
-import { SellerFrontPage,SellerPage,SellerUpload,SellerProduct,SellerOrder } from './SellerOnclick'
-
-
+import { SellerFrontPage } from './SellerOnclick'
+import { SellerPage } from './SellerOnclick'
+import { SellerUpload } from './SellerOnclick'
+import { SellerProduct } from './SellerOnclick'
+import { SellerOrder } from './SellerOnclick'
 
 // icon
-import buyerImg from '../image/buyHead.png'
-import sellerHouseIcon from '../image/sellerHouseIcon.svg'
-import sellerpageIcon from '../image/sellerpageIcon.svg'
-import sellerupIcon from '../image/sellerupIcon.svg'
-import sellerlistIcon from '../image/sellerlistIcon.svg'
-import sellerorderIcon from '../image/sellerorderIcon.svg'
+import buyerImg from './image/buyHead.png'
+import sellerHouseIcon from './image/sellerHouseIcon.svg'
+import sellerpageIcon from './image/sellerpageIcon.svg'
+import sellerupIcon from './image/sellerupIcon.svg'
+import sellerlistIcon from './image/sellerlistIcon.svg'
+import sellerorderIcon from './image/sellerorderIcon.svg'
 
 
 function SellerHome() {
