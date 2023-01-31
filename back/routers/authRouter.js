@@ -8,14 +8,16 @@ const pool = require('../utils/db');
 const argon2 = require('argon2');
 //圖片上傳的名稱套件 uuid https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
+// 要處理 content-type 是 multipart/form-data，express 沒有內建，需要另外用套件，這邊用第三方套件 multer 來處理
+// 圖片上傳的套件 https://www.npmjs.com/package/multer
+const multer = require('multer');
 
 router.use((req, res, next) => {
   console.log('這裡是驗證路由（auth router）的中間件');
   next();
 });
 
-// 要處理 content-type 是 multipart/form-data，express 沒有內建，需要另外用套件，這邊用第三方套件 multer 來處理
-const multer = require('multer');
+
 const path = require('path');
 // 設定註冊上傳圖片存哪裡: 位置跟名稱
 const storage = multer.diskStorage({
@@ -61,12 +63,11 @@ const uploader = multer({
 // 驗證資料 validation
 const registerRules = [
   // 中間件: 負責檢查 email 是否ＯＫ
-  body('email').isEmail().withMessage('請輸入正確格式的 Email'),
+  // body('email').isEmail().withMessage('請輸入正確格式的 Email'),
   // 中間件: 檢查密碼的長度
   body('password').isLength({ min: 8 }).withMessage('密碼長度至少為 8'),
   body('password').isLength({ max: 12 }).withMessage('密碼長度至多為 12'),
   // 中間件: 檢查 password 跟 confirmPassword 是否一致
-  // TODO: 客製自己想要的檢查條件
   body('confirmPassword')
     .custom((value, { req }) => {
       return value === req.body.password;
@@ -78,7 +79,7 @@ const registerRules = [
 router.post('/register', uploader.single('photo'), registerRules, async (req, res, next) => {
   console.log('I am register', req.body, req.file);
 
-  //async/await 應該要有 try-catch 去做錯誤處理
+  //TODO:async/await 應該要有 try-catch 去做錯誤處理
 
   // 處理驗證的結果
   const validateResult = validationResult(req);
@@ -90,33 +91,37 @@ router.post('/register', uploader.single('photo'), registerRules, async (req, re
   }
 
   // 驗證通過
-  // 檢查 email 是否已經註冊過
-  let [members] = await pool.execute('SELECT * FROM users WHERE users_email = ?', [req.body.email]);
+  // 檢查 帳號名稱 是否已經註冊過
+  let [members] = await pool.execute('SELECT * FROM users WHERE users_account = ?', [req.body.account]);
   if (members.length > 0) {
-    // 表示這個 email 存在資料庫中
+    // 表示這個 帳號 存在資料庫中
     // 如果已經註冊過，就回覆 400
     return res.status(400).json({
       errors: [
         {
-          msg: 'email 已經註冊過',
-          param: 'email',
+          msg: '帳號已經註冊過',
+          param: 'account',
         },
       ],
     });
   }
 
   // 雜湊 hash 密碼
-  const hashedPassword = await argon2.hash(req.body.password);
+  // const hashedPassword = await argon2.hash(req.body.password);
 
   // 存到資料庫
   // 允許使用者不上傳圖片，所以要先檢查一下使用者到底有沒有上傳
   const filename = req.file ? path.join('uploads', req.file.filename) : '';
-  let result = await pool.execute('INSERT INTO users (users_email, users_password, users_name, user_imageHead) VALUES (?, ?, ?, ?);', [req.body.email, hashedPassword, req.body.name, filename]);
+  // 雜湊後的密碼存入
+  // let result = await pool.execute('INSERT INTO users (users_account, users_password, users_name, user_imageHead) VALUES (?, ?, ?, ?);', [req.body.account, hashedPassword, req.body.name, filename]);
+  
+  // 還沒雜湊的密碼上傳
+  let result = await pool.execute('INSERT INTO users (users_account, users_password, users_name, user_imageHead) VALUES (?, ?, ?, ?);', [req.body.account, req.body.password, req.body.name, filename]);
   console.log('register: insert to db', result);
 
   // 回覆給前端
   res.json({
-    email: req.body.email,
+    account: req.body.account,
     member_id: result[0].insertId,
   });
 });
@@ -124,14 +129,14 @@ router.post('/register', uploader.single('photo'), registerRules, async (req, re
 // /api/auth/login 登入網址
 router.post('/login', async (req, res, next) => {
   // 確認 email 是否存在
-  let [members] = await pool.execute('SELECT * FROM users WHERE users_email = ?', [req.body.email]);
+  let [members] = await pool.execute('SELECT * FROM users WHERE users_account = ?', [req.body.account]);
   if (members.length === 0) {
-    // 表示這個 email 不存在資料庫中 -> 沒註冊過
+    // 表示這個 account 不存在資料庫中 -> 沒註冊過
     // 不存在，就回覆 401
     return res.status(401).json({
       errors: [
         {
-          // msg: 'email 尚未註冊',
+          // msg: 'account 尚未註冊',
           // param: 'email',
           msg: '帳號或密碼錯誤',
         },
@@ -165,8 +170,9 @@ router.post('/login', async (req, res, next) => {
   let retMember = {
     id: member.id,
     name: member.name,
-    email: member.email,
-    photo: member.photo,
+    account:member.account,
+    email: member.password,
+    // photo: member.photo,
   };
   // 寫入 session
   req.session.member = retMember;

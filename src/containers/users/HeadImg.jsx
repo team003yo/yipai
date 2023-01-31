@@ -11,30 +11,6 @@ import {
 
 import buyerImg from "./image/buyHead.png";
 
-// const useRWD=()=>{
-//     const [mobile,setMobile]=useState("mobile");
-
-//     const handleRWD=()=>{
-//         if(window.innerWidth>768)
-//             setMobile("PC");
-//         else
-//             setMobile("mobile");
-//     }
-
-//     useEffect(()=>{
-    
-//         window.addEventListener('resize',handleRWD);
-//         handleRWD(); //加入此行
-        
-//         return(()=>{
-//             window.removeEventListener('resize',handleRWD);
-//         })
-//     },[]);
-
-//     return mobile;
-// }
-
-
 function HeadImg(user) {
     return (
         <div className='_buyLogin_flex'>
