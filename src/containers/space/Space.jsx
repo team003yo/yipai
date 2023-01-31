@@ -20,6 +20,7 @@ function Space() {
     async function getSpace() {
       let response = await axios.get('http://localhost:3001/space');
       setSpace(response.data);
+
     }
     getSpace();
   }, []);

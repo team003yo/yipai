@@ -11,6 +11,13 @@
     margin: auto;
 
 }
+.yipai__wrap{
+    width: 100%;
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 40px;
+    break-inside: avoid;
+}
 
 .yipai__artistbox{    
     /* background: #000; */
@@ -44,6 +51,13 @@
 
 }
 
+.artistblog__wrap{
+    width: 80%;
+    margin: 0 auto;
+    column-count:3 ;
+    column-gap: 40px;
+    break-inside: avoid;
+}
 
 @media screen and (max-width: 990px) {
     .yipai__artistbox{
