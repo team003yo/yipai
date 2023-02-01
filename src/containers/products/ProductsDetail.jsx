@@ -1,87 +1,79 @@
 // import React from 'react';
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import './productsDetail.css'
-import 'bootstrap'
-import demo from '../../assets/demo.png'
-import artistLink from '../../assets/artistLink.png'
-import { Link, useLocation } from 'react-router-dom'
-import { Carousel } from 'react-responsive-carousel'
-import productsId01 from '../../assets/productsId01.png'
-import axios from 'axios'
-import { useEffect } from 'react'
-import { useParams  } from 'react-router-dom'
-import { RiDatabase2Fill } from 'react-icons/ri'
-import { BsWindowSidebar } from 'react-icons/bs'
+
+import "./productsDetail.css";
+import "bootstrap";
+import demo from "../../assets/demo.jpg";
+import artistLink from "../../assets/artistLink.png";
+import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import axios from "axios";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 // cart part
 import { useCart } from "../cart/utils/useCart";
 
 const ProductsDetail = () => {
-  
-    // cartpart
-    const {
-      cart,
-      items,
-      addItem,
-      removeItem,
-      updateItem,
-      clearCart,
-      isInCart,
-      plusOne,
-      minusOne,
-    } = useCart();
-    
+  // cartpart
+  const {
+    cart,
+    items,
+    addItem,
+    removeItem,
+    updateItem,
+    clearCart,
+    isInCart,
+    plusOne,
+    minusOne,
+  } = useCart();
 
+  const [productName, setProductName] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const navigate = useNavigate();
 
-    const [productName, setProductName] = useState("");
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const navigate = useNavigate();
-  
-    const showModal = (name) => {
-      setProductName("產品：" + name + "已成功加入購物車");
-      handleShow();
-    };
-  
-    const messageModal = (
-      <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>加入購物車成功</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{productName} </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="secondary"
-            onClick={() => {
-              handleClose();
-              navigate("/products", { replace: true });
-            }}
-          >
-            繼續購物
-          </Button>
-  
-          <Button
-            className="btn btn-primary"
-            onClick={() => {
-              // 導向購物車頁面
-              // props.history.push('/')
-              navigate("/cart", { replace: true });
-            }}
-          >
-            前往購物車結帳
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    );
-    
-    const [error, setError] = useState(null);
-    const { productId } = useParams();
-    const [data, setdata] = useState([]);
+  const showModal = (name) => {
+    setProductName("產品：" + name + "已成功加入購物車");
+    handleShow();
+  };
 
+  const messageModal = (
+    <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Header closeButton>
+        <Modal.Title>加入購物車成功</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{productName} </Modal.Body>
+      <Modal.Footer>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            handleClose();
+            navigate("/products", { replace: true });
+          }}
+        >
+          繼續購物
+        </Button>
 
-  
+        <Button
+          className="btn btn-primary"
+          onClick={() => {
+            // 導向購物車頁面
+            // props.history.push('/')
+            navigate("/cart", { replace: true });
+          }}
+        >
+          前往購物車結帳
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+
+  const { productId } = useParams();
+  const [data, setdata] = useState([]);
 
   useEffect(() => {
     // console.log('第二個參數是空陣列')
@@ -91,12 +83,12 @@ const ProductsDetail = () => {
     async function getdata() {
       let response = await axios.get(
         `http://localhost:3001/product/${productId}?`
-      )
-      setdata(response.data)
+      );
+      setdata(response.data);
       // console.log(response.data)
     }
-    getdata()
-  }, [])
+    getdata();
+  }, []);
 
   const display = (
     <>
@@ -107,45 +99,47 @@ const ProductsDetail = () => {
               <hgroup id="ProductsDetail_hgroup">
                 <div
                   key={productsDetail.id}
-                  className="ProductsDetail_nav-wrapper d-inline"
-                >
+                  className="ProductsDetail_nav-wrapper d-inline">
                   <div className="ProductsDetail_d-inline">
                     <h2>{productsDetail.name}</h2>
-                    <h4 className="ProductsDetail_card-text">BILD</h4>
-                    <h4>荷蘭</h4>
+                    <h4 className="ProductsDetail_card-text">{productsDetail.artist}</h4>
                   </div>
 
                   <table className="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col">媒材</th>
-                        <th scope="col">風格</th>
-                        <th scope="col">年份</th>
+                        <th scope="col"><h4>媒材</h4></th>
+                        {/* <th scope="col">風格</th> */}
+                        <th scope="col"><h4>年份</h4></th>
+                        <th scope="col"><h4>色系</h4></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>{productsDetail.material}</td>
-                        <td>印象派</td>
+                        {/* <td>印象派</td> */}
                         <td>{productsDetail.creation_year}</td>
+                        <td>{productsDetail.work_hue}</td>
+                        
                       </tr>
                     </tbody>
                     <thead>
                       <tr>
-                        <th scope="col">尺寸</th>
-                        <th scope="col">色系</th>
+                        <th scope="col"><h4>尺寸</h4></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>
-                          <p>寬</p>
-                          <p>高</p>
-                        </td>
-                        <td>{productsDetail.work_hue}</td>
+                        
+                          <td>寬</td>
+                          <td>高</td>
+                       
                       </tr>
                     </tbody>
+                  
                   </table>
+                  <p>價格</p>
+                  <h1  className="ProductsDetail_price_item d-flex">${productsDetail.price}</h1>
                   <div className="ProductsDetail_addCar ">
                     <button
                       className="ProductsDetail_addCar-button d-inline"
@@ -168,28 +162,23 @@ const ProductsDetail = () => {
                 <p className="ProductsDetail_page-link">
                   <Link to="/products">藝術品</Link>▶印象派
                 </p>
-                <Carousel
-                  className="ProductsDetail_carousel-products"
-                  showThumbs={true}
-                  showStatus={false}
-                >
-                  <img
+                <img
                     className="ProductsDetail_img-pic"
                     src={productsDetail.img_file}
                     alt="img"
                   />
-                  <img src={productsDetail.img_file} alt="img" />
-                </Carousel>
+                
               </figure>
               <article id="ProductsDetail_article">
                 <div className="ProductsDetail_Detail">
                   <div className="ProductsDetail_Detail-text ">
                     <p className="ProductsDetail_p" align="left">
-                    {productsDetail.detail_text}
+                      {productsDetail.detail_text}
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <img src={demo} alt="" className="ProductsDetail_demoPic" />
+                  <img className="ProductsDetail_Pic" src={productsDetail.img_file}/>
+                  <img src={demo} alt="" className="ProductsDetail_demobox" />
                   </div>
                 </div>
               </article>

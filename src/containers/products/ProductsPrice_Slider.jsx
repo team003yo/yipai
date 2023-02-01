@@ -25,76 +25,66 @@ const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)'
 const marks = [
   {
-    value: 0,
+    value: 2000,
   },
   {
     value: 20,
   },
   {
-    value: 37,
+    value: 50,
   },
   {
-    value: 100,
+    value: 99999,
   },
 ]
-const IOSSlider = styled(Slider)(({ theme }) => ({
-  color: theme.palette.mode === 'dark' ? '#3880ff' : '#3880ff',
+const AirbnbSlider = styled(Slider)(({ theme }) => ({
+  color: 'dark',
   height: 2,
   padding: '15px 0',
   '& .MuiSlider-thumb': {
     height: 28,
     width: 28,
     backgroundColor: '#fff',
-    boxShadow: iOSBoxShadow,
-    '&:focus, &:hover, &.Mui-active': {
-      boxShadow:
-        '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)',
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        boxShadow: iOSBoxShadow,
-      },
-    },
-  },
-  '& .MuiSlider-valueLabel': {
-    fontSize: 12,
-    fontWeight: 'normal',
-    top: -6,
-    backgroundColor: 'unset',
-    color: theme.palette.text.primary,
-    '&:before': {
-      display: 'none',
-    },
-    '& *': {
-      background: 'transparent',
-      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+    '&:hover': {
+      boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
     },
   },
   '& .MuiSlider-track': {
-    border: 'none',
+    height: 3,
   },
   '& .MuiSlider-rail': {
-    opacity: 0.5,
-    backgroundColor: '#bfbfbf',
+    color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
+    opacity: theme.palette.mode === 'dark' ? undefined : 1,
+    height: 3,
   },
-  '& .MuiSlider-mark': {
-    backgroundColor: '#bfbfbf',
-    height: 8,
-    width: 1,
-    '&.MuiSlider-markActive': {
-      opacity: 1,
-      backgroundColor: 'currentColor',
-    },
-  },
-}))
+}));
+
+interface AirbnbThumbComponentProps extends React.HTMLAttributes<unknown> {}
+
+function AirbnbThumbComponent(props: AirbnbThumbComponentProps) {
+  const { children, ...other } = props;
+  return (
+    <SliderThumb {...other}>
+      {children}
+      <span className="airbnb-bar" />
+      <span className="airbnb-bar" />
+      <span className="airbnb-bar" />
+    </SliderThumb>
+  );
+}
 
 export default function CustomizedSlider() {
   return (
     <Box sx={{ width: 180 }}>
-      <IOSSlider
-        aria-label="ios slider"
-        defaultValue={60}
-        marks={marks}
+      <Box sx={{ m: 3 }} />
+      <AirbnbSlider
+        slots={{ thumb: AirbnbThumbComponent }}
+        getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
+        defaultValue={[20, 40]}
         valueLabelDisplay="on"
+        marks={marks}
+        min={2000}
+        max={9999}
       />
     </Box>
   )
