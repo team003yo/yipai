@@ -27,7 +27,7 @@
                          ".. Products__footer "
                       ; /* 2.區域分為4行兩列 */
     grid-template-rows: 130px 300px 1300px 50px; /* 3.各區域 寬高設置 */
-    grid-template-columns:  250px 1fr ;
+    grid-template-columns:  0px 1fr ;
   }
   
   #Products__section > #Products__nav {
@@ -44,8 +44,8 @@
     justify-content: center;
     align-content: center;
   }
-  .Products＿slider-size{
-    margin: 10px 0 10px 0;
+  .Products＿slider-size,.Products＿slider-price{
+    margin: 10px 0 20px 0;
   }
   .Products＿size-h3,.Products＿size-h5{
     margin:20px ;
@@ -108,7 +108,7 @@
 .Products__figure-wrap{
    width: 80%;
    margin: 0px auto;
-   column-count: 4;
+   column-count: 3;
    /*欄數*/
    column-gap: 40px;
    /*每欄間隔*/

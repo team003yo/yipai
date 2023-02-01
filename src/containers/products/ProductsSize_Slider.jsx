@@ -26,9 +26,6 @@ const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)'
 const marks = [
   {
-    value: 0,
-  },
-  {
     value: 20,
   },
   {
@@ -39,7 +36,7 @@ const marks = [
   },
 ]
 const IOSSlider = styled(Slider)(({ theme }) => ({
-  color: theme.palette.mode === 'dark' ? '#3880ff' : '#3880ff',
+  color: theme.palette.mode === 'dark' ? '#00000' : '#00000',
   height: 2,
   padding: '15px 0',
   '& .MuiSlider-thumb': {
@@ -93,9 +90,12 @@ export default function CustomizedSlider() {
     <Box sx={{ width: 180 }}>
       <IOSSlider
         aria-label="ios slider"
-        defaultValue={60}
+        defaultValue={20}
         marks={marks}
         valueLabelDisplay="on"
+        step={20}
+        min={20}
+        max={100}
       />
     </Box>
   )
