@@ -88,8 +88,9 @@ app.get("/api", (req, res, next) => {
 const authRouter = require("./routers/authRouter");
 app.use("/api/auth", authRouter);
 // 會員路由
-// const memberRouter = require("./routers/memberRouter");
-// app.use("/api/members", memberRouter);
+const memberRouter = require("./routers/memberRouter");
+app.use("/api/members", memberRouter);
+
 // 會員資料檢視
 app.get("/users/:usersId", async (req, res, next) => {
     console.log("/users/:usersId => ", req.params.usersId);

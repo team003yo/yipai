@@ -126,7 +126,7 @@ router.post('/register', uploader.single('photo'), registerRules, async (req, re
   });
 });
 
-// /api/auth/login 登入網址
+// /api/auth/login 處理登入的網址
 router.post('/login', async (req, res, next) => {
   // 確認 email 是否存在
   let [members] = await pool.execute('SELECT * FROM users WHERE users_account = ?', [req.body.account]);
