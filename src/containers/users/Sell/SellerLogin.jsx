@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './sellerLogin.css'
 import SellerHome from './SellerHome'
-var sellerId = true
+var sellerId = false;
 
 const SellLogin = () => (
   <div id="login">
@@ -34,7 +34,7 @@ const SellLogin = () => (
           <div style={{ fontColor: '#515151' }}>
             沒有會員？請
             <span>
-              <Link to="">註冊</Link>
+              <Link to="/users/SellRegister">註冊</Link>
             </span>
           </div>
         </div>

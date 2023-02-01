@@ -18,8 +18,8 @@ function ListItemsWithHook() {
       >
         <thead>
           <tr>
-            <th>id</th>
-            <th>名稱</th>
+            
+            <th className='text-center'>名稱</th>
             <th>單價</th>
             <th>數量</th>
             <th>小計</th>
@@ -30,8 +30,8 @@ function ListItemsWithHook() {
           {items.map((v, i) => {
             return (
               <tr key={v.id}>
-                <td>{v.id}</td>
-                <td><Link to={`/products/${v.id}`}><a>{v.name}</a></Link></td>
+                
+                <td className='text-center'><Link to={`/products/${v.id}`}><a>{v.name}</a></Link></td>
                 <td>{v.price}</td>
                 <td>
                   <div className="btn-group mr-2" role="group">

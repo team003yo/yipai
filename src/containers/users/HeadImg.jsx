@@ -11,34 +11,10 @@ import {
 
 import buyerImg from "./image/buyHead.png";
 
-// const useRWD=()=>{
-//     const [mobile,setMobile]=useState("mobile");
-
-//     const handleRWD=()=>{
-//         if(window.innerWidth>768)
-//             setMobile("PC");
-//         else
-//             setMobile("mobile");
-//     }
-
-//     useEffect(()=>{
-    
-//         window.addEventListener('resize',handleRWD);
-//         handleRWD(); //加入此行
-        
-//         return(()=>{
-//             window.removeEventListener('resize',handleRWD);
-//         })
-//     },[]);
-
-//     return mobile;
-// }
-
-
 function HeadImg(user) {
     return (
         <div className='_buyLogin_flex'>
-            <div className='_buyLogin_flex _buyLogin_rwd_flex'>
+            <div className='_buyLogin_RWDflexcol _buyLogin_rwd_flex'>
                 <div className='_buyLogin_flex-re' style={{ marginTop: "1em" }}>
                     <img
                         src={buyerImg}
@@ -58,7 +34,7 @@ function HeadImg(user) {
                 </h3>
             </div>
 
-            <div className='_buyLogin_flex _buyLogin_rwd_flexbtn'>
+            <div className=' _buyLogin_rwd_flexbtn'>
                 {/* 按鈕列 */}
                 <BuyBotton
                     text='帳戶設定'

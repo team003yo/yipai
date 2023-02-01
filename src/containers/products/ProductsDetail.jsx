@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
+import { BsFillHeartFill, BsCartFill } from 'react-icons/bs';
+
 import "./productsDetail.css";
 import "bootstrap";
 import demo from "../../assets/demo.png";
@@ -16,7 +18,10 @@ import { useParams } from "react-router-dom";
 // cart part
 import { useCart } from "../cart/utils/useCart";
 
+
 const ProductsDetail = () => {
+ 
+
   // cartpart
   const {
     cart,
@@ -29,12 +34,15 @@ const ProductsDetail = () => {
     plusOne,
     minusOne,
   } = useCart();
+  
+  
 
   const [productName, setProductName] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
+  
 
   const showModal = (name) => {
     setProductName("產品：" + name + "已成功加入購物車");
@@ -148,6 +156,10 @@ const ProductsDetail = () => {
                         addItem(item);
                         // 呈現跳出對話盒
                         showModal(productsDetail.name);
+                        
+                        
+
+
                       }}
                     >
                       加入購物車

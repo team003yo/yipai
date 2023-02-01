@@ -1,23 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsFillHeartFill, BsCartFill } from "react-icons/bs";
+import { BsCartFill } from "react-icons/bs";
 import BuyerLogin from "../users/login/Login";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import { RiCloseCircleFill } from "react-icons/ri";
-import { Table } from "react-bootstrap";
-import productsId01 from "../../assets/productsId01.png";
+
 import "./cart.css";
 import pic5 from "../../assets/pic5.jpg";
 import pic3 from "../../assets/pic3.jpg";
 import pic4 from "../../assets/pic4.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useCart } from './utils/useCart'
+import { useCart } from "./utils/useCart";
 
-import LinkItems from './pages/ShoppingCart/components/LinkItems'
+
 import ListItemsWithHook from './pages/ShoppingCart/components/ListItemsWithHook'
 
 var buyerId = true;
