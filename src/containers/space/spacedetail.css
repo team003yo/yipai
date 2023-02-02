@@ -26,7 +26,12 @@
 }
 
 .space__detail-name{
-	color: black;
+    background-color: var(--color-text);
+    /* box-shadow: 0 0 10px; */
+    /* border-radius: 10px; */
+    opacity: .9;
+    padding: 10px 50px;
+	color: white;
 	position:absolute;
 	top: 30%;
 	left:10%;

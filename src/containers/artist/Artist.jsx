@@ -78,12 +78,12 @@ function Artist() {
         <div className="artist-container ">
           <div className="row align-items-start">
             <div className="">              
-              <div className="artist-card mb-5 box-shadow"> 
+              <div className="artist-card mb-5 box-shadow px-3"> 
               {artist.map((users, index) => {
                 return(
-                    <div key={users.users_id}>
+                    <div key={users.users_id} className="px-2">
                       <Link to={`/artist/${users.users_id}`}>
-                        <div className="position-relative px- py-5 shadow-sm p-3 mb-5 bg-body rounded">
+                        <div className="position-relative px-3 py-5 shadow-sm p-3 mb-5 bg-body rounded">
                           <img className="artist-card-img-top" src={users.users_main_product} alt="Card image page" />
                           <div className="artist-card-body">
                             <div className="artist-btn-group">

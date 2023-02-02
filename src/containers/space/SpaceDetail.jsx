@@ -8,30 +8,30 @@ import { FiShare } from 'react-icons/fi'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { ImPhone } from 'react-icons/im'
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'
 
 function SpaceDetail() {
-  const { spaceId } = useParams();
-  const [data, setData] = useState([]);
+  const { spaceId } = useParams()
+  const [data, setData] = useState([])
 
   useEffect(() => {
     async function getData() {
-      let response = await axios.get(`http://localhost:3001/space/${spaceId}?`);
-      setData(response.data);
-      console.log(response.data);
+      let response = await axios.get(`http://localhost:3001/space/${spaceId}?`)
+      setData(response.data)
+      console.log(response.data)
     }
-    getData();
-  }, []);
+    getData()
+  }, [])
 
   return (
     <>
       <div>
         {data.map((item) => {
-          return(
+          return (
             <>
               <div className="space__detail-img">
                 <img
@@ -45,22 +45,22 @@ function SpaceDetail() {
                   src={item.space_img_file}
                   alt="aside-1"
                 /> */}
-                <Carousel className="space__aside">
-                <div>
+                <Carousel autoPlay className="space__aside">
+                  <div>
                     <img src={item.space_img_file} />
-                </div>
-                <div>
+                  </div>
+                  <div>
                     <img src={item.space_img_file2} />
-                </div>
-                <div>
+                  </div>
+                  <div>
                     <img src={item.space_img_file3} />
-                </div>
+                  </div>
                 </Carousel>
                 <div className="space__detail-name">
                   <h1>{item.space_name}</h1>
                 </div>
               </div>
-              
+
               <div className="space__detail-main d-flex">
                 <div className="space__detail-map">
                   <div className="space__detail-map-text">
@@ -69,9 +69,6 @@ function SpaceDetail() {
                         {item.space_name}
                       </h2>
                     </div>
-                    {/* <div>
-                      <h4>Ask Art Space</h4>
-                    </div> */}
                     <div className="space__detail-map-title-6">
                       <FaMapMarkerAlt className="FaMapMarkerAlt_icon" />
                       {item.space_address}
@@ -85,18 +82,18 @@ function SpaceDetail() {
                     </div>
                     <br />
                     <div className="space__icon">
-              <div className="space__collect">
-                <Link to="#">
-                  <FaHeart className="FaHeart_icon" />
-                  收藏
-                </Link>
-              </div>
-              <div className="space__share">
-                <Link to="#">
-                  <FiShare className="share_icon" />
-                  分享
-                </Link>
-              </div>
+                      <div className="space__collect">
+                        <Link to="#">
+                          <FaHeart className="FaHeart_icon" />
+                          收藏
+                        </Link>
+                      </div>
+                      <div className="space__share">
+                        <Link to="#">
+                          <FiShare className="share_icon" />
+                          分享
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -112,10 +109,9 @@ function SpaceDetail() {
                 </div>
               </div>
             </>
-    )
-    })}
-    </div>
-
+          )
+        })}
+      </div>
     </>
   )
 }
