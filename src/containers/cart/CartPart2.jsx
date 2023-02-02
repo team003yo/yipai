@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UMayBeLike from "../../components/uMaybeLike/UMayBeLike"
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -11,6 +12,8 @@ import './cartPart2.css';
 import ListItemsWithHook from './pages/ShoppingCart/components/ListItemsWithHook'
 
 import { useCart } from './utils/useCart'
+
+
 
 
 const CartPart2 = () => {
@@ -82,6 +85,7 @@ const CartPart2 = () => {
       </div>
       <div className="dis-re">
         <ListItemsWithHook />
+        <UMayBeLike />
 
         <footer class="footer-floor1">
           <div>

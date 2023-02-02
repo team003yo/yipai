@@ -101,13 +101,11 @@ body {
     font-size: 12px;
   }
 
-  .cart__products-carousel {
-    width: 160px;
-    height: 100%;
-  }
+
 
   .cart__products {
-    /* height: 60vh; */
+    height: 60vh;
+    /* margin-top: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;

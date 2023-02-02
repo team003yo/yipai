@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import { BsCartFill } from "react-icons/bs";
 import BuyerLogin from "../users/login/Login";
 
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import UMayBeLike from "../../components/uMaybeLike/UMayBeLike"
 
 import "./cart.css";
-import pic5 from "../../assets/pic5.jpg";
-import pic3 from "../../assets/pic3.jpg";
-import pic4 from "../../assets/pic4.jpg";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useCart } from "./utils/useCart";
@@ -80,66 +77,7 @@ const Cart = () => {
             
             <h4 className="cart__h4">您可能會喜歡 :</h4>
 
-            <div className="cart__products">
-              <Carousel
-                className="cart__products-carousel"
-                autoPlay
-                showThumbs={false}
-                showStatus={false}
-              >
-                <Link to="/products/ProductsDetail">
-                  <div>
-                    <img alt="first" src={pic5} />
-                  </div>
-                </Link>
-                <div>
-                  <img alt="first" src={pic3} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic4} />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-              </Carousel>
-              <Carousel
-                className="cart__products-carousel"
-                autoPlay
-                showThumbs={false}
-                showStatus={false}
-              >
-                <div>
-                  <img alt="first" src={pic5} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic3} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic4} />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-              </Carousel>
-              <Carousel
-                autoPlay
-                className="cart__display-none cart__products-carousel"
-                showThumbs={false}
-                showStatus={false}
-              >
-                <div>
-                  <img alt="first" src={pic5} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic3} />
-                  {/* <p className="legend">畫廊</p> */}
-                </div>
-                <div>
-                  <img alt="first" src={pic4} />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-              </Carousel>
-            </div>
+            <UMayBeLike />
             <br />
             <br />
             <br />
