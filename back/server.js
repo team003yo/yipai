@@ -1,8 +1,9 @@
-// https://www.npmjs.com/package/express-session
+// 安裝expressSession套件 https://www.npmjs.com/package/express-session
 const expressSession = require("express-session");
-// https://www.npmjs.com/package/session-file-store
+// 安裝session-file-store套件 https://www.npmjs.com/package/session-file-store
 const FileStore = require("session-file-store")(expressSession);
 const path = require("path");
+const { checkLogin } = require('./middlewares/authMiddleware');
 
 const express = require("express");
 const app = express();
@@ -33,7 +34,6 @@ app.use(
         }),
         secret: process.env.SESSION_SECRET,
         // true: 即使 session 沒有改變也重新儲存一次
-        // 取決於你用的 storage 是有時效性的，可能需要不停地刷新這個時效
         resave: false,
         // true: 還沒有正式初始化的 session 也真的存起來
         saveUninitialized: false,
@@ -47,11 +47,12 @@ app.use(
 
 // 首頁
 app.get("/", async (req, res, next) => {
-    console.log("這裡是首頁 2");
+    console.log("這裡是藝拍首頁,顯示首頁資料");
     let [data] = await pool.query(
         "SELECT * FROM product JOIN users ON product.id = users.users_id ORDER BY RAND() LIMIT 1"
     );
     res.json(data);
+    
 });
 // 購物車
 app.get("/cart", async (req, res, next) => {
@@ -83,20 +84,21 @@ app.get("/users", async (req, res, next) => {
 });
 // 查詢使用者資料
 app.get("/news/:newsId", async (req, res, next) => {
-    console.log("/news/:newsId => ", req.params.spaceId);
+    console.log("/news/:newsId => ", req.params.newsId);
     let [data] = await pool.query("SELECT * FROM news WHERE news_id=? ", [
         req.params.newsId,
     ]);
     res.json(data);
 });
 // 會員部分路由
-app.get("/api", (req, res, next) => {
-    res.json({
-        name: "Cola",
-        account: "cola0098",
-        password: "12345",
-        confirmPassword: "12345",
-    });
+app.get("/api",checkLogin, async(req, res, next) => {
+    // if(req.session.member){
+        console.log(req.session.member);
+        let [data] = await pool.query("SELECT * FROM news WHERE users_id=? ", [
+            req.session.member.id,
+        ]);
+        res.json(data);
+    
 });
 // 授權路由
 const authRouter = require("./routers/authRouter");
@@ -120,7 +122,7 @@ app.get("/news", async (req, res, next) => {
     res.json(data);
 });
 app.get("/news/:newsId", async (req, res, next) => {
-    console.log("/news/:newsId => ", req.params.spaceId);
+    console.log("/news/:newsId => ", req.params.newsId);
     let [data] = await pool.query("SELECT * FROM news WHERE news_id=? ", [
         req.params.newsId,
     ]);
