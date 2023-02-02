@@ -54,3 +54,34 @@ background-position: center center;
     padding: 6em;
     background-color:var(--color-text);
 }
+
+@media screen and (max-width: 990px) {
+
+  
+
+}
+
+@media screen and (max-width: 700px) {
+ 
+}
+
+@media screen and (max-width: 550px) {
+    ._users_flex-ab{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: calc(50vw - ((44px * 4) + 12em));
+        top:30vh;
+        left: 4rem;
+        
+        z-index: 3;
+    }
+    ._users_box{
+        padding: 3em;
+        background-color:var(--color-bg);
+    }
+    ._users_box2{
+        padding: 3em;
+        background-color:var(--color-text);
+    }
+}

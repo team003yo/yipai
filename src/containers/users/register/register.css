@@ -126,3 +126,13 @@
 ._register_SettingInput{
     width: 8em;
 }
+@media screen and (max-width: 550px) {
+    ._register_buyerbox {
+        position: absolute;
+        width: 25em;
+        height: 40em;
+        top: calc(50% - 20em);
+        left: calc(50% - 12.5em);
+        background-color: var(--color-footer);
+    }
+}
