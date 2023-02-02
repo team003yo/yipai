@@ -102,4 +102,4 @@ const NewsId = () => {
   )
 }
 
-export default NewsId;
+export default NewsId

@@ -45,22 +45,29 @@ app.use(
 // 處理使用者註冊時上傳的圖片網址
 // app.use('/public', express.static('./public'));
 
-app.get("/", (req, res, next) => {
-    console.log("這裡是首頁!");
-    res.send("Hello Yipai");
+// 首頁
+app.get("/", async (req, res, next) => {
+    console.log("這裡是首頁 2");
+    let [data] = await pool.query(
+        "SELECT * FROM product JOIN users ON product.id = users.users_id ORDER BY RAND() LIMIT 1"
+    );
+    res.json(data);
 });
-
-// app.get("/", (req, res, next) => {
-//     console.log("這裡是首頁 2");
-//     res.send("Hello Express 9");
-// });
-
+// 購物車
+app.get("/cart", async (req, res, next) => {
+    console.log("這裡是 /cart");
+    let [data] = await pool.query(
+        "SELECT * FROM product JOIN user_order ON product.id = user_order.product_id ORDER BY RAND() LIMIT 1"
+    );
+    res.json(data);
+});
+// 商品頁
 app.get("/product", async (req, res, next) => {
     console.log("這裡是 /product");
     let [data] = await pool.query("SELECT * FROM product");
     res.json(data);
 });
-
+// 商品頁細節
 app.get("/product/:productId", async (req, res, next) => {
     console.log("/product/:productId => ", req.params.productId);
     let [data] = await pool.query("SELECT * FROM product WHERE id=? ", [
@@ -68,20 +75,27 @@ app.get("/product/:productId", async (req, res, next) => {
     ]);
     res.json(data);
 });
-
+// 所有使用者資料
 app.get("/users", async (req, res, next) => {
     console.log("這裡是 /users");
     let [data] = await pool.query("SELECT * FROM users");
     res.json(data);
 });
-
+// 查詢使用者資料
+app.get("/news/:newsId", async (req, res, next) => {
+    console.log("/news/:newsId => ", req.params.spaceId);
+    let [data] = await pool.query("SELECT * FROM news WHERE news_id=? ", [
+        req.params.newsId,
+    ]);
+    res.json(data);
+});
 // 會員部分路由
 app.get("/api", (req, res, next) => {
     res.json({
         name: "Cola",
-        account:"cola0098",
+        account: "cola0098",
         password: "12345",
-        confirmPassword: "12345"
+        confirmPassword: "12345",
     });
 });
 // 授權路由
@@ -99,12 +113,12 @@ app.get("/users/:usersId", async (req, res, next) => {
     ]);
     res.json(data);
 });
+// 展覽消息
 app.get("/news", async (req, res, next) => {
     console.log("這裡是 /news");
     let [data] = await pool.query("SELECT * FROM news");
     res.json(data);
 });
-// 查詢使用者資料
 app.get("/news/:newsId", async (req, res, next) => {
     console.log("/news/:newsId => ", req.params.spaceId);
     let [data] = await pool.query("SELECT * FROM news WHERE news_id=? ", [
@@ -112,16 +126,31 @@ app.get("/news/:newsId", async (req, res, next) => {
     ]);
     res.json(data);
 });
+// 空間
 app.get("/space", async (req, res, next) => {
     console.log("這裡是 /space");
     let [data] = await pool.query("SELECT * FROM space");
     res.json(data);
 });
-
 app.get("/space/:spaceId", async (req, res, next) => {
     console.log("/space/:spaceId => ", req.params.spaceId);
     let [data] = await pool.query("SELECT * FROM space WHERE space_id=? ", [
         req.params.spaceId,
+    ]);
+    res.json(data);
+});
+// 藝術家頁面
+app.get("/artist", async (req, res, next) => {
+    console.log("這裡是 /artist");
+    let [data] = await pool.query(
+        "SELECT * FROM users WHERE users_valid_role=1"
+    );
+    res.json(data);
+});
+app.get("/artist/:artistId", async (req, res, next) => {
+    console.log("/artist/:artistId => ", req.params.artistId);
+    let [data] = await pool.query("SELECT * FROM users WHERE users_valid_role=1 AND users_id=? ", [
+        req.params.artistId,
     ]);
     res.json(data);
 });

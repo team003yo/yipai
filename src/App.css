@@ -23,6 +23,11 @@ a:hover{
   text-decoration: none;
 
 }
+h6{
+  font-family: var(--font-family);
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
 
 
 .gradient__bg {
@@ -52,6 +57,15 @@ a:hover{
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
     both;
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.font-family{
+  font-family: 
+  var(--font-family);
+}
+
+.margin-200{
+  margin: 200px;
 }
 
 @-webkit-keyframes scale-up-center {
@@ -94,4 +108,10 @@ a:hover{
   .section__margin {
     margin: 4rem 2rem;
   }
+  .not-founnd__set{
+    margin: 40px;
+    padding: 20px;
+    font-size: 30px;
+  }
 }
+

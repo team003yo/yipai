@@ -1,20 +1,87 @@
 // import React from 'react';
-import React, { useState } from 'react'
-import './productsDetail.css'
-import 'bootstrap'
-import demo from '../../assets/demo.png'
-import artistLink from '../../assets/artistLink.png'
-import { Link } from 'react-router-dom'
-import { Carousel } from 'react-responsive-carousel'
-import productsId01 from '../../assets/productsId01.png'
-import axios from 'axios'
-import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { RiDatabase2Fill } from 'react-icons/ri'
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
+import { BsFillHeartFill, BsCartFill } from 'react-icons/bs';
+
+import "./productsDetail.css";
+import "bootstrap";
+import demo from "../../assets/demo.png";
+import artistLink from "../../assets/artistLink.png";
+import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import axios from "axios";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+// cart part
+import { useCart } from "../cart/utils/useCart";
+
 
 const ProductsDetail = () => {
-  const { productId } = useParams()
-  const [data, setdata] = useState([])
+ 
+
+  // cartpart
+  const {
+    cart,
+    items,
+    addItem,
+    removeItem,
+    updateItem,
+    clearCart,
+    isInCart,
+    plusOne,
+    minusOne,
+  } = useCart();
+  
+  
+
+  const [productName, setProductName] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const navigate = useNavigate();
+  
+
+  const showModal = (name) => {
+    setProductName("產品：" + name + "已成功加入購物車");
+    handleShow();
+  };
+
+  const messageModal = (
+    <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Header closeButton>
+        <Modal.Title>加入購物車成功</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{productName} </Modal.Body>
+      <Modal.Footer>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            handleClose();
+            navigate("/products", { replace: true });
+          }}
+        >
+          繼續購物
+        </Button>
+
+        <Button
+          className="btn btn-primary"
+          onClick={() => {
+            // 導向購物車頁面
+            // props.history.push('/')
+            navigate("/cart", { replace: true });
+          }}
+        >
+          前往購物車結帳
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+
+  const { productId } = useParams();
+  const [data, setdata] = useState([]);
 
   useEffect(() => {
     // console.log('第二個參數是空陣列')
@@ -24,17 +91,17 @@ const ProductsDetail = () => {
     async function getdata() {
       let response = await axios.get(
         `http://localhost:3001/product/${productId}?`
-      )
-      setdata(response.data)
+      );
+      setdata(response.data);
       // console.log(response.data)
     }
-    getdata()
-  }, [])
+    getdata();
+  }, []);
 
-  return (
+  const display = (
     <>
       <div className="container-fluid" id="ProductsDetail_container_fluid">
-        {data.map((productsDetail) => {
+        {data.map((productsDetail, index) => {
           return (
             <section id="ProductsDetail_section">
               <hgroup id="ProductsDetail_hgroup">
@@ -80,7 +147,23 @@ const ProductsDetail = () => {
                     </tbody>
                   </table>
                   <div className="ProductsDetail_addCar ">
-                    <button className="ProductsDetail_addCar-button d-inline">加入購物車</button>
+                    <button
+                      className="ProductsDetail_addCar-button d-inline"
+                      onClick={() => {
+                        // 商品原本無數量屬性(quantity)，要先加上
+                        const item = { ...productsDetail, quantity: 1 };
+                        // 注意: 重覆加入會自動+1產品數量
+                        addItem(item);
+                        // 呈現跳出對話盒
+                        showModal(productsDetail.name);
+                        
+                        
+
+
+                      }}
+                    >
+                      加入購物車
+                    </button>
                   </div>
                 </div>
               </hgroup>
@@ -94,15 +177,19 @@ const ProductsDetail = () => {
                   showThumbs={true}
                   showStatus={false}
                 >
-                  <img className="ProductsDetail_img-pic" src= {productsDetail.img_file} />
-                  <img src={productsDetail.img_file} />
+                  <img
+                    className="ProductsDetail_img-pic"
+                    src={productsDetail.img_file}
+                    alt="img"
+                  />
+                  <img src={productsDetail.img_file} alt="img" />
                 </Carousel>
               </figure>
               <article id="ProductsDetail_article">
                 <div className="ProductsDetail_Detail">
                   <div className="ProductsDetail_Detail-text ">
                     <p className="ProductsDetail_p" align="left">
-                    {productsDetail.detail_text}
+                      {productsDetail.detail_text}
                     </p>
                   </div>
                   <div className="col-md-6">
@@ -117,6 +204,7 @@ const ProductsDetail = () => {
                       <img
                         src={artistLink}
                         className="ProductsDetail_artistPic"
+                        alt="img"
                       />
                     </div>
                     <div className="ProductsDetail_card-body">
@@ -137,7 +225,7 @@ const ProductsDetail = () => {
                 </div>
               </aside>
             </section>
-          )
+          );
         })}
         <main id="ProductsDetail_main">
           <div className="ProductsDetail_main-wrap">
@@ -176,6 +264,7 @@ const ProductsDetail = () => {
                   <img
                     className="ProductsDetail_pic-img"
                     src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvMTA3NTI2N185OGJlNGM3ZGZlNGE5YzM2ZjBiOGNjN2RmMGQyOTEyNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=9a6c5126fe70659edb1b155cf024c7316ba6bce3d25fa3eb76876357b9fe9323"
+                    alt="img"
                   />
                   <div className="ProductsDetail__card-text">
                     <h6 className="ProductsDetail_productId">
@@ -191,6 +280,7 @@ const ProductsDetail = () => {
                   <img
                     className="ProductsDetail_pic-img"
                     src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvMTA3NTI0M18wZmE0MDJlNmNhZmEzNTIwYTNhNmRjYWU1NWI5ZGIyZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=3a70517d495b44f40ea52dccb98343482c306316c66ce46d4399093861508fac"
+                    alt="img"
                   />
                   <div className="ProductsDetail__card-text">
                     <h6 className="ProductsDetail_productId">The sky</h6>
@@ -205,6 +295,7 @@ const ProductsDetail = () => {
                   <img
                     className="ProductsDetail_pic-img"
                     src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvMTA3NTI2NV9hMDY2ZDUzMjNmYjc3ZGM3ZDY0ZmNhMmIzNDVmNGY3Zi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=4fba5bade6fe9c199c9d6dff1fb28852e85900d2fd130ad03dfcbb96dff40d3f"
+                    alt="img"
                   />
                   <div className="ProductsDetail__card-text">
                     <h6 className="ProductsDetail_productId">River</h6>
@@ -219,10 +310,18 @@ const ProductsDetail = () => {
       </div>
 
       <div className="ProductsDetail_addCar-bottom">
-        <a className="d-inline">加入購物車</a>
+        <a href="#" id="add_cart" className="d-inline">
+          加入購物車
+        </a>
       </div>
     </>
-  )
-}
+  );
+  return (
+    <>
+      {messageModal}
+      {display}
+    </>
+  );
+};
 
-export default ProductsDetail
+export default ProductsDetail;

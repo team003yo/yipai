@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import { BsFillHeartFill, BsCartFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
@@ -6,24 +6,56 @@ import { FaUser } from 'react-icons/fa';
 import logo1 from '../../logo1.svg';
 import './navbar.css';
 import { Link } from 'react-router-dom';
+import { useCart } from "../../containers/cart/utils/useCart";
 
 
-const cart = (
-  <Link className='navbar__cart-count' to="cart">
-  <BsCartFill className="iconStyle" />
-  <p>0</p>
-</Link>   
-)
+import axios from "axios";
 
 
-  
 
 
- 
 
 const Navbar = () => {
+  const {
+    cart,
+    items,
+    addItem,
+    removeItem,
+    updateItem,
+    clearCart,
+    isInCart,
+    plusOne,
+    minusOne,
+  } = useCart();
+
+  const [count, setCount] = useState(0);
+  // const addCount=()=>setCount(cart.totalItems);
+  // count = cart.totalItems
+
   const [toggleMenu, setToggleMenu] = useState(false);
-  
+
+  const [product, setProduct] = useState([]);
+  const [user_order, setUserOrder] = useState([]);
+
+  useEffect(() => {
+    console.log("第二個參數是空陣列");
+    // 在 component 初始化的時候跑一次
+    // 通常會把去跟後端要資料的動作放在這裡
+    async function getProduct() {
+      let response = await axios.get("http://localhost:3001/cart");
+      setProduct(response.data);
+      console.log(response.data);
+    }
+    getProduct();
+    async function getUserOrder() {
+      let response = await axios.get("http://localhost:3001/cart");
+      setUserOrder(response.data);
+      console.log(response.data);
+    }
+    getUserOrder();
+  }, []);
+
+
 
   return (
     <div className="yipai__navbar">
@@ -51,7 +83,10 @@ const Navbar = () => {
           </p>
         </div>
         <div className="yipai__navbar-icon">
-          {cart}
+          <Link className='navbar__cart-count' to="cart">
+            <BsCartFill className="iconStyle" />
+            <p>{cart.totalItems}</p>
+          </Link>  
           <Link to="users">
             <FaUser className="iconStyle" />
           </Link>

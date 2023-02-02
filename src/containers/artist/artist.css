@@ -6,28 +6,20 @@
   } */
 
 /* main */
-.main-content {
+.artist-main-content {
   display: flex;
   margin: auto;
   height: auto;
   margin-top: 10px;
 }
-.main-card {
-  display: flex;
-}
-.main-card-item img {
-  width: 310px;
-  height: 210px;
-  object-fit: cover;
-}
 
-.aside-menu {
-  width: 200px;
+.artist-aside-menu {
+  width: 30vw;
   text-align: center;
-  margin: 50px 20px;
+  margin: 50px 50px;
 }
-/* banner */
-.banner {
+/* artist-banner */
+.artist-banner {
   width: 100%;
   height: 100vh;
 }
@@ -42,81 +34,103 @@
   max-width: 100px;
   height: 40px;
 }
-.card-img-top {
-  max-height: 200px;
+.artist-card-img-top {
+  object-fit: cover;
+  width: 300px;
+  height: 180px;
+  overflow: hidden;
 }
-.card-img-body {
+.artist-card-img-body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-.page-item a {
+.artist-row{
+  --bs-gutter-x:0;
+  justify-content: center;
+  align-items: center;
+}
+.artist-page-item a {
   color: white;
   background-color: #000;
 }
+.artist-card-body{
+  margin-top: 10px;
+  width: 300px;
+}
+.artist-card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.justify-content-space-evenly{
+  justify-content: space-evenly;
+}
+.artist-card-text{
+  max-width: 150px;
+}
 @media screen and (max-width: 1440px) {
-  .banner {
+  .artist-banner {
     height: 80vh;
   }
-  .main-card-item img,
-  .card-img-top {    
-    object-fit:cover;
-    width: 100%;
+
+  .artist-card-img-top {
+    object-fit: cover;
+    width: 300px;
     height: 180px;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 1080px) {
-  .banner {
+  .artist-banner {
     height: 80vh;
   }
-  .bannerImg {
-    height: 100%;
-  }
-  .main-card-item img,
-  .card-img-top {
+  .artist-card-img-top {
     background-size: cover;
-    width: 100%;
+    width: 300px;
     height: 160px;
   }
-  .main-content {
+  .artist-card-body{
+    width: 100%;
+  }
+  .artist-main-content {
     height: auto;
   }
 }
 @media screen and (max-width: 780px) {
-  .banner {
+  .artist-banner {
     height: 70vh;
   }
-  .card-img-top {
+  .artist-card-img-top {
     background-size: cover;
-    width: 100%;
+    width: 300px;
     height: 220px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .main-content {
+  .artist-main-content {
     display: inline-block;
     height: auto;
   }
-  .main-card-item-text {
-    font-weight: 800;
+  .artist-banner {
+    height: 30vh;
   }
-  .banner {
-    height: 70vh;
+  .artistImg {
+    height: 100%;
+    background-image: url("./artist_main.png");
+    background-repeat: no-repeat;
+    background-size: contain;;
   }
-  .aside-menu {
+  .artist-aside-menu {
     display: none;
   }
-  .pagination {
-    display: none;
-  }
-  
-  .card-img-top {
+  .artist-card-img-top {
     background-size: cover;
     width: 100%;
     height: 220px;
   }
-  .card {
+  .artist-card {
     margin: auto;
     width: 300px;
   }
@@ -132,16 +146,11 @@
 .artist-name {
   color: #f9f7f2;
 }
-.aside-pic {
+.artist-detail-aside-pic {
   width: 100%;
   background-size: cover;
 }
-.aside {
-  position: absolute;
-  right: 0px;
-  width: 75%;
-}
-.detail-img {
+.artist-detail-img {
   position: relative;
 }
 .artist-detail-name {
@@ -209,9 +218,7 @@
 }
 
 /* icon */
-.size280 {
-  width: 280px;
-}
+
 .artistHead {
   background-image: url("./artist_head.png");
   height: 50%;
@@ -223,27 +230,30 @@
   /* text-align: center; */
   /* align-items: flex-end; */
 }
-.collect,
-.share {
+.artist-collect,
+.artist-share {
   margin: 5px;
 }
-.FaHeart_icon,
-.share_icon {
+.artist-FaHeart_icon,
+.artist-share_icon {
   width: 36px;
   height: 20px;
   margin-bottom: 5px;
 }
 
-.text-container {
+.artist-text-container {
   text-align: center;
   justify-content: center;
 }
 .detail-intro-img {
   width: 40vw;
   max-height: 800px;
-  object-fit:contain;
+  object-fit: contain;
 }
-
+.artist-aside-pic{
+  background-color: rgba(24, 24, 24, 0.31);
+  filter:brightness(.3);  
+}
 @media screen and (max-width: 1400px) {
   .detail-intro-text {
     line-height: 30px;
@@ -252,7 +262,6 @@
   .detail-intro-title {
     font-size: 32px;
   }
-  
 }
 @media screen and (max-width: 980px) {
   .artist-detail-namet- h1 {
@@ -271,8 +280,8 @@
     padding: 0px 50px;
   }
   .detail-intro-img {
-    width: 80%;    
-    object-fit:contain;
+    width: 80%;
+    object-fit: contain;
   }
   .detail-intro-title {
     font-size: 30px;
@@ -281,19 +290,19 @@
   .detail-intro-title-6 {
     font-size: 16px;
   }
-  .detail-intro-img-body {   
+  .detail-intro-img-body {
     text-align: center;
     justify-content: center;
-    object-fit:cover;    
-    width: 100%;    
+    object-fit: cover;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .aside-pic {
+  .artist-detail-aside-pic {
     height: 300px;
   }
-  .aside {
+  .artist-aside {
     width: 110%;
   }
   .detail-intro-text {

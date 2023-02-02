@@ -233,7 +233,13 @@ p.ProductsDetail_article{
   width: 300px;
 }
 
-
+.model-bg-color{
+  background: rgba(0, 0, 0, 0.5);
+}
+.btn-primary{
+  background: var(--color-footer);
+  border: var(--color-footer) solid 1px;
+}
 
 @media screen and (max-width: 990px){
   #ProductsDetail_container_fluid{

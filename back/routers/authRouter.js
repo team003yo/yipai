@@ -96,6 +96,7 @@ router.post('/register', uploader.single('photo'), registerRules, async (req, re
   if (members.length > 0) {
     // 表示這個 帳號 存在資料庫中
     // 如果已經註冊過，就回覆 400
+    console.log('帳號已經註冊過');
     return res.status(400).json({
       errors: [
         {
