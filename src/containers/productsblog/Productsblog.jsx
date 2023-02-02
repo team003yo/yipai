@@ -21,19 +21,24 @@ const Productsblog = () => (
           width={400}
           showArrows={false}
         >
-          <Link to="/products">
+          <Link to="/products/189">
             <div className="productsblog__carousel-img">
               <img alt="" src={pic2} />
             </div>
           </Link>
+          <Link to="/products/190">
+
           <div className="productsblog__carousel-img">
             <img alt="" src={pic3} />
             {/* <p className="legend">畫廊</p> */}
           </div>
+          </Link>
+
+          <Link to="/products/196">
           <div className="productsblog__carousel-img">
             <img alt="" src={pic4} />
             {/* <p className="legend">Legend 2</p> */}
-          </div>
+          </div></Link>
         </Carousel>
         <div className=" yipai__title-text">
           <p>佐久間 友香(Yuka SAKUMA) 的作品</p>

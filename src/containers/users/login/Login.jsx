@@ -9,8 +9,8 @@ import "./buyLogin.css";
 const Login = () => {
     // 登入預設
     const [member, setMember] = useState({
-        email: "ashleylai58@gmail.com",
-        password: "test1234",
+        account: "cola0098",
+        password: "12345678",
     });
 
     function handleChange(e) {
@@ -42,14 +42,14 @@ const Login = () => {
                         <div className='_buyLogin_buyerIcon'></div>
                         <form
                             method='POST'
-                            action=''
+                            action='http://localhost:3001//api/auth/login'
                             className='_buyLogin_flex'
                         >
                             <label className='_buyLogin_h3'>買家登入</label>
                             <input
                                 type='text'
                                 className='_buyLogin_inputBox'
-                                name='accountNumber'
+                                name='account'
                                 placeholder=' 帳號'
                                 value={member.account}
                                 onChange={handleChange}
