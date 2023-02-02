@@ -7,7 +7,7 @@ const pool = require('../utils/db');
 // 加密型態套件 https://www.npmjs.com/package/argon2
 const argon2 = require('argon2');
 //圖片上傳的名稱套件 uuid https://www.npmjs.com/package/uuid
-const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 // 要處理 content-type 是 multipart/form-data，express 沒有內建，需要另外用套件，這邊用第三方套件 multer 來處理
 // 圖片上傳的套件 https://www.npmjs.com/package/multer
 const multer = require('multer');
