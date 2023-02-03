@@ -285,7 +285,7 @@ p.Products__page-link{
                           "Products__figure "
                           "Products__footer "
                           ; /* 2.區域分為4行兩列 */
-      grid-template-rows: 80px 3350px 50px;/* 3.各區域 寬高設置 */
+      grid-template-rows: 150px 3330px 50px;/* 3.各區域 寬高設置 */
       grid-template-columns: 400px;
     }
     .Products__banner {
@@ -335,7 +335,7 @@ p.Products__page-link{
       break-inside: avoid;
       /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
   }
-    .Products＿nav-wrapp,.Products＿link{
+    p.Products＿link{
       display: none;
     }
 
