@@ -222,16 +222,17 @@ padding-top: 20px;
   }
 #SellerProduct__main{
     width: 50vw;
+    margin-top: 50px;
 }  
 
-  ul.SellerProduct__aside-list{
+.SellerProduct__aside-list{
      float: right;
      display: flex;
      list-style: none;
      padding: 0px 50px 0px 20px;
   }
-  .SellerProduct__aside-li{
-      margin: 5px;
+  .SellerProduct__aside-sort{
+      margin-left: 10px;
   }
   
   .SellerProduct__aside-searchBar{
@@ -244,7 +245,7 @@ padding-top: 20px;
       padding: 5px;
   }
   .SellerProduct__total{
-      padding: 10px 0 20px 0;
+      float: left;
   }
 
   .SellerProduct__other-product{
@@ -322,12 +323,18 @@ padding-top: 20px;
 }
 
 /* SellerProduct 頁面*/
-.SellerProduct__main_table-container{
+#SellerProduct__main{
+    width: 100vw;
+    margin-top: 20px;
+
+}  
+.SellerProduct__main_container{
     display: flex;
+    width: 100%;
+    margin-top: 10px;
 }
 .SellerProduct__section{
     margin: 0,auto;
-    
 }
 
 @media screen and (max-width: 414px) {  
@@ -489,38 +496,55 @@ padding-top: 0px;
 
 }
 /* SellerProduct  */
-.ul.SellerProduct__aside-list{
+.SellerProduct__aside-list{
     width: 100vw;
     float: right;
     display: flex;
     list-style: none;
     padding: 0px 50px 0px 20px;
  }
- .SellerProduct__aside-li_add{
-    display: none;
- }
-.SellerProduct__aside-li_add{
+
+.SellerProduct__aside_add{
     width: 100vw;
-    height: 150px;
     position: fixed;
     bottom: 0;
     font-size: 24px;
     padding-bottom: 95px;
+    margin: 0;
+
+ }
+ .SellerProduct__aside-sort{
+    width: 100px;
  }
 
-#SellerProduct__main{
+#SellerProduct__section {
     width: 100vw;
+    margin: 0;
 }  
+.SellerProduct__total{
+   
+   margin: 0  0px 10px 20px;
+}
 
 .SellerProduct＿main {
     width: 100vw;
     display: flex;
     flex-direction: row;
-    margin-top: 80px;
+    margin-top: 50px;
     
     }
     .SellerProduct__item{
         margin-left:5px ;
     }
+
+/* sellerorder */
+.sellerorder__main{
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    overflow:auto;
+   
+}
+
 
 }

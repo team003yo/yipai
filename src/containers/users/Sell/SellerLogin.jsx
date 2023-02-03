@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './sellerLogin.css'
 import SellerHome from './SellerHome'
-var sellerId = false
+var sellerId = true
 
 const SellLogin = () => (
   <div id="login">

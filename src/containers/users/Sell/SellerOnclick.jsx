@@ -215,27 +215,19 @@ function SellerProduct(params) {
       <section id="SellerProduct__section ">
         <nav id="SellerProduct__nav d-flex">
         <h1 className="SellerProduct__total">共有26件</h1>
-        
-          <ul className="SellerProduct__aside-list">
-            <li className="SellerProduct__aside-li">
+          <div className="SellerProduct__aside-list"> 
               <div className="SellerProduct__aside-searchBar">
                 <RiSearch2Line className="SellerProduct__aside-searchBar-icon" style={{width:"40px", height:"40px"}}
                 />
               </div>
-            </li>
-            
-              <Button className="SellerProduct__aside-li_add" variant="dark">新增商品+</Button>
-            
-            <li className="SellerProduct__aside-li">
-              <Button variant="dark">排序</Button>
-          </li>
-        </ul>
-       
+              <Button className="SellerProduct__aside_add" variant="dark">新增商品+</Button>
+              <Button className="SellerProduct__aside-sort" variant="dark">排序</Button>
+        </div>
+
         </nav>
         <main id="SellerProduct__main">
-        <div class="SellerProduct__main_table-container">
+        <div class="SellerProduct__main_container">
           <div className="SellerProduct＿main row align-items-start">
-
               <div className="SellerProduct__item col">
                 <img
                   className="SellerProduct__card-img-top"
@@ -336,7 +328,7 @@ function SellerOrder(params) {
         </div>
       </div>
       <div className="sellerorder__main__table">
-        <table>
+        <table >
           <thead>
             <tr>
               <th>
