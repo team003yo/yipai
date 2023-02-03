@@ -17,7 +17,7 @@ import { RiArrowUpSLine,RiArrowDownSLine } from 'react-icons/ri'
 
 
 function Products  ()  {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 1200);
   const [product, setProducts] = useState([])
   //product初始值
   const [originalProduct, setOriginalProducts] = useState([])
