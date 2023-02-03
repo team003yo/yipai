@@ -1,39 +1,52 @@
 // import React from 'react'
 import { RiMenu3Line, RiCloseLine, RiCreativeCommonsZeroLine } from 'react-icons/ri'
-import { Link } from 'react-router-dom'
+import { Link   } from 'react-router-dom'
 import './products.css'
 import Dropdown from 'react-bootstrap/Dropdown'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductsSize_Slider from './ProductsSize_Slider'
 import ProductsPrice_Slider from './ProductsPrice_Slider'
 
-import Pagination from 'react-bootstrap/Pagination'
 import { BiRectangle } from 'react-icons/bi'
 import { TbRectangleVertical, TbRectangle } from 'react-icons/tb'
 import axios from 'axios';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import ProductsPagination from './ProductsPagination'
+import { RiArrowUpSLine,RiArrowDownSLine } from 'react-icons/ri'
+
 
 function Products  ()  {
-  // 為了處理網址
-  // let navigate = useNavigate();
-  // const { currentPage } = useParams();
-  // const [page, setPage] = useState(parseInt(currentPage, 10) || 1); // 目前在哪一頁
-  // const [totalPage, setTotalPage] = useState(); // 總共有幾頁
-
-  const [product, setProducts] = useState([]);
-  //space初始值
-  const [originalProduct, setOriginalProducts] = useState([]);
+  window.scrollTo(0, 0);
+  const [product, setProducts] = useState([])
+  //product初始值
+  const [originalProduct, setOriginalProducts] = useState([])
   //select顯示在頁面的值
-  const [selectedMaterial, setSelectedMaterial] = useState('');
-  const [selectedCreation_year, setSelectedCreation_year] = useState('');
-  const [selectedWork_hue, setSelectedWork_hue] = useState('');
+  const [selectedMaterial, setSelectedMaterial] = useState('')
+  const [selectedCreation_year, setSelectedCreation_year] = useState('')
+  const [selectedWork_hue, setSelectedWork_hue] = useState('')
   
+    //清除鍵
+    const handleClear = () => {
+      //清空初始值
+      setProducts(originalProduct)
+      console.log(originalProduct)
+      //清空媒材
+      setSelectedMaterial('')
+      //清空年份
+      setSelectedCreation_year('')
+      //清空顏色
+      setSelectedWork_hue([]);
+  
+    }
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage, setPostPerPage] = useState(7)
+    const lastPostIndex = currentPage * postsPerPage
+    const firstPostIndex = lastPostIndex - postsPerPage
+    const currentPosts = product.slice(firstPostIndex, lastPostIndex)
+    const pages = Math.ceil(product.length / postsPerPage)
+    console.log(currentPage,product.length,pages)
 
-  useEffect(()=>{
-    console.log('空陣列的 useEffect');
-  },[]);
 
   // useEffect(() => {
   //   //console.log('第二個參數是空陣列');
@@ -47,7 +60,7 @@ function Products  ()  {
   //   }
   //   getProducts();
   // }, [page]);
-
+  
   useEffect(() => {
     console.log('空陣列的 useEffect');
   }, []);
@@ -65,22 +78,8 @@ function Products  ()  {
     getProducts();
   }, []);
 
-  //清除鍵
-  const handleClear = () => {
-    //清空初始值
-    setProducts(originalProduct);
-    console.log(originalProduct);
-    //清空媒材
-    setSelectedMaterial('');
-
-    //清空年份
-    setSelectedCreation_year('');
-
-    //清空顏色
-    setSelectedWork_hue([]);
-
-  }
-
+ 
+  //選擇媒材
   const handleClick = (value, type) => {
     //先設定一個filter(符合條件的新陣列)值
     let filtered =[...originalProduct]
@@ -129,7 +128,6 @@ function Products  ()  {
     }
 
   }
-  
   
   // const getPages = () => {
   //   let pages = [];
@@ -292,24 +290,6 @@ function Products  ()  {
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown> */}
-                <Dropdown>
-                  <Dropdown.Toggle
-                    variant="--color-bg"
-                    style={{ border: 'none' }}
-                    id="dropdown-basic"
-                    className="ms-5"
-                  >
-                    創作年份
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                  <Dropdown.Item value="由新至舊"
-                  onClick={() => handleClick('由新至舊', 'creation_year')}
-                  >由新至舊</Dropdown.Item>
-                    <Dropdown.Item value="由舊至新"
-                  onClick={() => handleClick('由舊至新', 'creation_year')}
-                  >由舊至新</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
               </tr>
               <h6 className="Products＿size-h5">依色系</h6>
               <tr className="Products＿slider-color">
@@ -383,9 +363,6 @@ function Products  ()  {
               <tr className="Products＿slider-price">
                 <ProductsPrice_Slider></ProductsPrice_Slider>
               </tr>
-              <tr>
-                
-              </tr>
             </table>
           </aside>
           <nav id="Products＿nav">
@@ -393,24 +370,37 @@ function Products  ()  {
               所有藝術品
             </h2>
             <div className="Products＿nav-wrapp">
-              <div className="Products＿link-bar d-flex">
+              <div className="Products＿link-bar ">
                 <p className="Products＿link d-flex">
                   <Link to="/">首頁▶</Link>
-                  <Link onClick={handleClear}>所有藝術品</Link>
+                  <Link onClick={handleClear}>所有藝術品▶ {selectedMaterial}</Link>
                 </p>
-                <p> ▶ {selectedMaterial}</p>
-              </div>
-            </div>
-            {/* <button className="Products＿button" variant="dark"> 
-                由新至舊
-           </button> */}
-          </nav>
+           <Dropdown>
+                  <Dropdown.Toggle
+                    variant="--color-bg"
+                    style={{ border: 'none' }}
+                    id="dropdown-basic"
+                    className="Products＿--color-bg ms-5"
+                  >
+                    創作年份
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                  <Dropdown.Item value="由新至舊"
+                  onClick={() => handleClick('由新至舊', 'creation_year')}
+                  >由新至舊</Dropdown.Item>
+                    <Dropdown.Item value="由舊至新"
+                  onClick={() => handleClick('由舊至新', 'creation_year')}
+                  >由舊至新</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+           </div>
+           </div>
+           </nav>
           <figure id="Products__figure">
          
             <div className="Products__figure-wrap">
-              {product.map((product_data, index) => {
+              {currentPosts.map((product_data, index) => {
                 return (
-                  
                   <div key={product_data.id} classMame="Products__img-id-wrap">
                     <Link to={`/products/${product_data.id}`}>
                       <img
@@ -434,6 +424,49 @@ function Products  ()  {
              </div>
           </footer>
         </section>
+        <div className="d-flex justify-content-center">
+              <RiArrowUpSLine
+                style={{
+                  display: 'inline-block',
+                  margin: '2px',
+                  borderColor: '#dbdbdb',
+                  borderWidth: '1px',
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '3px',
+                  textAlign: 'center',
+                }}
+                onClick={() => {
+                  setCurrentPage(currentPage - 1)
+                }}
+                disabled={currentPage === 1}
+              >
+                {'<<'}
+              </RiArrowUpSLine>
+              <ProductsPagination
+                className="product__page-item "
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+              />
+              <RiArrowDownSLine
+                style={{
+                  display: 'flex',
+                  margin: '2px',
+                  borderColor: '#dbdbdb',
+                  borderWidth: '1px',
+                  width: '50px',
+                  height: '50px',
+                  
+                }}
+                onClick={() => {
+                  setCurrentPage(currentPage + 1)
+                }}
+                disabled={currentPage >= pages}
+              >
+                {'>>'}
+                
+              </RiArrowDownSLine>
+            </div>
       </div>
     </>
   )
