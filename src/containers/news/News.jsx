@@ -5,12 +5,14 @@ import Button from 'react-bootstrap/Button'
 import { TbArrowsSort } from 'react-icons/tb'
 import { BiTimeFive } from 'react-icons/bi'
 import { MdArrowForwardIos,MdArrowBackIosNew } from 'react-icons/md'
+import { RiArrowUpSLine,RiArrowDownSLine } from 'react-icons/ri'
 import axios from 'axios';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 
 function News  ()  {
+  window.scrollTo(0, 0);
   // 為了處理網址
   let navigate = useNavigate();
   const { currentPage } = useParams();
@@ -43,7 +45,7 @@ function News  ()  {
     // 顯示「上一頁」
     if (page > 1) {
       pages.push(
-        <MdArrowBackIosNew
+        <RiArrowUpSLine
           style={{
             display: 'inline-block',
             margin: '2px',
@@ -53,6 +55,7 @@ function News  ()  {
             height: '50px',
             borderRadius: '3px',
             textAlign: 'center',
+            
           }}
           key={-1}
           onClick={(e) => {
@@ -61,7 +64,7 @@ function News  ()  {
           }}
         >
           {'<'}
-        </MdArrowBackIosNew>
+        </RiArrowUpSLine>
       );
     }
   
@@ -95,9 +98,9 @@ function News  ()  {
     // 顯示「下一頁」
     if (page < totalPage) {
       pages.push(
-        <MdArrowForwardIos
+        <RiArrowDownSLine
           style={{
-            display: 'inline-block',
+            display: 'flex',
             margin: '2px',
             borderColor: '#dbdbdb',
             borderWidth: '1px',
@@ -105,6 +108,7 @@ function News  ()  {
             height: '50px',
             borderRadius: '3px',
             textAlign: 'center',
+            
           }}
           key={-2}
           onClick={(e) => {
@@ -113,7 +117,7 @@ function News  ()  {
           }}
         >
           
-        </MdArrowForwardIos>
+        </RiArrowDownSLine>
       );
     }
   
