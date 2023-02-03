@@ -16,7 +16,7 @@ import buyerImg from "./image/buyHead.png";
 
 function HeadImg(user) {
 const [UseData, setUseData] = useState();
-const [UseId, setUseId] = useState();
+// const [UseId, setUseId] = useState();
 
     useEffect(() => {
         async function getMember() {
@@ -26,15 +26,9 @@ const [UseId, setUseId] = useState();
                     withCredentials: true,
                 }
             );
-            // fetch(response)
-            //     .then(function () {
-            //         // console.log(response.data.users_id);
-            //     })
-            //     .catch((error) => {
-            //         console.error("Error:", error);
-            //     });
+            
             setUseData(response.data.users_name);
-            setUseId(response.data.users_id);
+            // setUseId(response.data.users_id);
         }
         getMember();
     }, []);
