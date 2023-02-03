@@ -41,13 +41,13 @@ const Cart = () => {
     async function getProduct() {
       let response = await axios.get("http://localhost:3001/cart");
       setProduct(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     }
     getProduct();
     async function getUserOrder() {
       let response = await axios.get("http://localhost:3001/cart");
       setUserOrder(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     }
     getUserOrder();
   }, []);
