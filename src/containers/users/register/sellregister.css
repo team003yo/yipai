@@ -1,3 +1,6 @@
+#SellRegister{
+    font-family: var(--font-family);
+}
 ._SellRegister_flex {
     display: flex;
     flex-direction: column;
@@ -21,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow:0 10px 10px -5px rgba(152, 151, 151, 0.5);
+    box-shadow:0 5px 5px -5px rgba(152, 151, 151, 0.5);
 }
 
 ._SellRegister_BG {
@@ -46,7 +49,7 @@
 }
 
 ._SellRegister_inputBox {
-    margin-top: 60px;
+    margin-top: 30px;
     background: var(--color-text);
     border: 0em;
     width: 15em;
