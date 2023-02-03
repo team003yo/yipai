@@ -194,13 +194,13 @@ router.post('/login', async (req, res, next) => {
       ],
     });
   }
-
+  // console.log(members);
   // 只是從陣列中拿出資料而已
   let member = members[0];
 
   // 如果存在，比對密碼
   // let result = await argon2.verify(member.password, req.body.password);
-  let result = await (member.password===req.body.password);
+  let result = await (member.users_password===req.body.password);
   if (result === false) {
     // 密碼比對失敗
     // 密碼錯誤，回覆前端 401
@@ -219,13 +219,14 @@ router.post('/login', async (req, res, next) => {
   // 能執行到這裡，表示帳號存在，且密碼正確
 
   //寫入 session
-  // 準備好要寫進 session 的內容
   let retMember = {
-    id: member.id,
-    name: member.name,
-    account:member.account,
-    email: member.password,
-    // photo: member.photo,
+    users_id: member.users_id,
+    users_name: member.users_name,
+    users_account: member.users_account,
+    // users_phone: member.users_phone,
+    // users_email: member.users_email,
+    users_valid: member.users_valid,
+    users_valid_role: member.users_valid_role,
   };
   // 寫入 session
   req.session.member = retMember;
@@ -235,12 +236,15 @@ router.post('/login', async (req, res, next) => {
     msg: 'ok',
     member: retMember,
   });
+  console.log('登入成功！');
 });
 
-// 登出
+// 登出 http://localhost:3000/api/auth/logout
 router.get('/logout', (req, res, next) => {
   req.session.member = null;
   res.sendStatus(202);
+  console.log('登出成功！');
+
 });
 
 module.exports = router;
