@@ -340,7 +340,7 @@ padding-top: 20px;
 @media screen and (max-width: 414px) {  
 #sellerhome__main{
     margin: 0;
-    width: 414px;
+    width: 100vw;
 }
 
     /* 側欄 */
@@ -367,10 +367,16 @@ padding-top: 20px;
    display: none;
 } 
 /* SellerFrontPage */
+.sellerorder__main_detil_count,.sellerorder__main_detil_button{
+    display: none;
+}
 .SellerFrontPage{
     margin: 0;
 }
 .SellerFrontPage__main__section__news{
+    width: 100vw;
+}
+.SellerFrontPage__status {
     width: 100vw;
 }
 
@@ -522,7 +528,6 @@ padding-top: 0px;
     margin: 0;
 }  
 .SellerProduct__total{
-   
    margin: 0  0px 10px 20px;
 }
 
@@ -538,13 +543,23 @@ padding-top: 0px;
     }
 
 /* sellerorder */
+.sellerorder__main__text {
+    margin-top: 10px;
+}
 .sellerorder__main{
     display: flex;
     justify-content: center;
     /* align-items: flex-start; */
     overflow:auto;
-   
 }
-
-
+.sellerorder__main__table{
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    overflow:auto;
+    height: 100%;
+}
+.sellerorder__main__table_table{
+    height: 500px;
+}
 }

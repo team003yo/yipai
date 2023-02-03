@@ -328,7 +328,7 @@ function SellerOrder(params) {
         </div>
       </div>
       <div className="sellerorder__main__table">
-        <table >
+        <table className="sellerorder__main__table_table">
           <thead>
             <tr>
               <th>
@@ -354,24 +354,24 @@ function SellerOrder(params) {
                   <TiArrowSortedDown/>
                 </Button>
               </th>
-              <th>
+              <th className="sellerorder__main_detil_count">
                 <Button className="" variant="--color-bg" style={{ border: "none" }}> 
                   售出數量
                   <TiArrowSortedDown/>
                 </Button>
               </th>
-              <th></th>
+              <th className="sellerorder__main_detil_button"></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr >
               <td>0000000000000000000000</td>
               <td>未出貨</td>
               <td>2000</td>
               <td>2023/01/14</td>
-              <td>1</td>
-              <td>
-                <Button variant="dark">詳細資料</Button>
+              <td className="sellerorder__main_detil_count" >1</td>
+              <td className="sellerorder__main_detil_button">
+                <Button  variant="dark">詳細資料</Button>
               </td>
             </tr>
             <tr>
@@ -379,18 +379,18 @@ function SellerOrder(params) {
               <td>未出貨</td>
               <td>2000</td>
               <td>2023/01/14</td>
-              <td>1</td>
-              <td>
-                <Button variant="dark">詳細資料</Button>
+              <td className="sellerorder__main_detil_count">1</td>
+              <td className="sellerorder__main_detil_button">
+                <Button  variant="dark">詳細資料</Button>
               </td>
             </tr>            <tr>
               <td>0000000000000000000000</td>
               <td>未出貨</td>
               <td>2000</td>
               <td>2023/01/14</td>
-              <td>1</td>
-              <td>
-                <Button variant="dark">詳細資料</Button>
+              <td className="sellerorder__main_detil_count">1</td>
+              <td className="sellerorder__main_detil_button">
+                <Button  variant="dark">詳細資料</Button>
               </td>
             </tr>
           </tbody>
