@@ -16,9 +16,7 @@ const pool = require("./utils/db");
 const cors = require("cors");
 app.use(
     cors({
-        // 為了讓 browser 在 CORS 的情況下還是幫我們送 cookie
-        // 必須把 credentails 設定成 true
-        // 但是，當你把 credentials 設定成 true，就一定要設定 origin (來源)
+        // 必須把 credentails 設定成 true，一定要設定 origin (來源)
         origin: ["http://localhost:3000"],
         credentials: true,
     })
@@ -82,7 +80,7 @@ app.get("/users", async (req, res, next) => {
     let [data] = await pool.query("SELECT * FROM users");
     res.json(data);
 });
-// 查詢使用者資料
+// 
 app.get("/news/:newsId", async (req, res, next) => {
     console.log("/news/:newsId => ", req.params.newsId);
     let [data] = await pool.query("SELECT * FROM news WHERE news_id=? ", [
@@ -103,7 +101,7 @@ app.get("/api",checkLogin, async(req, res, next) => {
 // 授權路由
 const authRouter = require("./routers/authRouter");
 app.use("/api/auth", authRouter);
-// 會員路由
+// 會員登入路由
 const memberRouter = require("./routers/memberRouter");
 app.use("/api/members", memberRouter);
 

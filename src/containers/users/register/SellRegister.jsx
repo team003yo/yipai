@@ -18,11 +18,11 @@ const SellRegister = () => {
     });
     // 輸入的值更動的函式
     function handleChange(e) {
-        // console.log(e);
+        console.log(e);
         let newMember = { ...member };
         newMember[e.target.name] = e.target.value;
         setMember(newMember);
-        // setMember({ ...member, [e.target.name]: e.target.value });
+        setMember({ ...member, [e.target.name]: e.target.value });
     }
     // 上傳圖片用
     // function handleUpload(e) {
@@ -75,7 +75,7 @@ const SellRegister = () => {
                             <input
                                 type='text'
                                 className='_SellRegister_inputBox2'
-                                name='password'
+                                name='account'
                                 placeholder=' 帳號'
                                 value={member.account}
                                 onChange={handleChange}
@@ -91,7 +91,7 @@ const SellRegister = () => {
                             <input
                                 type='password'
                                 className='_SellRegister_inputBox2'
-                                name='password'
+                                name='confirmPassword'
                                 placeholder=' 再輸入一次密碼'
                                 value={member.confirmPassword}
                                 onChange={handleChange}

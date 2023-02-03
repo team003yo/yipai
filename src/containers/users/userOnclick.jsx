@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import ArtistPage from "./ArtistPage";
 import Art from "./Art";
 import ArtList from "./ArtList";
@@ -9,9 +11,50 @@ import BuyBotton from "./BuyBotton";
 import ArtistImg from "./image/ArtistImg.png";
 import pesnalImg from "./image/pesnalImg.png";
 import artsImg from "./image/artsImg.png";
+// 跨源讀取ＩＤ
+var mamberId;
+
+async function getMemberId() {
+    let response = await axios.get("http://localhost:3001/api/members", {
+        withCredentials: true,
+    });
+    // fetch(response)
+    //     .then(function () {
+    //         let Id = response.data.users_id;
+    //         console.log(Id);
+    //         return Id;
+
+    //     })
+    //     .catch((error) => {
+    //         console.error("Error:", error);
+    //     });
+    console.log(response.data.users_id);
+    mamberId = response.data.users_id;
+}
 
 // 帳號設定選項
-function BuyerSettings(params) {
+function BuyerSettings() {
+    let UserData;
+
+    // useEffect(() => {
+
+    getMemberId().then(async function getData() {
+        let response = await axios.get(
+            `http://localhost:3001/users/${mamberId}`
+        );
+        // console.log(response.data);
+        fetch(response)
+            .then(function () {
+                console.log(response.data);
+                UserData = response.data;
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    });
+
+    // }, []);
+
     ReactDOM.render(
         <div>
             <div className='_buyLogin_flex_content_sa '>
@@ -41,6 +84,7 @@ function BuyerSettings(params) {
                                     className='_buyLogin_SettingInput'
                                     type='text'
                                     name='username'
+                                    placeholder='{params.name}'
                                 ></input>
                             </div>
                             <div className=' _buyLogin_flex_content _buyLogin_p2'>
@@ -49,6 +93,7 @@ function BuyerSettings(params) {
                                     className='_buyLogin_SettingInput'
                                     type='text'
                                     name='account'
+                                    placeholder='{params.account}'
                                 ></input>
                             </div>
                             <div className=' _buyLogin_flex_content _buyLogin_p2'>
@@ -57,6 +102,7 @@ function BuyerSettings(params) {
                                     className='_buyLogin_SettingInput'
                                     type='email'
                                     name='email'
+                                    placeholder='{params.email}'
                                 ></input>
                             </div>
                             <div className=' _buyLogin_flex_content _buyLogin_p2'>
@@ -65,6 +111,7 @@ function BuyerSettings(params) {
                                     className='_buyLogin_SettingInput'
                                     type='tel'
                                     name='tel'
+                                    placeholder='{params.tel}'
                                 ></input>
                             </div>
                             <div className=' _buyLogin_p2 _buyLogin_flex_end'>
@@ -297,20 +344,17 @@ function FavoriteArtist(params) {
                 onClick=''
             />
             {/* 橫的 */}
-            <div
-                className='_buyLogin_flex _buyLogin_h30'
-            >
+            <div className='_buyLogin_flex _buyLogin_h30'>
                 {/* 一個藝術家 */}
                 <div
                     className='_buyLogin_flex _buyLogin_card'
                     style={{ flexDirection: "row", position: "relative" }}
                 >
-                    
-                        <ArtistPage
-                            pesnalImg={pesnalImg}
-                            artistImg={ArtistImg}
-                            artisrName='yannick aaron'
-                        />
+                    <ArtistPage
+                        pesnalImg={pesnalImg}
+                        artistImg={ArtistImg}
+                        artisrName='yannick aaron'
+                    />
 
                     {/* 作品 */}
                     <div
@@ -332,18 +376,17 @@ function FavoriteArtist(params) {
                         />
                     </div>
                 </div>
-                
+
                 {/* 一個藝術家 */}
                 <div
                     className='_buyLogin_flex _buyLogin_card'
                     style={{ flexDirection: "row", position: "relative" }}
                 >
-                    
-                        <ArtistPage
-                            pesnalImg={pesnalImg}
-                            artistImg={ArtistImg}
-                            artisrName='yannick aaron'
-                        />
+                    <ArtistPage
+                        pesnalImg={pesnalImg}
+                        artistImg={ArtistImg}
+                        artisrName='yannick aaron'
+                    />
 
                     {/* 作品 */}
                     <div
@@ -433,4 +476,5 @@ export {
     PurchaseHistory,
     FavoriteArtist,
     FavoriteArts,
+    getMemberId,
 };

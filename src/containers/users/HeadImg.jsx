@@ -7,6 +7,7 @@ import {
     PurchaseHistory,
     FavoriteArtist,
     FavoriteArts,
+    // getMemberId
 } from "./userOnclick";
 import axios from "axios";
 import buyerImg from "./image/buyHead.png";
@@ -15,6 +16,7 @@ import buyerImg from "./image/buyHead.png";
 
 function HeadImg(user) {
 const [UseData, setUseData] = useState();
+const [UseId, setUseId] = useState();
 
     useEffect(() => {
         async function getMember() {
@@ -24,14 +26,15 @@ const [UseData, setUseData] = useState();
                     withCredentials: true,
                 }
             );
-            fetch(response)
-                .then(function () {
-                    console.log(response.data.users_name);
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                });
+            // fetch(response)
+            //     .then(function () {
+            //         // console.log(response.data.users_id);
+            //     })
+            //     .catch((error) => {
+            //         console.error("Error:", error);
+            //     });
             setUseData(response.data.users_name);
+            setUseId(response.data.users_id);
         }
         getMember();
     }, []);
