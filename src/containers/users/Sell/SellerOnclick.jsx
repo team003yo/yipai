@@ -215,6 +215,7 @@ function SellerProduct(params) {
       <section id="SellerProduct__section ">
         <nav id="SellerProduct__nav d-flex">
         <h1 className="SellerProduct__total">共有26件</h1>
+        
           <ul className="SellerProduct__aside-list">
             <li className="SellerProduct__aside-li">
               <div className="SellerProduct__aside-searchBar">
@@ -222,41 +223,19 @@ function SellerProduct(params) {
                 />
               </div>
             </li>
-            <li className="SellerProduct__aside-li">
-              <Button variant="dark">新增商品+</Button>
-            </li>
+            
+              <Button className="SellerProduct__aside-li_add" variant="dark">新增商品+</Button>
+            
             <li className="SellerProduct__aside-li">
               <Button variant="dark">排序</Button>
           </li>
         </ul>
+       
         </nav>
         <main id="SellerProduct__main">
         <div class="SellerProduct__main_table-container">
           <div className="SellerProduct＿main row align-items-start">
-            <div className=" SellerProduct__item col">
-                <img className="SellerProduct__card-img-top" src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8zMjA5XC9tYWluXC96b29tXC8zMTU0NzdfZGY4ZjEyMjI4MzlmZDE4MWY4N2ZjYmI3ZmQyNmM2NTkuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NzUwLCJoZWlnaHQiOjc1MCwiZml0IjoiaW5zaWRlIn0sInRvRm9ybWF0Ijoid2VicCIsIndlYnAiOnsicXVhbGl0eSI6ODB9fX0=?signature=8801d203789aa1e99e51ff76f768a15bd51149a7b3e4cc942db977b937fe671e"/>
-                <div className="SellerProduct__card-text">
-                  <p className="SellerProduct__productId">
-                    品名品名品名品名品
-                  </p>
-                  <p className="SellerProduct__article">作者作者作者作者</p>
-                  <p className="SellerProduct__price">$16900</p>
-                </div>
-              </div>
-              <div className="SellerProduct__item col">
-                <img
-                  className="SellerProduct__card-img-top"
-                  src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8xOTQxNVwvbWFpblwvem9vbVwvODg3OTQxXzYwNzNhNjU4MzcyZTFiNTY2MzVlNTVlZDRhZjBlNTFmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjc1MCwiaGVpZ2h0Ijo3NTAsImZpdCI6Imluc2lkZSJ9LCJ0b0Zvcm1hdCI6IndlYnAiLCJ3ZWJwIjp7InF1YWxpdHkiOjgwfX19?signature=afb4f906096d0f37c64b83457e1f8c52b3b75c6f0494b03efa5684e8356086cc"
-                />
-          
-                <div className="SellerProduct__card-text col">
-                  <p className="SellerProduct__productId">
-                    品名品名品名品名品名
-                  </p>
-                  <p className="SellerProduct__article">作者作者作者作者</p>
-                  <p className="SellerProduct__price">$16900</p>
-                </div>
-              </div>
+
               <div className="SellerProduct__item col">
                 <img
                   className="SellerProduct__card-img-top"
