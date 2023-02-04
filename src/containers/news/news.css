@@ -90,7 +90,7 @@ display: -webkit-box;
     grid-template-areas:
                          "News__nav "
                          "News__main ";
-    grid-template-rows: 30px 2000px 50px; /* 3.各區域 寬高設置 */
+    grid-template-rows: 30px 2200px 50px; /* 3.各區域 寬高設置 */
     grid-template-columns:  1fr ;
   }
   

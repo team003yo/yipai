@@ -34,7 +34,7 @@ const SellLogin = () => (
           <div style={{ fontColor: '#515151' }}>
             沒有會員？請
             <span>
-              <Link to="">註冊</Link>
+              <Link to="/users/SellRegister">註冊</Link>
             </span>
           </div>
         </div>
