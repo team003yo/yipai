@@ -1,8 +1,7 @@
-
 #ProductsDetail_section {
   font-family: var(--font-family);
   display: grid; /* 1.設定 display 為 grid */
-  width: 100%;
+  width: 100vw;
   height: 100%;
   grid-template-areas:
                        "ProductsDetail_figure  ProductsDetail_hgroup"
@@ -11,8 +10,7 @@
                        /* "ProductsDetail_main  ProductsDetail_main" */
                       ; /* 2.區域分為4行兩列 */
   grid-template-rows:  780px 411px 411px ; /* 3.各區域 寬高設置 */
-  grid-template-columns: 755px 1fr;
- 
+  grid-template-columns: 755px 685px;
 }
 #ProductsDetail_container_fluid{
   max-width:1400px;
@@ -40,6 +38,13 @@
 .ProductsDetail_card-text{
   color:#CAB296;  
 }
+#ProductsDetail_section > #ProductsDetail_article {
+  grid-area:ProductsDetail_article;
+  display: flex;
+  justify-content: center;
+  position: relative;
+ 
+}
 
 .ProductsDetail_addCar-button{
   background-color: #C9D7E3;
@@ -48,14 +53,15 @@
   padding: 20px;
 }
 #ProductsDetail_main{
-  width: 100%;
+  width: 1440px;
   height: 380px;
   display: flex;
   justify-content: center;
   position: relative;
 }
+
 .ProductsDetail_main-wrap{
-  width: 100%;
+  width: 100vw;
   max-height: 380px;
   background-color:#EAEAEA;
 }
@@ -336,9 +342,7 @@ p.ProductsDetail_article{
     grid-template-rows: 680px 500px 311px 400px ; /* 3.各區域 寬高設置 */
     grid-template-columns: 550px ;
   }
-  #ProductsDetail_container_fluid{
-    width:550px;
-  }
+ 
  
   .ProductsDetail_artistLink{
     width:500px;
@@ -402,9 +406,16 @@ p.ProductsDetail_article{
                   "ProductsDetail_aside "
                   /* "ProductsDetail_main" */
                         ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 550px 300px 311px 400px ; /* 3.各區域 寬高設置 */
-    grid-template-columns:414px 1fr ;
+    grid-template-rows: 550px 300px 550px 400px ; /* 3.各區域 寬高設置 */
+    grid-template-columns:414px ;
   }
+  #ProductsDetail_container_fluid{
+    width:100vw;
+  }
+  .ProductsDetail_figure{
+    width:100vw;
+  }
+
   
   tr.ProductsDetail_pic2{
     display: none;
@@ -413,16 +424,12 @@ p.ProductsDetail_article{
    height: 375px;
   }
   .ProductsDetail_img-pic{
-    width: 414px;
+    width: 100vw;
   }
   .ProductsDetail_demobox{
     position: relative;
     height: 30vh;
   }
-  /* .ProductsDetail_Pic{
-    position: absolute;
-    
-  }  */
      
   .ProductsDetail_nav-wrapper{
     width: 330px;
@@ -440,13 +447,19 @@ p.ProductsDetail_article{
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    width: 414px;
+    width: 100vw;
     position: fixed;
     bottom: 0;
   } 
   .ProductsDetail_page-link{
     display: none;
     
+  }
+  .ProductsDetail_Detail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 180px;
   }
                      
 }

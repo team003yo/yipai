@@ -28,35 +28,58 @@ const marks = [
     value: 2000,
   },
   {
-    value: 20,
+    value: 5000,
   },
   {
-    value: 50,
+    value: 10000,
   },
   {
     value: 99999,
   },
 ]
 const AirbnbSlider = styled(Slider)(({ theme }) => ({
-  color: 'dark',
-  height: 2,
-  padding: '15px 0',
-  '& .MuiSlider-thumb': {
-    height: 28,
-    width: 28,
+    color: 'dark',
+    height: 2,
+    padding: '15px 0',
+     '& .MuiSlider-thumb': {
+    height: 20,
+    width: 20,
     backgroundColor: '#fff',
     '&:hover': {
-      boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
+    boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
+    },
+  },
+  '& .MuiSlider-valueLabel': {
+    fontSize: 12,
+    fontWeight: 'normal',
+    top: -6,
+    backgroundColor: 'unset',
+    color: theme.palette.text.primary,
+    '&:before': {
+      display: 'none',
+    },
+    '& *': {
+      background: 'transparent',
+      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
     },
   },
   '& .MuiSlider-track': {
-    height: 3,
+    border: 'none',
   },
   '& .MuiSlider-rail': {
-    color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
-    opacity: theme.palette.mode === 'dark' ? undefined : 1,
-    height: 3,
+    opacity: 0.5,
+    backgroundColor: '#bfbfbf',
   },
+  '& .MuiSlider-mark': {
+    backgroundColor: '#bfbfbf',
+    height: 8,
+    width: 1,
+    '&.MuiSlider-markActive': {
+      opacity: 1,
+      backgroundColor: 'currentColor',
+    },
+  },
+  
 }));
 
 interface AirbnbThumbComponentProps extends React.HTMLAttributes<unknown> {}
@@ -66,9 +89,7 @@ function AirbnbThumbComponent(props: AirbnbThumbComponentProps) {
   return (
     <SliderThumb {...other}>
       {children}
-      <span className="airbnb-bar" />
-      <span className="airbnb-bar" />
-      <span className="airbnb-bar" />
+      
     </SliderThumb>
   );
 }
@@ -76,12 +97,13 @@ function AirbnbThumbComponent(props: AirbnbThumbComponentProps) {
 export default function CustomizedSlider() {
   return (
     <Box sx={{ width: 180 }}>
-      <Box sx={{ m: 3 }} />
+     
       <AirbnbSlider
         slots={{ thumb: AirbnbThumbComponent }}
         getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
         defaultValue={[20, 40]}
         valueLabelDisplay="on"
+        step={2000}
         marks={marks}
         min={2000}
         max={9999}

@@ -40,8 +40,8 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
   height: 2,
   padding: '15px 0',
   '& .MuiSlider-thumb': {
-    height: 28,
-    width: 28,
+    height: 20,
+    width: 20,
     backgroundColor: '#fff',
     boxShadow: iOSBoxShadow,
     '&:focus, &:hover, &.Mui-active': {

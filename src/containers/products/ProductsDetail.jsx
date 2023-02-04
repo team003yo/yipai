@@ -131,8 +131,8 @@ const ProductsDetail = () => {
                     <tbody>
                       <tr>
                         
-                          <td>寬</td>
-                          <td>高</td>
+                          <td>寬{productsDetail.width}m</td>
+                          <td>高{productsDetail.hegiht}m</td>
                        
                       </tr>
                     </tbody>
@@ -170,14 +170,14 @@ const ProductsDetail = () => {
                 
               </figure>
               <article id="ProductsDetail_article">
-                <div className="ProductsDetail_Detail">
+                <div className="ProductsDetail_Detail ">
                   <div className="ProductsDetail_Detail-text ">
                     <p className="ProductsDetail_p" align="left">
                       {productsDetail.detail_text}
                     </p>
                   </div>
                   <div className="col-md-6">
-                  <img className="ProductsDetail_Pic" src={productsDetail.img_file}/>
+                  {/* <img className="ProductsDetail_Pic" src={productsDetail.img_file}/> */}
                   <img src={demo} alt="" className="ProductsDetail_demobox" />
                   </div>
                 </div>
