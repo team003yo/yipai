@@ -1,9 +1,8 @@
-import React from "react";
+import { React, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
-import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import ArtistPage from "./ArtistPage";
 import Art from "./Art";
 import ArtList from "./ArtList";
@@ -13,238 +12,26 @@ import ArtistImg from "./image/ArtistImg.png";
 import pesnalImg from "./image/pesnalImg.png";
 import artsImg from "./image/artsImg.png";
 // 跨源讀取ＩＤ
-var mamberId;
+// var mamberId;
 
-async function getMemberId() {
-    let response = await axios.get("http://localhost:3001/api/members", {
-        withCredentials: true,
-    });
-    // console.log(response.data.users_id);
-    mamberId = response.data.users_id;
-}
-// async function handleSubmit(e) {
-//     console.log("handleSubmit");
-//     // 關閉表單的預設行為
-//     e.preventDefault();
-//     let response = await axios.post(
-//         "http://localhost:3001/api/auth/",
-//         formData
-//     );
+//  function getMemberId() {
+//     let response =  axios.get("http://localhost:3001/api/members", {
+//         withCredentials: true,
+//     });
+//     // console.log(response.data.users_id);
+//     mamberId = response.data.users_id;
 // }
+
 // 帳號設定選項
 function BuyerSettings() {
-    let UserData;
-    const container = document.getElementById("userDown");
-    const root = createRoot(container);
-    getMemberId().then(async function getData() {
-        let response = await axios.get(
-            `http://localhost:3001/users/${mamberId}`
-        );
-        UserData = response.data[0];
-        console.log(UserData);
-
-        const Settings = () => (
-            <div>
-                <div className='_buyLogin_flex_content_sa '>
-                    <div className='_buyLogin_mx2'>
-                        <div className='_buyLogin_Titlebox _buyLogin_flex'>
-                            <div
-                                className='_buyLogin_h4'
-                                style={{ marginLeft: "0" }}
-                            >
-                                帳戶設定
-                            </div>
-                        </div>
-                        <div
-                            className='_buyLogin_Contentbox _buyLogin_flex'
-                            style={{
-                                alignItems: "unset",
-                                justifyContent: "space-between",
-                            }}
-                        >
-                            {/* 左邊表單 */}
-                            <form method='post'>
-                                <div className=' _buyLogin_flex_content _buyLogin_p2'>
-                                    <label className='_buyLogin_h4'>
-                                        用戶姓名：
-                                    </label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='text'
-                                        name='username'
-                                        placeholder={UserData.users_name}
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p2'>
-                                    <label className='_buyLogin_h4'>
-                                        帳號：
-                                    </label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='text'
-                                        name='account'
-                                        placeholder={UserData.users_account}
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p2'>
-                                    <label className='_buyLogin_h4'>
-                                        Email：
-                                    </label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='email'
-                                        name='email'
-                                        placeholder={UserData.users_email}
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p2'>
-                                    <label className='_buyLogin_h4'>
-                                        Tel：
-                                    </label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='tel'
-                                        name='tel'
-                                        placeholder={UserData.users_phone}
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_p2 _buyLogin_flex_end'>
-                                    <button className='_buyLogin_ChangeControlBtn' >
-                                        更改
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    {/*  */}
-                    <div className='_buyLogin_mx2'>
-                        <div className='_buyLogin_Titlebox _buyLogin_flex'>
-                            <div
-                                className='_buyLogin_h4'
-                                style={{ marginLeft: "0" }}
-                            >
-                                地址設定
-                            </div>
-                        </div>
-                        <div className='_buyLogin_Contentbox'>
-                            {/* 右邊表單 */}
-                            <form method='post'>
-                                <div className=' _buyLogin_flex_content _buyLogin_p1'>
-                                    <label className='_buyLogin_h4'>
-                                        城市：
-                                    </label>
-                                    <select className='_buyLogin_SettingInput'>
-                                        <option disabled>請選擇城市</option>
-                                        <option>桃園市</option>
-                                        <option>新北市</option>
-                                        <option>台北市</option>
-                                        <option>基隆市</option>
-                                        <option>宜蘭縣</option>
-                                        <option>花蓮縣</option>
-                                        <option>台東縣</option>
-                                        <option>屏東縣</option>
-                                        <option>高雄市</option>
-                                        <option>台南市</option>
-                                        <option>嘉義縣</option>
-                                        <option>嘉義市</option>
-                                        <option>雲林縣</option>
-                                        <option>南投縣</option>
-                                        <option>彰化縣</option>
-                                        <option>台中市</option>
-                                        <option>苗栗縣</option>
-                                        <option>新竹縣</option>
-                                        <option>新竹市</option>
-                                        <option>澎湖縣</option>
-                                        <option>金門縣</option>
-                                        <option>連江縣</option>
-                                    </select>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p1'>
-                                    <label className='_buyLogin_h4'>區：</label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='text'
-                                        name='township'
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p1'>
-                                    <label className='_buyLogin_h4'>路：</label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='text'
-                                        name='rode'
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p1'>
-                                    <label className='_buyLogin_h4'>
-                                        路鄰里：
-                                    </label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='text'
-                                        name='adjacent'
-                                    ></input>
-                                </div>
-                                <div className=' _buyLogin_flex_content _buyLogin_p1'>
-                                    <label className='_buyLogin_h4'>
-                                        郵遞區號：
-                                    </label>
-                                    <input
-                                        className='_buyLogin_SettingInput'
-                                        type='number'
-                                        name='postalCode'
-                                    ></input>
-                                </div>
-                                <div className='_buyLogin_flex _buyLogin_p1 _buyLogin_flex_end'>
-                                    <button className='_buyLogin_ChangeControlBtn '>
-                                        更改
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-        root.render(<Settings />);
-    });
+    const container = document.getElementById("BuyerSettings");
+    container.style.display='block';
 }
 
 // 購買記錄選項
 function PurchaseHistory(params) {
-    ReactDOM.render(
-        <div>
-            <div style={{ overflowX: "auto" }}>
-                <table className='_buyLogin_table'>
-                    <thead className='_buyLogin_tline'>
-                        <tr className='_buyLogin_td'>
-                            <th>訂單編號</th>
-                            <th>金額</th>
-                            <th>訂購時間</th>
-                            <th>訂購品項</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr
-                            className='_buyLogin_tr _buyLogin_tline'
-                            style={{ borderColor: "#CAB296" }}
-                        >
-                            <td>1002939311112</td>
-                            <td>12,800</td>
-                            <td>2022/11/02</td>
-                            <td>1</td>
-                            <td>
-                                <button className='_buyLogin_tableBtn'>
-                                    詳細資訊
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>,
-        document.getElementById("userDown")
-    );
+    const container =document.getElementById("PurchaseHistory")
+    container.style.display='block';
 }
 
 // 我的訂單選項
@@ -475,5 +262,5 @@ export {
     PurchaseHistory,
     FavoriteArtist,
     FavoriteArts,
-    getMemberId,
+    // getMemberId,
 };

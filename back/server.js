@@ -3,7 +3,7 @@ const expressSession = require("express-session");
 // 安裝session-file-store套件 https://www.npmjs.com/package/session-file-store
 const FileStore = require("session-file-store")(expressSession);
 const path = require("path");
-const { checkLogin } = require('./middlewares/authMiddleware');
+const { checkLogin } = require("./middlewares/authMiddleware");
 
 const express = require("express");
 const app = express();
@@ -50,7 +50,6 @@ app.get("/", async (req, res, next) => {
         "SELECT * FROM product JOIN users ON product.id = users.users_id ORDER BY RAND() LIMIT 1"
     );
     res.json(data);
-    
 });
 // 購物車
 app.get("/cart", async (req, res, next) => {
@@ -80,7 +79,7 @@ app.get("/users", async (req, res, next) => {
     let [data] = await pool.query("SELECT * FROM users");
     res.json(data);
 });
-// 
+//
 app.get("/news/:newsId", async (req, res, next) => {
     console.log("/news/:newsId => ", req.params.newsId);
     let [data] = await pool.query("SELECT * FROM news WHERE news_id=? ", [
@@ -89,18 +88,18 @@ app.get("/news/:newsId", async (req, res, next) => {
     res.json(data);
 });
 // 會員部分路由
-app.get("/api",checkLogin, async(req, res, next) => {
+app.get("/api", checkLogin, async (req, res, next) => {
     // if(req.session.member){
-        console.log(req.session.member);
-        let [data] = await pool.query("SELECT * FROM news WHERE users_id=? ", [
-            req.session.member.id,
-        ]);
-        res.json(data);
-    
+    console.log(req.session.member);
+    let [data] = await pool.query("SELECT * FROM news WHERE users_id=? ", [
+        req.session.member.id,
+    ]);
+    res.json(data);
 });
 // 授權路由
 const authRouter = require("./routers/authRouter");
 app.use("/api/auth", authRouter);
+
 // 會員登入路由
 const memberRouter = require("./routers/memberRouter");
 app.use("/api/members", memberRouter);
@@ -113,6 +112,23 @@ app.get("/users/:usersId", async (req, res, next) => {
     ]);
     res.json(data);
 });
+// 更改會員資料
+app.put("/users/:usersId", async (req, res, next) => {
+    console.log("/users/:usersId TO upload ", req.params.usersId);
+    let [data] = await pool.query(
+        `UPDATE users SET users_name = ? , users_account = ? , users_email = ? ,users_phone = ? WHERE users_id = ?`,
+        [
+            req.body.username,
+            req.body.account,
+            req.body.email,
+            req.body.phone,
+            req.body.usersId,
+        ]
+    );
+    console.log(req.body);
+    res.json(data);
+});
+
 // 展覽消息
 app.get("/news", async (req, res, next) => {
     console.log("這裡是 /news");
@@ -149,9 +165,10 @@ app.get("/artist", async (req, res, next) => {
 });
 app.get("/artist/:artistId", async (req, res, next) => {
     console.log("/artist/:artistId => ", req.params.artistId);
-    let [data] = await pool.query("SELECT * FROM users WHERE users_valid_role=1 AND users_id=? ", [
-        req.params.artistId,
-    ]);
+    let [data] = await pool.query(
+        "SELECT * FROM users WHERE users_valid_role=1 AND users_id=? ",
+        [req.params.artistId]
+    );
     res.json(data);
 });
 

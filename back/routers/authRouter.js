@@ -62,8 +62,9 @@ const uploader = multer({
 
 // 驗證資料 validation
 const registerRules = [
-  // 中間件: 負責檢查 email 是否ＯＫ
-  // body('email').isEmail().withMessage('請輸入正確格式的 Email'),
+  // 中間件: 負責檢查 帳號 是否ＯＫ
+  body('account').isLength({ min: 4 }).withMessage('帳號長度需要超過4'),
+  body('email').isLength({ max: 25 }).withMessage('帳號長度不能超過25'),
   // 中間件: 檢查密碼的長度
   body('password').isLength({ min: 8 }).withMessage('密碼長度至少為 8'),
   body('password').isLength({ max: 12 }).withMessage('密碼長度至多為 12'),
