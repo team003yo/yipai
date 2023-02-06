@@ -59,6 +59,11 @@ app.get("/cart", async (req, res, next) => {
     );
     res.json(data);
 });
+app.get("/maybelike", async (req, res, next) => {
+    console.log("這裡是 /maybelike");
+    let [data] = await pool.query("SELECT * FROM product ORDER BY RAND() LIMIT 0,5 ");
+    res.json(data);
+});
 // 商品頁
 app.get("/product", async (req, res, next) => {
     console.log("這裡是 /product");

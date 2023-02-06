@@ -36,10 +36,14 @@ const Blog = () =>{
       <div className="yipai__blog-heading">
         <h1 className="yipai__text gradient__text">尋找藝術品</h1>
       </div>
+      <Link to='products'><h4 className='spaceblog-content'>更多藝術品 ▶</h4></Link>
+
       <Productsblog />
       <div className="yipai__blog-heading">
         <h1 className="yipai__text gradient__text">大藝術家們</h1>
       </div>
+      <Link to='artist'><h4 className='spaceblog-content'>看看更多大藝術家們 ▶</h4></Link>
+
       <ArtistBlog />
       <div className="yipai__blog-heading">
           <h1  className="yipai__text gradient__text">立即探索展覽空間</h1>

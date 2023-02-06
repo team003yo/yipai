@@ -1,4 +1,10 @@
-#請記得安裝 npm install react-icons
+1/31更新
+
+npm install react-use-cart
+
+npm i use-cart --save
+
+請記得安裝 npm install react-icons
 
 npm install axios
 

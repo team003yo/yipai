@@ -25,10 +25,12 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.8.0",
+    "react-router": "^6.6.1",
+    "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
-    "remotes": "^1.1.5",
+    "react-use-cart": "^1.13.0",
     "styled-components": "^5.3.6",
+    "use-cart": "^1.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
