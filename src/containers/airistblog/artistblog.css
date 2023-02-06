@@ -24,9 +24,7 @@
     width: 270px;
     height: 270px;
     margin: 15px;
-    -webkit-box-shadow: 3px 3px 5px rgba(136, 136, 136, 0.793);
-	-moz-box-shadow: 3px 3px 5px rgb(141, 141, 141);
-	box-shadow: 3px 3px 5px rgb(125, 125, 125);
+   
 }
 .yipai__artistbox img:hover{
     filter:alpha(Opacity=100);
@@ -37,6 +35,8 @@
 
 .yipai__artistbox img{
     object-fit:cover;
+    width: 270px;
+    height: 270px;
 }
 
 .yipai__artistbox-text {
@@ -83,6 +83,14 @@
 }
 
 @media screen and (max-width: 700px) {
+    .grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(3,1fr);
+        margin: auto;
+    
+    }
     .yipai__artistbox{
     
         /* background: #000; */
@@ -121,21 +129,24 @@
     .yipai__artistbox{
         
         /* background: #000; */
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         margin: 5px;
         
         
     }
     .yipai__artistbox img{
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 
     .yipai__artistbox-text p{
         margin: 15px;
         font-size: 15px;
         color: #CAB296;
+    }
+    .yipai__artistbox-hide{
+        display: none;
     }
 
 }

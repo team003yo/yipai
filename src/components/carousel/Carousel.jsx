@@ -11,10 +11,7 @@ export default () => (
       <img alt="first" src={first} />
       {/* <p className="legend">畫廊</p> */}
     </div>
-    <div>
-      <img alt="first" src={first} />
-      {/* <p className="legend">畫廊</p> */}
-    </div>
+
     <div>
       <img alt="first" src={second} />
       {/* <p className="legend">Legend 2</p> */}

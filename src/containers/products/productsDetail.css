@@ -26,6 +26,9 @@
   position: relative;
   
 }
+.ProductsDetail_img-pic{
+  height: 60vh;
+}
  
 #ProductsDetail_section > #ProductsDetail_hgroup {
   grid-area:ProductsDetail_hgroup;
@@ -34,6 +37,10 @@
   position: relative;
  
 }
+.ProductsDetail_card-text{
+  color:#CAB296;  
+}
+
 .ProductsDetail_addCar-button{
   background-color: #C9D7E3;
   border: none;
@@ -63,13 +70,16 @@
 
 }
 
-.ProductsDetail_other-wrapp ,.ProductsDetail_addCar,.ProductsDetail_slider-pic,.ProductsDetail_main-wrap{
+.ProductsDetail_other-wrapp ,.ProductsDetail_price_item,.ProductsDetail_addCar,.ProductsDetail_slider-pic,.ProductsDetail_main-wrap{
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
+.ProductsDetail_price_item{
+  margin: 15px;
+}
 .ProductsDetail_card-pic{
   padding: 5px;
   align-items: center;
@@ -200,9 +210,19 @@ p.ProductsDetail_article{
   max-width: 330px;
   
 }
-.ProductsDetail_demoPic{
-  width: 350px;
+.ProductsDetail_demobox{
+  position: relative;
+  height: 40vh;
 }
+.ProductsDetail_Pic{
+  position: absolute;
+  width: 150px;
+  right:350px;
+  bottom: -300px;
+  z-index: 1000;
+  box-shadow: 3px 3px 10px rgba(123, 123, 129, 0.7);
+}
+
 .ProductsDetail_Detail-text{
   display: inline-block;
   max-width: 400px;
@@ -370,7 +390,7 @@ p.ProductsDetail_article{
     }
   
 }
-@media screen and (max-width: 550px){
+@media screen and (max-width: 414px){
   #ProductsDetail_section  {
     display: grid; /* 1.設定 display 為 grid */
     width: 100%;
@@ -382,8 +402,8 @@ p.ProductsDetail_article{
                   "ProductsDetail_aside "
                   /* "ProductsDetail_main" */
                         ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 680px 500px 311px 400px ; /* 3.各區域 寬高設置 */
-    grid-template-columns:500px 1fr ;
+    grid-template-rows: 550px 300px 311px 400px ; /* 3.各區域 寬高設置 */
+    grid-template-columns:414px 1fr ;
   }
   
   tr.ProductsDetail_pic2{
@@ -392,5 +412,41 @@ p.ProductsDetail_article{
   .ProductsDetail_other-wrapp {
    height: 375px;
   }
-                        
+  .ProductsDetail_img-pic{
+    width: 414px;
+  }
+  .ProductsDetail_demobox{
+    position: relative;
+    height: 30vh;
+  }
+  /* .ProductsDetail_Pic{
+    position: absolute;
+    
+  }  */
+     
+  .ProductsDetail_nav-wrapper{
+    width: 330px;
+    position: absolute;
+    top: 0px;
+  }
+  .ProductsDetail_main-wrap{
+    width: 414px;
+  }
+  .ProductsDetail_addCar-bottom{
+    padding: 20px;
+    background-color:#C9D7E3 ;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    width: 414px;
+    position: fixed;
+    bottom: 0;
+  } 
+  .ProductsDetail_page-link{
+    display: none;
+    
+  }
+                     
 }

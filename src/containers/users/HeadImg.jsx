@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BuyBotton from "./BuyBotton";
 import {
     BuyerSettings,
@@ -8,10 +8,33 @@ import {
     FavoriteArtist,
     FavoriteArts,
 } from "./userOnclick";
-
+import axios from "axios";
 import buyerImg from "./image/buyHead.png";
+// import { render } from "@testing-library/react";
+// import { Link } from "react-router-dom";
 
 function HeadImg(user) {
+const [UseData, setUseData] = useState();
+
+    useEffect(() => {
+        async function getMember() {
+            let response = await axios.get(
+                "http://localhost:3001/api/members",
+                {
+                    withCredentials: true,
+                }
+            );
+            fetch(response)
+                .then(function () {
+                    console.log(response.data.users_name);
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+            setUseData(response.data.users_name);
+        }
+        getMember();
+    }, []);
     return (
         <div className='_buyLogin_flex'>
             <div className='_buyLogin_RWDflexcol _buyLogin_rwd_flex'>
@@ -28,7 +51,7 @@ function HeadImg(user) {
                 </div>
                 <h3>
                     您好
-                    <span>{user.name}</span>
+                    <span>{UseData}</span>
                     <span>你現在是</span>
                     <span>藝拍小夥伴啦</span>
                 </h3>
@@ -63,11 +86,9 @@ function HeadImg(user) {
                 />
             </div>
             <div id='userDown'></div>
-            <div className="userBtns"></div>
-            
+            <div className='userBtns'></div>
         </div>
     );
 }
 
-export {HeadImg} ;
-
+export { HeadImg };

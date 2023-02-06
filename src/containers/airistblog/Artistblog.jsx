@@ -1,17 +1,19 @@
 import React from "react";
-import pic1 from "../../assets/pic1.jpg";
-import pic2 from "../../assets/pic2.jpg";
-import pic3 from "../../assets/pic3.jpg";
-import pic4 from "../../assets/pic4.jpg";
-import pic5 from "../../assets/pic5.jpg";
-import pic6 from "../../assets/pic6.jpg";
-import pic7 from "../../assets/pic7.jpg";
-import pic8 from "../../assets/pic8.jpg";
-import pic9 from "../../assets/pic9.jpg";
-import artistName from "../../assets/artist.png";
+
+import AlexisLeBorgne from "../../assets/AlexisLeBorgne.png";
+import JimMeskhi from "../../assets/JimMeskhi.png";
+import HugoRaffrayAirist from "../../assets/HugoRaffrayAirist.jpeg";
+import RicardoValbuena from "../../assets/RicardoValbuena.png";
+import KristinKossi from "../../assets/KristinKossi.png";
+import GalaBiermann from "../../assets/GalaBiermann.png";
+import KatherineRhodesFields from "../../assets/KatherineRhodesFields.png";
+import EmanuelaAssenza from "../../assets/EmanuelaAssenza.png";
+import MatTTtam from "../../assets/MatTTtam.png";
 import "./artistblog.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 const ArtistBlog = () => {
   const [product, setProduct] = useState([]);
@@ -41,31 +43,32 @@ const ArtistBlog = () => {
         <div className="body">
           <div id="artistblog" className="grid">
             <div className="yipai__artistbox">
-              <img src={pic1} alt="img" />
+            <Link to="/artist/6"><img src={AlexisLeBorgne} alt="img" /></Link>
+              
             </div>
             <div className="yipai__artistbox">
-              <img src={pic2} alt="img2" />
+              <Link to="/artist/27"><img src={JimMeskhi} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox">
-              <img src={pic3} alt="img" />
+            <Link to="/artist/26"><img src={HugoRaffrayAirist} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox">
-              <img src={pic4} alt="img" />
+            <Link to="/artist/44"><img src={RicardoValbuena} alt="img" /></Link>
             </div>
-            <div className="yipai__artistbox">
-              <img src={pic5} alt="img" />
+            <div className="yipai__artistbox yipai__artistbox-hide">
+            <Link to="/artist/33"><img src={KristinKossi} alt="img" /></Link>
             </div>
-            <div className="yipai__artistbox">
-              <img src={pic6} alt="img" />
+            <div className="yipai__artistbox yipai__artistbox-hide">
+            <Link to="/artist/25"><img src={GalaBiermann} alt="img" /></Link>
             </div>
-            <div className="yipai__artistbox">
-              <img src={pic7} alt="img" />
+            <div className="yipai__artistbox yipai__artistbox-hide">
+            <Link to="/artist/31"><img src={KatherineRhodesFields} alt="img" /></Link>
             </div>
-            <div className="yipai__artistbox">
-              <img src={pic8} alt="img" />
+            <div className="yipai__artistbox yipai__artistbox-hide">
+            <Link to="/artist/20"><img src={EmanuelaAssenza} alt="img" /></Link>
             </div>
-            <div className="yipai__artistbox">
-              <img src={pic9} alt="img" />
+            <div className="yipai__artistbox yipai__artistbox-hide">
+            <Link to="/artist/40"><img src={MatTTtam} alt="img" /></Link>
           </div>
         </div>
       </div>

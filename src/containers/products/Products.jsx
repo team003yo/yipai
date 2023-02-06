@@ -6,6 +6,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductsSize_Slider from './ProductsSize_Slider'
 import ProductsPrice_Slider from './ProductsPrice_Slider'
+
 import Pagination from 'react-bootstrap/Pagination'
 import { BiRectangle } from 'react-icons/bi'
 import { TbRectangleVertical, TbRectangle } from 'react-icons/tb'
@@ -424,6 +425,7 @@ function Products  ()  {
                   </div>
                 )
               })}
+            
             </div>
           </figure>
           <footer id="Products__footer">

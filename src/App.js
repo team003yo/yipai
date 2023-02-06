@@ -3,7 +3,6 @@ import React from "react";
 import {
   Footer,
   Blog,
-  Header,
   MyContent,
   Space,
   Products,
@@ -14,7 +13,6 @@ import {
   CartPart2,
   CartPart3,
   Login,
-  Sell,
   ArtistBlog,
   SpaceBlog,
   News,
@@ -25,7 +23,6 @@ import {
   Register,
   SellRegister,
   ProductList,
-  MainContent,
 } from "./containers";
 import { Brand, Navbar, Carousel, ScrollToTop, NotFound } from "./components";
 import "./App.css";
@@ -36,6 +33,7 @@ import SingleCart from "./containers/cart/pages/ShoppingCart/SingleCart";
 import MultipleCart from "./containers/cart/pages/ShoppingCart/MultipleCart";
 import { CartProvider } from "./containers/cart/utils/useCart";
 import { SecondCartProvider } from "./containers/cart/utils/useSecondCart";
+import { HeadImg } from "./containers/users/HeadImg";
 
 function App() {
   return (
@@ -48,10 +46,10 @@ function App() {
 
               {/* <Header /> */}
               <MyContent>
-                  <Routes>
-                    <Route index element={<Carousel />} />
-                    {/* <Route index element={<Header />} /> */}
-                  </Routes>
+                <Routes>
+                  <Route index element={<Carousel />} />
+                  {/* <Route index element={<Header />} /> */}
+                </Routes>
                 <ScrollToTop>
                   <Routes>
                     <Route path="/" element={<Blog />} />
@@ -64,11 +62,15 @@ function App() {
                     />
                     <Route path="about" element={<About />} />
                     <Route path="artist" element={<Artist />} />
-                    <Route path="/artist/:artistId" element={<ArtistDetail />} />
+                    <Route
+                      path="/artist/:artistId"
+                      element={<ArtistDetail />}
+                    />
                     <Route path="users" element={<Users />} />
                     <Route path="/users/BuyLogin" element={<Login />} />
                     <Route path="/users/SellLogin" element={<SellLogin />} />
                     <Route path="/users/Register" element={<Register />} />
+                    <Route path="/users/LoginTo" element={<HeadImg />} />
                     <Route
                       path="/users/SellRegister"
                       element={<SellRegister />}
@@ -79,11 +81,11 @@ function App() {
                     <Route path="/cart-test" element={<SingleCart />} />
                     <Route path="multiple-cart" element={<MultipleCart />} />
                     <Route path="product-list" element={<ProductList />} />
+
                     <Route path="/news/:newsId" element={<NewsId />} />
                     <Route path="news" element={<News />} />
-                    <Route/>
+                    <Route />
                     <Route path="*" element={<NotFound />} />
-
                   </Routes>
                 </ScrollToTop>
               </MyContent>
