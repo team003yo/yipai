@@ -24,11 +24,7 @@ const Register = () => {
         setMember(newMember);
         // setMember({ ...member, [e.target.name]: e.target.value });
     }
-    // 上傳圖片用
-    // function handleUpload(e) {
-    //     // file input 的值並不是存在 value 欄位裡，是在member裡
-    //     setMember({ ...member, photo: e.target.files[0] });
-    // }
+    
     async function handleSubmit(e) {
         console.log("handleSubmit");
         // 關閉表單的預設行為
