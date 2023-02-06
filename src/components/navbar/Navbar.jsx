@@ -38,18 +38,19 @@ const Navbar = () => {
   const [user_order, setUserOrder] = useState([]);
 
   useEffect(() => {
-    // console.log("第二個參數是空陣列");
+    console.log("第二個參數是空陣列");
     // 在 component 初始化的時候跑一次
     // 通常會把去跟後端要資料的動作放在這裡
     async function getProduct() {
       let response = await axios.get("http://localhost:3001/cart");
       setProduct(response.data);
+      console.log(response.data);
     }
     getProduct();
     async function getUserOrder() {
       let response = await axios.get("http://localhost:3001/cart");
       setUserOrder(response.data);
-      // console.log(response.data);
+      console.log(response.data);
     }
     getUserOrder();
   }, []);
