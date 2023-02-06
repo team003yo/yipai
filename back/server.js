@@ -91,7 +91,7 @@ app.get("/news/:newsId", async (req, res, next) => {
 app.get("/api", checkLogin, async (req, res, next) => {
     // if(req.session.member){
     console.log(req.session.member);
-    let [data] = await pool.query("SELECT * FROM news WHERE users_id=? ", [
+    let [data] = await pool.query("SELECT * FROM users WHERE users_id=? ", [
         req.session.member.id,
     ]);
     res.json(data);
