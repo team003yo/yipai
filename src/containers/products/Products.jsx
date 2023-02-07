@@ -311,17 +311,17 @@ const handleWidthRange = (value, type) => {
         <section id="Products__section">
           <aside id="Products__aside">
             <table className="Products＿aside-content-center">
-              <th>
-                <h3 className="Products＿size-h3">藝術品分類</h3>
+              <th >
+                <h5 className="Products＿size-h3">藝術品分類</h5>
               </th>
               <tr>
-              <Link variant="dark" onClick={handleClear}><h5 className='ms-5' >清除選取</h5></Link>
+              <Link variant="dark" onClick={handleClear}><h5 className='' >清除選取</h5></Link>
                 <Dropdown>
                   <Dropdown.Toggle
                     variant="--color-bg "
                     style={{ border: 'none' }}
                     id="dropdown-basic"
-                    className="ms-5"
+                    className=""
                   >
                     依媒材
                   </Dropdown.Toggle>
@@ -356,7 +356,7 @@ const handleWidthRange = (value, type) => {
                     variant="--color-bg"
                     style={{ border: 'none' }}
                     id="dropdown-basic"
-                    className="ms-5"
+                    className=""
                   >
                     依風格
                   </Dropdown.Toggle>
@@ -596,39 +596,38 @@ const handleWidthRange = (value, type) => {
                 </Dropdown>
             </table>
           </aside>
-          <nav id="Products＿nav">
-            <h2 className="Products＿nav__h3 " align="left">
-              所有藝術品
-            </h2>
-            <div className="Products＿nav-wrapp">
-              <div className="Products＿link-bar ">
-                <p className="Products＿link d-flex">
-                  <Link to="/">首頁▶</Link>
-                  <Link onClick={handleClear}>所有藝術品▶  件 {selectedMaterial}  {selectedWork_hue}</Link>
-                </p>
-           <Dropdown>
-                  <Dropdown.Toggle
-                    variant="--color-bg"
-                    style={{ border: 'none' }}
-                    id="dropdown-basic"
-                    className="Products＿--color-bg ms-5"
-                  >
-                    創作年份
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                  <Dropdown.Item value="由新至舊"
-                  onClick={() => handleClick('由新至舊', 'creation_year')}
-                  >由新至舊</Dropdown.Item>
-                    <Dropdown.Item value="由舊至新"
-                  onClick={() => handleClick('由舊至新', 'creation_year')}
-                  >由舊至新</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-           </div>
-           </div>
-           </nav>
+                      <nav id="Products＿nav">
+              <h2 className="Products＿nav__h3 " align="left">
+                所有藝術品
+              </h2>
+              <div className="Products＿nav-wrapp">
+                <div className="Products＿link-bar ">
+                  <p className="Products＿link ">
+                    <Link to="/">首頁▶</Link>
+                    <Link onClick={handleClear}>所有藝術品▶  件 {selectedMaterial}  {selectedWork_hue}</Link>
+                  </p>
+             <Dropdown className='Products__dropdown_creatyear'>
+                    <Dropdown.Toggle
+                      variant="--color-bg"
+                      style={{ border: 'none' }}
+                      id="dropdown-basic"
+                      className="Products＿--color-bg ms-2"
+                    >
+                      創作年份
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                    <Dropdown.Item value="由新至舊"
+                    onClick={() => handleClick('由新至舊', 'creation_year')}
+                    >由新至舊</Dropdown.Item>
+                      <Dropdown.Item value="由舊至新"
+                    onClick={() => handleClick('由舊至新', 'creation_year')}
+                    >由舊至新</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+             </div>
+             </div>
+             </nav>
           <figure id="Products__figure">
-         
             <div className="Products__figure-wrap">
               {currentPosts.map((product_data, index) => {
                 return (

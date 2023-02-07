@@ -16,28 +16,26 @@
 }
 
 #Products__section {
-    font-family: var(--font-family);
-    display: grid; /* 1.設定 display 為 grid */
-    width: 100%;
-    height: 100%;
-    grid-template-areas:
-                         "Products__aside Products__nav "
+  font-family: var(--font-family);
+  display: grid; /* 1.設定 display 為 grid */
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+                         "Products__nav Products__nav "
                          "Products__aside  Products__figure "
                          "..  Products__figure "
                          ".. Products__footer "
                       ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 130px 300px 2000px 50px; /* 3.各區域 寬高設置 */
-    grid-template-columns:  350px 1fr ;
+  grid-template-rows: 100px 300px 2500px 50px; /* 3.各區域 寬高設置 */
+  grid-template-columns:  350px 1fr ;
   }
-  
   #Products__section > #Products__nav {
     grid-area: Products__nav;
   }
   
-  #Products__section > #Products__aside {
-    grid-area: Products__aside;
-    display: flex;
-    justify-content: center;
+  #Products__aside {
+    margin-left: 10px;
+    text-align:center;
   }
   .Products＿slider-color,.Products＿slider-shape,.Products＿slider-size,.Products＿slider-price{
     display: flex;
@@ -47,9 +45,13 @@
   .Products＿slider-size,.Products＿slider-price{
     margin: 10px 0 20px 0;
   }
+  .Products＿size-h3{
+    font-size: 22px;
+  }
   .Products＿size-h3,.Products＿size-h5{
-    margin:20px ;
-    text-align: center;
+    margin:29px 0px 20px 0px ;
+    left:0px ;
+    /* text-align: center; */
   }
   .Products＿slider-color-size-h6{
     margin-bottom:10px ;
@@ -104,6 +106,7 @@
 
   #Products__section > #Products__figure {
     grid-area: Products__figure;
+    margin: 50px;
   }
 .Products__figure-wrap{
    width: 80%;
@@ -128,29 +131,23 @@
     object-fit: cover;
     object-position: 50% 50%;
 }
-
 .Products_other-product{
     max-width: 100vw;
     position:absolute;
   }
-
 
 .Products__aside-content{
     text-align: center;
     padding: 30px;
 }  
 
-
 .Products__card-pic{
     vertical-align:100%;
     text-align: justify;
 }
-
 .Products__card{
     display: flex;
   }
-
-
 .Products__other-product{
     height: 500px;
     vertical-align:  bottom;
@@ -165,6 +162,10 @@
     padding: 10px  0px 0 0px ;
     /* max-width: 300px; */
   }
+  .Products＿nav__h3{
+    margin-left: 120px;
+  }
+
   .Products＿nav__h3,.Products＿link-bar{
     padding: 10px;
     display: inline-block;
@@ -173,7 +174,7 @@
   }
   .Products＿link-bar{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .Products＿button{
     float: left;
@@ -244,61 +245,58 @@ p.Products__page-link{
   justify-content: center;
 }
 
-@media screen and (max-width: 990px){   
-    #Products__section  {
-      display: grid; /* 1.設定 display 為 grid */
-      width: 100%;
-      height: 100%;
-      grid-template-areas:
-                          "Products__aside Products__nav "
-                          "Products__aside  Products__figure "
-                          "..  Products__figure "
-                          "..  Products__footer "
-                          ; /* 2.區域分為4行兩列 */
-      grid-template-rows: 100px 300px 1200px 50px;/* 3.各區域 寬高設置 */
-      grid-template-columns: 200px 1fr;
-    }
-    .Products_other-product{
-      width: 78vw;
-      position:absolute;
-    }
-    .Products__card-text{
-        position: absolute;
-        margin: auto ;
-        padding: 10px  0px 0 0px ;
-        width: 200px;
-      }
-      .Products__productId{
-        width: 200px;
-      }
-      
+.Products＿aside-content-center{
+  margin: 50px
+}
+.Products＿aside-content-center table{
+  margin: 0px;
 }
 
-@media screen and (max-width: 414px){   
+@media screen and (max-width: 550px){   
     #Products__section  {
       display: grid; /* 1.設定 display 為 grid */
-      width: 100%;
-      height: 100%;
+      width: 95vw;
       grid-template-areas:
                           "Products__nav "
                           "Products__figure "
                           "Products__figure "
                           "Products__footer "
                           ; /* 2.區域分為4行兩列 */
-      grid-template-rows: 150px 3330px 50px;/* 3.各區域 寬高設置 */
+      grid-template-rows: 80px 2000px 50px;/* 3.各區域 寬高設置 */
       grid-template-columns: 400px;
+      justify-content: center;
     }
     .Products__banner {
       width: 100%;
       height: 30vh;
-  }
-    #Products__section > #Products__aside {
-        display: none;
-      }
-    .Products_other-product{
-        width: 30vw;
-        position:absolute;
-      }
+    }
+    
+    #Products＿nav{
+      width: 300px;
+      justify-items: center;
+      display: inline;
+    }
+    .Products__dropdown_creatyear{
+      width: 90vw;
+    }
+
+    .Products＿link-bar{
+      width: 100vw;
+      flex-direction: column;
+      padding: 0;
+    }
+    .Products＿nav__h3{
+      margin: 0 ;
+    }
+
+    #Products__aside {
+      display: none;
+    }
+
+    .Products＿aside-content-center{
+      display: none;
+    }
+
     .Products__other-product{
       height:350px;
     }
@@ -315,19 +313,18 @@ p.Products__page-link{
     }
 
     .Products__card-img-top{
-        width: 32vh;
+        height: 30vh;
         object-fit: cover;
         object-position: 50% 50%;
   }
-
-    .Products__figure-wrap{
-      width: 80%;
+    .Products__figure-wrap{  
       margin: 0px auto;
       column-count: 1;
       /*欄數*/
       column-gap: 30px;
       /*每欄間隔*/
   }
+
     .Products__img-id-wrap{
       padding: 5px;
       box-sizing: border-box;

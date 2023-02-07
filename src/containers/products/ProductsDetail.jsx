@@ -72,11 +72,13 @@ const ProductsDetail = () => {
     </Modal>
   );
 
-
+  
+  const [artistData, setArtistData] = useState([]);
+  const [selectedArtist, setSelectedArtist] = useState([]);
   const { productId } = useParams();
   const [data, setdata] = useState([]);
-  const [UsersProduct, setUsersProduct] = useState([])
-  const [originalUsersProduct, setOriginalUsersProduct] = useState([])
+  const { artistId } = useParams();
+  const [artist, setData] = useState([]);
 
   useEffect(() => {
     // console.log('第二個參數是空陣列')
@@ -88,34 +90,43 @@ const ProductsDetail = () => {
         `http://localhost:3001/product/${productId}?`
       );
       setdata(response.data);
-      console.log(response.data)
+      // console.log(response.data)
     }
     getdata();
   }, []);
-  console.log(data)
 
-//   useEffect(() => {
-//     // console.log('第二個參數是空陣列');
-//     // 在 component 初始化的時候跑一次
-//     // 通常會把去跟後端要資料的動作放在這裡
-//     async function getUsersproduct() {
-//       let UsersProduct = await axios.get(`http://localhost:3001/Users`);
-//       setUsersProduct(UsersProduct.data);
-//       console.log('作者姓名:', UsersProduct.data);
-//       // setOriginalUsersProduct(UsersProduct.data);
-//     }
-//     getUsersproduct();
-//   }, []);
-//   // users_name
-//   let UsersProduct111 = [...UsersProduct]
-//   UsersProduct111 = UsersProduct.filter((Users) => Users.users_name === data.artist)
-// // setUsersProduct(UsersProduct111)
-// console.log(UsersProduct111)
+  useEffect(() => {
+    async function getData() {
+      let response = await axios.get(`http://localhost:3001/product/${productId}?`);
+      setData(response.data);
+    }
+    getData();
+  }, []);
+
+  useEffect(() => {
+    async function getArtistData() {
+      let response = await axios.get('http://localhost:3001/artist');
+      setArtistData(response.data);
+    }
+    getArtistData();
+  }, []);
+  
+  useEffect(() => {
+    const filteredData = artistData.filter((data) => {
+      return selectedArtist.some(selectedArtist => selectedArtist.id === data.user_id);
+    });
+    setData(filteredData);
+  }, [selectedArtist, artistData]);
+
+    // console.log('第二個參數是空陣列')
+    // 在 component 初始化的時候跑一次
+    // 通常會把去跟後端要資料的動作放在這裡
+
 
   const display = (
     <>
       <div className="container-fluid" id="ProductsDetail_container_fluid">
-        {data.map((productsDetail) => {
+        {data.map((productsDetail, index) => {
           return (
             <section id="ProductsDetail_section">
               <hgroup id="ProductsDetail_hgroup">
@@ -214,7 +225,7 @@ const ProductsDetail = () => {
                   </div>
                 </div>
               </article>
-              {data.map((productsDetail) => { 
+              {/* {artist.map((users, index) => { */}
               <aside id="ProductsDetail_aside">
                 <div className="ProductsDetail_aside-wrapp">
                   <div className="ProductsDetail_artistLink">
@@ -228,7 +239,7 @@ const ProductsDetail = () => {
                     <div className="ProductsDetail_card-body">
                       <div className="ProductsDetail_card-body-wrap">
                         <h5 className="ProductsDetail_card-title"  >
-                        {productsDetail.users_name}
+                        {/* {users.users_name} */}
                         </h5>
                         <p className="ProductsDetail_card-text">French</p>
                         <p className="ProductsDetail_Detail-text">
@@ -242,8 +253,8 @@ const ProductsDetail = () => {
                   </div>
                 </div>
               </aside>
-                 })
-              }  
+                {/* })
+              } */}
   
         <main id="ProductsDetail_main">
           <div className="ProductsDetail_main-wrap">
