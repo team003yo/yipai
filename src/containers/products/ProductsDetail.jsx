@@ -72,8 +72,10 @@ const ProductsDetail = () => {
     </Modal>
   );
 
-  const { productId } = useParams();
+  const { productId, } = useParams();
   const [data, setdata] = useState([]);
+  const [artist, setArtist] = useState([]);
+  const [selectedArtist, setSelectedArtist]= useState('')
 
   useEffect(() => {
     // console.log('第二個參數是空陣列')
@@ -85,10 +87,30 @@ const ProductsDetail = () => {
         `http://localhost:3001/product/${productId}?`
       );
       setdata(response.data);
-      // console.log(response.data)
+      //console.log(response.data)
     }
     getdata();
   }, []);
+
+  useEffect(() => {
+  async function getArtist() {
+    let artistResponse = await axios.get('http://localhost:3001/artist');
+
+    const getdata = getdata.filter((getdata) => {
+       getArtist.some(selectedArtist => getArtist.id === getdata.user_id);
+      });
+
+    setArtist(artistResponse.data);
+    console.log(artistResponse.data)
+  }
+   getArtist();
+   
+}, []);
+
+    // console.log('第二個參數是空陣列')
+    // 在 component 初始化的時候跑一次
+    // 通常會把去跟後端要資料的動作放在這裡
+
 
   const display = (
     <>
@@ -101,26 +123,35 @@ const ProductsDetail = () => {
                   key={productsDetail.id}
                   className="ProductsDetail_nav-wrapper d-inline">
                   <div className="ProductsDetail_d-inline">
-                    <h2>{productsDetail.name}</h2>
+                    <h1>{productsDetail.name}</h1>
                     <h4 className="ProductsDetail_card-text">{productsDetail.artist}</h4>
                   </div>
 
                   <table className="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col"><h4>媒材</h4></th>
-                        {/* <th scope="col">風格</th> */}
-                        <th scope="col"><h4>年份</h4></th>
-                        <th scope="col"><h4>色系</h4></th>
+                        <th ><h4>媒材</h4></th>
+                        <th ><h4>風格</h4></th>
+                        <th ><h4>年份</h4></th>
+                       
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>{productsDetail.material}</td>
-                        {/* <td>印象派</td> */}
+                        <td>{productsDetail.product_style}</td> 
                         <td>{productsDetail.creation_year}</td>
-                        <td>{productsDetail.work_hue}</td>
                         
+                      </tr>
+                      </tbody>
+                      <thead>
+                      <tr>
+                      <th scope="col"><h4>色系</h4></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      <th scope="col">{productsDetail.work_hue}</th>
                       </tr>
                     </tbody>
                     <thead>
@@ -130,15 +161,17 @@ const ProductsDetail = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        
                           <td>寬{productsDetail.width}m</td>
                           <td>高{productsDetail.hegiht}m</td>
-                       
                       </tr>
                     </tbody>
+                    <thead>
+                      <tr>
+                        <th scope="col"><h4>價格</h4></th>
+                      </tr>
+                    </thead>
                   
                   </table>
-                  <p>價格</p>
                   <h1  className="ProductsDetail_price_item d-flex">${productsDetail.price}</h1>
                   <div className="ProductsDetail_addCar ">
                     <button
@@ -157,10 +190,9 @@ const ProductsDetail = () => {
                   </div>
                 </div>
               </hgroup>
-
               <figure id="ProductsDetail_figure">
                 <p className="ProductsDetail_page-link">
-                  <Link to="/products">藝術品</Link>▶印象派
+                  <Link to="/products">藝術品</Link>▶{productsDetail.product_style}▶{productsDetail.material}
                 </p>
                 <img
                     className="ProductsDetail_img-pic"
@@ -182,6 +214,7 @@ const ProductsDetail = () => {
                   </div>
                 </div>
               </article>
+              {artist.map((users, index) => {
               <aside id="ProductsDetail_aside">
                 <div className="ProductsDetail_aside-wrapp">
                   <div className="ProductsDetail_artistLink">
@@ -194,8 +227,8 @@ const ProductsDetail = () => {
                     </div>
                     <div className="ProductsDetail_card-body">
                       <div className="ProductsDetail_card-body-wrap">
-                        <h5 className="ProductsDetail_card-title">
-                          Yannick Aaron
+                        <h5 className="ProductsDetail_card-title"  key={users.users_id}>
+                        {users.users_name}
                         </h5>
                         <p className="ProductsDetail_card-text">French</p>
                         <p className="ProductsDetail_Detail-text">
@@ -209,9 +242,9 @@ const ProductsDetail = () => {
                   </div>
                 </div>
               </aside>
-            </section>
-          );
-        })}
+                })
+              }
+  
         <main id="ProductsDetail_main">
           <div className="ProductsDetail_main-wrap">
             <h3 className="fw-bold ProductsDetail_more">
@@ -292,6 +325,10 @@ const ProductsDetail = () => {
             </table>
           </div>
         </main>
+        </section>
+          );
+        })}
+        
       </div>
 
       <div className="ProductsDetail_addCar-bottom">

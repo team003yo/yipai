@@ -7,13 +7,14 @@
                        "ProductsDetail_figure  ProductsDetail_hgroup"
                        "ProductsDetail_article  ProductsDetail_article"
                        "ProductsDetail_aside  ProductsDetail_aside"
-                       /* "ProductsDetail_main  ProductsDetail_main" */
+                       "ProductsDetail_main  ProductsDetail_main" 
                       ; /* 2.區域分為4行兩列 */
-  grid-template-rows:  780px 411px 411px ; /* 3.各區域 寬高設置 */
-  grid-template-columns: 755px 685px;
+  grid-template-rows:  950px 500px 450px 380px; /* 3.各區域 寬高設置 */
+  grid-template-columns: 855px 1fr;
 }
 #ProductsDetail_container_fluid{
-  max-width:1400px;
+  align-items: center;
+  width:100vw;
 }
 
 #ProductsDetail_section > #ProductsDetail_figure {
@@ -25,7 +26,9 @@
   
 }
 .ProductsDetail_img-pic{
-  height: 60vh;
+  margin: 0 0 0 250px;
+  width: 30vw;
+  object-fit: cover;
 }
  
 #ProductsDetail_section > #ProductsDetail_hgroup {
@@ -49,11 +52,11 @@
 .ProductsDetail_addCar-button{
   background-color: #C9D7E3;
   border: none;
-  width: 300px;
+  width: 400px;
   padding: 20px;
 }
 #ProductsDetail_main{
-  width: 1440px;
+  width: 100vw;
   height: 380px;
   display: flex;
   justify-content: center;
@@ -83,8 +86,11 @@
   position: relative;
 }
 
+.ProductsDetail_p{
+  margin-right: 40px;
+}
 .ProductsDetail_price_item{
-  margin: 15px;
+  margin: 0 0 35px 0;
 }
 .ProductsDetail_card-pic{
   padding: 5px;
@@ -94,10 +100,12 @@ p.ProductsDetail_price{
   margin-bottom:0px;
 }
 .ProductsDetail_nav-wrapper{
-  width: 330px;
+  width: 400px;
   position: absolute;
   top: 150px;
+  margin-right: 100px;
 }
+
 
 .ProductsDetail_addCar-bottom{
   display: none;

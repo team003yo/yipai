@@ -26,7 +26,7 @@
                          "..  Products__figure "
                          ".. Products__footer "
                       ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 130px 300px 2800px 50px; /* 3.各區域 寬高設置 */
+    grid-template-rows: 130px 300px 2500px 50px; /* 3.各區域 寬高設置 */
     grid-template-columns:  350px 1fr ;
   }
   
