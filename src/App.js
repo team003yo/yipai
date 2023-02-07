@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Footer,
   Blog,
@@ -33,16 +33,36 @@ import { HeadImg } from "./containers/users/HeadImg";
 import ProtectedRoutes from "./containers/users/utils/ProtectedRoutes";
 import SellerHome from "./containers/users/Sell/SellerHome";
 
-
-//使用者 user 與 admin
-const Permission = {
-  User: "User",
-  Admin: "Admin",
-};
-
 function App() {
-  //使用者登入狀態       是               使用者權限
-  const user = { login: true, permission: ["Admin"] };
+
+  const [User, setUser] = useState([]); //記錄數值
+  const [UserData2, setUserData2] = useState([]); //記錄數值
+  useEffect(() => {
+    async function getMember2() {
+      let response2 = await axios.get(`http://localhost:3001/api/members`, {
+        withCredentials: true,
+      });
+      // UserInputData.current = response2.data[0];
+      setUser(response2.data.users_valid_role
+        );
+      console.log(response2.data.users_valid_role
+        );
+    }
+    getMember2();
+  }, []);
+  console.log(User);
+
+  // console.log(User.data);
+    //使用者登入狀態       是               使用者權限
+    const user = { login: true, permission: [User] };
+
+    //使用者 user 與 admin
+    const Permission = {
+      User: User,
+      Admin: "Admin",
+    };
+  
+  console.log(Permission.User);
 
   return (
     <SecondCartProvider localStorageKey="secondCart">
@@ -50,13 +70,13 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <div className="gradient__bg">
-            {/* 標題列 */}
+              {/* 標題列 */}
               <Navbar />
               <MyContent>
-              {/* 頁面捲動 */}
+                {/* 頁面捲動 */}
                 <ScrollToTop>
                   <Routes>
-                  {/* 首頁 */}
+                    {/* 首頁 */}
                     <Route path="/" element={<Blog />} />
                     {/* 空間頁面 */}
                     <Route path="/space" element={<Space />} />
@@ -86,7 +106,10 @@ function App() {
                       path="/users/SellRegister"
                       element={<SellRegister />}
                     />
-                    <Route path="/users/ArtistLoginTo" element={<SellerHome/>} />
+                    <Route
+                      path="/users/ArtistLoginTo"
+                      element={<SellerHome />}
+                    />
                     {/* 登入保護機制 user={user} 使用者身分 Permission.XX 可進入頁面的權限者 */}
                     <Route
                       element={
@@ -96,7 +119,7 @@ function App() {
                         />
                       }
                     >
-                    {/* 購物車部分 */}
+                      {/* 購物車部分 */}
                       <Route path="cart" element={<Cart />} />
                       <Route path="/cart/CartPart2" element={<CartPart2 />} />
                       <Route path="/cart/CartPart3" element={<CartPart3 />} />
@@ -113,7 +136,6 @@ function App() {
             </div>
             {/* 贊助商 */}
             <Brand />
-
           </div>
           {/* 頁腳 */}
           <Footer />

@@ -33,7 +33,7 @@ function HeadImg(user) {
             );
             // UserInputData.current = response2.data[0];
             setUserData(response2.data[0].users_id);
-            console.log(response2.data[0]); 
+            // console.log(response2.data[0]); 
             setUserOldDatas(response2.data[0]);
             let responseOrder = await axios.get(
                 `http://localhost:3001/api/members/orders`,
@@ -54,7 +54,7 @@ function HeadImg(user) {
     });
     // 每次輸入後更新
     useEffect(() => {
-        console.log(UserInputData);
+        // console.log(UserInputData);
     }, [UserInputData]);
     // 每次輸入後更新
     const handleChange = (event) => {
@@ -77,8 +77,8 @@ function HeadImg(user) {
             .then((response) => console.log(response))
             .catch((error) => console.error(error));
     };
-    console.log(UserOldDatas);
-    console.log(UserOrders);
+    // console.log(UserOldDatas);
+    // console.log(UserOrders);
 
     return (
         <div className='_buyLogin_flex'>
