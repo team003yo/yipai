@@ -596,38 +596,39 @@ const handleWidthRange = (value, type) => {
                 </Dropdown>
             </table>
           </aside>
-                      <nav id="Products＿nav">
-              <h2 className="Products＿nav__h3 " align="left">
-                所有藝術品
-              </h2>
-              <div className="Products＿nav-wrapp">
-                <div className="Products＿link-bar ">
-                  <p className="Products＿link ">
-                    <Link to="/">首頁▶</Link>
-                    <Link onClick={handleClear}>所有藝術品▶  件 {selectedMaterial}  {selectedWork_hue}</Link>
-                  </p>
-             <Dropdown className='Products__dropdown_creatyear'>
-                    <Dropdown.Toggle
-                      variant="--color-bg"
-                      style={{ border: 'none' }}
-                      id="dropdown-basic"
-                      className="Products＿--color-bg ms-2"
-                    >
-                      創作年份
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    <Dropdown.Item value="由新至舊"
-                    onClick={() => handleClick('由新至舊', 'creation_year')}
-                    >由新至舊</Dropdown.Item>
-                      <Dropdown.Item value="由舊至新"
-                    onClick={() => handleClick('由舊至新', 'creation_year')}
-                    >由舊至新</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-             </div>
-             </div>
-             </nav>
+          
           <figure id="Products__figure">
+          <nav id="Products＿nav">
+            <h2 className="Products＿nav__h3 " align="left">
+              所有藝術品
+            </h2>
+            <div className="Products＿nav-wrapp">
+              <div className="Products＿link-bar ">
+                <p className="Products＿link d-flex">
+                  <Link to="/">首頁▶</Link>
+                  <Link onClick={handleClear}>所有藝術品▶  件 {selectedMaterial}  {selectedWork_hue}</Link>
+                </p>
+           <Dropdown>
+                  <Dropdown.Toggle
+                    variant="--color-bg"
+                    style={{ border: 'none' }}
+                    id="dropdown-basic"
+                    className="Products＿--color-bg ms-5"
+                  >
+                    創作年份
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                  <Dropdown.Item value="由新至舊"
+                  onClick={() => handleClick('由新至舊', 'creation_year')}
+                  >由新至舊</Dropdown.Item>
+                    <Dropdown.Item value="由舊至新"
+                  onClick={() => handleClick('由舊至新', 'creation_year')}
+                  >由舊至新</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+           </div>
+           </div>
+           </nav>
             <div className="Products__figure-wrap">
               {currentPosts.map((product_data, index) => {
                 return (
