@@ -14,18 +14,51 @@ import axios from 'axios'
 
 import { Carousel } from 'react-responsive-carousel'
 
+//地圖
+import {
+  MapContainer as LeafletMap,
+  TileLayer,
+  Marker,
+  Popup,
+} from 'react-leaflet'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+
 function SpaceDetail() {
   const { spaceId } = useParams()
   const [data, setData] = useState([])
+  // const [spaceLat, setSpaceLat] = useState([])
+  // const [spaceLng, setSpaceLng] = useState([])
+
+  // const [state, setState] = useState([])
+  // useEffect(() => {
+    // 連接資料庫
+    // 設定狀態
+    // console.log('didmount')
+    // setState(demoDataFromServer)
+  // }, [])
 
   useEffect(() => {
     async function getData() {
       let response = await axios.get(`http://localhost:3001/space/${spaceId}?`)
       setData(response.data)
       console.log(response.data)
+      // setSpaceLat(response.data[0].space_lat)
+      // console.log(response.data[0].space_lat)
+      // setSpaceLng(response.data[0].space_lng)
+      // console.log(response.data[0].space_lng)
     }
     getData()
   }, [])
+  //箭頭
+  // const demoDataFromServer = [{ lat: 25.0450374, lng: 121.165975 }]
+
+  const customMarker = new L.Icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png',
+    // iconSize: [25, 41],
+    // iconAnchor: [10, 41],
+    // popupAnchor: [20, -40],
+  })
 
   return (
     <>
@@ -99,12 +132,33 @@ function SpaceDetail() {
                 </div>
                 <div>
                   <div>
-                    <img
+                    {/* <img
                       className="space__detail-map-img"
                       src={require('./map.png')}
                       alt="map"
                       style={{ width: '100%' }}
-                    />
+                    /> */}
+                    <LeafletMap
+                      center={[item.space_lat, item.space_lng]}
+                      zoom={22}
+                      style={{ height: '50vh', width: '80vh' }}
+                    >
+                      <TileLayer
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                      />
+                      {/* {state.map(({ lat, lng }, index) => ( */}
+                        <Marker
+                          position={[item.space_lat, item.space_lng]}
+                          icon={customMarker}
+                          // key={index}
+                        >
+                          {/* <Popup>
+                          {index + 1} is for popup with lat: {lat} and lon {lng}
+                        </Popup> */}
+                        </Marker>
+                      {/* ))} */}
+                    </LeafletMap>
                   </div>
                 </div>
               </div>

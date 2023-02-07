@@ -46,7 +46,7 @@
 }
 
 ._SellRegister_inputBox {
-    margin-top: 60px;
+    margin-top: 40px;
     background: var(--color-text);
     border: 0em;
     width: 15em;
@@ -66,7 +66,7 @@
     border: 0em;
     width: 15em;
     height: 3em;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 0.5em;
     font-size: var(--text-h2);
 }
