@@ -19,7 +19,7 @@ function UMayBeLike() {
     async function getProducts() {
       let response = await axios.get(`http://localhost:3001/maybelike`);
       setProducts(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     }
     
     const data = [{ id: products.id, img_file: products.img_file,name:products.artist},];

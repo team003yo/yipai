@@ -20,19 +20,19 @@ const ArtistBlog = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    console.log("第二個參數是空陣列");
+    // console.log("第二個參數是空陣列");
     // 在 component 初始化的時候跑一次
     // 通常會把去跟後端要資料的動作放在這裡
     async function getProduct() {
       let response = await axios.get("http://localhost:3001");
       setProduct(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     }
     getProduct();
     async function getUsers() {
       let response = await axios.get("http://localhost:3001");
       setUsers(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     }
     getUsers();
   }, []);
@@ -43,32 +43,32 @@ const ArtistBlog = () => {
         <div className="body">
           <div id="artistblog" className="grid">
             <div className="yipai__artistbox">
-            <Link to="/artist/6"><img src={AlexisLeBorgne} alt="img" /></Link>
+            <Link to="/artist/32"><img src={AlexisLeBorgne} alt="img" /></Link>
               
             </div>
             <div className="yipai__artistbox">
-              <Link to="/artist/27"><img src={JimMeskhi} alt="img" /></Link>
+              <Link to="/artist/53"><img src={JimMeskhi} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox">
-            <Link to="/artist/26"><img src={HugoRaffrayAirist} alt="img" /></Link>
+            <Link to="/artist/52"><img src={HugoRaffrayAirist} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox">
             <Link to="/artist/44"><img src={RicardoValbuena} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox yipai__artistbox-hide">
-            <Link to="/artist/33"><img src={KristinKossi} alt="img" /></Link>
+            <Link to="/artist/59"><img src={KristinKossi} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox yipai__artistbox-hide">
-            <Link to="/artist/25"><img src={GalaBiermann} alt="img" /></Link>
+            <Link to="/artist/51"><img src={GalaBiermann} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox yipai__artistbox-hide">
-            <Link to="/artist/31"><img src={KatherineRhodesFields} alt="img" /></Link>
+            <Link to="/artist/57"><img src={KatherineRhodesFields} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox yipai__artistbox-hide">
-            <Link to="/artist/20"><img src={EmanuelaAssenza} alt="img" /></Link>
+            <Link to="/artist/46"><img src={EmanuelaAssenza} alt="img" /></Link>
             </div>
             <div className="yipai__artistbox yipai__artistbox-hide">
-            <Link to="/artist/40"><img src={MatTTtam} alt="img" /></Link>
+            <Link to="/artist/66"><img src={MatTTtam} alt="img" /></Link>
           </div>
         </div>
       </div>

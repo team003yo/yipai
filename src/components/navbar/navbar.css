@@ -126,6 +126,11 @@
   padding-top:-15px ;
 
 }
+.navbar__user-name{
+  margin-top: 1rem;
+  font-weight: 700;
+  font-family:var(--font-family);
+}
 
 @media screen and (max-width: 1050px) {
   .yipai__navbar-links_container {

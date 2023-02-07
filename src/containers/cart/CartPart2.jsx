@@ -1,22 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import UMayBeLike from "../../components/uMaybeLike/UMayBeLike"
-
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
-import { FaTruck, FaListAlt } from 'react-icons/fa';
-import { Table } from 'react-bootstrap';
-
-import './cartPart2.css';
-
-import ListItemsWithHook from './pages/ShoppingCart/components/ListItemsWithHook'
-
-import { useCart } from './utils/useCart'
-
-
-
+import React, { useState, useEffect } from "react";
+import submitOrder from "../../components/user_order/SubmitOrder";
+import { Link, useParams } from "react-router-dom";
+import UMayBeLike from "../../components/uMaybeLike/UMayBeLike";
+import axios from "axios";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { FaTruck, FaListAlt } from "react-icons/fa";
+import { Table } from "react-bootstrap";
+import "./cartPart2.css";
+import ListItemsWithHook from "./pages/ShoppingCart/components/ListItemsWithHook";
+import { useCart } from "./utils/useCart";
 
 const CartPart2 = () => {
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    // 这里可以换成您的实际数据源
+    async function getUsers() {
+      let response = await axios.get(`http://localhost:3001`);
+      setUsers(response.data);
+      console.log(response.data);
+    }
+
+    const data = [
+      {
+        id: users.users_id,
+        phone: users.users_phone,
+        city: users.send_address,
+      },
+    ];
+
+    const shuffledUsers = shuffleArray(data).slice(0, 1);
+    setUsers(shuffledUsers);
+    getUsers();
+  }, []);
 
   const {
     cart,
@@ -28,7 +50,8 @@ const CartPart2 = () => {
     isInCart,
     plusOne,
     minusOne,
-  } = useCart()
+  } = useCart();
+  const firstCart = useCart()
   return (
     <div className="font-family margin-50">
       <Link to="/products" className="keepbuying-button">
@@ -69,11 +92,15 @@ const CartPart2 = () => {
           </tr>
         </thead>
         <tbody className="line-height-50 text-right">
-          <tr>
-            <td colSpan={2} className="">陳浩南</td>
-            <td className="text-center ">台北市中山區南京西路14號</td>
-            <td className="text-center">0989123456</td>
-          </tr>
+          {users.map((user) => (
+            <tr>
+              <td colSpan={2} className="">
+                {user.users_name}
+              </td>
+              <td className="text-center ">{user.send_address}</td>
+              <td className="text-center">{user.users_phone}</td>
+            </tr>
+          ))}
         </tbody>
       </Table>
 
@@ -104,7 +131,9 @@ const CartPart2 = () => {
               <button>上一頁</button>
             </Link>
             <Link to="/cart/CartPart3">
-              <button>前往結帳頁面</button>
+              <button id="submitOrder" onClick={firstCart.clearCart}>
+                前往結帳 
+              </button>
             </Link>
           </div>
         </footer>

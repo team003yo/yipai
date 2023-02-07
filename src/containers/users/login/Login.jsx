@@ -30,7 +30,7 @@ const Login = () => {
         console.log(response.data);      
         setTimeout(()=>{
             window.location.assign("/users/LoginTo");;
-        },1000);
+        },500);
     }
 
     return (

@@ -1,10 +1,16 @@
 import React from 'react';
-
+import { Carousel } from "react-responsive-carousel";
+import banner from './banner.jpg'
 import './about.css';
 
 const About = () => (
   <div>
-    <img className="yipai__img" src={require('./banner.jpg')} alt="banner" />
+    <Carousel autoPlay showThumbs={false} showStatus={false}>
+        <div>
+          <img alt="first" src={banner} />
+          {/* <p className="legend">畫廊</p> */}
+        </div>
+      </Carousel>
     <div className="yipai__about section__padding" id="about">
       <div className="yipai__about">
         <h1 className="gradient__text">關於藝拍</h1>
