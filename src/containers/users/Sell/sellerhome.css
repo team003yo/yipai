@@ -97,11 +97,11 @@
 display: flex;
 justify-content: space-around;
 background-color: #EAEAEA;
-height: 70vh;
+height: 69vh;
 padding-top: 20px;
 }
 .sellerpage__main__left{
-    width: 40vh;
+    width: 50vh;
     padding-top: 40px;
 }
 .sellerpage__main__left__name{
@@ -113,7 +113,7 @@ padding-top: 20px;
     align-items: flex-start;
 }
 .sellerpage__main__right{
-    width: 30vh;
+    width: 50vh;
 }
 .sellerpage__main__right__name{
     display: flex;
@@ -124,7 +124,7 @@ padding-top: 20px;
     align-items: flex-start;
 }
 .sellerpage__main__right_textarea{
-    width: 250px;
+    width: 350px;
     height:350px;
     background-Color:#F9F7F2;
 }
@@ -222,10 +222,11 @@ padding-top: 20px;
   }
 #SellerProduct__main{
     width: 50vw;
-    margin-top: 50px;
+    margin-top: 100px;
 }  
 
 .SellerProduct__aside-list{
+     margin: 100px 0 20px 0;
      float: right;
      display: flex;
      list-style: none;
@@ -249,7 +250,7 @@ padding-top: 20px;
   }
 
   .SellerProduct__other-product{
-      height: 200px;
+      height: 150px;
       vertical-align:  bottom;
       
   }
@@ -258,8 +259,8 @@ padding-top: 20px;
   }
   
   .SellerProduct__card-img-top{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     
   }
   .SellerProduct__card-pic{
@@ -270,10 +271,12 @@ padding-top: 20px;
   .SellerProduct__productId{
       padding: 5px;
       margin: 0;
+      display: flex;
       /* text-align:justify; */
     }
   .SellerProduct__article,.SellerProduct__price{
       margin: 0;
+      display: flex;
   }
 
 /* sellerorder */
@@ -319,30 +322,38 @@ padding-top: 20px;
 }
 .SellerUpload__button_wrap{
     float: right;
-    margin-right: 10px;
+    margin-right: 80px;
 }
-
 /* SellerProduct 頁面*/
 #SellerProduct__main{
-    width: 100vw;
     margin-top: 20px;
-
 }  
 .SellerProduct__main_container{
     display: flex;
-    width: 100%;
-    margin-top: 10px;
+    width: 50vw;
 }
 .SellerProduct__section{
     margin: 0,auto;
 }
-
+.SellerProduct＿main {
+    margin-top: 50px;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    
+    }
 @media screen and (max-width: 414px) {  
 #sellerhome__main{
     margin: 0;
-    width: 100vw;
+    width:414px;
 }
-
+.SellerProduct__main_container{
+    display: flex;
+    align-items: center;
+    width:  100vw;
+    margin-top: 10px;
+}
     /* 側欄 */
 .sellerhome__sidebar{
     width: 100vw;
@@ -508,21 +519,23 @@ padding-top: 0px;
     display: flex;
     list-style: none;
     padding: 0px 50px 0px 20px;
+    justify-content: center; 
+    align-items: center;
  }
 
 .SellerProduct__aside_add{
     width: 100vw;
+    font-size: 24px;
+    padding:0 0 95px 0;
+    margin: 0;
     position: fixed;
     bottom: 0;
-    font-size: 24px;
-    padding-bottom: 95px;
-    margin: 0;
 
  }
+
  .SellerProduct__aside-sort{
     width: 100px;
  }
-
 #SellerProduct__section {
     width: 100vw;
     margin: 0;
@@ -533,10 +546,10 @@ padding-top: 0px;
 
 .SellerProduct＿main {
     width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
-    
+    margin: 50px 0 0 15px ;
     }
     .SellerProduct__item{
         margin-left:5px ;

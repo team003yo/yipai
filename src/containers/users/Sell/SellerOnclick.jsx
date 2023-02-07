@@ -213,13 +213,13 @@ function SellerProduct(params) {
   ReactDOM.render(
     <div>
       <section id="SellerProduct__section ">
-        <nav id="SellerProduct__nav d-flex">
+      <nav id="SellerProduct__nav d-flex">
         <h1 className="SellerProduct__total">共有26件</h1>
           <div className="SellerProduct__aside-list"> 
-              <div className="SellerProduct__aside-searchBar">
+              {/* <div className="SellerProduct__aside-searchBar">
                 <RiSearch2Line className="SellerProduct__aside-searchBar-icon" style={{width:"40px", height:"40px"}}
                 />
-              </div>
+              </div> */}
               <Button className="SellerProduct__aside_add" variant="dark">新增商品+</Button>
               <Button className="SellerProduct__aside-sort" variant="dark">排序</Button>
         </div>
@@ -236,7 +236,7 @@ function SellerProduct(params) {
             
                 <div className="SellerProduct__card-text">
                   <p className="SellerProduct__productId">
-                    品名品名品名品名品名
+                    品名品名品名品名
                   </p>
                   <p className="SellerProduct__article">作者作者作者作者</p>
                   <p className="SellerProduct__price">$16900</p>
@@ -250,7 +250,7 @@ function SellerProduct(params) {
               
                 <div className="SellerProduct__card-text">
                   <p className="SellerProduct__productId">
-                    品名品名品名品名品
+                    品名品名品名品名
                   </p>
                   <p className="SellerProduct__article">作者作者作者作者</p>
                   <p className="SellerProduct__price">$16900</p>
@@ -262,7 +262,7 @@ function SellerProduct(params) {
             
                 <div className="SellerProduct__card-text">
                   <p className="SellerProduct__productId">
-                    品名品名品名品名品名
+                    品名品名品名品名
                   </p>
                   <p className="SellerProduct__article">作者作者作者作者</p>
                   <p className="SellerProduct__price">$16900</p>
@@ -276,7 +276,7 @@ function SellerProduct(params) {
          
                 <div className="SellerProduct__card-text">
                   <p className="SellerProduct__productId">
-                    品名品名品名品名品
+                    品名品名品名
                   </p>
                   <p className="SellerProduct__article">作者作者作者作者</p>
                   <p className="SellerProduct__price">$16900</p>
@@ -289,7 +289,7 @@ function SellerProduct(params) {
                 />
                 <div className="SellerProduct__card-text">
                   <p className="SellerProduct__productId">
-                    品名品名品名品名品
+                    品名品名品名品名
                   </p>
                   <p className="SellerProduct__article">作者作者作者作者</p>
                   <p className="SellerProduct__price">$16900</p>
@@ -303,7 +303,63 @@ function SellerProduct(params) {
               
                 <div className="SellerProduct__card-text">
                   <p className="SellerProduct__productId">
-                    品名品名品名品名品
+                    品名品名品名品名
+                  </p>
+                  <p className="SellerProduct__article">作者作者作者作者</p>
+                  <p className="SellerProduct__price">$16900</p>
+                </div>
+              </div>
+              <div className="SellerProduct__item col">
+                <img
+                  className="SellerProduct__card-img-top"
+                  src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8zMzA1N1wvbWFpblwvem9vbVwvMTUwMjYxOV83OTI0YWVmNjJjZjYxYmVkNDEzZmIyMTJhOTA2NTI0Mi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=5160b85669a83546d04479b705b9c1aaccbdb3d6e1605ef10ca6d45baabdd6d0"
+                />
+              
+                <div className="SellerProduct__card-text">
+                  <p className="SellerProduct__productId">
+                    品名品名品名品名
+                  </p>
+                  <p className="SellerProduct__article">作者作者作者作者</p>
+                  <p className="SellerProduct__price">$16900</p>
+                </div>
+              </div>
+              <div className="SellerProduct__item col">
+                <img
+                  className="SellerProduct__card-img-top"
+                  src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8zMzA1N1wvbWFpblwvem9vbVwvMTUwMjYxOV83OTI0YWVmNjJjZjYxYmVkNDEzZmIyMTJhOTA2NTI0Mi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=5160b85669a83546d04479b705b9c1aaccbdb3d6e1605ef10ca6d45baabdd6d0"
+                />
+              
+                <div className="SellerProduct__card-text">
+                  <p className="SellerProduct__productId">
+                    品名品名品名品名
+                  </p>
+                  <p className="SellerProduct__article">作者作者作者作者</p>
+                  <p className="SellerProduct__price">$16900</p>
+                </div>
+              </div>
+              <div className="SellerProduct__item col">
+                <img
+                  className="SellerProduct__card-img-top"
+                  src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8zMzA1N1wvbWFpblwvem9vbVwvMTUwMjYxOV83OTI0YWVmNjJjZjYxYmVkNDEzZmIyMTJhOTA2NTI0Mi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=5160b85669a83546d04479b705b9c1aaccbdb3d6e1605ef10ca6d45baabdd6d0"
+                />
+              
+                <div className="SellerProduct__card-text">
+                  <p className="SellerProduct__productId">
+                    品名品名品名品名
+                  </p>
+                  <p className="SellerProduct__article">作者作者作者作者</p>
+                  <p className="SellerProduct__price">$16900</p>
+                </div>
+              </div>
+              <div className="SellerProduct__item col">
+                <img
+                  className="SellerProduct__card-img-top"
+                  src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8zMzA1N1wvbWFpblwvem9vbVwvMTUwMjYxOV83OTI0YWVmNjJjZjYxYmVkNDEzZmIyMTJhOTA2NTI0Mi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=5160b85669a83546d04479b705b9c1aaccbdb3d6e1605ef10ca6d45baabdd6d0"
+                />
+              
+                <div className="SellerProduct__card-text">
+                  <p className="SellerProduct__productId">
+                    品名品名品名品名
                   </p>
                   <p className="SellerProduct__article">作者作者作者作者</p>
                   <p className="SellerProduct__price">$16900</p>
