@@ -21,12 +21,13 @@ import axios from 'axios';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 
-
 function Products  ()  {
   window.scrollTo(0, 800);
   const [product, setProducts] = useState([])
   //product初始值
   const [originalProduct, setOriginalProducts] = useState([])
+
+ 
   //select顯示在頁面的值
   const [selectedMaterial, setSelectedMaterial] = useState('')
   const [selectedCreation_year, setSelectedCreation_year] = useState('')
@@ -55,6 +56,8 @@ function Products  ()  {
       //清空初始值
       setProducts(originalProduct)
       console.log(originalProduct)
+
+
       //清空媒材
       setSelectedMaterial('')
       //清空風格
@@ -312,7 +315,7 @@ const handleWidthRange = (value, type) => {
                 <h3 className="Products＿size-h3">藝術品分類</h3>
               </th>
               <tr>
-              <Link className='ms-5' variant="dark" onClick={handleClear}>清除選取</Link>
+              <Link variant="dark" onClick={handleClear}><h5 className='ms-5' >清除選取</h5></Link>
                 <Dropdown>
                   <Dropdown.Toggle
                     variant="--color-bg "
@@ -371,7 +374,7 @@ const handleWidthRange = (value, type) => {
                   </Dropdown.Menu>
                 </Dropdown>
               </tr>
-              <h6 className="Products＿size-h5">依色系</h6> 
+              <h5 className="Products＿size-h5">依色系</h5> 
               <tr className="Products＿slider-color">
                 <table>
                   <tr>
@@ -469,15 +472,15 @@ const handleWidthRange = (value, type) => {
               
               </tr>
               
-             <h6 className="Products＿size-h5">形狀</h6>
+             {/* <h6 className="Products＿size-h5">形狀</h6>
               <tr className="Products＿slider-shape">
                 <BiRectangle style={{ width: '50px', height: '40px' }} />
                 <TbRectangleVertical
                   style={{ width: '40px', height: '40px' }}
                 />
                 <TbRectangle style={{ width: '40px', height: '40px' }} />
-              </tr> 
-              <h5 className="Products＿size-h5">依尺寸(CM)</h5>
+              </tr>  */}
+              <h4 className="Products＿size-h5">依尺寸(CM)</h4>
               <h5 className="Products＿slider-color-size-h6" onClick={handleClear}>長邊{selectedWidth}</h5>
 
               <Dropdown>
@@ -648,7 +651,7 @@ const handleWidthRange = (value, type) => {
           </figure>
           <footer id="Products__footer">
               <div className="Products__footer_page">
-              {/* <ul>{getPages()}</ul> */}
+            
              </div>
           </footer>
         </section>
