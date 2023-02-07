@@ -1,3 +1,7 @@
+2/7/更新
+npm install react react-dom leaflet
+npm install react-leaflet
+
 1/31更新
 
 npm install react-use-cart
