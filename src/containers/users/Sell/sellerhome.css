@@ -271,7 +271,7 @@ padding-top: 20px;
   .SellerProduct__productId{
       padding: 5px;
       margin: 0;
-      display: flex;
+     
       /* text-align:justify; */
     }
   .SellerProduct__article,.SellerProduct__price{
@@ -343,7 +343,7 @@ padding-top: 20px;
     margin-top: 0px;
     
     }
-@media screen and (max-width: 414px) {  
+@media screen and (max-width: 550px) {  
 #sellerhome__main{
     margin: 0;
     width:414px;
@@ -514,6 +514,7 @@ padding-top: 0px;
 }
 /* SellerProduct  */
 .SellerProduct__aside-list{
+    margin: 0;
     width: 100vw;
     float: right;
     display: flex;
@@ -526,11 +527,10 @@ padding-top: 0px;
 .SellerProduct__aside_add{
     width: 100vw;
     font-size: 24px;
-    padding:0 0 95px 0;
-    margin: 0;
+    padding:0 0 105px 0;
     position: fixed;
     bottom: 0;
-
+    border-radius: 0;
  }
 
  .SellerProduct__aside-sort{
