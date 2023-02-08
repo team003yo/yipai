@@ -6,9 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from 'react-bootstrap/Button';
 import ProductsPagination from './ProductsPagination'
 
+
 //篩選區域
 import ProductsSize_Slider from './ProductsSize_Slider'
 import ProductsPrice_Slider from './ProductsPrice_Slider'
+import ProductsBurger from './ProductsBurger'
 
 //icon
 import { BiRectangle } from 'react-icons/bi'
@@ -596,16 +598,21 @@ const handleWidthRange = (value, type) => {
                 </Dropdown>
             </table>
           </aside>
-                      <nav id="Products＿nav">
-              <h2 className="Products＿nav__h3 " align="left">
-                所有藝術品
-              </h2>
+              <nav id="Products＿nav">
+              <div className="Products＿nav__h3 d-flex  " align="left">
+              <ProductsBurger
+              classMame="ProductsBurger"
+              ></ProductsBurger><h2 className='ms-2'>所有藝術品</h2>
+              </div>
               <div className="Products＿nav-wrapp">
                 <div className="Products＿link-bar ">
+
+                  {/* 手機板不顯示 */}
                   <p className="Products＿link ">
                     <Link to="/">首頁▶</Link>
                     <Link onClick={handleClear}>所有藝術品▶  件 {selectedMaterial}  {selectedWork_hue}</Link>
                   </p>
+
              <Dropdown className='Products__dropdown_creatyear'>
                     <Dropdown.Toggle
                       variant="--color-bg"
@@ -623,7 +630,8 @@ const handleWidthRange = (value, type) => {
                     onClick={() => handleClick('由舊至新', 'creation_year')}
                     >由舊至新</Dropdown.Item>
                     </Dropdown.Menu>
-                  </Dropdown>
+              </Dropdown>
+
              </div>
              </div>
              </nav>
@@ -697,6 +705,7 @@ const handleWidthRange = (value, type) => {
                 
               </RiArrowDownSLine>
             </div>
+              
       </div>
     </>
   )

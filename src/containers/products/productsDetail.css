@@ -437,7 +437,6 @@ p.ProductsDetail_article{
     position: relative;
     height: 30vh;
   }
-     
   .ProductsDetail_nav-wrapper{
     width: 90vw;
     position: absolute;
@@ -460,8 +459,7 @@ p.ProductsDetail_article{
     bottom: 0;
   } 
   .ProductsDetail_page-link{
-    display: none;
-    
+    display: none;  
   }
   .ProductsDetail_Detail {
     display: flex;

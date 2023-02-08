@@ -1,9 +1,10 @@
 #Products__container-fluid{
-    width:1440px;
+    width:100vw;
     display: flex;
     justify-content: center;
     align-items: center; 
 }
+
 .Products__banner {
     width: 100%;
     height: 100vh;
@@ -32,7 +33,7 @@
   #Products__section > #Products__nav {
     grid-area: Products__nav;
   }
-  
+
   #Products__aside {
     margin-left: 10px;
     text-align:center;
@@ -255,15 +256,14 @@ p.Products__page-link{
 @media screen and (max-width: 550px){   
     #Products__section  {
       display: grid; /* 1.設定 display 為 grid */
-      width: 95vw;
+
       grid-template-areas:
                           "Products__nav "
                           "Products__figure "
                           "Products__figure "
-                          "Products__footer "
-                          ; /* 2.區域分為4行兩列 */
-      grid-template-rows: 80px 2000px 50px;/* 3.各區域 寬高設置 */
-      grid-template-columns: 400px;
+                          "Products__footer "; /* 2.區域分為4行1列 */
+      grid-template-rows: 100px 2000px 50px;/* 3.各區域 寬高設置 */
+      grid-template-columns: 100vw;
       justify-content: center;
     }
     .Products__banner {
@@ -276,6 +276,10 @@ p.Products__page-link{
       justify-items: center;
       display: inline;
     }
+    .Products＿--color-bg{
+      float: right;
+    }
+
     .Products__dropdown_creatyear{
       width: 90vw;
     }
@@ -286,6 +290,7 @@ p.Products__page-link{
       padding: 0;
     }
     .Products＿nav__h3{
+      align-items: center;
       margin: 0 ;
     }
 
@@ -332,8 +337,9 @@ p.Products__page-link{
       break-inside: avoid;
       /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
   }
-    p.Products＿link{
-      display: none;
+    .Products＿link {
+      display: flex;
+      margin:0 0  0 10px ;
     }
 
 }
