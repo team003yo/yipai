@@ -105,18 +105,27 @@ const ProductsDetail = () => {
 
   useEffect(() => {
     async function getArtistData() {
-      let response = await axios.get('http://localhost:3001/artist');
-      setArtistData(response.data);
+      let artistResponse = await axios.get('http://localhost:3001/artist');
+      setArtistData(artistResponse.data);
     }
     getArtistData();
   }, []);
+  console.log(artistData)
+  console.log(data)
+  let filtered = [...artistData]
+  filtered = filtered.filter((artistData) => artistData.users_name === data.artist)
+  // setArtistData(filtered);
+  console.log(filtered)
+  console.log(artistData)
   
-  useEffect(() => {
-    const filteredData = artistData.filter((data) => {
-      return selectedArtist.some(selectedArtist => selectedArtist.id === data.user_id);
-    });
-    setData(filteredData);
-  }, [selectedArtist, artistData]);
+
+  
+  // useEffect(() => {
+  //   const filteredData = artistData.filter((data) => {
+  //     return selectedArtist.some(selectedArtist => selectedArtist.id === data.user_id);
+  //   });
+  //   setData(filteredData);
+  // }, [selectedArtist, artistData]);
 
     // console.log('第二個參數是空陣列')
     // 在 component 初始化的時候跑一次
