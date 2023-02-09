@@ -5,8 +5,8 @@ const NotFound = () => {
   const navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
-      navigate('/');
-    }, 1000);
+      navigate('/users');
+    }, 0);
   }, []);
   return (
     <div className="text-center font-family margin-200 not-founnd__set">

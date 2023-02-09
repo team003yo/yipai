@@ -9,6 +9,8 @@ import { Table } from "react-bootstrap";
 import "./cartPart2.css";
 import ListItemsWithHook from "./pages/ShoppingCart/components/ListItemsWithHook";
 import { useCart } from "./utils/useCart";
+import BuyerLogin from "../users/login/Login";
+
 
 const CartPart2 = () => {
   const shuffleArray = (array) => {
@@ -52,7 +54,29 @@ const CartPart2 = () => {
     minusOne,
   } = useCart();
   const firstCart = useCart()
+
+  const [login, setLogin] = useState(false);
+  useEffect(() => {
+    async function getMember2() {
+      let response = await axios.get(
+        `http://localhost:3001/api/members/userData`,
+        {
+          withCredentials: true,
+        }
+      );
+      if (Array.isArray(response.data) && response.data.length > 0) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+      console.log(response.data[0]);
+    }
+    getMember2();
+  }, []);
   return (
+    <div id="login">
+    {login?(
+      
     <div className="font-family margin-50">
       <Link to="/products" className="keepbuying-button">
         ❮ 繼續購物
@@ -142,6 +166,8 @@ const CartPart2 = () => {
         <br />
       </div>
     </div>
+    ):(<BuyerLogin />)}
+  </div>
   );
 };
 export default CartPart2;

@@ -6,16 +6,13 @@ import { FaUser } from "react-icons/fa";
 // import logo from '../../logo.svg';
 import logo1 from "../../logo1.svg";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import { useCart } from "../../containers/cart/utils/useCart";
 
 import axios from "axios";
 
-
-
 const Navbar = () => {
-    
-
+  // ...
   const {
     cart,
     items,
@@ -27,78 +24,64 @@ const Navbar = () => {
     plusOne,
     minusOne,
   } = useCart();
-  
   const [count, setCount] = useState(0);
-  // const addCount=()=>setCount(cart.totalItems);
-  // count = cart.totalItems
-
-  const [toggleMenu, setToggleMenu] = useState(false);
-
+  const [UserName, setUserName] = useState({});
+  const [login, setLogin] = useState(false);
   const [product, setProduct] = useState([]);
   const [user_order, setUserOrder] = useState([]);
-  const [UserName, setUserName] = useState({});
+  const [toggleMenu, setToggleMenu] = useState(false);
   useEffect(() => {
     async function getMember2() {
-      let response2 = await axios.get(
+      let response = await axios.get(
         `http://localhost:3001/api/members/userData`,
         {
           withCredentials: true,
         }
       );
-      setUserName(response2.data[0]);
-    //   console.log(response2.data[0]);
+      if (Array.isArray(response.data) && response.data.length > 0) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+      setUserName(response.data[0]);
+      console.log(response.data[0]);
     }
     getMember2();
-    // console.log("第二個參數是空陣列");
-    // 在 component 初始化的時候跑一次
-    // 通常會把去跟後端要資料的動作放在這裡
+  }, []);
+  useEffect(() => {
     async function getProduct() {
       let response = await axios.get("http://localhost:3001/cart");
       setProduct(response.data);
-    //   console.log(response.data);
+      //   console.log(response.data);
     }
     getProduct();
     async function getUserOrder() {
       let response = await axios.get("http://localhost:3001/cart");
       setUserOrder(response.data);
-    //   console.log(response.data);
+      //   console.log(response.data);
     }
     getUserOrder();
   }, []);
 
-    const [logout,setLogout] = useState([]);
-    useEffect(() => {
-        async function getLogout() {
-            
-            let response2 = await axios.get(
-                `http://localhost:3001/api/auth/logout`,
-                {
-                    withCredentials: true,
-                }
-            );
-            // UserInputData.current = response2.data[0];
-            setLogout(response2.data[0].users_id);
-            // console.log(response2.data[0]); 
-            setLogout(response2.data[0]);
-            let responseOrder = await axios.get(
-                `http://localhost:3001/api/members/orders`,
-                {
-                    withCredentials: true,
-                }
-            );
-            setLogout(responseOrder.data[0]);
-        }
-        getLogout();
-    }, []);
-
-
+  async function logout() {
+    try {
+      await axios.get(`http://localhost:3001/api/auth/logout`, {
+        withCredentials: true,
+      });
+      setLogin(false);
+      // You can redirect the user to the login page after they log out
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className="yipai__navbar">
+      {/* ... */}
       <div className="yipai__navbar-links">
         <div className="yipai__navbar-links_logo">
           <Link to="/">
-            <img src={logo1} alt="logo1"/>
+            <img src={logo1} alt="logo1" />
           </Link>
         </div>
         <div className="yipai__navbar-links_container">
@@ -119,20 +102,30 @@ const Navbar = () => {
           </p>
         </div>
         <div className="yipai__navbar-icon">
-          <Link className="navbar__cart-count" to="cart">
-            <BsCartFill className="iconStyle" />
-            <p>{cart.totalItems}</p>
-          </Link>
-          <Link to="/users" >
-            <FaUser className='iconStyle' />
-            </Link>
-          <Link to="/users" >
-            <IoLogOut onClick={logout} className='iconStyle' />
-            </Link>
+          {!login ? (
+            <p>
+              <Link to="users" className="navbar__user-set">
+                <FaUser fontSize={22} />
+              </Link>
+            </p>
+          ) : (
+            <>
+            
+                <h6>Hi ! {UserName.users_name}</h6>
+  
 
-
-          <p className="navbar__user-name">
-            {UserName.users_name ? `您好! ${UserName.users_name}` : "請登入"}
+              <p onClick={logout}>
+                <Link to="/users">
+                  <IoLogOut fontSize={30} />
+                </Link>
+              </p>
+            </>
+          )}
+          <p>
+            <Link to="cart" className="navbar__cart-count">
+              <BsCartFill fontSize={22} />
+              <p>{cart.totalItems}</p>
+            </Link>
           </p>
         </div>
         <div className="yipai__navbar-menu">

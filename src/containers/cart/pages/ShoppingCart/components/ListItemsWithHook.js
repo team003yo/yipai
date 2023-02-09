@@ -19,6 +19,7 @@ function ListItemsWithHook() {
         <thead>
           <tr>
             
+            <th className='text-center'>預覽</th>
             <th className='text-center'>名稱</th>
             <th>單價</th>
             <th>數量</th>
@@ -31,6 +32,7 @@ function ListItemsWithHook() {
             return (
               <tr key={v.id}>
                 
+                <td className='cart__peview text-center'><Link to={`/products/${v.id}`}><img src={v.img_file}></img></Link></td>
                 <td className='text-center'><Link to={`/products/${v.id}`}><a>{v.name}</a></Link></td>
                 <td>{v.price}</td>
                 <td>

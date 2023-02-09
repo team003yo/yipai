@@ -20,7 +20,24 @@ var buyerId = true;
 const Cart = () => {
   const [product, setProduct] = useState([]);
   const [user_order, setUserOrder] = useState([]);
-
+  const [login, setLogin] = useState(false);
+  useEffect(() => {
+    async function getMember2() {
+      let response = await axios.get(
+        `http://localhost:3001/api/members/userData`,
+        {
+          withCredentials: true,
+        }
+      );
+      if (Array.isArray(response.data) && response.data.length > 0) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+      console.log(response.data[0]);
+    }
+    getMember2();
+  }, []);
   const {
     cart,
     items,
@@ -56,7 +73,7 @@ const Cart = () => {
     
     <div id="login">
       {/* 賣家登入 */}
-      {buyerId ? (
+      {login ? (
         <div className="font-family margin-50">
           <Link to="/products" className="keepbuying-button">
             ❮ 繼續購物

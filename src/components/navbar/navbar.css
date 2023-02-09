@@ -103,7 +103,7 @@
 
 
 .navbar__cart-count {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-content: stretch;
   flex-wrap: wrap;
@@ -118,18 +118,21 @@
   text-align: center;
   justify-content: center;
   font-family: var(--font-family);
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   text-align: center;
   background: var(--color-text);
   border-radius: 50%;
-  padding-top:-15px ;
+  /* padding-top:-15px ; */
 
 }
 .navbar__user-name{
   margin-top: 1rem;
   font-weight: 700;
   font-family:var(--font-family);
+}
+.navbar__user-set{
+  margin-right: 1rem;
 }
 
 @media screen and (max-width: 1050px) {

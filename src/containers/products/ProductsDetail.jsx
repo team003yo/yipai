@@ -35,16 +35,54 @@ const ProductsDetail = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
+  const [login, setLogin] = useState(false);
+  useEffect(() => {
+    async function getMember2() {
+      let response = await axios.get(
+        `http://localhost:3001/api/members/userData`,
+        {
+          withCredentials: true,
+        }
+      );
+      if (Array.isArray(response.data) && response.data.length > 0) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+      console.log(response.data[0]);
+    }
+    getMember2();
+  }, []);
+
+  const [UserName, setUserName] = useState([]);
+  useEffect(() => {
+    async function getMember2() {
+      let response = await axios.get(
+        `http://localhost:3001/api/members/userData`,
+        {
+          withCredentials: true,
+        }
+        );
+     
+      setUserName(response.data[0]);
+      console.log(response.data[0]);
+    }
+    getMember2();
+  }, []);
 
   const showModal = (name) => {
     setProductName("產品：" + name + "已成功加入購物車");
+    handleShow();
+  };
+  const showModalFail = (name) => {
+    setProductName("請登入!");
     handleShow();
   };
 
   const messageModal = (
     <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header closeButton>
-        <Modal.Title>加入購物車成功</Modal.Title>
+        <Modal.Title>訊息</Modal.Title>
       </Modal.Header>
       <Modal.Body>{productName} </Modal.Body>
       <Modal.Footer>
@@ -68,6 +106,27 @@ const ProductsDetail = () => {
         >
           前往購物車結帳
         </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+  const messageModalFalse = (
+    <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Header closeButton>
+        <Modal.Title>加入購物車失敗</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>XX</Modal.Body>
+      <Modal.Footer>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            handleClose();
+            navigate("/products", { replace: true });
+          }}
+        >
+          返回
+        </Button>
+
+        
       </Modal.Footer>
     </Modal>
   );
@@ -185,7 +244,7 @@ const ProductsDetail = () => {
                   </table>
                   <h1  className="ProductsDetail_price_item d-flex">${productsDetail.price}</h1>
                   <div className="ProductsDetail_addCar ">
-                    <button
+                  {login ? (<button
                       className="ProductsDetail_addCar-button d-inline"
                       onClick={() => {
                         // 商品原本無數量屬性(quantity)，要先加上
@@ -197,7 +256,20 @@ const ProductsDetail = () => {
                       }}
                     >
                       加入購物車
-                    </button>
+                    </button>):(<button
+                      className="ProductsDetail_addCar-button d-inline"
+                      onClick={() => {
+                        // 商品原本無數量屬性(quantity)，要先加上
+                        const item = { };
+                        // 注意: 重覆加入會自動+1產品數量
+                        removeItem(item);
+                        // 呈現跳出對話盒
+                        showModalFail("請登入!");
+                      }}
+                    >
+                      加入購物車
+                    </button>)}
+                    
                   </div>
                 </div>
               </hgroup>
@@ -351,6 +423,7 @@ const ProductsDetail = () => {
   );
   return (
     <>
+      {messageModalFalse}
       {messageModal}
       {display}
     </>
