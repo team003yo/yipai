@@ -473,15 +473,6 @@ const handleWidthRange = (value, type) => {
                 </table>
               
               </tr>
-              
-             {/* <h6 className="Products＿size-h5">形狀</h6>
-              <tr className="Products＿slider-shape">
-                <BiRectangle style={{ width: '50px', height: '40px' }} />
-                <TbRectangleVertical
-                  style={{ width: '40px', height: '40px' }}
-                />
-                <TbRectangle style={{ width: '40px', height: '40px' }} />
-              </tr>  */}
               <h4 className="Products＿size-h5">依尺寸(CM)</h4>
               <h5 className="Products＿slider-color-size-h6" onClick={handleClear}>長邊{selectedWidth}</h5>
 
@@ -610,7 +601,7 @@ const handleWidthRange = (value, type) => {
                   {/* 手機板不顯示 */}
                   <p className="Products＿link ">
                     <Link to="/">首頁▶</Link>
-                    <Link onClick={handleClear}>所有藝術品▶  件 {selectedMaterial}  {selectedWork_hue}</Link>
+                    <Link onClick={handleClear}>所有藝術品▶ {product.length} 件 {selectedMaterial}  {selectedWork_hue}</Link>
                   </p>
 
              <Dropdown className='Products__dropdown_creatyear'>

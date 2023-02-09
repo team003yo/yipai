@@ -1,345 +1,345 @@
 #Products__container-fluid{
-    width:100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 .Products__banner {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 .Products__banner__img {
-    height: 100%;
-    background-image: url("../../assets/shop.png");
-    background-repeat:no-repeat;
-    background-size:cover;
+  height: 100%;
+  background-image: url("../../assets/shop.png");
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 #Products__section {
-  font-family: var(--font-family);
-  display: grid; /* 1.設定 display 為 grid */
-  width: 100%;
-  height: 100%;
-  grid-template-areas:
-                         "Products__nav Products__nav "
-                         "Products__aside  Products__figure "
-                         "..  Products__figure "
-                         ".. Products__footer "
-                      ; /* 2.區域分為4行兩列 */
-  grid-template-rows: 100px 300px 2500px 50px; /* 3.各區域 寬高設置 */
-  grid-template-columns:  350px 1fr ;
-  }
-  #Products__section > #Products__nav {
-    grid-area: Products__nav;
-  }
+font-family: var(--font-family);
+display: grid; /* 1.設定 display 為 grid */
+width: 100%;
+height: 100%;
+grid-template-areas:
+                       "Products__nav Products__nav "
+                       "Products__aside  Products__figure "
+                       "..  Products__figure "
+                       ".. Products__footer "
+                    ; /* 2.區域分為4行兩列 */
+grid-template-rows: 100px 300px 2500px 50px; /* 3.各區域 寬高設置 */
+grid-template-columns:  350px 1fr ;
+}
+#Products__section > #Products__nav {
+  grid-area: Products__nav;
+}
 
-  #Products__aside {
-    margin-left: 10px;
-    text-align:center;
-  }
-  .Products＿slider-color,.Products＿slider-shape,.Products＿slider-size,.Products＿slider-price{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  .Products＿slider-size,.Products＿slider-price{
-    margin: 10px 0 20px 0;
-  }
-  .Products＿size-h3{
-    font-size: 22px;
-  }
-  .Products＿size-h3,.Products＿size-h5{
-    margin:29px 0px 20px 0px ;
-    left:0px ;
-    /* text-align: center; */
-  }
-  .Products＿slider-color-size-h6{
-    margin-bottom:10px ;
-    text-align: center;
-  }
-  .Products＿slider-color-item{
-    width: 20px;
-    height: 20px;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 50%;
-    
-  }
-  .Products＿slider-color-item-red{
-    background-color: rgb(214, 76, 76);
-  }
-  .Products＿slider-color-item-ori{
-    background-color: rgb(238, 149, 15);
-  }
-  .Products＿slider-color-item-yel{
-    background-color: rgb(240, 200, 39);
-  }
-  .Products＿slider-color-item-gre{
-    background-color: rgb(153, 223, 118);
-  }
-  .Products＿slider-color-item-blu{
-    background-color: rgb(76, 186, 214);
-  }
-  .Products＿slider-color-item-pur{
-    background-color: rgb(190, 130, 230);
-  }
-  .Products＿slider-color-item-bro{
-    background-color: rgb(176, 78, 33);
-  }
-  .Products＿slider-color-item-whi{
-    background-color: rgb(255, 255, 255);
-  }
-  .Products＿slider-color-item-gra{
-    background-color: rgb(155, 155, 155);
-  }
-  .Products＿slider-color-item-bla{
-    background-color: rgb(29, 28, 28);
-  }
-  .Products＿filter＿clear{
-    margin-left: 52px;
-  }
+#Products__aside {
+  margin-left: 10px;
+  text-align:center;
+}
+.Products＿slider-color,.Products＿slider-shape,.Products＿slider-size,.Products＿slider-price{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.Products＿slider-size,.Products＿slider-price{
+  margin: 10px 0 20px 0;
+}
+.Products＿size-h3{
+  font-size: 22px;
+}
+.Products＿size-h3,.Products＿size-h5{
+  margin:29px 0px 20px 0px ;
+  left:0px ;
+  /* text-align: center; */
+}
+.Products＿slider-color-size-h6{
+  margin-bottom:10px ;
+  text-align: center;
+}
+.Products＿slider-color-item{
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  
+}
+.Products＿slider-color-item-red{
+  background-color: rgb(214, 76, 76);
+}
+.Products＿slider-color-item-ori{
+  background-color: rgb(238, 149, 15);
+}
+.Products＿slider-color-item-yel{
+  background-color: rgb(240, 200, 39);
+}
+.Products＿slider-color-item-gre{
+  background-color: rgb(153, 223, 118);
+}
+.Products＿slider-color-item-blu{
+  background-color: rgb(76, 186, 214);
+}
+.Products＿slider-color-item-pur{
+  background-color: rgb(190, 130, 230);
+}
+.Products＿slider-color-item-bro{
+  background-color: rgb(176, 78, 33);
+}
+.Products＿slider-color-item-whi{
+  background-color: rgb(255, 255, 255);
+}
+.Products＿slider-color-item-gra{
+  background-color: rgb(155, 155, 155);
+}
+.Products＿slider-color-item-bla{
+  background-color: rgb(29, 28, 28);
+}
+.Products＿filter＿clear{
+  margin-left: 52px;
+}
 
-  #Products__section > #Products__footer {
-    grid-area: Products__footer;
+#Products__section > #Products__footer {
+  grid-area: Products__footer;
 
-  }
+}
 
-  #Products__section > #Products__figure {
-    grid-area: Products__figure;
-    margin: 50px;
-  }
+#Products__section > #Products__figure {
+  grid-area: Products__figure;
+  margin: 50px;
+}
 .Products__figure-wrap{
-   width: 80%;
-   margin: 0px auto;
-   column-count: 3;
-   /*欄數*/
-   column-gap: 40px;
-   /*每欄間隔*/
+ width: 80%;
+ margin: 0px auto;
+ column-count: 3;
+ /*欄數*/
+ column-gap: 40px;
+ /*每欄間隔*/
 }
 .Products__img-id-wrap{
-        padding: 5px;
-        box-sizing: border-box;
-        margin: 0 auto 5px;
-        break-inside: avoid;
-        /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
-}
-.Products__productId{
-    margin-top: 5px;
-}
-.Products__card-img-top{
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-}
-.Products_other-product{
-    max-width: 100vw;
-    position:absolute;
-  }
-
-.Products__aside-content{
-    text-align: center;
-    padding: 30px;
-}  
-
-.Products__card-pic{
-    vertical-align:100%;
-    text-align: justify;
-}
-.Products__card{
-    display: flex;
-  }
-.Products__other-product{
-    height: 500px;
-    vertical-align:  bottom;
-   
-}
-  p.Products__article{
-    color:#CAB296;
-    margin-bottom:0px;
-  }
-  .Products__card-text{
-    position: absolute;
-    padding: 10px  0px 0 0px ;
-    /* max-width: 300px; */
-  }
-  .Products＿nav__h3{
-    margin-left: 120px;
-  }
-
-  .Products＿nav__h3,.Products＿link-bar{
-    padding: 10px;
-    display: inline-block;
-    letter-spacing: 3px;
-    
-  }
-  .Products＿link-bar{
-    display: flex;
-    justify-content: space-around;
-  }
-  .Products＿button{
-    float: left;
-  }
-  .Products＿--color-bg{
-    background-color: black;
-    color: white;
-  }
-
-.Products__main-card-item-text{
-    margin-bottom:0px
-}
-.Products__main-content{
-    display: flex;
-    margin: auto;
-    height: 100vh;
-    margin-top: 10px;
-}
-.Products__main-card{
-    display: flex;
-}
-
-.Products__aside-menu{
-    width: 200px;
-    text-align: center;
-    margin: 50px 20px;
-}
-  
-  .yipai__navbar-menu_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: end;
-    background: rgb(247, 247, 245);
-    padding: 2rem;
-    position: absolute;
-    right: 0.3rem;
-    /* top: 40px; */
-    margin-top: 30px;
-    min-width: 210px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  }
- 
-p.Products__page-link{
-    letter-spacing: 3px;
-}
-.Products__item-main-card{
-    width:309px;
-    height:531px;
-}
-.Products__Namepic{
-    width: 230px;
-    object-fit:contain;
-    margin: 0 20px;
-}
-.Products__Name-text{
-    width:225px;
-    padding:0 0 0 18px;
-}
-.Products__main-card-content{
-    height:368px;
-}
-.Products__footer_page{
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
-.Products＿aside-content-center{
-  margin: 50px
-}
-.Products＿aside-content-center table{
-  margin: 0px;
-}
-
-@media screen and (max-width: 550px){   
-    #Products__section  {
-      display: grid; /* 1.設定 display 為 grid */
-
-      grid-template-areas:
-                          "Products__nav "
-                          "Products__figure "
-                          "Products__figure "
-                          "Products__footer "; /* 2.區域分為4行1列 */
-      grid-template-rows: 100px 2000px 50px;/* 3.各區域 寬高設置 */
-      grid-template-columns: 100vw;
-      justify-content: center;
-    }
-    .Products__banner {
-      width: 100%;
-      height: 30vh;
-    }
-    
-    #Products＿nav{
-      width: 300px;
-      justify-items: center;
-      display: inline;
-    }
-    .Products＿--color-bg{
-      float: right;
-    }
-
-    .Products__dropdown_creatyear{
-      width: 90vw;
-    }
-
-    .Products＿link-bar{
-      width: 100vw;
-      flex-direction: column;
-      padding: 0;
-    }
-    .Products＿nav__h3{
-      align-items: center;
-      margin: 0 ;
-    }
-
-    #Products__aside {
-      display: none;
-    }
-
-    .Products＿aside-content-center{
-      display: none;
-    }
-
-    .Products__other-product{
-      height:350px;
-    }
-
-    .Products__card-text{
-        position: absolute;
-        margin: auto ;
-        padding: 10px  0px 0 0px ;
-        width: 150px;
-      }
-      
-      .Products__card-pic{
-        padding: 5px;
-    }
-
-    .Products__card-img-top{
-        height: 30vh;
-        object-fit: cover;
-        object-position: 50% 50%;
-  }
-    .Products__figure-wrap{  
-      margin: 0px auto;
-      column-count: 1;
-      /*欄數*/
-      column-gap: 30px;
-      /*每欄間隔*/
-  }
-
-    .Products__img-id-wrap{
       padding: 5px;
       box-sizing: border-box;
       margin: 0 auto 5px;
       break-inside: avoid;
       /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+}
+.Products__productId{
+  margin-top: 5px;
+}
+.Products__card-img-top{
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.Products_other-product{
+  max-width: 100vw;
+  position:absolute;
+}
+
+.Products__aside-content{
+  text-align: center;
+  padding: 30px;
+}  
+
+.Products__card-pic{
+  vertical-align:100%;
+  text-align: justify;
+}
+.Products__card{
+  display: flex;
+}
+.Products__other-product{
+  height: 500px;
+  vertical-align:  bottom;
+ 
+}
+p.Products__article{
+  color:#CAB296;
+  margin-bottom:0px;
+}
+.Products__card-text{
+  position: absolute;
+  padding: 10px  0px 0 0px ;
+  /* max-width: 300px; */
+}
+.Products＿nav__h3{
+  margin-left: 120px;
+}
+
+.Products＿nav__h3,.Products＿link-bar{
+  padding: 10px;
+  display: inline-block;
+  letter-spacing: 3px;
+  
+}
+.Products＿link-bar{
+  display: flex;
+  justify-content: space-around;
+}
+.Products＿button{
+  float: left;
+}
+.Products＿--color-bg{
+  background-color: black;
+  color: white;
+}
+
+.Products__main-card-item-text{
+  margin-bottom:0px
+}
+.Products__main-content{
+  display: flex;
+  margin: auto;
+  height: 100vh;
+  margin-top: 10px;
+}
+.Products__main-card{
+  display: flex;
+}
+
+.Products__aside-menu{
+  width: 200px;
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.yipai__navbar-menu_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: end;
+  background: rgb(247, 247, 245);
+  padding: 2rem;
+  position: absolute;
+  right: 0.3rem;
+  /* top: 40px; */
+  margin-top: 30px;
+  min-width: 210px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+p.Products__page-link{
+  letter-spacing: 3px;
+}
+.Products__item-main-card{
+  width:309px;
+  height:531px;
+}
+.Products__Namepic{
+  width: 230px;
+  object-fit:contain;
+  margin: 0 20px;
+}
+.Products__Name-text{
+  width:225px;
+  padding:0 0 0 18px;
+}
+.Products__main-card-content{
+  height:368px;
+}
+.Products__footer_page{
+display: flex;
+align-content: center;
+justify-content: center;
+}
+
+.Products＿aside-content-center{
+margin: 50px
+}
+.Products＿aside-content-center table{
+margin: 0px;
+}
+
+@media screen and (max-width: 550px){   
+  #Products__section  {
+    display: grid; /* 1.設定 display 為 grid */
+
+    grid-template-areas:
+                        "Products__nav "
+                        "Products__figure "
+                        "Products__figure "
+                        "Products__footer "; /* 2.區域分為4行1列 */
+    grid-template-rows: 100px 2000px 50px;/* 3.各區域 寬高設置 */
+    grid-template-columns: 100vw;
+    justify-content: center;
   }
-    .Products＿link {
-      display: flex;
-      margin:0 0  0 10px ;
+  .Products__banner {
+    width: 100%;
+    height: 30vh;
+  }
+  
+  #Products＿nav{
+    width: 300px;
+    justify-items: center;
+    display: inline;
+  }
+  .Products＿--color-bg{
+    float: right;
+  }
+
+  .Products__dropdown_creatyear{
+    width: 90vw;
+  }
+
+  .Products＿link-bar{
+    width: 100vw;
+    flex-direction: column;
+    padding: 0;
+  }
+  .Products＿nav__h3{
+    align-items: center;
+    margin: 0 ;
+  }
+
+  #Products__aside {
+    display: none;
+  }
+
+  .Products＿aside-content-center{
+    display: none;
+  }
+
+  .Products__other-product{
+    height:350px;
+  }
+
+  .Products__card-text{
+      position: absolute;
+      margin: auto ;
+      padding: 10px  0px 0 0px ;
+      width: 150px;
     }
+    
+    .Products__card-pic{
+      padding: 5px;
+  }
+
+  .Products__card-img-top{
+      height: 30vh;
+      object-fit: cover;
+      object-position: 50% 50%;
+}
+  .Products__figure-wrap{  
+    margin: 0px auto;
+    column-count: 1;
+    /*欄數*/
+    column-gap: 30px;
+    /*每欄間隔*/
+}
+
+  .Products__img-id-wrap{
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0 auto 5px;
+    break-inside: avoid;
+    /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+}
+  .Products＿link {
+    display: flex;
+    margin:0 0  0 10px ;
+  }
 
 }
