@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from 'react-bootstrap/Button';
 import ProductsPagination from './ProductsPagination'
 
-
 //篩選區域
 import ProductsSize_Slider from './ProductsSize_Slider'
 import ProductsPrice_Slider from './ProductsPrice_Slider'
@@ -473,6 +472,15 @@ const handleWidthRange = (value, type) => {
                 </table>
               
               </tr>
+              
+             {/* <h6 className="Products＿size-h5">形狀</h6>
+              <tr className="Products＿slider-shape">
+                <BiRectangle style={{ width: '50px', height: '40px' }} />
+                <TbRectangleVertical
+                  style={{ width: '40px', height: '40px' }}
+                />
+                <TbRectangle style={{ width: '40px', height: '40px' }} />
+              </tr>  */}
               <h4 className="Products＿size-h5">依尺寸(CM)</h4>
               <h5 className="Products＿slider-color-size-h6" onClick={handleClear}>長邊{selectedWidth}</h5>
 
@@ -589,44 +597,44 @@ const handleWidthRange = (value, type) => {
                 </Dropdown>
             </table>
           </aside>
-              <nav id="Products＿nav">
-              <div className="Products＿nav__h3 d-flex  " align="left">
+          
+          
+
+          <nav id="Products＿nav">
+          <div className="Products＿nav__h3 d-flex  " align="left">
               <ProductsBurger
               classMame="ProductsBurger"
               ></ProductsBurger><h2 className='ms-2'>所有藝術品</h2>
               </div>
-              <div className="Products＿nav-wrapp">
-                <div className="Products＿link-bar ">
-
-                  {/* 手機板不顯示 */}
-                  <p className="Products＿link ">
+            <div className="Products＿nav-wrapp">
+              <div className="Products＿link-bar ">
+                {/* 手機板不顯示 */}
+                <p className="Products＿link ">
                     <Link to="/">首頁▶</Link>
                     <Link onClick={handleClear}>所有藝術品▶ {product.length} 件 {selectedMaterial}  {selectedWork_hue}</Link>
                   </p>
-
-             <Dropdown className='Products__dropdown_creatyear'>
-                    <Dropdown.Toggle
-                      variant="--color-bg"
-                      style={{ border: 'none' }}
-                      id="dropdown-basic"
-                      className="Products＿--color-bg ms-2"
-                    >
-                      創作年份
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    <Dropdown.Item value="由新至舊"
-                    onClick={() => handleClick('由新至舊', 'creation_year')}
-                    >由新至舊</Dropdown.Item>
-                      <Dropdown.Item value="由舊至新"
-                    onClick={() => handleClick('由舊至新', 'creation_year')}
-                    >由舊至新</Dropdown.Item>
-                    </Dropdown.Menu>
-              </Dropdown>
-
-             </div>
-             </div>
-             </nav>
-          <figure id="Products__figure">
+           <Dropdown>
+                  <Dropdown.Toggle
+                    variant="--color-bg"
+                    style={{ border: 'none' }}
+                    id="dropdown-basic"
+                    className="Products＿--color-bg ms-5"
+                  >
+                    創作年份
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                  <Dropdown.Item value="由新至舊"
+                  onClick={() => handleClick('由新至舊', 'creation_year')}
+                  >由新至舊</Dropdown.Item>
+                    <Dropdown.Item value="由舊至新"
+                  onClick={() => handleClick('由舊至新', 'creation_year')}
+                  >由舊至新</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+           </div>
+           </div>
+           </nav>
+           <figure id="Products__figure">
             <div className="Products__figure-wrap">
               {currentPosts.map((product_data, index) => {
                 return (
@@ -696,7 +704,6 @@ const handleWidthRange = (value, type) => {
                 
               </RiArrowDownSLine>
             </div>
-              
       </div>
     </>
   )
