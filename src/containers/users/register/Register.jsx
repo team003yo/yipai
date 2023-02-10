@@ -6,9 +6,12 @@ import axios from 'axios'
 // import { Link } from "react-router-dom";
 // import HeadImg from "../HeadImg";
 import { FaUserCircle } from 'react-icons/fa'
+import { useNavigate } from 'react-router'
 // import { height } from "@mui/system";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [member, setMember] = useState({
     // 自動填入
     name: '',
@@ -118,6 +121,9 @@ const Register = () => {
       formData
     )
     console.log(response.data)
+    setTimeout(() => {
+      navigate('/users/BuyLogin');
+    }, 0);
   }
   return (
     <>

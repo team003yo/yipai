@@ -6,9 +6,12 @@ import { useEffect, useState } from 'react'
 // import { Link } from "react-router-dom";
 // import HeadImg from "../HeadImg";
 import { FaUserCircle } from 'react-icons/fa'
+import { useNavigate } from 'react-router'
 // import { height } from '@mui/system';
 
 const SellRegister = () => {
+  const navigate = useNavigate();
+
   const [member, setMember] = useState({
     // 自動填入
     name: '',
@@ -119,6 +122,9 @@ const SellRegister = () => {
       formData
     )
     console.log(response.data)
+    setTimeout(() => {
+      navigate('/users/SellLogin');
+    }, 0);
   }
   return (
     <>
