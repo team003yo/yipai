@@ -1,4 +1,4 @@
-import { React, useRef, createRef, useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import BuyBotton from "./BuyBotton";
 import {
     BuyerSettings,
@@ -6,7 +6,6 @@ import {
     PurchaseHistory,
     FavoriteArtist,
     FavoriteArts,
-    // getMemberId
 } from "./userOnclick";
 import Art from "./Art";
 import ArtList from "./ArtList";
@@ -18,30 +17,32 @@ import axios from "axios";
 import buyerImg from "./image/buyHead.png";
 
 function HeadImg(user) {
-    let [UserData, setUserData] = useState(); //記錄數值
-    let [UserOldDatas, setUserOldDatas] = useState(); //原本的數據
-    let [UserOrders,setUserOrders] = useState(); //記錄使用者訂單
+    let [UserData, setUserData] = useState({}); //記錄數值
+    let [UserOldDatas, setUserOldDatas] = useState({}); //原本的數據
+    let [UserOrders, setUserOrders] = useState([]); //記錄使用者訂單
+    let [UserImg, setUserImg] = useState([]); //記錄舊圖網址
+
     // 只執行一次
     useEffect(() => {
         async function getMember2() {
-            
             let response2 = await axios.get(
                 `http://localhost:3001/api/members/userData`,
                 {
                     withCredentials: true,
                 }
             );
-            // UserInputData.current = response2.data[0];
             setUserData(response2.data[0].users_id);
-            // console.log(response2.data[0]); 
+            console.log(response2.data[0]);
             setUserOldDatas(response2.data[0]);
+            setUserImg(response2.data[0].user_imageHead); //抓到圖片網址
             let responseOrder = await axios.get(
                 `http://localhost:3001/api/members/orders`,
                 {
                     withCredentials: true,
                 }
             );
-            setUserOrders(responseOrder.data[0]);
+            setUserOrders(responseOrder.data);
+            console.log(responseOrder.data)
         }
         getMember2();
     }, []);
@@ -50,12 +51,10 @@ function HeadImg(user) {
         username: "",
         account: "",
         email: "",
+        imageHead: "",
         phone: "",
     });
-    // 每次輸入後更新
-    useEffect(() => {
-        // console.log(UserInputData);
-    }, [UserInputData]);
+
     // 每次輸入後更新
     const handleChange = (event) => {
         setUserInputData({
@@ -63,40 +62,128 @@ function HeadImg(user) {
             [event.target.name]: event.target.value,
         });
     };
+    // 選擇的檔案
+    const [selectedFile, setSelectedFile] = useState(null);
+    // 是否有檔案被挑選
+    const [isFilePicked, setIsFilePicked] = useState(false);
+    // 預覽圖片
+    const [preview, setPreview] = useState("");
+    // server上的圖片網址
+    const [imgServerUrl, setImgServerUrl] = useState("");
+
+    // 當選擇檔案更動時建立預覽圖
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview("");
+            return;
+        }
+
+        const objectUrl = URL.createObjectURL(selectedFile);
+        console.log(objectUrl);
+        setPreview(objectUrl);
+
+        // 當元件unmounted時清除記憶體
+        return () => URL.revokeObjectURL(objectUrl);
+    }, [selectedFile]);
+
+    const changeHandler = (e) => {
+        const file = e.target.files[0];
+        console.log(file);
+        if (file) {
+            setIsFilePicked(true);
+            setSelectedFile(file);
+            setImgServerUrl("");
+        } else {
+            setIsFilePicked(false);
+            setSelectedFile(null);
+            setImgServerUrl("");
+        }
+    };
     // 送出輸入資料
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-            .put(`http://localhost:3001/api/members`, {
-                username: UserInputData.username,
-                account: UserInputData.account,
-                email: UserInputData.email,
-                phone: UserInputData.phone,
-                usersId: UserData,
-            })
-            .then((response) => console.log(response))
-            .catch((error) => console.error(error));
+            .put(
+                `http://localhost:3001/api/members/userData`,
+                {
+                    withCredentials: true,
+                },
+                {
+                    username: UserInputData.username,
+                    account: UserInputData.account,
+                    email: UserInputData.email,
+                    phone: UserInputData.phone,
+                    // imageHead: imgServerUrl,
+                    usersId: UserData,
+                }
+            )
+            .then((response) => {
+                console.log(response);
+                alert("更改成功");
+              })
+              .catch((error) => {
+                console.error(error);
+                alert("更改失敗");
+              });
+              
     };
-    // console.log(UserOldDatas);
-    // console.log(UserOrders);
+    const handleSubmission = () => {
+        const formData = new FormData();
+
+        // 對照server上的檔案名稱 req.files.avatar
+        formData.append("avatar", selectedFile);
+        fetch(
+            "http://localhost:3001/upload-avatar",
+            {
+                method: "POST",
+                body: selectedFile.name,
+                credentials: 'include'
+            }
+        )
+            .then((response) => {
+                response.json();
+                console.log(selectedFile.name);
+            })
+            .then((result) => {
+                console.log("Success:", result);
+                setImgServerUrl("/uploads" + result.data.name);
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    };
+    // 每次輸入後更新
+    useEffect(() => {
+        console.log(UserInputData);
+    }, [UserInputData]);
 
     return (
         <div className='_buyLogin_flex'>
             <div className='_buyLogin_RWDflexcol _buyLogin_rwd_flex'>
                 <div className='_buyLogin_flex-re' style={{ marginTop: "1em" }}>
                     <img
-                        src={buyerImg}
+                        src={UserImg} //
                         alt='buyHead'
                         className='_buyLogin_headImg'
                     />
                     <label className='_buyLogin_headIcon'>
                         {/* 增加檔案 */}
-                        <input type='file' style={{ display: "none" }}></input>
+                        <div>
+                            <input
+                                type='file'
+                                id='imageHead'
+                                name='imageHead'
+                                style={{ display: "none" }}
+                                // value={imgServerUrl}
+                                onChange={changeHandler}
+                            ></input>
+                        </div>
                     </label>
+                    <button onClick={handleSubmission}>送出</button>
                 </div>
                 <h3>
                     您好
-                    {/* <span>{UserOldData.users_name}</span> */}
+                    <span>{UserOldDatas.users_name}</span>
                     <span>你現在是</span>
                     <span>藝拍小夥伴啦</span>
                 </h3>
@@ -141,7 +228,6 @@ function HeadImg(user) {
                             </div>
                         </div>
                         {/* 左邊表單 */}
-
                         <div
                             className='_buyLogin_Contentbox _buyLogin_flex'
                             style={{
@@ -162,7 +248,7 @@ function HeadImg(user) {
                                         className='_buyLogin_SettingInput'
                                         type='text'
                                         name='username'
-                                        // placeholder={UserOldData.users_name}
+                                        placeholder={UserOldDatas.users_name}
                                         value={UserInputData.username}
                                         onChange={handleChange}
                                         required
@@ -176,6 +262,7 @@ function HeadImg(user) {
                                         className='_buyLogin_SettingInput'
                                         type='text'
                                         name='account'
+                                        placeholder={UserOldDatas.users_account}
                                         value={UserInputData.account}
                                         onChange={handleChange}
                                         required
@@ -207,8 +294,12 @@ function HeadImg(user) {
                                         required
                                     ></input>
                                 </div>
+
                                 <div className=' _buyLogin_p2 _buyLogin_flex_end'>
-                                    <button className='_buyLogin_ChangeControlBtn'>
+                                    <button
+                                        className='_buyLogin_ChangeControlBtn'
+                                        onClick={handleSubmit}
+                                    >
                                         更改
                                     </button>
                                 </div>
@@ -324,24 +415,24 @@ function HeadImg(user) {
                             </tr>
                         </thead>
                         <tbody>
-                        {/* {UserOldDatas.map(UserOldData => ( */}
-                            
-                            <tr 
-                                // key={UserOldData.order_id}
-                                className='_buyLogin_tr _buyLogin_tline'
-                                style={{ borderColor: "#CAB296" }}
-                            >
-                                {/* <td>{UserOldData.order_date}</td> */}
-                                <td>12,800</td>
-                                <td>2022/11/02</td>
-                                <td>1</td>
-                                <td>
-                                    <button className='_buyLogin_tableBtn'>
-                                        詳細資訊
-                                    </button>
-                                </td>
-                            </tr>
-                            {/* ))} */}
+                            {/* <div key={UserOrders.order_id}>{UserOrders.order_id}</div> */}
+                            {UserOrders.map((User_Order) => (
+                                <tr
+                                    key={User_Order.order_id}
+                                    className='_buyLogin_tr _buyLogin_tline'
+                                    style={{ borderColor: "#CAB296" }}
+                                >
+                                    <td>{User_Order.order_date}</td>
+                                    <td>12,800</td>
+                                    <td>2022/11/02</td>
+                                    <td>1</td>
+                                    <td>
+                                        <button className='_buyLogin_tableBtn'>
+                                            詳細資訊
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

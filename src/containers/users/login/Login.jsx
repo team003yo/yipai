@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+// https://www.npmjs.com/package/axios
 import axios from "axios";
 import { HeadImg } from "../HeadImg";
 
-// https://www.npmjs.com/package/axios
 import "./buyLogin.css";
 
 const Login = () => {
@@ -28,16 +28,15 @@ const Login = () => {
             }
         );
         console.log(response.data);      
-        setTimeout(()=>{
-            window.location.assign("/users/LoginTo");;
-        },500);
+        alert("登入成功");
+        // 跳轉
+        setTimeout(() => {
+            window.location.assign("/users/LoginTo");
+        }, 500);
     }
 
     return (
         <div id='login'>
-            {/* {memberUser !== [] ? (
-                <HeadImg />
-            ) : ( */}
             <div className='_buyLogin_BG'>
                 <div className='_buyLogin_flex _buyLogin_buyerbox'>
                     <div className='_buyLogin_buyerIcon'></div>

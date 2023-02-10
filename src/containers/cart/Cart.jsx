@@ -21,6 +21,7 @@ const Cart = () => {
   const [product, setProduct] = useState([]);
   const [user_order, setUserOrder] = useState([]);
   const [login, setLogin] = useState(false);
+  const [selllogin, setSellLogin] = useState(false);
   useEffect(() => {
     async function getMember2() {
       let response = await axios.get(
@@ -29,15 +30,37 @@ const Cart = () => {
           withCredentials: true,
         }
       );
-      if (Array.isArray(response.data) && response.data.length > 0) {
+      if (Array.isArray(response.data ) && response.data.length > 0) {
         setLogin(true);
       } else {
+
         setLogin(false);
       }
-      console.log(response.data[0]);
+      
+      console.log(response.data[0].users_valid_role);
     }
     getMember2();
   }, []);
+  // useEffect(() => {
+  //   async function getSellLogin() {
+  //     let response = await axios.get(
+  //       `http://localhost:3001/api/members/userData`,
+  //       {
+  //         withCredentials: true,
+  //       }
+  //     );
+  //     if (Array.isArray(response.data) && response.data.length > 0) {
+  //       setSellLogin(true);
+  //     } else {
+  //       setSellLogin(false);
+  //     }
+  //     console.log(response.data[0]);
+  //   }
+  //   s\getSellLogin();
+  // }, []);
+
+  console.log(login);
+
   const {
     cart,
     items,

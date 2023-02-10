@@ -136,7 +136,8 @@
     height: 42px;
     z-index: 3;
     position: absolute;
-    right: 0;
+    /* top: 12.5em; */
+    right: 0.5em;
     cursor: pointer;
 }
 ._buyLogin_headImg {

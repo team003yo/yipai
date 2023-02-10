@@ -2,8 +2,6 @@ import React from 'react'
 import './register.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, Navigate, Outlet } from "react-router-dom";
-
 
 // import { Link } from "react-router-dom";
 // import HeadImg from "../HeadImg";
@@ -108,7 +106,7 @@ const Register = () => {
     console.log('handleSubmit')
     // 關閉表單的預設行為
     e.preventDefault()
-    
+
     // 作法2: 有檔案的表單 https://developer.mozilla.org/en-US/docs/Web/API/FormData
     let formData = new FormData()
     formData.append('name', member.name)
@@ -119,9 +117,6 @@ const Register = () => {
       'http://localhost:3001/api/auth/register',
       formData
     )
-    setTimeout(()=>{
-      window.location.assign("/users");;
-  },500);
     console.log(response.data)
   }
   return (

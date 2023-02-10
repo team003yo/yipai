@@ -32,8 +32,11 @@ const ProductsDetail = () => {
 
   const [productName, setProductName] = useState("");
   const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
   const handleClose = () => setShow(false);
+  const handleClose2 = () => setShow2(false);
   const handleShow = () => setShow(true);
+  const handleShow2 = () => setShow2(true);
   const navigate = useNavigate();
   const [login, setLogin] = useState(false);
   useEffect(() => {
@@ -69,14 +72,14 @@ const ProductsDetail = () => {
     }
     getMember2();
   }, []);
-
   const showModal = (name) => {
     setProductName("產品：" + name + "已成功加入購物車");
     handleShow();
   };
+
   const showModalFail = (name) => {
     setProductName("請登入!");
-    handleShow();
+    handleShow2();
   };
 
   const messageModal = (
@@ -110,16 +113,25 @@ const ProductsDetail = () => {
     </Modal>
   );
   const messageModalFalse = (
-    <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+    <Modal className="model-bg-color" show={show2} onHide={handleClose2} backdrop="static" keyboard={false}>
       <Modal.Header closeButton>
         <Modal.Title>加入購物車失敗</Modal.Title>
       </Modal.Header>
-      <Modal.Body>XX</Modal.Body>
+      <Modal.Body>請登入</Modal.Body>
       <Modal.Footer>
         <Button
           variant="secondary"
           onClick={() => {
-            handleClose();
+            handleClose2();
+            navigate("/users", { replace: true });
+          }}
+        >
+          前往登入
+        </Button>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            handleClose2();
             navigate("/products", { replace: true });
           }}
         >
