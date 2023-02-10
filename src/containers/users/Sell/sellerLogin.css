@@ -1,7 +1,3 @@
-#login{
-    font-family: var(--font-family);
-}
-
 ._sellerLogin_flex {
     display: flex;
     flex-direction: column;
