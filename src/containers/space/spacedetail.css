@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     /* text-align: center; */
 }
 .space__detail-map-text{
@@ -139,4 +139,8 @@
     .space__detail-map-img{
         height: 50vh;
     }
+    .space__map{
+        width: 100vw !important;
+    }
+    
   }

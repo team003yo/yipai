@@ -14,7 +14,6 @@ import ArtistImg from "./image/ArtistImg.png";
 import pesnalImg from "./image/pesnalImg.png";
 import artsImg from "./image/artsImg.png";
 import axios from "axios";
-import buyerImg from "./image/buyHead.png";
 
 function HeadImg(user) {
     let [UserData, setUserData] = useState({}); //記錄數值
@@ -42,7 +41,6 @@ function HeadImg(user) {
                 }
             );
             setUserOrders(responseOrder.data);
-            console.log(responseOrder.data)
         }
         getMember2();
     }, []);
@@ -51,10 +49,42 @@ function HeadImg(user) {
         username: "",
         account: "",
         email: "",
-        imageHead: "",
+        // imageHead: "",
         phone: "",
     });
+    //================================================================
+    //  記錄輸入的產品
+    const [productInputData, setProductInputData] = useState({
+        photo: "",
+    });
+    // 每次輸入後更新產品資料
+    useEffect(() => {
+        console.log(productInputData);
+    }, [productInputData]);
+    
+    // 檔案更新值
+    function handleUpload(e) {
+        // file input 的值並不是存在 value 欄位裡
+        setProductInputData({ ...productInputData, photo: e.target.files[0] });
+    }
 
+    // 送出輸入資料
+    async function handleProductSubmit(e) {
+        console.log("handleProductSubmit");
+        // 關閉表單的預設行為
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append("photo", productInputData.photo);
+        let response = await axios.post(
+            "http://localhost:3001/uploadsPhoto/product",
+            formData,{
+                withCredentials: true,
+            }
+        );
+        console.log(response.data);
+        alert('圖片上傳成功');
+    }
+    //================================================================
     // 每次輸入後更新
     const handleChange = (event) => {
         setUserInputData({
@@ -62,44 +92,15 @@ function HeadImg(user) {
             [event.target.name]: event.target.value,
         });
     };
-    // 選擇的檔案
-    const [selectedFile, setSelectedFile] = useState(null);
-    // 是否有檔案被挑選
-    const [isFilePicked, setIsFilePicked] = useState(false);
-    // 預覽圖片
-    const [preview, setPreview] = useState("");
-    // server上的圖片網址
-    const [imgServerUrl, setImgServerUrl] = useState("");
-
-    // 當選擇檔案更動時建立預覽圖
-    useEffect(() => {
-        if (!selectedFile) {
-            setPreview("");
-            return;
-        }
-
-        const objectUrl = URL.createObjectURL(selectedFile);
-        console.log(objectUrl);
-        setPreview(objectUrl);
-
-        // 當元件unmounted時清除記憶體
-        return () => URL.revokeObjectURL(objectUrl);
-    }, [selectedFile]);
-
-    const changeHandler = (e) => {
-        const file = e.target.files[0];
-        console.log(file);
-        if (file) {
-            setIsFilePicked(true);
-            setSelectedFile(file);
-            setImgServerUrl("");
-        } else {
-            setIsFilePicked(false);
-            setSelectedFile(null);
-            setImgServerUrl("");
-        }
-    };
     // 送出輸入資料
+        let UserFormData = new FormData();
+        UserFormData.append("username", UserInputData.username);
+        UserFormData.append("account", UserInputData.account);
+        UserFormData.append("email", UserInputData.email);
+        UserFormData.append("phone", UserInputData.phone);
+        UserFormData.append("photo", productInputData.photo);
+        UserFormData.append("usersId", UserData);
+
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
@@ -108,50 +109,12 @@ function HeadImg(user) {
                 {
                     withCredentials: true,
                 },
-                {
-                    username: UserInputData.username,
-                    account: UserInputData.account,
-                    email: UserInputData.email,
-                    phone: UserInputData.phone,
-                    // imageHead: imgServerUrl,
-                    usersId: UserData,
-                }
+                UserFormData
             )
-            .then((response) => {
-                console.log(response);
-                alert("更改成功");
-              })
-              .catch((error) => {
-                console.error(error);
-                alert("更改失敗");
-              });
-              
+            .then((response) => console.log(response))
+            .catch((error) => console.error(error));
     };
-    const handleSubmission = () => {
-        const formData = new FormData();
 
-        // 對照server上的檔案名稱 req.files.avatar
-        formData.append("avatar", selectedFile);
-        fetch(
-            "http://localhost:3001/upload-avatar",
-            {
-                method: "POST",
-                body: selectedFile.name,
-                credentials: 'include'
-            }
-        )
-            .then((response) => {
-                response.json();
-                console.log(selectedFile.name);
-            })
-            .then((result) => {
-                console.log("Success:", result);
-                setImgServerUrl("/uploads" + result.data.name);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
-    };
     // 每次輸入後更新
     useEffect(() => {
         console.log(UserInputData);
@@ -161,8 +124,8 @@ function HeadImg(user) {
         <div className='_buyLogin_flex'>
             <div className='_buyLogin_RWDflexcol _buyLogin_rwd_flex'>
                 <div className='_buyLogin_flex-re' style={{ marginTop: "1em" }}>
-                    <img
-                        src={UserImg} //
+                <img
+                 src={UserOldDatas && UserOldDatas.user_imageHead && UserOldDatas.user_imageHead.includes("http")?UserOldDatas.user_imageHead:"http://localhost:3001/public/uploads/"+ UserOldDatas.user_imageHead} 
                         alt='buyHead'
                         className='_buyLogin_headImg'
                     />
@@ -175,11 +138,11 @@ function HeadImg(user) {
                                 name='imageHead'
                                 style={{ display: "none" }}
                                 // value={imgServerUrl}
-                                onChange={changeHandler}
+                                onChange={handleUpload}
                             ></input>
                         </div>
                     </label>
-                    <button onClick={handleSubmission}>送出</button>
+                    <button onClick={handleProductSubmit}>送出</button>
                 </div>
                 <h3>
                     您好
@@ -415,7 +378,6 @@ function HeadImg(user) {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* <div key={UserOrders.order_id}>{UserOrders.order_id}</div> */}
                             {UserOrders.map((User_Order) => (
                                 <tr
                                     key={User_Order.order_id}

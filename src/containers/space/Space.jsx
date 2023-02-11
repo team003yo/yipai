@@ -86,10 +86,6 @@ function Space() {
         setSelectedDays([...selectedDays, space_day])
       }
 
-      //filtered = filtered.filter((space) => space.on_weekdays.includes(space_day))
-      //newSelectedDays=["週三", "週四", "週一"]
-      //space.on_weekdays= "週一,週二,週三,週四,週五"
-
       const newFiltered = filtered.filter((space, i) => {
         let found = false
         for (let i = 0; i < newSelectedDays.length; i++) {
@@ -104,25 +100,6 @@ function Space() {
       console.log(filtered.length, newSelectedDays, newFiltered.length)
     }
   }
-
-  // function handleClick(e) {
-  //   // e.preventDefault();
-  //   const space_area = e.target.innerText;
-  //   console.log(space_area);
-  //   let filtered;
-  //   if (space_area === "北") {
-  //       filtered = space.filter(space => space.space_area === "北");
-  //   } else if (space_area === "中") {
-  //       filtered = space.filter(space => space.space_area === "中");
-  //   } else if (space_area === "南") {
-  //       filtered = space.filter(space => space.space_area === "南");
-  //   }
-  //   // const filtered = space.filter(space => {
-  //   //     return space.space_area == "北";
-  //   // });
-  //   console.log(filtered);
-  //   setSpace(filtered);
-  // }
   return (
     <>
       <header>
@@ -184,26 +161,6 @@ function Space() {
                 )}
               </Dropdown.Menu>
             </Dropdown>
-            {/* 為上面 Dropdown的展開
-              <Dropdown>
-              <Dropdown.Toggle 
-                variant="--color-bg" 
-                style={{ border: "none" }} 
-                id="dropdown-basic"
-              >
-                依營業時間
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item
-                value="周一"onClick={() => handleClick('周一', 'day')}>周一</Dropdown.Item>
-                <Dropdown.Item value="週二" onClick={() => handleClick('週二', 'day')}>週二</Dropdown.Item>
-                <Dropdown.Item value="週三" onClick={() => handleClick('週三', 'day')}>週三</Dropdown.Item>
-                <Dropdown.Item value="週四" onClick={() => handleClick('週四', 'day')}>週四</Dropdown.Item>
-                <Dropdown.Item value="週五" onClick={() => handleClick('週五', 'day')}>週五</Dropdown.Item>
-                <Dropdown.Item value="週六" onClick={() => handleClick('週六', 'day')}>週六</Dropdown.Item>
-                <Dropdown.Item value="週日" onClick={() => handleClick('週日', 'day')}>週日</Dropdown.Item>
-              </Dropdown.Menu>
-                </Dropdown> */}
             <Button className="mt-4" variant="dark" onClick={handleClear}>
               Clear
             </Button>

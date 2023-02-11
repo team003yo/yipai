@@ -78,6 +78,10 @@
     max-width: 100px;
     height:40px;
 }
+.space__map{
+    height: 50vh ;
+    width: 45vw;
+}
 
 @media screen and (max-width: 1440px) {
     .space__banner {
@@ -144,6 +148,9 @@
     .space__main-card-item img{
         width: 360px;
         height: 210px;
+    }
+    .Space__h6{
+        line-height: 1.5;
     }
 
     /* pagination */
