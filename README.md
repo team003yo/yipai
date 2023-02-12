@@ -1,4 +1,16 @@
-2/10 更新leo的 news有問題 要覆蓋記得備份
+2/13  memberRouter.js
+// GET  賣家商品 /api/members/sellerProduct
+router.get("/sellerProduct",checkLogin, async (req, res, next) => {
+  let [data] = await pool.query("SELECT * FROM product WHERE artist=? ", [
+    req.session.member.users_name,
+  ]);
+  res.json(data);
+});
+// GET  賣家訂單 /api/members/sellerOrder
+router.get("/sellerOrder",checkLogin, async (req, res, next) => {
+  let [data] = await pool.query("SELECT * FROM user_order ");
+  res.json(data);
+});
 
 
 2/7/更新
