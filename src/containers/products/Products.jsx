@@ -597,8 +597,6 @@ const handleWidthRange = (value, type) => {
                 </Dropdown>
             </table>
           </aside>
-          
-          
 
           <nav id="Products＿nav">
           <div className="Products＿nav__h3 d-flex  " align="left">

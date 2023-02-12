@@ -9,7 +9,7 @@
                        "ProductsDetail_aside  ProductsDetail_aside"
                        "ProductsDetail_main  ProductsDetail_main" 
                       ; /* 2.區域分為4行兩列 */
-  grid-template-rows:  950px 500px 450px 380px; /* 3.各區域 寬高設置 */
+  grid-template-rows:  950px 500px 450px 500px; /* 3.各區域 寬高設置 */
   grid-template-columns: 855px 1fr;
 }
 #ProductsDetail_container_fluid{
@@ -67,7 +67,7 @@
 }
 #ProductsDetail_main{
   width: 100vw;
-  height: 380px;
+  height: 100%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -75,18 +75,13 @@
 
 .ProductsDetail_main-wrap{
   width: 100vw;
-  max-height: 380px;
   background-color:#EAEAEA;
 }
 
-.ProductsDetail_more{
-  position: absolute;
-  top:20px;
-}
 .ProductsDetail__card-text{
   max-width: 230px;
   padding: 10px;
-
+  
 }
 
 .ProductsDetail_other-wrapp ,.ProductsDetail_price_item,.ProductsDetail_addCar,.ProductsDetail_slider-pic,.ProductsDetail_main-wrap{
@@ -99,7 +94,7 @@
 .ProductsDetail_p{
   width: 20vw;
   margin: 0 0;
- 
+  
 }
 .ProductsDetail_price_item{
   margin: 0 0 35px 0;
@@ -107,7 +102,9 @@
 .ProductsDetail_card-pic{
   padding: 5px;
   align-items: center;
+  object-fit: contain;
 }
+
 p.ProductsDetail_price{
   margin-bottom:0px;
 }
@@ -156,20 +153,20 @@ p.ProductsDetail_price{
 .ProductsDetail_card-img-top{
   width: 200px;
   object-fit:contain;
-   position: relative;
+  position: relative;
   
 }
 .ProductsDetail_pic-img{
-  max-width:100%;
-  height: 230px;
-  padding: 10px;
+  height: 330px;
+  padding: 20px;
   object-fit:contain;
 } 
+
 .ProductsDetail__card-text{
   max-width:100%;
   height: 56px;
   padding:0 10px  10px  10px;
- 
+  
 }
 
 p.ProductsDetail_article{
@@ -210,6 +207,7 @@ p.ProductsDetail_article{
   max-width: 400px;
 }
 
+
 .ProductsDetail_Detile,.ProductsDetail_aside-wrapp,.ProductsDetail_footer-wrapp{
   height:411px;
   display: flex;
@@ -220,8 +218,8 @@ p.ProductsDetail_article{
   height: 350px;
 }
 .ProductsDetail_more{
-  margin:0px 0  15px 0;
- 
+  z-index: 1000;
+  margin: 15px 0px  0   0;
 }
 
 .ProductsDetail_card-body{
@@ -241,17 +239,18 @@ p.ProductsDetail_article{
 }
 .ProductsDetail_Pic{
   position: absolute;
-  width: 150px;
+  height: 30vh;
   z-index: 1000;
-  margin: 20px 0  0 220px ;
+  margin: 40px 0  0 240px ;
   box-shadow: 3px 3px 10px rgba(123, 123, 129, 0.7);
+  object-fit:scale-down;
+  
 }
 
 .ProductsDetail_Detail-text{
   display: inline-block;
   justify-content: center;
   padding: 15px;
- 
 }
 .ProductsDetail_Detail{
   display: flex;
@@ -284,6 +283,16 @@ p.ProductsDetail_article{
 .btn-primary{
   background: var(--color-footer);
   border: var(--color-footer) solid 1px;
+}
+
+/* main */
+
+.ProductsDetail_main-wrap＿550{
+  display: none;
+}
+
+.ProductsDetail_more{
+  position: absolute;
 }
 
 @media screen and (max-width: 990px){
@@ -369,8 +378,7 @@ p.ProductsDetail_article{
   }
 
 .ProductsDetail_pic-img{
-  max-width:100%;
-  height: 190px;
+  height: 30vh;
   padding: 10px;
   object-fit:contain;
 } 
@@ -410,8 +418,8 @@ p.ProductsDetail_article{
                   "ProductsDetail_article"
                   "ProductsDetail_aside "
                   /* "ProductsDetail_main" */
-                        ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 550px 400px 750px 550px ; /* 3.各區域 寬高設置 */
+                  ; /* 2.區域分為4行兩列 */
+    grid-template-rows: 550px 450px 700px 550px ; /* 3.各區域 寬高設置 */
     grid-template-columns:100vw ;
   }
   #ProductsDetail_container_fluid{
@@ -476,15 +484,42 @@ p.ProductsDetail_article{
     margin-top: 180px;
   }
 
+  .ProductsDetail_Pic{
+    position: absolute;
+    height: 20vh;
+    z-index: 1000;
+    margin: 30px 0  0 200px ;
+    box-shadow: 3px 3px 10px rgba(123, 123, 129, 0.7);
+    object-fit:scale-down;
+    
+  }
+
   /* article */
   .ProductsDetail_Detail-text{
-    display: flex;
-    justify-content: center;
-   
+      display: flex;
+      justify-content: center;
+      padding: 0;
    
   }
   .ProductsDetail_artistLink{
     flex-direction: column;
   }
+
+  .ProductsDetail_Pic{
+    position: absolute;
+    height: 13vh;
+    z-index: 1000;
+    margin: 40px 0  0 160px ;
+    box-shadow: 3px 3px 10px rgba(123, 123, 129, 0.7);
+    object-fit:scale-down;
+    
+  }
+
+  /* main */
+
+.ProductsDetail_main-wrap,.ProductsDetail_more{
+  display: none;
+  
+}
                      
 }
