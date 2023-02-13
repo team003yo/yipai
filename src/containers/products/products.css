@@ -325,25 +325,24 @@ margin: 0px;
       padding: 5px;
   }
 
-  .Products__card-img-top{
-      height: 30vh;
-      object-fit: cover;
-      object-position: 50% 50%;
-}
   .Products__figure-wrap{  
-    margin: 0px auto;
+    width: 100vw;
+    margin: 0px ;
     column-count: 1;
     /*欄數*/
     column-gap: 30px;
     /*每欄間隔*/
 }
 
-  .Products__img-id-wrap{
-    padding: 5px;
-    box-sizing: border-box;
-    margin: 0 auto 5px;
-    break-inside: avoid;
-    /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+.Products__img-id-wrap{
+  border-bottom: 1px solid #C9D7E3;
+  padding: 15px;
+  width: 400px;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0  auto;
+  break-inside: avoid;
+  /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
 }
   .Products＿link {
     display: flex;
