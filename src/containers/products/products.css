@@ -270,7 +270,7 @@ margin: 0px;
                         "Products__figure "
                         "Products__figure "
                         "Products__footer "; /* 2.區域分為4行1列 */
-    grid-template-rows: 100px 5000px 50px;/* 3.各區域 寬高設置 */
+    grid-template-rows: 100px 900vh 50px;/* 3.各區域 寬高設置 */
     grid-template-columns: 100vw;
     justify-content: center;
   }
@@ -343,6 +343,9 @@ margin: 0px;
   margin: 0  auto;
   break-inside: avoid;
   /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+}
+.Products__productId{
+ font-size: 30px;
 }
   .Products＿link {
     display: flex;
