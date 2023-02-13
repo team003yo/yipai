@@ -128,7 +128,40 @@ const RightNav = ({ open }) => {
                   >≤400</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown> </li>
-      <li>依照金額篩選</li>
+      <li><h5 className="Products＿slider-color-size-h6" >短邊</h5>
+              <Dropdown>
+                  <Dropdown.Toggle
+                    variant="--color-bg "
+                    style={{ border: 'none' }}
+                    id="dropdown-basic"
+                    className="ms-5"
+                  >
+                    所有
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                  <Dropdown.Item value="所有"
+                 
+                  >
+                  所有
+                  </Dropdown.Item>
+                    <Dropdown.Item value="50"
+                
+                  >
+                  ≤50≤
+                  </Dropdown.Item>
+                    <Dropdown.Item value="100"
+                 
+                  >
+                  ≤100≤</Dropdown.Item>
+                    <Dropdown.Item value="300"
+                
+                  >
+                  ≤300≤</Dropdown.Item>
+                    <Dropdown.Item value="400"
+                
+                  >≤400</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown></li>
     </Ul>
   )
 }

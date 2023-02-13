@@ -17,6 +17,7 @@ import { useParams } from "react-router-dom";
 import { useCart } from "../cart/utils/useCart";
 
 const ProductsDetail = () => {
+  window.scrollTo(0, 0);
   // cartpart
   const {
     cart,
@@ -129,6 +130,7 @@ const ProductsDetail = () => {
     </Modal>
   );
 
+  const [products, setProducts] = useState('')
   const [selectedProducts, setSelectedProducts] = useState([])
   const [data, setData] = useState([]);
   const [artistData, setArtistData] = useState([]);
@@ -136,7 +138,6 @@ const ProductsDetail = () => {
   const { productId } = useParams();
   const { artistId } = useParams();
   const [artistName, setArtistName] = useState([]);
-  const [products, setProducts] = useState('')
 
   
 
@@ -192,6 +193,10 @@ const ProductsDetail = () => {
   //  (products) => products.artist === filtered[0].id
   //);
 
+  // const Red = 'ProductsDetail_icon-value1';
+  // const Orange = 'ProductsDetail_icon-value1';
+
+
   const display = (
     <>
       <div className="container-fluid" id="ProductsDetail_container_fluid">
@@ -230,9 +235,39 @@ const ProductsDetail = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                      <th scope="col">{productsDetail.work_hue}</th>
-                      </tr>
+                    <tr>
+  <th scope="col">
+  {productsDetail.work_hue}
+    {/* {
+      (() => {
+        switch (productsDetail.work_hue) {
+          case 'red':
+            return <div className={`ProductsDetail-color-item ${Red}`} />
+          case 'orange':
+            return <div className={`ProductsDetail-color-item ${Orange}`} />
+          // case 'value3':
+          //   return <div className={`ProductsDetail-color-item ${value3}`} />
+          // case 'value4':
+          //   return <div className={`ProductsDetail-color-item ${value4}`} />
+          // case 'value5':
+          //   return <div className={`ProductsDetail-color-item ${value5}`} />
+          // case 'value6':
+          //   return <div className={`ProductsDetail-color-item ${value6}`} />
+          // case 'value7':
+          //   return <div className={`ProductsDetail-color-item ${value7}`} />
+          // case 'value8':
+          //   return <div className={`ProductsDetail-color-item ${value8}`} />
+          // case 'value9':
+          //   return <div className={`ProductsDetail-color-item ${value9}`} />
+          // case 'value10':
+          //   return <div className={`ProductsDetail-color-item ${value10}`} />
+          default:
+            return null;
+        }
+      })()
+    } */}
+  </th>
+</tr>
                     </tbody>
                     <thead>
                       <tr>
@@ -242,7 +277,7 @@ const ProductsDetail = () => {
                     <tbody>
                       <tr>
                           <td>寬{productsDetail.width}m</td>
-                          <td>高{productsDetail.hegiht}m</td>
+                          <td>高{productsDetail.height}m</td>
                       </tr>
                     </tbody>
                     <thead>
@@ -292,7 +327,6 @@ const ProductsDetail = () => {
                     src={productsDetail.img_file}
                     alt="img"
                   />
-                
               </figure>
               <article id="ProductsDetail_article">
                 <div className="ProductsDetail_Detail ">
@@ -338,45 +372,39 @@ const ProductsDetail = () => {
               </aside>
               )
               })}
-
         {/* 電腦版 */}
-
         <main id="ProductsDetail_main">
         <h3 className="fw-bold ProductsDetail_more">
               其他推薦的藝術品
         </h3>
         {SelectedImg_file.slice(0, 5).map((SelectedImg_file, index) => {
           return (
-          <div className="ProductsDetail_main-wrap">
+          <div className="ProductsDetail_main-wrap" key={SelectedImg_file.id}>
             <table className="ProductsDetail_other-product">
+            <thead>
               <tr className="ProductsDetail_card-pic ProductsDetail_pic1">
                 <td>
+                <a href={`http://localhost:3000/products/${SelectedImg_file.id}`}>
                   <img
                     className="ProductsDetail_pic-img"
                     src= {SelectedImg_file.img_file}
-                  />
+                    />
                   <div className="ProductsDetail__card-text">
                     <h6 className="ProductsDetail_productId">{SelectedImg_file.name}</h6>
                     <p className="ProductsDetail_price">${SelectedImg_file.price}</p>
                   </div>
+                  </a>
                 </td>
               </tr>
+            </thead>
             </table>
           </div>
           )
               })}
-      
         </main>
         </section>
         );
         })}
-        
-      </div>
-
-      <div className="ProductsDetail_addCar-bottom">
-        <a href="#" id="add_cart" className="d-inline">
-          加入購物車
-        </a>
       </div>
     </>
   );

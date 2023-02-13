@@ -56,6 +56,23 @@
   position: relative;
  
 }
+
+.ProductsDetail-color-item{
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.ProductsDetail_icon-value1{
+  background-color: rgb(214, 76, 76);
+}
+
+.ProductsDetail_icon-value2{
+  background-color: rgb(238, 149, 15);
+}
+
 .ProductsDetail_Detail {
   width: 100vw;
 }
@@ -149,24 +166,18 @@ p.ProductsDetail_price{
   position:absolute;
   margin-top: 60px;
 }
-
-.ProductsDetail_card-img-top{
-  width: 200px;
-  object-fit:contain;
-  position: relative;
-  
-}
 .ProductsDetail_pic-img{
-  height: 330px;
-  padding: 20px;
-  object-fit:contain;
+  width: 250px;
+  height: 250px;
+  object-fit:cover;
+  position: relative;
+  padding: 10px;
 } 
 
 .ProductsDetail__card-text{
   max-width:100%;
   height: 56px;
   padding:0 10px  10px  10px;
-  
 }
 
 p.ProductsDetail_article{
@@ -239,7 +250,7 @@ p.ProductsDetail_article{
 }
 .ProductsDetail_Pic{
   position: absolute;
-  height: 30vh;
+  height: 25vh;
   z-index: 1000;
   margin: 40px 0  0 240px ;
   box-shadow: 3px 3px 10px rgba(123, 123, 129, 0.7);
@@ -364,7 +375,7 @@ p.ProductsDetail_article{
                          "ProductsDetail_aside"
                          /* "ProductsDetail_main" */
                         ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 680px 500px 311px 400px ; /* 3.各區域 寬高設置 */
+    grid-template-rows: 680px 500px 500px 500px ; /* 3.各區域 寬高設置 */
     grid-template-columns: 550px ;
   }
  
@@ -389,9 +400,7 @@ p.ProductsDetail_article{
  
 }
 
-  .ProductsDetail_addCar{
-    display: none;
-  }
+  
   .ProductsDetail_addCar-bottom{
     padding: 20px;
     background-color:#C9D7E3 ;
@@ -419,7 +428,7 @@ p.ProductsDetail_article{
                   "ProductsDetail_aside "
                   /* "ProductsDetail_main" */
                   ; /* 2.區域分為4行兩列 */
-    grid-template-rows: 550px 450px 700px 550px ; /* 3.各區域 寬高設置 */
+    grid-template-rows: 550px 550px 700px 550px ; /* 3.各區域 寬高設置 */
     grid-template-columns:100vw ;
   }
   #ProductsDetail_container_fluid{
@@ -450,7 +459,6 @@ p.ProductsDetail_article{
     height: 30vh;
   }
   
-     
   .ProductsDetail_nav-wrapper{
     width: 100vw;
     position: absolute;
