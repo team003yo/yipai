@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import Pagination from './Pagination'
 
 function Space() {
+  window.scrollTo(0, 800);
   const [space, setSpace] = useState([])
   const [originalSpace, setOriginalSpace] = useState([])
   //select值

@@ -3,15 +3,12 @@ import './sellregister.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import HeadImg from "../HeadImg";
 import { FaUserCircle } from 'react-icons/fa'
-import { useNavigate } from 'react-router'
 // import { height } from '@mui/system';
 
 const SellRegister = () => {
-  const navigate = useNavigate();
-
   const [member, setMember] = useState({
     // 自動填入
     name: '',
@@ -122,9 +119,11 @@ const SellRegister = () => {
       formData
     )
     console.log(response.data)
-    setTimeout(() => {
-      navigate('/users/SellLogin');
-    }, 0);
+    alert('註冊成功!')
+      // http://localhost:3000/users/SellLogin
+      setTimeout(() => {
+        window.location.assign("/users/SellLogin");
+    }, 500);
   }
   return (
     <>
@@ -197,6 +196,12 @@ const SellRegister = () => {
                 送出
               </button>
             </form>
+            <div className="m-5" style={{ fontColor: "#515151" }}>
+              已有會員？請
+              <span>
+                <Link to="/users/SellLogin">登入</Link>
+              </span>
+            </div>
           </div>
         </div>
       </div>

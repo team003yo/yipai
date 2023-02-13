@@ -18,17 +18,6 @@
   text-align: center;
   margin: 50px 50px;
 }
-/* artist-banner */
-.artist-banner {
-  width: 100%;
-  height: 100vh;
-}
-.artistImg {
-  height: 100%;
-  background-image: url("./artist_main.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .button-new-old {
   min-width: 100px;
   max-width: 100px;
@@ -69,26 +58,18 @@
 .artist-card-text{
   max-width: 150px;
 }
-@media screen and (max-width: 1440px) {
-  .artist-banner {
-    height: 80vh;
-  }
-
+.artist-carousel .carousel .control-dots{
+  display: none;
+}
+.artist-background{
+  background-color: rgba(233, 214, 130, 0.159);
+}
+@media screen and (max-width: 980px) {
   .artist-card-img-top {
     object-fit: cover;
     width: 300px;
     height: 180px;
     overflow: hidden;
-  }
-}
-@media screen and (max-width: 1080px) {
-  .artist-banner {
-    height: 80vh;
-  }
-  .artist-card-img-top {
-    background-size: cover;
-    width: 300px;
-    height: 160px;
   }
   .artist-card-body{
     width: 100%;
@@ -98,52 +79,43 @@
   }
 }
 @media screen and (max-width: 780px) {
-  .artist-banner {
-    height: 70vh;
-  }
   .artist-card-img-top {
     background-size: cover;
-    width: 300px;
+    width: 500px;
     height: 220px;
+  }
+  .artist-card-body{
+    width: 100%;
+  }
+  .artist-aside-menu {
+    display: none;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .artist-main-content {
     display: inline-block;
     height: auto;
   }
-  .artist-banner {
-    height: 30vh;
-  }
-  .artistImg {
-    height: 100%;
-    background-image: url("./artist_main.png");
-    background-repeat: no-repeat;
-    background-size: contain;;
-  }
+  
   .artist-aside-menu {
     display: none;
   }
   .artist-card-img-top {
     background-size: cover;
-    width: 100%;
+    width: 400px;
     height: 220px;
   }
-  .artist-card {
-    margin: auto;
-    width: 300px;
+  .button-new-old{
+    display: none;
   }
 }
 
 /*ArtistDetail */
-.artist-country {
+.artist-name {
   color: #cab296;
 }
 .artist-born {
-  color: #f9f7f2;
-}
-.artist-name {
   color: #f9f7f2;
 }
 .artist-detail-aside-pic {
@@ -165,8 +137,8 @@
 .artist-detail-name h1 {
   font-size: 60px;
 }
-.artist-detail-name h2 {
-  font-size: 40px;
+.artist-detail-name h3 {
+  font-size: 45px;
 }
 
 /*ArtistDetail detail-intro */
@@ -218,12 +190,6 @@
 }
 
 /* icon */
-
-.artistHead {
-  background-image: url("./artist_head.png");
-  height: 50%;
-  background-repeat: no-repeat;
-}
 .icon {
   display: flex;
   justify-content: center;
@@ -251,10 +217,9 @@
   object-fit: contain;
 }
 .artist-aside-pic{
-  background-color: rgba(24, 24, 24, 0.31);
-  filter:brightness(.3);  
+  filter:brightness(.25);  
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 980px) {
   .detail-intro-text {
     line-height: 30px;
   }
@@ -263,12 +228,12 @@
     font-size: 32px;
   }
 }
-@media screen and (max-width: 980px) {
-  .artist-detail-namet- h1 {
-    font-size: 50px;
+@media screen and (max-width: 780px) {
+  .artist-detail-namet h1 {
+    font-size: 45px;
   }
-  .artist-detail-name h2 {
-    font-size: 40px;
+  .artist-detail-name h3 {
+    font-size: 30px;
   }
   /* 換一行 */
   .detail-main {
@@ -298,7 +263,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .artist-detail-aside-pic {
     height: 300px;
   }
@@ -309,10 +274,10 @@
     padding: 0px;
   }
   .artist-detail-name h1 {
-    font-size: 40px;
-  }
-  .artist-detail-name h2 {
     font-size: 30px;
+  }
+  .artist-detail-name h3 {
+    font-size: 15px;
   }
   .detail-intro-img {
     height: 100%;
@@ -320,5 +285,8 @@
   .detail-intro-img-body {
     text-align: center;
     justify-content: center;
+  }
+  .artist-page-item{
+    display: none;
   }
 }

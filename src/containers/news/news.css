@@ -21,13 +21,15 @@
     height: 100%;
     grid-template-areas:
                          "News__nav "
-                         "News__main ";
-    grid-template-rows: 100px 2000px 50px; /* 3.各區域 寬高設置 */
-    grid-template-columns:  1fr ;
+                         "News__main "
+                         "News__footer ";
+    grid-template-rows: 100px 1200px 50px; /* 3.各區域 寬高設置 */
+    grid-template-columns:  100vw ;
   }
   #News__section > #News__nav {
     grid-area: News__nav;
   }
+  
   #News__section > #News__main {
     grid-area: News__main;
   }
@@ -42,22 +44,22 @@
   }
 
   .News__main-wrap{
-    padding: 50px;
-    width: 100%;
+    width: 95vw;
     margin: 0px auto;
-    column-width:500px ;
+    column-count: 3;
     /*欄數*/
-    column-gap: 50px;
+    column-gap: 20px;
     /*每欄間隔*/
-    break-inside: avoid;
 }
 .News__newsId{
     margin-top: 10px;
 }
 .News__img-id-wrap{
-    padding: 5px;
+    border-bottom: 1px solid #C9D7E3;
+    padding: 10px;
+    width: 570px;
     box-sizing: border-box;
-    margin: 0 auto 5px;
+    margin: 0 ;
     break-inside: avoid;
         /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
 }
@@ -79,14 +81,68 @@ display: -webkit-box;
 -webkit-line-clamp: 2;
 
 }
-
-@media screen and (max-width: 990px) {
-  
+.News__text-nowrap{
+  width: 90vw;
+}
+.News__currentPage{
+  flex-direction: column;
+  float: right;
+}
+.News＿--color-bg{
+  background-color: black;
+  color: white;
+  margin-right: 50px;
 }
 
-@media screen and (max-width: 700px) {
- 
-}
-
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 550px){
+  #News__section {
+    font-family: var(--font-family);
+    display: grid; /* 1.設定 display 為 grid */
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+                         "News__nav "
+                         "News__main ";
+    grid-template-rows: 80px 3000px 50px; /* 3.各區域 寬高設置 */
+    grid-template-columns:  100vw ;
   }
+  
+  .News__banner {
+    width: 100%;
+    height: 25vh;
+}
+
+.News__main-wrap{
+  width: 50vw;
+  margin: 0px;
+  column-count: 1;
+  /*欄數*/
+  column-gap: 20px;
+  /*每欄間隔*/
+}
+.News__newsId{
+  margin-top: 10px;
+}
+.News__img-id-wrap{
+  border-bottom: 1px solid #C9D7E3;
+  padding: 10px;
+  width: 400px;
+  box-sizing: border-box;
+  margin: 0 ;
+  break-inside: avoid;
+      /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+}
+
+  .News__banner__img {
+    background-image: url("../../assets/news__banner.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.News__button{
+  display: none;
+}
+
+}
+  
+
+

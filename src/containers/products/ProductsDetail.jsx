@@ -17,6 +17,7 @@ import { useParams } from "react-router-dom";
 import { useCart } from "../cart/utils/useCart";
 
 const ProductsDetail = () => {
+  window.scrollTo(0, 0);
   // cartpart
   const {
     cart,
@@ -32,11 +33,8 @@ const ProductsDetail = () => {
 
   const [productName, setProductName] = useState("");
   const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
   const handleClose = () => setShow(false);
-  const handleClose2 = () => setShow2(false);
   const handleShow = () => setShow(true);
-  const handleShow2 = () => setShow2(true);
   const navigate = useNavigate();
   const [login, setLogin] = useState(false);
   useEffect(() => {
@@ -52,7 +50,7 @@ const ProductsDetail = () => {
       } else {
         setLogin(false);
       }
-      console.log(response.data[0]);
+      // console.log(response.data[0]);
     }
     getMember2();
   }, []);
@@ -68,18 +66,18 @@ const ProductsDetail = () => {
         );
      
       setUserName(response.data[0]);
-      console.log(response.data[0]);
+      // console.log(response.data[0]);
     }
     getMember2();
   }, []);
+
   const showModal = (name) => {
     setProductName("產品：" + name + "已成功加入購物車");
     handleShow();
   };
-
   const showModalFail = (name) => {
     setProductName("請登入!");
-    handleShow2();
+    handleShow();
   };
 
   const messageModal = (
@@ -113,85 +111,90 @@ const ProductsDetail = () => {
     </Modal>
   );
   const messageModalFalse = (
-    <Modal className="model-bg-color" show={show2} onHide={handleClose2} backdrop="static" keyboard={false}>
+    <Modal className="model-bg-color" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header closeButton>
         <Modal.Title>加入購物車失敗</Modal.Title>
       </Modal.Header>
-      <Modal.Body>請登入</Modal.Body>
+      <Modal.Body>XX</Modal.Body>
       <Modal.Footer>
         <Button
           variant="secondary"
           onClick={() => {
-            handleClose2();
-            navigate("/users", { replace: true });
-          }}
-        >
-          前往登入
-        </Button>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            handleClose2();
+            handleClose();
             navigate("/products", { replace: true });
           }}
         >
           返回
         </Button>
-
-        
       </Modal.Footer>
     </Modal>
   );
 
-  
+  const [products, setProducts] = useState('')
+  const [selectedProducts, setSelectedProducts] = useState([])
+  const [data, setData] = useState([]);
   const [artistData, setArtistData] = useState([]);
   const [selectedArtist, setSelectedArtist] = useState([]);
   const { productId } = useParams();
-  const [data, setdata] = useState([]);
   const { artistId } = useParams();
-  const [artist, setData] = useState([]);
+  const [artistName, setArtistName] = useState([]);
 
-  useEffect(() => {
+  
+
+    useEffect(() => {
     // console.log('第二個參數是空陣列')
     // 在 component 初始化的時候跑一次
     // 通常會把去跟後端要資料的動作放在這裡
-
-    async function getdata() {
+    async function getData() {
       let response = await axios.get(
         `http://localhost:3001/product/${productId}?`
+        );
+        setData(response.data);
+      }
+      getData();
+    }, []);
+    
+    useEffect(() => {
+      async function getArtistData() {
+        let artistResponse = await axios.get('http://localhost:3001/artist');
+        setArtistData(artistResponse.data);
+      }
+      getArtistData();
+    }, []);
+    
+    //console.log(artistData);
+    //console.log(data);
+    
+    let filtered = [...artistData];
+    filtered = filtered.filter(
+      (artistData) => artistData.users_name === data[0].artist
       );
-      setdata(response.data);
-      // console.log(response.data)
-    }
-    getdata();
-  }, []);
+      //console.log(filtered)
+      
+      useEffect(() => {
+        async function getProducts() {
+          let ProductsResponse = await axios.get(`http://localhost:3001/product`);
+          setProducts(ProductsResponse.data);
+          // console.log(ProductsResponse.data);
+        }
+        getProducts();
+      }, []);
 
-  useEffect(() => {
-    async function getData() {
-      let response = await axios.get(`http://localhost:3001/product/${productId}?`);
-      setData(response.data);
-    }
-    getData();
-  }, []);
+      //console.log(products);
+      // console.log(artistData[0].users_name );
+      
+  let SelectedImg_file = [...products]; 
+      SelectedImg_file = SelectedImg_file.filter(
+        (SelectedImg_file) => SelectedImg_file.artist === data[0].artist
+      );
+  // console.log(SelectedImg_file);
 
-  useEffect(() => {
-    async function getArtistData() {
-      let response = await axios.get('http://localhost:3001/artist');
-      setArtistData(response.data);
-    }
-    getArtistData();
-  }, []);
-  
-  useEffect(() => {
-    const filteredData = artistData.filter((data) => {
-      return selectedArtist.some(selectedArtist => selectedArtist.id === data.user_id);
-    });
-    setData(filteredData);
-  }, [selectedArtist, artistData]);
+  //SelectedImg_file = SelectedImg_file.filter(
+  //  (products) => products.artist === filtered[0].id
+  //);
 
-    // console.log('第二個參數是空陣列')
-    // 在 component 初始化的時候跑一次
-    // 通常會把去跟後端要資料的動作放在這裡
+  // const Red = 'ProductsDetail_icon-value1';
+  // const Orange = 'ProductsDetail_icon-value1';
 
 
   const display = (
@@ -232,9 +235,39 @@ const ProductsDetail = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                      <th scope="col">{productsDetail.work_hue}</th>
-                      </tr>
+                    <tr>
+  <th scope="col">
+  {productsDetail.work_hue}
+    {/* {
+      (() => {
+        switch (productsDetail.work_hue) {
+          case 'red':
+            return <div className={`ProductsDetail-color-item ${Red}`} />
+          case 'orange':
+            return <div className={`ProductsDetail-color-item ${Orange}`} />
+          // case 'value3':
+          //   return <div className={`ProductsDetail-color-item ${value3}`} />
+          // case 'value4':
+          //   return <div className={`ProductsDetail-color-item ${value4}`} />
+          // case 'value5':
+          //   return <div className={`ProductsDetail-color-item ${value5}`} />
+          // case 'value6':
+          //   return <div className={`ProductsDetail-color-item ${value6}`} />
+          // case 'value7':
+          //   return <div className={`ProductsDetail-color-item ${value7}`} />
+          // case 'value8':
+          //   return <div className={`ProductsDetail-color-item ${value8}`} />
+          // case 'value9':
+          //   return <div className={`ProductsDetail-color-item ${value9}`} />
+          // case 'value10':
+          //   return <div className={`ProductsDetail-color-item ${value10}`} />
+          default:
+            return null;
+        }
+      })()
+    } */}
+  </th>
+</tr>
                     </tbody>
                     <thead>
                       <tr>
@@ -244,7 +277,7 @@ const ProductsDetail = () => {
                     <tbody>
                       <tr>
                           <td>寬{productsDetail.width}m</td>
-                          <td>高{productsDetail.hegiht}m</td>
+                          <td>高{productsDetail.height}m</td>
                       </tr>
                     </tbody>
                     <thead>
@@ -294,7 +327,6 @@ const ProductsDetail = () => {
                     src={productsDetail.img_file}
                     alt="img"
                   />
-                
               </figure>
               <article id="ProductsDetail_article">
                 <div className="ProductsDetail_Detail ">
@@ -304,18 +336,19 @@ const ProductsDetail = () => {
                     </p>
                   </div>
                   <div className="col-md-6">
-                  {/* <img className="ProductsDetail_Pic" src={productsDetail.img_file}/> */}
+                  <img className="ProductsDetail_Pic" src={productsDetail.img_file}/>
                   <img src={demo} alt="" className="ProductsDetail_demobox" />
                   </div>
                 </div>
               </article>
-              {/* {artist.map((users, index) => { */}
+              {filtered.map((artistData, index) => {
+                return(
               <aside id="ProductsDetail_aside">
                 <div className="ProductsDetail_aside-wrapp">
                   <div className="ProductsDetail_artistLink">
                     <div className="col-md-4">
                       <img
-                        src={artistLink}
+                        src={artistData.user_imageHead}
                         className="ProductsDetail_artistPic"
                         alt="img"
                       />
@@ -323,12 +356,12 @@ const ProductsDetail = () => {
                     <div className="ProductsDetail_card-body">
                       <div className="ProductsDetail_card-body-wrap">
                         <h5 className="ProductsDetail_card-title"  >
-                        {/* {users.users_name} */}
+                        {artistData.users_name}
                         </h5>
-                        <p className="ProductsDetail_card-text">French</p>
+                        <h5 className="ProductsDetail_card-text">{artistData.users_birth}</h5>
                         <p className="ProductsDetail_Detail-text">
                           <p className="ProductsDetail_p" align="left">
-                            我是林容德，84年次，出生於嘉義縣水上鄉。父親任職於新營長榮鋼鐵品管課課長，母親為財團法人嘉義北回文化藝術基金會董事長助理，我的哥哥畢業於國立交通大學，目前在桃園星宇航空總部工作
+                          {artistData.users_introduce}
                           </p>
                         </p>
                         <button className="ProductsDetail_follow">關注</button>
@@ -337,99 +370,41 @@ const ProductsDetail = () => {
                   </div>
                 </div>
               </aside>
-                {/* })
-              } */}
-  
+              )
+              })}
+        {/* 電腦版 */}
         <main id="ProductsDetail_main">
-          <div className="ProductsDetail_main-wrap">
-            <h3 className="fw-bold ProductsDetail_more">
-              這個藝術家的其他商品
-            </h3>
+        <h3 className="fw-bold ProductsDetail_more">
+              其他推薦的藝術品
+        </h3>
+        {SelectedImg_file.slice(0, 5).map((SelectedImg_file, index) => {
+          return (
+          <div className="ProductsDetail_main-wrap" key={SelectedImg_file.id}>
             <table className="ProductsDetail_other-product">
+            <thead>
               <tr className="ProductsDetail_card-pic ProductsDetail_pic1">
                 <td>
+                <a href={`http://localhost:3000/products/${SelectedImg_file.id}`}>
                   <img
                     className="ProductsDetail_pic-img"
-                    src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvODA0ODM1X2JkNWY4MDlhNmUwZjFiMzQ2ODQzNjlkYTkyNzdjM2U0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjc1MCwiaGVpZ2h0Ijo3NTAsImZpdCI6Imluc2lkZSJ9LCJ0b0Zvcm1hdCI6IndlYnAiLCJ3ZWJwIjp7InF1YWxpdHkiOjgwfX19?signature=4de31b7ee197e656160452397ab3fac1148ae59c0e210b85c3fbd765a2a406cc"
-                    alt=""
-                  />
+                    src= {SelectedImg_file.img_file}
+                    />
                   <div className="ProductsDetail__card-text">
-                    <h6 className="ProductsDetail_productId">Imagine</h6>
-                    <p className="ProductsDetail_price">$190200</p>
+                    <h6 className="ProductsDetail_productId">{SelectedImg_file.name}</h6>
+                    <p className="ProductsDetail_price">${SelectedImg_file.price}</p>
                   </div>
+                  </a>
                 </td>
               </tr>
-              <tr className="ProductsDetail_card-pic ProductsDetail_pic2">
-                <td>
-                  <img
-                    className="ProductsDetail_pic-img"
-                    src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvOTkyNTkzXzU4NDMxZGRlOTM3ZDEzZTBjNWZlNWZkNDVhOGY3NWJmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjc1MCwiaGVpZ2h0Ijo3NTAsImZpdCI6Imluc2lkZSJ9LCJ0b0Zvcm1hdCI6IndlYnAiLCJ3ZWJwIjp7InF1YWxpdHkiOjgwfX19?signature=0900fb339dc79cec9f9caed2d0f6927e2efcbe7900face96077b85fb8896a3ba"
-                    alt=""
-                  />
-                  <div className="ProductsDetail__card-text">
-                    <h6 className="ProductsDetail_productId">Harmony</h6>
-                    <p className="ProductsDetail_price">$1174200</p>
-                  </div>
-                </td>
-              </tr>
-              <tr className="ProductsDetail_card-pic ProductsDetail_pic3">
-                <td>
-                  <img
-                    className="ProductsDetail_pic-img"
-                    src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvMTA3NTI2N185OGJlNGM3ZGZlNGE5YzM2ZjBiOGNjN2RmMGQyOTEyNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=9a6c5126fe70659edb1b155cf024c7316ba6bce3d25fa3eb76876357b9fe9323"
-                    alt="img"
-                  />
-                  <div className="ProductsDetail__card-text">
-                    <h6 className="ProductsDetail_productId">
-                      Der Stubenhocker
-                    </h6>
-
-                    <p className="ProductsDetail_price">$16900</p>
-                  </div>
-                </td>
-              </tr>
-              <tr className="ProductsDetail_card-pic ProductsDetail_pic4">
-                <td>
-                  <img
-                    className="ProductsDetail_pic-img"
-                    src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvMTA3NTI0M18wZmE0MDJlNmNhZmEzNTIwYTNhNmRjYWU1NWI5ZGIyZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=3a70517d495b44f40ea52dccb98343482c306316c66ce46d4399093861508fac"
-                    alt="img"
-                  />
-                  <div className="ProductsDetail__card-text">
-                    <h6 className="ProductsDetail_productId">The sky</h6>
-
-                    <p className="ProductsDetail_price">$16900</p>
-                  </div>
-                </td>
-              </tr>
-
-              <tr className="ProductsDetail_card-pic ProductsDetail_pic5">
-                <td>
-                  <img
-                    className="ProductsDetail_pic-img"
-                    src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0d29ya3NcL3YyXC9jcm9wcGVkXC8yMzU5M1wvbWFpblwvem9vbVwvMTA3NTI2NV9hMDY2ZDUzMjNmYjc3ZGM3ZDY0ZmNhMmIzNDVmNGY3Zi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo3NTAsImhlaWdodCI6NzUwLCJmaXQiOiJpbnNpZGUifSwidG9Gb3JtYXQiOiJ3ZWJwIiwid2VicCI6eyJxdWFsaXR5Ijo4MH19fQ==?signature=4fba5bade6fe9c199c9d6dff1fb28852e85900d2fd130ad03dfcbb96dff40d3f"
-                    alt="img"
-                  />
-                  <div className="ProductsDetail__card-text">
-                    <h6 className="ProductsDetail_productId">River</h6>
-
-                    <p className="ProductsDetail_price">$16900</p>
-                  </div>
-                </td>
-              </tr>
+            </thead>
             </table>
           </div>
+          )
+              })}
         </main>
         </section>
-          );
+        );
         })}
-        
-      </div>
-
-      <div className="ProductsDetail_addCar-bottom">
-        <a href="#" id="add_cart" className="d-inline">
-          加入購物車
-        </a>
       </div>
     </>
   );

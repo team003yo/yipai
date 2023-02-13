@@ -21,6 +21,10 @@ const Footer = () => {
   if(location.pathname === '/cart/CartPart3'){
     return<></>
   }
+  if(location.pathname === '/users/ArtistLoginTo'){ return<></> }
+  if(location.pathname === '/users/Register'){ return<></> }
+  if(location.pathname === '/users/BuyLogin'){ return<></> }
+  if(location.pathname === '/users/SellRegister'){ return<></> }
   if(location.pathname === '/users/SellLogin'){ return<></> }
   // ;
 

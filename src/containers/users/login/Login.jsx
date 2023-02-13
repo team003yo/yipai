@@ -10,8 +10,8 @@ import "./buyLogin.css";
 const Login = () => {
     // 登入預設
     const [member, setMember] = useState({
-        account: "cola00981",
-        password: "00000000",
+        account: "john1123",
+        password: "12345678",
     });
 
     function handleChange(e) {
@@ -20,7 +20,7 @@ const Login = () => {
     async function handleSubmit(e) {
         e.preventDefault();
         let response = await axios.post(
-            "http://localhost:3001/api/auth/login",
+            "http://localhost:3001/api/auth/Buylogin",
             member,
             {
                 // 跨源存取 cookie
@@ -42,7 +42,7 @@ const Login = () => {
                     <div className='_buyLogin_buyerIcon'></div>
                     <form
                         method='POST'
-                        action='http://localhost:3001//api/auth/login'
+                        action='http://localhost:3001/api/auth/Buylogin'
                         className='_buyLogin_flex'
                     >
                         <label className='_buyLogin_h3'>買家登入</label>

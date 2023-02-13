@@ -41,23 +41,7 @@ const Cart = () => {
     }
     getMember2();
   }, []);
-  // useEffect(() => {
-  //   async function getSellLogin() {
-  //     let response = await axios.get(
-  //       `http://localhost:3001/api/members/userData`,
-  //       {
-  //         withCredentials: true,
-  //       }
-  //     );
-  //     if (Array.isArray(response.data) && response.data.length > 0) {
-  //       setSellLogin(true);
-  //     } else {
-  //       setSellLogin(false);
-  //     }
-  //     console.log(response.data[0]);
-  //   }
-  //   s\getSellLogin();
-  // }, []);
+
 
   console.log(login);
 

@@ -10,7 +10,6 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 import { useCart } from "../../containers/cart/utils/useCart";
 
 import axios from "axios";
-
 const Navbar = () => {
   // ...
   const {
@@ -30,6 +29,8 @@ const Navbar = () => {
   const [product, setProduct] = useState([]);
   const [user_order, setUserOrder] = useState([]);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [MerberId,setMemberId]=useState('');
+
   useEffect(() => {
     async function getMember2() {
       let response = await axios.get(
@@ -45,6 +46,7 @@ const Navbar = () => {
       }
       setUserName(response.data[0]);
       console.log(response.data[0]);
+      setMemberId(response.data[0].users_valid_role)
     }
     getMember2();
   }, []);
@@ -73,6 +75,7 @@ const Navbar = () => {
     } catch (error) {
       console.error(error);
     }
+   
   }
 
   return (
@@ -111,7 +114,8 @@ const Navbar = () => {
           ) : (
             <>
             
-                <h6>Hi ! {UserName.users_name}</h6>
+                <h6>Hi ! {MerberId==0?<a href="/users/LoginTo"> {UserName.users_name}</a>:<a href="/users/ArtistLoginTo"> {UserName.users_name}</a>}</h6>
+                
   
 
               <p onClick={logout}>

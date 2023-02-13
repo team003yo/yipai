@@ -7,6 +7,8 @@ import { FaHeart } from 'react-icons/fa'
 import { FiShare } from 'react-icons/fi'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { ImPhone } from 'react-icons/im'
+import { AiFillCalendar } from 'react-icons/ai'
+
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -25,6 +27,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 function SpaceDetail() {
+  window.scrollTo(0, 800);
   const { spaceId } = useParams()
   const [data, setData] = useState([])
   // const [spaceLat, setSpaceLat] = useState([])
@@ -101,6 +104,10 @@ function SpaceDetail() {
                       <h2 className="space__detail-map-title">
                         {item.space_name}
                       </h2>
+                    </div>
+                    <div className="space__detail-map-title-6">
+                    <AiFillCalendar/>
+                      {item.on_weekdays}
                     </div>
                     <div className="space__detail-map-title-6">
                       <FaMapMarkerAlt className="FaMapMarkerAlt_icon" />

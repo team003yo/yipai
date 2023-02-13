@@ -26,7 +26,7 @@ const CartPart2 = () => {
     async function getUsers() {
       let response = await axios.get(`http://localhost:3001`);
       setUsers(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     }
 
     const data = [
@@ -54,8 +54,40 @@ const CartPart2 = () => {
     minusOne,
   } = useCart();
   const firstCart = useCart()
-
+  const [postOrder,setPostOreder] = useState();
+  const [product, setProduct] = useState([]);
+  const [user_order, setUserOrder] = useState([]);
   const [login, setLogin] = useState(false);
+  const [UserName, setUserName] = useState([]);
+  const [address, setAddress] = useState('');
+  const [orderSubmit, setOrderSubmit] = useState();
+
+  let [UserData, setUserData] = useState({}) //記錄數值
+
+
+
+
+  
+  useEffect(() => {
+
+
+    // console.log("第二個參數是空陣列");
+    // 在 component 初始化的時候跑一次
+    // 通常會把去跟後端要資料的動作放在這裡
+    async function getProduct() {
+      let response = await axios.get("http://localhost:3001/cart");
+      setProduct(response.data);
+      // console.log(response.data);
+    }
+    getProduct();
+    async function getUserOrder() {
+      let response = await axios.get("http://localhost:3001/cart");
+      setUserOrder(response.data);
+      // console.log(response.data);
+    }
+    getUserOrder();
+  }, []);
+
   useEffect(() => {
     async function getMember2() {
       let response = await axios.get(
@@ -64,15 +96,23 @@ const CartPart2 = () => {
           withCredentials: true,
         }
       );
+      
       if (Array.isArray(response.data) && response.data.length > 0) {
         setLogin(true);
       } else {
         setLogin(false);
       }
+      // setOrderSubmit(response.data[0])
+      setUserName(response.data[0]);
       console.log(response.data[0]);
+      setAddress(response.data[0].users_city + response.data[0].users_street + response.data[0].users_township)
     }
     getMember2();
   }, []);
+  console.log(orderSubmit)
+
+
+
   return (
     <div id="login">
     {login?(
@@ -92,6 +132,7 @@ const CartPart2 = () => {
         </h5>
       </div>
       <hr />
+
       <Table
         striped
         hover
@@ -109,20 +150,17 @@ const CartPart2 = () => {
             <th colSpan="" className="col text-center">
               收貨人電話
             </th>
-            {/* <th className="text-center">預覽</th>
-              <th className="text-center">名稱</th>
-              <th className="text-center">數量</th>
-              <th className="text-center">價格</th> */}
+          
           </tr>
         </thead>
         <tbody className="line-height-50 text-right">
           {users.map((user) => (
             <tr>
               <td colSpan={2} className="">
-                {user.users_name}
+                {UserName.users_name}
               </td>
-              <td className="text-center ">{user.send_address}</td>
-              <td className="text-center">{user.users_phone}</td>
+              <td className="text-center" >{address}</td>
+              <td className="text-center">{UserName.users_phone}</td>
             </tr>
           ))}
         </tbody>
@@ -156,9 +194,11 @@ const CartPart2 = () => {
             </Link>
             <Link to="/cart/CartPart3">
               <button id="submitOrder" onClick={firstCart.clearCart}>
+              
                 前往結帳 
               </button>
             </Link>
+            <button onClick={postOrder}>test</button>
           </div>
         </footer>
         <br />
