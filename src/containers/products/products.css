@@ -113,13 +113,13 @@ grid-template-columns:  350px 1fr ;
  margin: 0px auto;
  column-count: 3;
  /*欄數*/
- column-gap: 12px;
+ column-gap: 10px;
  /*每欄間隔*/
 }
 .Products__img-id-wrap{
       border-bottom: 1px solid #C9D7E3;
       padding: 15px;
-      width: 280px;
+      width: 350px;
       box-sizing: border-box;
       margin: 0  ;
       break-inside: avoid;
