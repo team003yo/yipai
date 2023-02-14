@@ -4,6 +4,18 @@
     align-items: center;
     justify-content: center;
 }
+._buyLogin_RWDflexInvisible{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+._buyLogin_RWDflexcol{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
 ._buyLogin_mx2 {
     margin: 0 2em;
 }
@@ -52,7 +64,7 @@
     padding-top: 2em;
 }
 ._buyLogin_p1 {
-    padding-top: 1.5em;
+    padding-top: 1.25em;
 }
 ._buyLogin_h3 {
     margin: 0.5em 0 0.5em 0;
@@ -103,6 +115,7 @@
     font-size: var(--text-h2);
 }
 ._buyLogin_rwd_flexbtn {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0.5em;
@@ -116,19 +129,33 @@
     margin-bottom: 0.5em;
     font-size: var(--text-h2);
 }
-._buyLogin_headIcon {
+.sellerhome_buyLogin_headIcon,._buyLogin_headIcon {
     background-image: url(../image/addFileIcon.svg);
+    background-position: center;
+    background-size: 70%;
+    background-color:#C9D7E3;
     background-repeat: no-repeat;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 40px;
     z-index: 3;
-    position: absolute;
-    right: 0;
+    /* top: 12.5em; */
     cursor: pointer;
+    margin: 0;
 }
 ._buyLogin_headImg {
     z-index: 0;
 }
+._buyLogin_headIcon_Button{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: #eaeaea;
+    background-color: #000;
+    margin: 0px 0;
+}
+
 /* ICON按鈕樣式 */
 ._buyLogin_buyerControlBtn {
     border: 0;
@@ -278,9 +305,7 @@
     font-size: 30px;
     font-style: bold;
 }
-._buyLogin_h30{
-    height: 30em;
-}
+
 ._buyLogin_artostText{
     z-index: 2;
     margin-right: 3em;
@@ -290,9 +315,16 @@
     ._buyLogin_rwd_flex {
         flex-direction: row;
     }
+    ._buyLogin_RWDflexInvisible{
+        display: none;
+    }
+    ._buyLogin_RWDflexcol{
+        flex-direction: row;
+
+    }
     ._buyLogin_flex-re img {
-    width: 8em;
-}
+        width: 8em;
+    }
     ._buyLogin_rwd_flex h3 {
         margin-left: 1em;
         width: 7em;
@@ -404,8 +436,8 @@
     }
     ._buyLogin_NewBtn{
         position: relative;
-        left: 16.5em;
-        top: 1em;
+        margin-left: 16em;
+        margin-top: 1em;
         display: flex;
         flex-direction: row-reverse;
         border: 0;
@@ -491,24 +523,33 @@
         overflow: hidden;
     }
     ._buyLogin_imgBox img{
-        width: 20em;
+        width: 26em;
         position:absolute;
         top: -50%;
     }
     ._buyLogin_h30{
         height: auto;
+        margin-top: 1.5em;
+        flex-direction: column;
     }
     ._buyLogin_artistHead{
         width: 6em;
         height: 6em;
-        margin-top: 1em;
-        margin-left: 0;
+        margin:1em 0;
     }
     ._buyLogin_artostText{
         margin-right: 0;
         margin-left: 0;
     }
-    /* 按鈕列表 */
-    /* .userBtns{
-    } */
+    ._buyLogin_flex_row{
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: #fff;
+    }
+    ._buyLogin_card{
+        border: 1px solid #656565;
+        border-radius: 2em;
+        overflow: hidden;
+        margin: 2em 0;
+    }
 }
