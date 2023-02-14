@@ -4,8 +4,9 @@
 }
 .sellerhome__main{
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
-
 
 
 /* 側欄 */
@@ -24,8 +25,13 @@
     align-items: center;
     text-align: center;
 }
+.sellerhome_buyLogin_headIcon_flex{
+    display: flex;
+    justify-content: center;
+}
 ._sellerhome__pic_1920{
     position: relative;
+    
 }
 .sellerhome__headIcon{
     background-image: url(../image/addFileIcon.svg);
@@ -33,10 +39,23 @@
     width: 42px;
     height: 42px;
     z-index: 3;
-    position: absolute;
     right: 0px;
     bottom: 0px;
     cursor: pointer;
+}
+
+._buyLogin_headIcon_Button{
+    font-size: 10pt;
+}
+._buyLogin_imageHead_Button {
+    color:#EAEAEA;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    font-size: 10pt;
+    padding: 0;
+    background-color: #000000;
 }
 .sellerhome__sidebar__center ul li{
     margin: 15px;
@@ -202,6 +221,59 @@ padding-top: 20px;
     display: flex;
     margin: 10px;
 }
+/* color */
+.SellerUpload__color-item{
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    
+  }
+  .SellerUpload__color-item.active {
+    border: 2px solid #000;
+  }
+  .SellerUpload__color-item-red{
+    background-color: rgb(214, 76, 76);
+    border: none;
+  }
+  .SellerUpload__color-item-ori{
+    background-color: rgb(238, 149, 15);
+    border: none;
+  }
+  .SellerUpload__color-item-yel{
+    background-color: rgb(240, 200, 39);
+    border: none;
+  }
+  .SellerUpload__color-item-gre{
+    background-color: rgb(153, 223, 118);
+    border: none;
+  }
+  .SellerUpload__color-item-blu{
+    background-color: rgb(76, 186, 214);
+    border: none;
+  }
+  .SellerUpload__color-item-pur{
+    background-color: rgb(190, 130, 230);
+    border: none;
+  }
+  .SellerUpload__color-item-bro{
+    background-color: rgb(176, 78, 33);
+    border: none;
+  }
+  .SellerUpload__color-item-whi{
+    background-color: rgb(255, 255, 255);
+    border: none;
+  }
+  .SellerUpload__color-item-gra{
+    background-color: rgb(155, 155, 155);
+    border: none;
+  }
+  .SellerUpload__color-item-bla{
+    background-color: rgb(29, 28, 28);
+    border: none;
+  }
+
 
 .SellerUpload__uploadIcon {
     background-image: url(../image/seller-upload-pic.svg);
@@ -284,8 +356,11 @@ padding-top: 20px;
 /* sellerorder */
 #SellerOrder{
     margin-top: 50px;
+    display: flex;
+    align-items: center;
 }
 .sellerorder__main{
+    width: 780px;
     background-color: #F9F7F2;
     position: fixed;
     top: 0;
@@ -300,18 +375,31 @@ padding-top: 20px;
     margin: 0px 20px;
     height: 15%;
 }
+.sellerorder_detail_wrap{
+    width: 900px;
+    padding: 20px;
+    background-color: #EADCCC;
+}
+
 .sellerorder__main__text__input{
     color: black;
     display: flex;
     justify-content: space-between
 }
 .sellerorder__main__table{
-    display: flex;
-    justify-content: center;
     /* align-items: flex-start; */
+    display: flex;
+    justify-items: center;
     overflow:auto;
     height: 70%;
+    flex-direction: column;
+
+
 }
+.sellerorder_detail_wrap_table{
+    overflow:hidden;
+}
+
 .sellerorder__main__table th{
     padding: 7px 20px 10px 20px;
     border-bottom: 2px solid black;
@@ -322,12 +410,20 @@ padding-top: 20px;
     padding: 7px 10px 10px 10px;
     border-bottom: 1px solid gray;
 }
+.sellerorder__main__table_table{
+    height:70px;
+}
 ._sellerhome__pic_414{
     display: none;
 }
 .SellerUpload__button_wrap{
     float: right;
     margin-right: 80px;
+}
+.sellerorder_detail_wrap_table th{
+    font-size: 18px;
+    padding: 7px;
+    text-align: center;
 }
 /* SellerProduct 頁面*/
 #SellerProduct__main{
