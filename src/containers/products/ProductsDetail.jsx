@@ -236,8 +236,16 @@ const ProductsDetail = () => {
                     </thead>
                     <tbody>
                     <tr>
-  <th scope="col">
-  {productsDetail.work_hue}
+  <th scope="col" >
+  {/* {productsDetail.work_hue} */}
+<div className="d-flex"> 
+  {[ 'Red','Orange','Yellow', 'Green', 'Blue', 'Purple','Brown', 'White','Gray', 'Black']
+    .filter(color => productsDetail.work_hue.includes(color))
+    .map(color => <div key={color} className={`ProductsDetail-color-item-${color}`} />)
+  }
+</div>
+
+  {/* <div className={`ProductsDetail-color-item ${Red}`} /> */}
     {/* {
       (() => {
         switch (productsDetail.work_hue) {

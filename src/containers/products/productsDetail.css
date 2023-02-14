@@ -43,6 +43,97 @@
   position: relative;
  
 }
+
+.ProductsDetail-color-item-Red{
+  background-color: rgb(214, 76, 76);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+ 
+}
+.ProductsDetail-color-item-Orange{
+  background-color: rgb(238, 149, 15);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+
+}
+.ProductsDetail-color-item-Yellow{
+  background-color: rgb(240, 200, 39);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+
+}
+.ProductsDetail-color-item-Green{
+  background-color: rgb(153, 223, 118);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+
+}
+.ProductsDetail-color-item-blue{
+  background-color: rgb(76, 186, 214);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+ 
+}
+.ProductsDetail-color-item-Purple{
+  background-color: rgb(190, 130, 230);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+
+}
+.ProductsDetail-color-item-brown{
+  background-color: rgb(176, 78, 33);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+
+}
+.ProductsDetail-color-item-White{
+  background-color: rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.ProductsDetail-color-item-Gray{
+  background-color: rgb(155, 155, 155);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+}
+.ProductsDetail-color-item-Black{
+  background-color: rgb(29, 28, 28);
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+
 .ProductsDetail_card-text{
   color:#CAB296;  
   margin: 0;
