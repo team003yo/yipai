@@ -34,7 +34,7 @@ grid-template-columns:  10vw 1fr ;
   grid-area: Products__nav;
 }
 .Products＿link {
-  margin-right: 450px;
+  margin-right: 500px;
 }
 #Products__aside {
   margin-left: 10px;
