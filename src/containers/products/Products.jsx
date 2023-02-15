@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import "./products.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Button from 'react-bootstrap/Button'
 import ProductsPagination from "./ProductsPagination";
 
 //篩選區域
-import ProductsSize_Slider from "./ProductsSize_Slider";
-import ProductsPrice_Slider from "./ProductsPrice_Slider";
 import ProductsBurger from "./ProductsBurger";
 
 //icon
@@ -315,14 +314,10 @@ function Products() {
       <div className="container-fluid" id="Products＿container-fluid">
         <section id="Products__section">
           <aside id="Products__aside">
-            <table className="Products＿aside-content-center">
-              <th>
-                <h5 className="Products＿size-h3">藝術品分類</h5>
-              </th>
+            <table className="Products＿aside-content-center">   
+                <h3 className="Products＿size-h3 mb-4">藝術品分類</h3>
               <tr>
-                <Link variant="dark" onClick={handleClear}>
-                  <h5 className="">清除選取</h5>
-                </Link>
+                
                 <Dropdown>
                   <Dropdown.Toggle
                     variant="--color-bg "
@@ -699,6 +694,9 @@ function Products() {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
+                <Button className="mt-4" variant="dark" onClick={handleClear}>
+                 清除選取
+                </Button>
             </table>
           </aside>
           <nav id="Products＿nav">
