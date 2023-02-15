@@ -33,7 +33,9 @@ grid-template-columns:  10vw 1fr ;
 #Products__section > #Products__nav {
   grid-area: Products__nav;
 }
-
+.Products＿link {
+  margin-right: 450px;
+}
 #Products__aside {
   margin-left: 10px;
   text-align:center;
@@ -338,7 +340,7 @@ margin: 0px;
 }
   .Products＿link {
     display: flex;
-    margin:0 0  0 10px ;
+    margin:0 0 0 10px ;
   }
 
 }
